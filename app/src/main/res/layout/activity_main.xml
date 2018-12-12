@@ -19,12 +19,12 @@
     <EditText
             android:layout_width="215dp"
             android:layout_height="43dp"
-            android:inputType="textPassword"
             android:ems="10"
             android:id="@+id/password" android:layout_marginBottom="52dp"
             app:layout_constraintBottom_toTopOf="@+id/connexion" android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.464"/>
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.464"
+            android:inputType="textPassword" tools:text="password"/>
     <android.support.design.widget.TextInputLayout
             android:layout_width="219dp"
             android:layout_height="wrap_content"
