@@ -9,13 +9,13 @@
 
     <Button
             android:text="Connexion"
-            android:onClick="nfc_connect"
+            android:onClick="conection"
             android:layout_width="128dp"
             android:layout_height="47dp"
             android:id="@+id/connexion" android:layout_marginBottom="32dp"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.462"/>
+            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.462" tools:ignore="OnClick"/>
     <EditText
             android:layout_width="215dp"
             android:layout_height="43dp"
