@@ -15,37 +15,37 @@
             android:id="@+id/connexion" android:layout_marginBottom="32dp"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.462" tools:ignore="OnClick"/>
-    <EditText
-            android:layout_width="215dp"
-            android:layout_height="43dp"
-            android:ems="10"
-            android:id="@+id/password" android:layout_marginBottom="52dp"
-            app:layout_constraintBottom_toTopOf="@+id/connexion" android:layout_marginStart="8dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.464"
-            android:inputType="textPassword" tools:text="password"/>
-    <android.support.design.widget.TextInputLayout
-            android:layout_width="219dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="72dp"
-            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/password"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintHorizontal_bias="0.023" app:layout_constraintVertical_bias="0.915"
-            android:id="@+id/textInputLayout">
+            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.5" tools:ignore="OnClick"
+            app:layout_constraintTop_toBottomOf="@+id/password"/>
 
-        <android.support.design.widget.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Identifiant"/>
-    </android.support.design.widget.TextInputLayout>
     <ImageView
             android:layout_width="207dp"
             android:layout_height="221dp" app:srcCompat="@drawable/caducee_logo"
-            android:id="@+id/imageView4" android:layout_marginBottom="36dp"
-            app:layout_constraintBottom_toTopOf="@+id/textInputLayout" app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/imageView4"
+            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp"/>
+            android:layout_marginStart="8dp" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintVertical_bias="0.029"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/identifiant" android:layout_marginTop="28dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintBottom_toTopOf="@+id/password" android:hint="Identifiant"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/password"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/identifiant"
+            app:layout_constraintBottom_toTopOf="@+id/connexion" android:hint="password"/>
 
 </android.support.constraint.ConstraintLayout>
