@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".choisir_plateforme">
+        tools:context=".choisir_plateforme" android:onClick="choisir_portable">
 
     <TextView
             android:text="NFC"
@@ -32,12 +32,11 @@
             android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"/>
     <ImageButton
-            android:layout_width="152dp"
-            android:layout_height="146dp" app:srcCompat="@drawable/logo_smartphone"
-            android:id="@+id/imageButton11" android:layout_marginTop="116dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="4dp" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/textView3" app:layout_constraintVertical_bias="0.0"
-            android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/imageButton5"
-            android:onClick="choisir_portable"/>
+            android:layout_width="180dp"
+            android:layout_height="214dp" app:srcCompat="@drawable/logo_tel"
+            android:id="@+id/imageButton8"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton5" android:layout_marginEnd="8dp"
+            android:layout_marginTop="108dp" app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintHorizontal_bias="0.333" android:onClick="choisir_portable"/>
 </android.support.constraint.ConstraintLayout>
