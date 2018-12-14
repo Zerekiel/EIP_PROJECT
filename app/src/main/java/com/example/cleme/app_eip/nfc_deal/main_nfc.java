@@ -22,11 +22,11 @@ import com.example.cleme.app_eip.nfc_deal.record.ParseNdefRecord;
 import java.util.List;
 
 public class main_nfc  extends AppCompatActivity {
-    private NfcAdapter nfcAdapter;
-    private PendingIntent pendingIntent;
-    private TextView text;
+    public NfcAdapter nfcAdapter;
+    public PendingIntent pendingIntent;
+    public TextView text;
 
-    @Override
+  /*  @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -70,7 +70,7 @@ public class main_nfc  extends AppCompatActivity {
     protected void onNewIntent(Intent intent) {
         setIntent(intent);
         resolveIntent(intent);
-    }
+    }*/
 
     public void resolveIntent(Intent intent) {
         String action = intent.getAction();
@@ -120,7 +120,7 @@ public class main_nfc  extends AppCompatActivity {
         text.setText(builder.toString());
     }
 
-    private void showWirelessSettings() {
+    public void showWirelessSettings() {
         Toast.makeText(this, "You need to enable NFC", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(Settings.ACTION_WIRELESS_SETTINGS);
         startActivity(intent);
