@@ -1,4 +1,4 @@
-package com.example.cleme.app_eip.nfc_deal.record;
+package com.example.cleme.app_eip.nfc_manager.record;
 
 import android.nfc.FormatException;
 import android.nfc.NdefMessage;
@@ -9,7 +9,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 
-import com.example.cleme.app_eip.nfc_deal.parser.NdefMessageParser;
+import com.example.cleme.app_eip.nfc_manager.parser.NdefMessageParser;
 
 import java.util.Arrays;
 import java.util.NoSuchElementException;
@@ -158,4 +158,3 @@ public class SmartPoster implements ParseNdefRecord {
         return (new String(type.getPayload(), Charsets.UTF_8));
     }
 }
-

@@ -15,7 +15,13 @@ public class choisir_plateforme extends AppCompatActivity {
 
     public void choisir_portable(View view)
     {
-        Intent intent = new Intent(this, Infos_medicales.class);
+        Intent intent = new Intent(this, nfc_connect.class);
         startActivity(intent);
+    }
+
+    public void deconnection(View view)
+    {
+        finish();
+        return ;
     }
 }

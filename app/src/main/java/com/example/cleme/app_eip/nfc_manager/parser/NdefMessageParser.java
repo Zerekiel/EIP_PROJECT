@@ -1,12 +1,12 @@
-package com.example.cleme.app_eip.nfc_deal.parser;
+package com.example.cleme.app_eip.nfc_manager.parser;
 
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
 
-import com.example.cleme.app_eip.nfc_deal.record.SmartPoster;
-import com.example.cleme.app_eip.nfc_deal.record.ParseNdefRecord;
-import com.example.cleme.app_eip.nfc_deal.record.TextRecord;
-import com.example.cleme.app_eip.nfc_deal.record.UriRecord;
+import com.example.cleme.app_eip.nfc_manager.record.ParseNdefRecord;
+import com.example.cleme.app_eip.nfc_manager.record.SmartPoster;
+import com.example.cleme.app_eip.nfc_manager.record.TextRecord;
+import com.example.cleme.app_eip.nfc_manager.record.UriRecord;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,13 +24,13 @@ public class NdefMessageParser {
         List<ParseNdefRecord> elements = new ArrayList<ParseNdefRecord>();
 
         for (final NdefRecord record : records) {
-            if (UriRecord.isUri(record)) {
+            if (UriRecord.isUri(record))
                 elements.add(UriRecord.parse(record));
-            } else if (TextRecord.isText(record)) {
+            else if (TextRecord.isText(record))
                 elements.add(TextRecord.parse(record));
-            } else if (SmartPoster.isPoster(record)) {
+            else if (SmartPoster.isPoster(record))
                 elements.add(SmartPoster.parse(record));
-            } else {
+            else {
                 elements.add(new ParseNdefRecord() {
                     @Override
                     public String str() {
@@ -39,6 +39,7 @@ public class NdefMessageParser {
                 });
             }
         }
+
         return (elements);
     }
 }

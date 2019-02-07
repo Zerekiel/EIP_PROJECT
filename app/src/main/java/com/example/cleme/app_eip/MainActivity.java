@@ -2,6 +2,7 @@ package com.example.cleme.app_eip;
 
 import android.content.Context;
 import android.content.Intent;
+import android.nfc.NfcAdapter;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void conection(View view)
     {
-        Intent intent = new Intent(this, nfc_connect.class);
+        Intent intent = new Intent(this, choisir_plateforme.class);
 
         EditText identifiant = (EditText) findViewById(R.id.identifiant);
         String id1 = identifiant.getText().toString();
