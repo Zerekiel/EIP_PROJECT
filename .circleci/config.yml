@@ -19,7 +19,6 @@ jobs:
             - echo y | android update sdk --no-ui --all --filter "extra-android-m2repository"
             - echo y | android update sdk --no-ui --all --filter "extra-android-support"
           command: chmod +x ./gradlew
-          command: chmod +x gradlew
           command: ./gradlew --gradle-version 4.8 --distribution-type all
           command: ./gradlew androidDependencies
       - save_cache:
