@@ -34,14 +34,3 @@ jobs:
           destination: reports
       - store_test_results:
           path: app/build/test-result
-
-    created
-    Jul '18
-    last reply
-    Oct '18
-    2
-    replies
-    731
-    views
-    2
-    users
