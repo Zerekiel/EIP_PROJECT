@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public static void error_msg(Context context, String err_msg) {
+    public static void errorMsg(Context context, String err_msg) {
         Toast.makeText(context, err_msg, Toast.LENGTH_LONG).show();
     }
 
@@ -31,11 +31,12 @@ public class MainActivity extends AppCompatActivity {
         EditText password = (EditText) findViewById(R.id.password);
         String id2 = password.getText().toString();
 
-        if (id1.equals("deprost") && id2.equals("password")) {
+        if ("deprost".equals(id1) && "password".equals(id2)) {
             startActivity(intent);
         }
+
         else {
-            error_msg(getApplicationContext(), "WRONG ID OR PASSWD");
+            errorMsg(getApplicationContext(), "WRONG ID OR PASSWD");
         }
     }
 }

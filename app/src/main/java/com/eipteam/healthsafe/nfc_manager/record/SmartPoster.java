@@ -22,13 +22,18 @@ public class SmartPoster implements ParseNdefRecord {
 
     private final RecommendedAction mAction;
 
-    private final String mType;
+    private static final byte[] ACTION_RECORD_TYPE = new byte[] {'a', 'c', 't'};
+
+    private static final byte[] TYPE_TYPE = new byte[] {'t'};
+
 
     public SmartPoster(UriRecord uri, TextRecord title, RecommendedAction action, String type) {
+        final String mType;
+
         this.mUriRecord = Preconditions.checkNotNull(uri);
         this.mTitleRecord = title;
         this.mAction = Preconditions.checkNotNull(action);
-        this.mType = type;
+        mType = type;
     }
 
     public UriRecord getUriRecord() {
@@ -115,7 +120,7 @@ public class SmartPoster implements ParseNdefRecord {
         }
 
         private byte getByte() {
-            return (mAction);
+            return (this.mAction);
         }
     }
 
@@ -128,8 +133,6 @@ public class SmartPoster implements ParseNdefRecord {
 
         return (null);
     }
-
-    private static final byte[] ACTION_RECORD_TYPE = new byte[] {'a', 'c', 't'};
 
     private static RecommendedAction parseRecommendedAction(NdefRecord[] records) {
         NdefRecord record = getByType(ACTION_RECORD_TYPE, records);
@@ -145,8 +148,6 @@ public class SmartPoster implements ParseNdefRecord {
 
         return (RecommendedAction.UNKNOWN);
     }
-
-    private static final byte[] TYPE_TYPE = new byte[] {'t'};
 
     private static String parseType(NdefRecord[] records) {
         NdefRecord type = getByType(TYPE_TYPE, records);

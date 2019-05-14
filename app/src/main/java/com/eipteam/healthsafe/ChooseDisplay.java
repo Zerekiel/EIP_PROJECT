@@ -13,7 +13,7 @@ public class ChooseDisplay extends AppCompatActivity {
         setContentView(R.layout.activity_choose_display);
     }
 
-    public void choisir_portable(View view)
+    public void choosePortable(View view)
     {
         Intent intent = new Intent(this, NFCConnect.class);
         startActivity(intent);
@@ -22,7 +22,6 @@ public class ChooseDisplay extends AppCompatActivity {
     public void deconnection(View view)
     {
         finish();
-        return ;
     }
 }
 

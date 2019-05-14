@@ -112,6 +112,4 @@ public class UriRecord implements ParseNdefRecord {
             return (false);
         }
     }
-
-    private static final byte[] EMPTY = new byte[0];
 }
