@@ -7,6 +7,8 @@ android:
     - platform-tools
     - extra-android-support # because I'm use support library
     - extra-android-m2repository # because I'm use support library
+    - $ANDROID_TARGET
+    - sys-img-${ANDROID_ABI}-${ANDROID_TARGET}
   licenses:
     - '.+'
 
@@ -22,3 +24,6 @@ before_script:
 
 script:
   - ./gradlew assembleRelease --stacktrace
+  
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
