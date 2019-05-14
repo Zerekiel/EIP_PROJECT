@@ -164,6 +164,8 @@ public class NFCConnect extends Activity {
                         case MifareClassic.TYPE_PRO:
                             type = "Pro";
                             break;
+                        default:
+                            break;
                     }
                     sb.append("Mifare Classic type: ");
                     sb.append(type);
@@ -194,6 +196,8 @@ public class NFCConnect extends Activity {
                         break;
                     case MifareUltralight.TYPE_ULTRALIGHT_C:
                         type = "Ultralight C";
+                        break;
+                    default:
                         break;
                 }
                 sb.append("Mifare Ultralight type: ");
@@ -257,6 +261,5 @@ public class NFCConnect extends Activity {
     public void retour(View view)
     {
         finish();
-        return ;
     }
 }

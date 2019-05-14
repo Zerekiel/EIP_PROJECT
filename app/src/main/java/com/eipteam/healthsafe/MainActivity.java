@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public static void error_msg(Context context, String err_msg) {
+    public static void errorMsg(Context context, String err_msg) {
         Toast.makeText(context, err_msg, Toast.LENGTH_LONG).show();
     }
 
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         else {
-            error_msg(getApplicationContext(), "WRONG ID OR PASSWD");
+            errorMsg(getApplicationContext(), "WRONG ID OR PASSWD");
         }
     }
 }

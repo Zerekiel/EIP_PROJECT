@@ -8,10 +8,9 @@ import android.widget.TextView;
 
 public class MedicalStats extends AppCompatActivity {
 
-    private TextView data;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        TextView data;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medical_stats);
 
@@ -29,9 +28,8 @@ public class MedicalStats extends AppCompatActivity {
         }
     }
 
-    public void return_connect(View view)
+    public void returnConnect(View view)
     {
         finish();
-        return ;
     }
 }
