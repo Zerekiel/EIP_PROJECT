@@ -20,7 +20,6 @@ public class SmartPoster implements ParseNdefRecord {
 
     private final UriRecord mUriRecord;
 
-    private final RecommendedAction mAction;
 
     private static final byte[] ACTION_RECORD_TYPE = new byte[] {'a', 'c', 't'};
 
@@ -28,12 +27,13 @@ public class SmartPoster implements ParseNdefRecord {
 
 
     public SmartPoster(UriRecord uri, TextRecord title, RecommendedAction action, String type) {
-        final String mType;
+        // final RecommendedAction mAction;
+        // final String mType;
 
         this.mUriRecord = Preconditions.checkNotNull(uri);
         this.mTitleRecord = title;
-        this.mAction = Preconditions.checkNotNull(action);
-        mType = type;
+        // this.mAction = Preconditions.checkNotNull(action);
+        // mType = type;
     }
 
     public UriRecord getUriRecord() {
