@@ -25,7 +25,7 @@ jobs:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
           name: Run Tests
-          command: ./gradlew lint test
+          command: cd App_mobile && ./gradlew lint test
       - run:
           name: Update npm
           command: 'sudo npm install -g npm@latest'
