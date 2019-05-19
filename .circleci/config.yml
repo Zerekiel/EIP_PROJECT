@@ -41,18 +41,7 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
-      - run:
-          name: Test
-          command: cd App_web && npm test
-      - run:
-          name: Generate code coverage
-          command: './node_modules/.bin/nyc report --reporter=text-lcov'
-      - store_artifacts:
-          path: test-results.xml
-          prefix: tests
-      - store_artifacts:
-          path: coverage
-          prefix: coverage
+
    #   - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
   #        path: app/build/reports
  #         destination: reports
