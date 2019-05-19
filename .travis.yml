@@ -3,10 +3,8 @@ matrix:
     - language: node_js
       node_js:
         - 0.12
-      install:
-        - cd istanbul-mocha && npm install && cd ..
       script:
-        - cd istanbul-mocha && npm test        
+        - cd ./App_web npm test        
 
     - language: android
       android:
