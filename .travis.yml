@@ -26,10 +26,10 @@ matrix:
       install: true
 
       before_script:
-        - chmod +x gradlew
+        - chmod +x ./App_mobile/gradlew
 
       script:
-        - ./gradlew assembleRelease --stacktrace
+        - ./App_mobile/gradlew assembleRelease --stacktrace
 
       after_success:
         - bash <(curl -s https://codecov.io/bash)
