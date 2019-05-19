@@ -26,6 +26,7 @@ jobs:
       - run:
           name: Run Tests
           command: cd App_mobile && ./gradlew lint test
+      - run: apt-get install -y npm
       - run:
           name: Update npm
           command: 'sudo npm install -g npm@latest'
