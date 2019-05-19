@@ -32,7 +32,8 @@ matrix:
         - chmod +x ./App_mobile/gradlew
 
       script:
-        - ./App_mobile/gradlew assembleRelease --stacktrace
+        - cd ./App_mobile
+        - gradlew assembleRelease --stacktrace
 
       after_success:
         - bash <(curl -s https://codecov.io/bash)
