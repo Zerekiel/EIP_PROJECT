@@ -18,11 +18,18 @@ matrix:
         licenses:
           - '.+'
 
-        before_script:
-          - chmod +x gradlew
+      sudo: required
 
-        script:
-          - ./gradlew assembleRelease --stacktrace
+      jdk:
+        - oraclejdk8
 
-        after_success:
-          - bash <(curl -s https://codecov.io/bash)
+      install: true
+
+      before_script:
+        - chmod +x gradlew
+
+      script:
+        - ./gradlew assembleRelease --stacktrace
+
+      after_success:
+        - bash <(curl -s https://codecov.io/bash)
