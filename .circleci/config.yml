@@ -15,10 +15,10 @@ jobs:
          command: yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses || if [ $? -ne '141' ]; then exit $?; fi;
       - run:
          name: Chmod permissions #if permission for Gradlew Dependencies fail, use this.
-         command: sudo chmod +x ./gradlew
+         command: sudo chmod +x ./App_mobile/gradlew
       - run:
           name: Download Dependencies
-          command: ./gradlew androidDependencies
+          command: cd App_mobile && ./gradlew androidDependencies
       - save_cache:
           paths:
             - ~/.gradle
