@@ -3,6 +3,9 @@ matrix:
     - language: node-js
       node_js:
         - "node"
+      cache:
+        directories:
+          - "node_modules"
 
     - language: android
       android:
