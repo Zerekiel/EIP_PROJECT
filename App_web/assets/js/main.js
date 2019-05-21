@@ -15,13 +15,13 @@ function importHeader() {
             elem.removeAttribute("header");
             importHeader();
           }
-        }
+        };
         xhttp.open("GET", file, true);
         xhttp.send();
         return;
       }
     }
-};
+}
 
 function makeItAppear() {
     document.getElementById("profile").setAttribute("onclick", "{makeItDisappear()}");
@@ -40,9 +40,9 @@ function makeItDisappear() {
 function checkCode() {
     var code = document.getElementById("verif-code").value;
     console.log(code);
-    if (code === "test")
+    if (code === "test") {
         document.location.href="infos.html";
-    else {
+    } else {
         document.getElementById("submit").setAttribute("onclick", "{checkCode()}");
         document.getElementById("result").innerText = error;
         document.getElementById("result").style.backgroundColor = "red";
