@@ -9,13 +9,13 @@ function importHeader() {
       if (file) {
         xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
-          if (this.readyState == 4) {
-            if (this.status == 200) {elem.innerHTML = this.responseText;}
-            if (this.status == 404) {elem.innerHTML = "Page not found.";}
+          if (this.readyState === 4) {
+            if (this.status === 200) {elem.innerHTML = this.responseText;}
+            if (this.status === 404) {elem.innerHTML = "Page not found.";}
             elem.removeAttribute("header");
             importHeader();
           }
-        }      
+        }
         xhttp.open("GET", file, true);
         xhttp.send();
         return;
