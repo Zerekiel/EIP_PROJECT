@@ -1,10 +1,14 @@
+
+notifications:
+  slack: healthsafe:yjWOO4vhSSuvJ4g9ehyYXyxF
+
 matrix:
   include:
     - language: node_js
       node_js:
         - 0.12
       script:
-        - cd ./App_web npm test        
+        - cd ./App_web npm test
 
     - language: android
       android:
