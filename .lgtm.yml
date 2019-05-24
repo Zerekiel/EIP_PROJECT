@@ -6,8 +6,8 @@ extraction:
       - export PATH=$PATH:$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools
     index:
       build_command:
-        - chmod +x ./App_mobile/gradlew
         - cd ./App_mobile
+        - chmod +x gradlew
         - ./gradlew assembleRelease
   javascript:
     index:
