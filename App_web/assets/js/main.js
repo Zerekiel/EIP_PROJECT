@@ -39,7 +39,7 @@ function makeItDisappear() {
 
 function checkCode() {
     var code = document.getElementById("verif-code").value;
-    console.log(code);
+    Console.log(code);
     if (code === "test") {
         document.location.href="infos.html";
     } else {
