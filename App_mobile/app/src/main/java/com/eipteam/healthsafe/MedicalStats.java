@@ -99,7 +99,7 @@ public class MedicalStats extends AppCompatActivity {
             if (displayInfo[i].equals(key))
                 return keys[i];
         }
-        return "hellolololo";
+        return "This is not a key (too bad).";
     }
 
     private boolean checkData(String datas) {
