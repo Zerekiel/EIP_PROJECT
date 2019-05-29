@@ -28,8 +28,11 @@ public class MedicalStats extends AppCompatActivity {
         }
     }
 
-    public void returnConnect(View view)
-    {
+    public void returnConnect(View view) {
         finish();
+    }
+
+    public void setup(View v) {
+        startActivity(new Intent(this, AddData.class));
     }
 }
