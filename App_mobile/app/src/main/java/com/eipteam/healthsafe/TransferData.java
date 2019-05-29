@@ -151,7 +151,6 @@ public class TransferData extends AppCompatActivity {
 
                 ndef.writeNdefMessage(message);
                 toast(this, "Message was write successfully.");
-                long id = System.currentTimeMillis();
                 return true;
             } else {
                 NdefFormatable format = NdefFormatable.get(detectedTag);

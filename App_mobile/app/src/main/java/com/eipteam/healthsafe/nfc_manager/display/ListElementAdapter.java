@@ -39,16 +39,17 @@ public class ListElementAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         final ListElementHolder holder;
+        View newView = convertView;
 
-        if (convertView == null) {
+        if (newView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.activity_custom_listview, parent, false);
+            newView = inflater.inflate(R.layout.activity_custom_listview, parent, false);
             holder = new ListElementHolder();
-            holder.text = convertView.findViewById(R.id.txView);
-            holder.edit = convertView.findViewById(R.id.edText);
-            convertView.setTag(holder);
+            holder.text = newView.findViewById(R.id.txView);
+            holder.edit = newView.findViewById(R.id.edText);
+            newView.setTag(holder);
         } else {
-            holder = (ListElementHolder) convertView.getTag();
+            holder = (ListElementHolder) newView.getTag();
         }
 
         holder.text.setText(listElem.get(position).getText());
@@ -71,6 +72,6 @@ public class ListElementAdapter extends BaseAdapter {
             }
         });
 
-        return convertView;
+        return newView;
     }
 }
