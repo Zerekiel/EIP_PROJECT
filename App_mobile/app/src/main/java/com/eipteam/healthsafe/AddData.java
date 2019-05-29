@@ -124,7 +124,7 @@ public class AddData extends AppCompatActivity {
     }
 
     private void promptForContent(final NdefMessage msg) {
-        new AlertDialog.Builder(this).setTitle(R.string.app_name).setMessage("Do you really want to replace " + new String(msg.getRecords()[0].getPayload()) + " par " + mapToString(medicalInfos) + " ?")
+        new AlertDialog.Builder(this).setTitle(R.string.app_name).setMessage("Do you really want to replace\n" + new String(msg.getRecords()[0].getPayload()) + " by\n" + mapToString(medicalInfos) + " ?")
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -195,7 +195,7 @@ public class AddData extends AppCompatActivity {
         new AlertDialog.Builder(this).setTitle("Error").setMessage(text).setPositiveButton("OK", null).show();
     }
 
-    private String mapToString(HashMap<String, String> map) {
+    public static String mapToString(HashMap<String, String> map) {
         StringBuilder stringBuilder = new StringBuilder();
 
         for (String s : map.keySet()) {
@@ -206,7 +206,7 @@ public class AddData extends AppCompatActivity {
         return stringBuilder.toString();
     }
 
-    private HashMap<String, String> stringToMap(String str) {
+    public static HashMap<String, String> stringToMap(String str) {
         String[] lines = str.split("\n");
         HashMap<String, String> map = new HashMap<>();
 
