@@ -51,12 +51,12 @@ public class ListElementAdapter extends BaseAdapter {
             holder = (ListElementHolder) convertView.getTag();
         }
 
-        holder.text.setText(listElem.get(position).text);
+        holder.text.setText(listElem.get(position).getText());
         holder.text.setId(position);
 
-        if (listElem.get(position).edit.equals("N/A"))
-            listElem.get(position).edit = "";
-        holder.edit.setText(listElem.get(position).edit);
+        if (listElem.get(position).getEdit().equals("N/A"))
+            listElem.get(position).setEdit("");
+        holder.edit.setText(listElem.get(position).getEdit());
         holder.edit.setId(position);
 
         holder.edit.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -65,7 +65,7 @@ public class ListElementAdapter extends BaseAdapter {
                 if (!listElem.isEmpty()) {
                     final int position = v.getId();
                     final EditText Caption = (EditText) v;
-                    listElem.get(position).edit = Caption.getText().toString();
+                    listElem.get(position).setEdit(Caption.getText().toString());
                     notifyDataSetChanged();
                 }
             }

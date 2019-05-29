@@ -17,7 +17,6 @@ public class MedicalStats extends AppCompatActivity {
 
     private final ArrayList<Element> infos = new ArrayList<>();
     private ListElementAdapter adpInfos;
-    private ListView listInfos;
     private HashMap<String, String> map;
     private HashMap<String, String> defaultMap;
     private String[] keys;
@@ -28,6 +27,7 @@ public class MedicalStats extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medical_stats);
 
+        ListView listInfos;
         listInfos = findViewById(R.id.listInfo);
 
         keys = getResources().getStringArray(R.array.medical_informations);

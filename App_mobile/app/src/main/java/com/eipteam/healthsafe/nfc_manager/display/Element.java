@@ -1,8 +1,8 @@
 package com.eipteam.healthsafe.nfc_manager.display;
 
 public class Element {
-    String text;
-    String edit;
+    private String text;
+    private String edit;
 
     public Element (String _text, String _edit) {
         text = _text;
@@ -15,5 +15,9 @@ public class Element {
 
     public String getEdit() {
         return edit;
+    }
+
+    public void setEdit(String _edit) {
+        edit = _edit;
     }
 }

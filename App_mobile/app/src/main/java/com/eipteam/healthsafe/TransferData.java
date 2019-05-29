@@ -26,8 +26,6 @@ import java.util.HashMap;
 public class TransferData extends AppCompatActivity {
 
     private NfcAdapter nfcAdapter;
-    private PendingIntent pendingIntent;
-    private IntentFilter[] exchangeFilters;
     private Tag detectedTag;
     private HashMap<String, String> medicalInfos;
 
@@ -41,7 +39,7 @@ public class TransferData extends AppCompatActivity {
 
         String rawMap = getIntent().getStringExtra("Infos");
 
-        if (rawMap.equals("NULL")) {
+        if ("NULL".equals(rawMap)) {
             for (String s : getResources().getStringArray(R.array.medical_informations)) {
                 medicalInfos.put(s, "N/A");
             }
@@ -55,7 +53,7 @@ public class TransferData extends AppCompatActivity {
         super.onResume();
 
         nfcAdapter = NfcAdapter.getDefaultAdapter(this);
-        pendingIntent = PendingIntent.getActivity(this, 0, new Intent(this, getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, new Intent(this, getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
 
         IntentFilter ndefDetected = new IntentFilter(NfcAdapter.ACTION_NDEF_DISCOVERED);
 
@@ -63,7 +61,7 @@ public class TransferData extends AppCompatActivity {
             ndefDetected.addDataType("text/plain");
         } catch (IntentFilter.MalformedMimeTypeException e) { }
 
-        exchangeFilters = new IntentFilter[] { ndefDetected };
+        IntentFilter[] exchangeFilters = new IntentFilter[] { ndefDetected };
 
         nfcAdapter.enableForegroundDispatch(this, pendingIntent, exchangeFilters, null);
     }
@@ -99,7 +97,6 @@ public class TransferData extends AppCompatActivity {
 
     private NdefMessage[] getNdefMessages(Intent intent) {
         NdefMessage[] msgs = null;
-        String action = intent.getAction();
 
         if (NfcAdapter.ACTION_TAG_DISCOVERED.equals(intent.getAction()) || NfcAdapter.ACTION_NDEF_DISCOVERED.equals(intent.getAction())) {
             Parcelable[] rawMsgs = intent.getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES);
@@ -132,14 +129,10 @@ public class TransferData extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         writeTag(getMessageAsNdef(mapToString(medicalInfos)));
                     }
-                }).setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-            }}).show();
+                }).setNegativeButton("No", null).show();
     }
 
-    boolean writeTag(NdefMessage message) {
+    private boolean writeTag(NdefMessage message) {
         int size = message.toByteArray().length;
 
         try {
@@ -167,8 +160,6 @@ public class TransferData extends AppCompatActivity {
                     try {
                         format.connect();
                         format.format(message);
-
-                        long id = System.currentTimeMillis();
 
                         toast(this, "Message was write successfully.");
 

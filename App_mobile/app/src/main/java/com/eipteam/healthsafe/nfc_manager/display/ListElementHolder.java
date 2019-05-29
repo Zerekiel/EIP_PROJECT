@@ -4,6 +4,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class ListElementHolder {
-    TextView text;
-    EditText edit;
+    public TextView text;
+    public EditText edit;
 }
