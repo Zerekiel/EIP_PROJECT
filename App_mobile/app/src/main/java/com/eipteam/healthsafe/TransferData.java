@@ -2,6 +2,7 @@ package com.eipteam.healthsafe;
 
 import android.app.AlertDialog;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -16,12 +17,13 @@ import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.HashMap;
 
-public class AddData extends AppCompatActivity {
+public class TransferData extends AppCompatActivity {
 
     private NfcAdapter nfcAdapter;
     private PendingIntent pendingIntent;
@@ -33,7 +35,7 @@ public class AddData extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_adddata);
+        setContentView(R.layout.activity_transferdata);
 
         medicalInfos = new HashMap<>();
 
@@ -146,16 +148,16 @@ public class AddData extends AppCompatActivity {
             if (ndef != null) {
                 ndef.connect();
                 if (!ndef.isWritable()) {
-                    error("Tag is read-only.");
+                    error(this, "Tag is read-only.");
                     return false;
                 }
                 if (ndef.getMaxSize() < size) {
-                    error("Tag capacity is " + ndef.getMaxSize() + " bytes, message is " + size + " bytes.");
+                    error(this, "Tag capacity is " + ndef.getMaxSize() + " bytes, message is " + size + " bytes.");
                     return false;
                 }
 
                 ndef.writeNdefMessage(message);
-                toast("Message was write successfully.");
+                toast(this, "Message was write successfully.");
                 long id = System.currentTimeMillis();
                 return true;
             } else {
@@ -168,31 +170,31 @@ public class AddData extends AppCompatActivity {
 
                         long id = System.currentTimeMillis();
 
-                        toast("Message was write successfully.");
+                        toast(this, "Message was write successfully.");
 
                         return true;
                     } catch (IOException e) {
-                        error("Failed to format tag. " + e.getMessage());
+                        error(this, "Failed to format tag. " + e.getMessage());
                         return false;
                     }
                 } else {
-                    error("Tag doesn't support NDEF.");
+                    error(this, "Tag doesn't support NDEF.");
                     return false;
                 }
             }
         } catch (Exception e) {
-            error("Failed to write Tag. " + e.getMessage());
+            error(this, "Failed to write Tag. " + e.getMessage());
         }
 
         return  false;
     }
 
-    private void toast(String text) {
-        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+    public void toast(Context context, String text) {
+        Toast.makeText(context, text, Toast.LENGTH_SHORT).show();
     }
 
-    private void error(String text) {
-        new AlertDialog.Builder(this).setTitle("Error").setMessage(text).setPositiveButton("OK", null).show();
+    public static void error(Context context, String text) {
+        new AlertDialog.Builder(context).setTitle("Error").setMessage(text).setPositiveButton("OK", null).show();
     }
 
     public static String mapToString(HashMap<String, String> map) {
@@ -215,5 +217,9 @@ public class AddData extends AppCompatActivity {
         }
 
         return map;
+    }
+
+    public void back(View v) {
+        finish();
     }
 }

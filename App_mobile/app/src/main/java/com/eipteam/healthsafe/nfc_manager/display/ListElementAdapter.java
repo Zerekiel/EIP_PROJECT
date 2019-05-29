@@ -54,6 +54,8 @@ public class ListElementAdapter extends BaseAdapter {
         holder.text.setText(listElem.get(position).text);
         holder.text.setId(position);
 
+        if (listElem.get(position).edit.equals("N/A"))
+            listElem.get(position).edit = "";
         holder.edit.setText(listElem.get(position).edit);
         holder.edit.setId(position);
 

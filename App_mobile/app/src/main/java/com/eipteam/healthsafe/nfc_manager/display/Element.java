@@ -8,4 +8,12 @@ public class Element {
         text = _text;
         edit = _edit;
     }
+
+    public String getText() {
+        return text;
+    }
+
+    public String getEdit() {
+        return edit;
+    }
 }
