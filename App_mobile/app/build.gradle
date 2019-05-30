@@ -16,6 +16,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    testOptions {
+        unitTests.returnDefaultValues = true
+            unitTests {
+                includeAndroidResources = true
+            }
+    }
 }
 
 dependencies {
@@ -26,4 +32,9 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     api 'com.google.guava:guava:27.0.1-android'
+    testImplementation 'org.powermock:powermock-api-mockito:1.6.5'
+    testImplementation 'org.powermock:powermock-module-junit4-rule-agent:1.6.5'
+    testImplementation 'org.powermock:powermock-module-junit4-rule:1.6.5'
+    testImplementation "org.powermock:powermock-module-junit4:1.6.5"
+    testImplementation 'org.robolectric:robolectric:4.2'
 }
