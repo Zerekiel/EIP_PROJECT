@@ -1,6 +1,11 @@
 package com.eipteam.healthsafe;
 
+
+import android.app.Application;
 import android.arch.lifecycle.ReportFragment;
+import android.os.Bundle;
+import android.os.PersistableBundle;
+import android.view.View;
 
 import junit.framework.TestCase;
 
@@ -9,24 +14,51 @@ import org.powermock.modules.junit4.PowerMockRunner;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.robolectric.Robolectric;
 
-import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
-import static org.powermock.api.mockito.PowerMockito.mockStatic;
 import static org.powermock.api.mockito.PowerMockito.spy;
+
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({ ReportFragment.class })
 public class MainActivityUnitTest extends TestCase {
-    @Test
-    public void testOnCreate() throws Exception {
-        PowerMockito.mockStatic(ReportFragment.class);
-//        mockStatic(MainActivity.class);
-        MainActivity ma = spy(new MainActivity());
-        doNothing().when(ma).setContentView(R.layout.activity_main);
+    private Application context;
+    private MainActivity ma = new MainActivity();
 
-        ma.onCreate(null);
-        verify(ma, times(1)).setContentView(R.layout.activity_main);
+    @Test(expected = RuntimeException.class)
+    public void testOnCreate() {
+        PowerMockito.mockStatic(ReportFragment.class);
+        MainActivity spyma = spy(new MainActivity());
+
+        Bundle b = new Bundle();
+        PersistableBundle pb = new PersistableBundle();
+        ma.onSaveInstanceState(b, pb);
+        assertNotNull(ma);
+        ma = Robolectric.buildActivity(MainActivity.class).create().get();
+
+        assertSame(ma, spyma);
+        ma.onCreate(b);
+        verify(spyma, times(1)).setContentView(R.layout.activity_main);
     }
+
+    @Test()
+    public void testConnection() {
+        PowerMockito.mockStatic(ReportFragment.class);
+        MainActivity spyma = spy(new MainActivity());
+
+        Bundle b = new Bundle();
+        PersistableBundle pb = new PersistableBundle();
+        ma.onSaveInstanceState(b, pb);
+        assertNotNull(ma);
+
+        View view = new View(context);
+        view.setEnabled(false);
+//        ma = Robolectric.buildActivity(MainActivity.class);
+//        ma = Robolectric.buildActivity(MainActivity.class).create().get();
+  //      ma.connection(view);
+
+    }
+
 }

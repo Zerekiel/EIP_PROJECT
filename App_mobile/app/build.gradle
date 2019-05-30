@@ -18,6 +18,9 @@ android {
     }
     testOptions {
         unitTests.returnDefaultValues = true
+            unitTests {
+                includeAndroidResources = true
+            }
     }
 }
 
@@ -33,4 +36,5 @@ dependencies {
     testImplementation 'org.powermock:powermock-module-junit4-rule-agent:1.6.5'
     testImplementation 'org.powermock:powermock-module-junit4-rule:1.6.5'
     testImplementation "org.powermock:powermock-module-junit4:1.6.5"
+    testImplementation 'org.robolectric:robolectric:4.2'
 }
