@@ -1,0 +1,190 @@
+body {
+    max-width: 1920px;
+    width: 100vw;
+    margin: auto;
+}
+
+red {
+    color: red;
+}
+
+#topbar {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 470px;
+    width: inherit;
+    max-width: inherit;
+}
+
+#topbar h2 {
+    color: white;
+}
+
+.elem {
+    width: 30%;
+    text-align: center;
+}
+
+.section-accessor {
+    margin: 25px 15px;
+    display: none;
+}
+
+.section-accessor a {
+    /* display: none; */
+    padding: 15px;
+    border: 1px solid #133164;
+    border-radius: 15px;
+    text-decoration: none;
+    background-color: #0f76d9;
+    color: white;
+    transition: .2s cubic-bezier(0,-0.01,1,1)
+}
+
+.section-accessor a:hover {
+    background-color: white;
+    color: #133164;
+}
+
+.language {
+    margin: 22px 5px;
+}
+
+.language img {
+    border: 1px solid white;
+    border-radius: 15px;
+}
+
+header {
+    background-image: url('../img/firetruck.jpg');
+    background-repeat: no-repeat;
+    background-size: 1920px;
+    width: 1920px;
+    height: 1000px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: auto;
+}
+
+.proj-name {
+    width: 500px;
+    color: white;
+}
+
+section {
+    width: 1920px;
+    margin: auto;
+    padding-bottom: 50px;
+}
+
+#team {
+    min-height: 100vh;
+}
+
+.slideshow {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 500px;
+    height: 500px;
+    width: 1000px;
+    min-width: 1000px;
+    margin: auto;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.slideshow p {
+    color: white;
+    height: 50px;
+    margin-top: 400px;
+    font-style: italic;
+}
+
+.team-slide {
+    background-image: url("../img/team-pic/Thibaut.jpg");
+    margin-bottom: 25px;
+}
+
+.switch-btn {
+    width: 5vw;
+    height: inherit;
+    background-color: #70b5f7;
+    opacity: 0.9;
+}
+
+i {
+    width: 30px;
+    margin: 226px 40%;
+}
+
+.more {
+    margin-left: 15px;
+    color: #9addf8;
+    font-style: italic;
+}
+
+.more:hover {
+    cursor: pointer;
+}
+
+.profile {
+    width: 700px;
+    margin: auto;
+    display: flex;
+}
+
+.left-card img {
+    width: 250px;
+}
+
+.left-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 340px; 
+}
+
+.infos-perso {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 15px 0 0 25px;
+    min-height: 150px;
+    width: 220px;
+}
+
+.right-card {
+    flex-wrap: wrap;
+    padding: 15px;
+}
+
+.right-card div {
+    margin-bottom: 15px;
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.right-card img {
+    width: 32px;
+    height: 32px;
+}
+
+.right-card span {
+    width: 200px;
+}
+
+.right-card img {
+    padding-left: 15px;
+}
+
+.languages {
+}
+
+.social {
+}
