@@ -72,13 +72,15 @@ public class MedicalStats extends AppCompatActivity {
         int nbSame = 0;
 
         for (Element e : infos) {
-            if (defaultMap.get(getKeysId(e.getText())).equals(e.getEdit()) || (defaultMap.get(getKeysId(e.getText())).equals("N/A") && e.getEdit().equals("")))
-                nbSame += 1;
-            else {
-                if (e.getEdit().equals(""))
-                    map.put(getKeysId(e.getText()), "N/A");
-                else
-                    map.put(getKeysId(e.getText()), e.getEdit());
+            if (e.getEdit() != null && e.getText() != null) {
+                if (defaultMap.get(getKeysId(this.displayInfo, e.getText())).equals(e.getEdit()) || (defaultMap.get(getKeysId(this.displayInfo, e.getText())).equals("N/A") && e.getEdit().equals("")))
+                    nbSame += 1;
+                else {
+                    if (e.getEdit().equals(""))
+                        map.put(getKeysId(this.displayInfo, e.getText()), "N/A");
+                    else
+                        map.put(getKeysId(this.displayInfo, e.getText()), e.getEdit());
+                }
             }
         }
 
@@ -94,15 +96,15 @@ public class MedicalStats extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private String getKeysId(String key) {
+    protected String getKeysId(String[] displayInfo, String key) {
         for (int i = 0; i < displayInfo.length; i++) {
             if (displayInfo[i].equals(key))
                 return keys[i];
         }
-        return "This is not a key (too bad).";
+        return getResources().getString(R.string.notKey);
     }
 
-    private boolean checkData(String datas) {
+    protected boolean checkData(String datas) {
         if (!datas.contains("\n"))
             return false;
 

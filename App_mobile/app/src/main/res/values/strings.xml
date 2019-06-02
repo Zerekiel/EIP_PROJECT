@@ -15,6 +15,7 @@
         <item>Organ_donation</item>
         <item>Doctor</item>
     </string-array>
+    <string name="notKey">This is not a key.</string>
     <string-array name="explicit_informations">
         <item>Id</item>
         <item>LastName</item>
