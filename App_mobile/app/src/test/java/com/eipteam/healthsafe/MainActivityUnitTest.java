@@ -37,8 +37,14 @@ public class MainActivityUnitTest extends TestCase {
         ma.onSaveInstanceState(b, pb);
         assertNotNull(ma);
         ma = Robolectric.buildActivity(MainActivity.class).create().get();
+        View view = new View(context);
+        view.setEnabled(false);
+
+        ma.connection(view);
+        ma.errorMsg(context, "test");
 
         assertSame(ma, spyma);
+
         ma.onCreate(b);
         verify(spyma, times(1)).setContentView(R.layout.activity_main);
     }
@@ -46,19 +52,13 @@ public class MainActivityUnitTest extends TestCase {
     @Test()
     public void testConnection() {
         PowerMockito.mockStatic(ReportFragment.class);
-        MainActivity spyma = spy(new MainActivity());
 
         Bundle b = new Bundle();
         PersistableBundle pb = new PersistableBundle();
         ma.onSaveInstanceState(b, pb);
         assertNotNull(ma);
 
-        View view = new View(context);
-        view.setEnabled(false);
-//        ma = Robolectric.buildActivity(MainActivity.class);
 //        ma = Robolectric.buildActivity(MainActivity.class).create().get();
-  //      ma.connection(view);
 
     }
-
 }
