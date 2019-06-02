@@ -31,6 +31,13 @@
             "mongo",
             "python"
         ],
+        "tool":[
+            "visual_studio",
+            "docker",
+            "git",
+            "node",
+            "dotnet"
+        ],
         "social_list":[
             "linkedin",
             "facebook",

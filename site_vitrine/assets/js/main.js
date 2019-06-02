@@ -109,6 +109,10 @@ function showDesc(event) {
         for (let index = 0; index < idx.length; index++) {
             $('.languages').append("<img src=\"assets/img/" + idx[index] + ".jpg\" alt=\"" + idx[index] + "\"/>");
         }
+        var idx = infos.infos_right.tool;
+        for (let index = 0; index < idx.length; index++) {
+            $('.tools_frameworks').append("<img src=\"assets/img/" + idx[index] + ".png\" alt=\"" + idx[index] + "\"/>");
+        }
         idx = infos.infos_right.social_list;
         for (let index = 0; index < idx.length; index++) {
             switch (idx[index]) {
