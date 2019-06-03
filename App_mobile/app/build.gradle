@@ -30,7 +30,7 @@ task jacocoFix(type: Copy) {
     rename { String fileName ->
         fileName.replace("jacocoTestReport.xml", "jacoco.xml")
     }
-    filter { line -> line.replaceAll("com/", "webapp/src/main/java/com/") }
+    filter { line -> line.replaceAll("com/", "App_mobile/src/main/java/com/") }
 }
 
 android {
