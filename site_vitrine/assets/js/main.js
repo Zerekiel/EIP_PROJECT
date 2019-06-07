@@ -5,32 +5,8 @@ var team = [{img:"Floriane.jpg", current:false, punchline:"La motivation est la 
             {img:"Adil.jpg", current:false, punchline:"Adil"},
             {img:"group.jpg", current:false, punchline:"La team"},
             {img:"Thibaut.jpg", current:true, punchline:"Je veux vivre d'amour et de mojitos"}];
-var proj = [{url:"y2mate.com - presentation_projet_healthsafe_GTPTQEN4LO0_1080p.mp4", current:true},
-            {url:"y2mate.com - presentation_application_healthsafe_Pnr4CFogvcY_1080p.mp4", current:false}];
-
-var Floriane = "<div class=\"left-card\">" +
-"<img src=\"./assets/img/team-pic/Floriane.jpg\" alt=\"Floriane\"/>" +
-"<span>22 ans</span>" +
-"<span>infos 2</span>" +
-"<span>infos 3</span>" +
-"<span>infos 4</span>" +
-"<span>infos 5</span>" +
-"<span>infos 6</span>" +
-"</div>" +
-"<div class=\"right-card\">" +
-"</div>";
-
-var Clement = "<div class=\"left-card\">" +
-"<img src=\"./assets/img/team-pic/Clement.jpg\" alt=\"Clement\"/>" +
-"<span>22 ans</span>" +
-"<span>infos 2</span>" +
-"<span>infos 3</span>" +
-"<span>infos 4</span>" +
-"<span>infos 5</span>" +
-"<span>infos 6</span>" +
-"</div>" +
-"<div class=\"right-card\">" +
-"</div>";
+var proj = [{url:"y2mate.com - presentation_projet_healthsafe_GTPTQEN4LO0_1080p.mp4", title:"Présentation projet HealthSafe", current:true},
+            {url:"y2mate.com - presentation_application_healthsafe_Pnr4CFogvcY_1080p.mp4", title:"Présentation application mobile", current:false}];
 
 function getIdx(tab) {
     for (let index = 0; index < tab.length; index++) {
@@ -44,7 +20,11 @@ function setNext(location, tab) {
     tab.forEach(element => {
         if (element.current == true) {
             if (location == "proj") {
-                $('.proj-slide source').attr('src', './assets/video/' + element.url);
+                $('.slide-title').html(element.title);
+                var video = $('.proj-slide video')[0];
+                video.src = "./assets/video/" + element.url;
+                video.load();
+                video.play();
             }
             else {
                 $('.team-slide').css('background-image', 'url(\'./assets/img/team-pic/' + element.img + '\')')
@@ -63,7 +43,8 @@ function setNext(location, tab) {
 function getNext(tab, action) {
     var idx = getIdx(tab);
 
-    $('.more').removeClass(tab[idx].img.split('.')[0]);
+    if (tab.length > 3)
+        $('.more').removeClass(tab[idx].img.split('.')[0]);
     if (action == '+') {
         if (idx < tab.length - 1) {
             tab[idx].current = false;
@@ -139,9 +120,8 @@ function showDesc(event) {
 
 window.onload = function(page) {
     $('.switch-btn').click(function (e) {
-        console.log($(e.target));
-        getNext($(e.target).hasClass('proj') ? proj : team, $(e.target).hasClass('left') ? '-' : '+');
-    })
+        getNext($(e.target).hasClass('proj-btn') ? proj : team, $(e.target).hasClass('left') ? '-' : '+');
+    });
     $('.more').click(function (e) {
         showDesc(e);
     });

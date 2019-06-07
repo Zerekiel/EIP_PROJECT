@@ -74,9 +74,71 @@ header {
 }
 
 section {
-    width: 1920px;
+    /* width: 1920px; */
     margin: auto;
     padding-bottom: 50px;
+    padding-top: 75px;
+}
+
+.slide-title {
+    position: absolute;
+    color: white;
+}
+
+.switch-btn {
+    width: 5vw;
+    height: inherit;
+    background: linear-gradient(to left, white, red);
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    transition: background-size 0.3s 0s;
+}
+/* Sweep To Left */
+.hvr-sweep-to-left {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+.hvr-sweep-to-left:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to left, red, white);
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 0% 50%;
+    transform-origin: 100% 100%;
+    /* -webkit-transition-property: transform;
+    transition-property: transform; */
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    /*-webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out; */
+}
+.hvr-sweep-to-left:hover, .hvr-sweep-to-left:focus, .hvr-sweep-to-left:active {
+    color: black;
+}
+.hvr-sweep-to-left:hover:before, .hvr-sweep-to-left:focus:before, .hvr-sweep-to-left:active:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.proj-btn.right:hover, .team-btn.right:hover {
+    background-size: 100% 100%;
 }
 
 #team {
@@ -106,13 +168,6 @@ section {
 .team-slide {
     background-image: url("../img/team-pic/Thibaut.jpg");
     margin-bottom: 25px;
-}
-
-.switch-btn {
-    width: 5vw;
-    height: inherit;
-    background-color: #70b5f7;
-    opacity: 0.9;
 }
 
 i {

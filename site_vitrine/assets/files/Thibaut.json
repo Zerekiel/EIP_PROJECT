@@ -27,8 +27,6 @@
             "js",
             "html",
             "css",
-            "bdd",
-            "mongo",
             "python"
         ],
         "tool":[
@@ -36,6 +34,8 @@
             "docker",
             "git",
             "node",
+            "bdd",
+            "mongo",
             "dotnet"
         ],
         "social_list":[
