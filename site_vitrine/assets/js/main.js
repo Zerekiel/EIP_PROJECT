@@ -5,8 +5,8 @@ var team = [{img:"Floriane.jpg", current:false, punchline:"La motivation est la 
             {img:"Adil.jpg", current:false, punchline:"Adil"},
             {img:"group.jpg", current:false, punchline:"La team"},
             {img:"Thibaut.jpg", current:true, punchline:"Je veux vivre d'amour et de mojitos"}];
-var proj = [{url:"y2mate.com - presentation_projet_healthsafe_GTPTQEN4LO0_1080p.mp4", title:"Présentation projet HealthSafe", current:true},
-            {url:"y2mate.com - presentation_application_healthsafe_Pnr4CFogvcY_1080p.mp4", title:"Présentation application mobile", current:false}];
+var proj = [{url:"y2mate.com - presentation_projet_healthsafe_GTPTQEN4LO0_1080p.mp4", title:"<red>P</red>résentation projet <red>H</red>ealthSafe", current:true},
+            {url:"y2mate.com - presentation_application_healthsafe_Pnr4CFogvcY_1080p.mp4", title:"<red>P</red>résentation application mobile", current:false}];
 
 function getIdx(tab) {
     for (let index = 0; index < tab.length; index++) {
@@ -116,6 +116,7 @@ function showDesc(event) {
         }
         $('.destination').append(infos.infos_right.destination);
     }, "text");
+    $('.profile').css('display', 'flex');
 }
 
 window.onload = function(page) {
@@ -125,6 +126,9 @@ window.onload = function(page) {
     $('.more').click(function (e) {
         showDesc(e);
     });
+    $('form').submit(function (e) {
+        console.log(e.target);
+    })    
 }
 
 window.onscroll = function topbarScroll() {

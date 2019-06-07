@@ -76,6 +76,7 @@ header {
 section {
     /* width: 1920px; */
     margin: auto;
+    padding: 75px 20vw;
     padding-bottom: 50px;
     padding-top: 75px;
 }
@@ -142,7 +143,6 @@ section {
 }
 
 #team {
-    min-height: 100vh;
 }
 
 .slideshow {
@@ -188,7 +188,8 @@ i {
 .profile {
     width: 700px;
     margin: auto;
-    display: flex;
+    display: none;
+    min-height: 500px;
 }
 
 .left-card img {
@@ -243,3 +244,57 @@ i {
 
 .social {
 }
+
+#contact {
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+}
+
+#contact div {
+    width: 45%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.letstalk-form {
+    width: 235px!important;
+}
+
+input[type=text], input[type=email], input[type=tel], textarea {
+    width: 200px;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+input[type=submit] {
+    width: 100px;
+    margin: auto;
+    padding: 15px;
+    background-color: #0f76d9;
+    border-color:  #0f76d9;
+    border-radius: 15px;
+}
+
+.a-beautiful-heart {
+    fill:#ef1944;
+    width:1em;
+    animation:love 5s ease infinite;
+}
+
+@keyframes love {
+    0% {
+     transform:scale(1)
+    }
+    50% {
+     transform:scale(1.2)
+    }
+    100% {
+     transform:scale(1)
+    }
+}
+   
