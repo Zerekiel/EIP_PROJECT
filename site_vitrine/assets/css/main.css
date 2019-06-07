@@ -175,7 +175,7 @@ i {
     margin: 226px 40%;
 }
 
-.more {
+.more, .less {
     margin-left: 15px;
     color: #9addf8;
     font-style: italic;

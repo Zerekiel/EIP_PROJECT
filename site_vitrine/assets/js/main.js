@@ -116,15 +116,23 @@ function showDesc(event) {
         }
         $('.destination').append(infos.infos_right.destination);
     }, "text");
+    var tab = $(event.target).classList;
+    $(event.target).removeClass('more').removeClass(tab[1]).addClass('less').addClass(tab[1]).html("voir moins...");
     $('.profile').css('display', 'flex');
+}
+
+function hideDesc(event) {
+    $('.profile').html('').css('display', 'none');
+    var tab = $(event.target).classList;
+    $(event.target).removeClass('less').removeClass(tab[1]).addClass('more').addClass(tab[1]).html("voir plus...");
 }
 
 window.onload = function(page) {
     $('.switch-btn').click(function (e) {
         getNext($(e.target).hasClass('proj-btn') ? proj : team, $(e.target).hasClass('left') ? '-' : '+');
     });
-    $('.more').click(function (e) {
-        showDesc(e);
+    $('.team-slide span').click(function (e) {
+        $(event.target).hasClass('more') ? showDesc(e) : $(event.target).hasClass('less') ? hideDesc(e) : exit;
     });
     $('form').submit(function (e) {
         console.log(e.target);
