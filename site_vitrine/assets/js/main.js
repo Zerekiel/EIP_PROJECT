@@ -116,15 +116,13 @@ function showDesc(event) {
         }
         $('.destination').append(infos.infos_right.destination);
     }, "text");
-    var tab = $(event.target).classList;
-    $(event.target).removeClass('more').removeClass(tab[1]).addClass('less').addClass(tab[1]).html("voir moins...");
-    $('.profile').css('display', 'flex');
+    $(event.target).addClass('less').removeClass(team[getIdx(team)].img.split('.')[0]).removeClass('more').addClass(team[getIdx(team)].img.split('.')[0]).html("voir moins...");
+    $('.profile').addClass('display');
 }
 
 function hideDesc(event) {
-    $('.profile').html('').css('display', 'none');
-    var tab = $(event.target).classList;
-    $(event.target).removeClass('less').removeClass(tab[1]).addClass('more').addClass(tab[1]).html("voir plus...");
+    $('.profile').removeClass('display');
+    $(event.target).addClass('more').removeClass(team[getIdx(team)].img.split('.')[0]).removeClass('less').addClass(team[getIdx(team)].img.split('.')[0]).html("voir plus...");
 }
 
 window.onload = function(page) {
@@ -163,7 +161,7 @@ window.onscroll = function topbarScroll() {
         topbar.css('position', 'absolute');
         topbar.css('background', 'transparent');
         // topbar.css('background-color', 'transparent');
-        topbar.css('margin-top', '470px');
+        topbar.css('margin-top', '23vw');
         section.css('display', 'none');
         $('#topbar h2').css('color', 'white');
         $('#topbar h1').css('display', 'block');

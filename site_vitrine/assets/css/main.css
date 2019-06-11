@@ -1,6 +1,6 @@
 body {
     max-width: 1920px;
-    width: 100vw;
+    width: 100%;
     margin: auto;
 }
 
@@ -12,7 +12,7 @@ red {
     position: absolute;
     display: flex;
     justify-content: space-around;
-    margin-top: 470px;
+    margin-top: 23vh;
     width: inherit;
     max-width: inherit;
 }
@@ -59,9 +59,9 @@ red {
 header {
     background-image: url('../img/firetruck.jpg');
     background-repeat: no-repeat;
-    background-size: 1920px;
-    width: 1920px;
-    height: 1000px;
+    background-size: 100%;
+    width: 100%;
+    height: 700px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -76,7 +76,7 @@ header {
 section {
     /* width: 1920px; */
     margin: auto;
-    padding: 75px 20vw;
+    padding: 75px 0;
     padding-bottom: 50px;
     padding-top: 75px;
 }
@@ -110,6 +110,7 @@ section {
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
 }
+
 .hvr-sweep-to-left:before {
     content: "";
     position: absolute;
@@ -127,11 +128,12 @@ section {
     transition-property: transform; */
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
-    /*-webkit-transition-timing-function: ease-out;
-    transition-timing-function: ease-out; */
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
 }
+
 .hvr-sweep-to-left:hover, .hvr-sweep-to-left:focus, .hvr-sweep-to-left:active {
-    color: black;
+    background-color: transparent;
 }
 .hvr-sweep-to-left:hover:before, .hvr-sweep-to-left:focus:before, .hvr-sweep-to-left:active:before {
     -webkit-transform: scaleX(1);
@@ -150,12 +152,12 @@ section {
     background-repeat: no-repeat;
     background-size: 500px;
     height: 500px;
-    width: 1000px;
-    min-width: 1000px;
     margin: auto;
     background-color: black;
     display: flex;
     justify-content: space-between;
+    width: 65%;
+    min-width: 823px;
 }
 
 .slideshow p {
@@ -171,8 +173,12 @@ section {
 }
 
 i {
-    width: 30px;
-    margin: 226px 40%;
+    margin-top: 226px;
+}
+
+i.left {
+    position: absolute;
+    right: 0;
 }
 
 .more, .less {
@@ -181,15 +187,24 @@ i {
     font-style: italic;
 }
 
-.more:hover {
+.more:hover, .less:hover {
     cursor: pointer;
 }
 
 .profile {
     width: 700px;
     margin: auto;
-    display: none;
-    min-height: 500px;
+    display: flex;
+    height: 500px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 2s 0s, opacity 1s 0s;
+}
+
+.profile.display {
+    max-height: 700px;
+    opacity: 1;
 }
 
 .left-card img {
@@ -250,10 +265,15 @@ i {
     display: flex;
     justify-content: space-around;
     background-color: #333;
+    padding: 0 15vw;
 }
 
 #contact div {
     width: 45%;
+}
+
+#contact h4 {
+    width: 100%
 }
 
 form {
