@@ -144,13 +144,14 @@ window.onscroll = function topbarScroll() {
     if (document.body.scrollTop >= 600 || document.documentElement.scrollTop >= 600)
     {
         topbar.css('position', 'fixed');
-        topbar.css('background', 'linear-gradient(#0f76d9, white)');
+        topbar.css('background', 'linear-gradient(to bottom, #ff1c4e,#ff8985)');
         // topbar.css('background', 'linear-gradient(#0f76d9, #70b5f7)');
         // topbar.css('background-color', '#70b5f7');
         topbar.css('margin-top', '0');
         topbar.css('z-index', '1');
         topbar.css('justify-content', 'space-around');
         section.css('display', 'block');
+        $('fb').css('text-shadow', '1px 1px 0 white, 1px -1px 0 white, -1px -1px 0 white, -1px 1px 0 white, 1px 0px 0 white, 1px 0px 0 white, -1px 0px 0 white, -1px 0px 0 white, 0px 1px 0 white, 0px -1px 0 white, 0px -1px 0 white, 0px 1px 0 white, 0px 0px 0 white, 0px 0px 0 white, 0px 0px 0 white, 0px 0px 0 white, 0 0 0 white')
         $('#topbar h2').css('color', 'white');
         $('#topbar h1').css('display', 'none');
         // $('.topbar a').css('color', 'black')
@@ -161,10 +162,31 @@ window.onscroll = function topbarScroll() {
         topbar.css('position', 'absolute');
         topbar.css('background', 'transparent');
         // topbar.css('background-color', 'transparent');
-        topbar.css('margin-top', '23vw');
+        topbar.css('margin-top', '350px');
         section.css('display', 'none');
+        $('fb').css('text-shadow', 'none')
         $('#topbar h2').css('color', 'white');
         $('#topbar h1').css('display', 'block');
         // $('.topbar a').css('color', 'white')
     }
 }
+
+// function generateFontBorder(size, color) {
+//         @maxi: @stroke + 1;
+//         .i-loop (@i) when (@i > 0) {
+//           @maxj: @stroke + 1;
+//           .j-loop (@j) when (@j > 0) {
+//             text-shadow+: (@i - 1)*(1px)  (@j - 1)*(1px) 0 @color;
+//             text-shadow+: (@i - 1)*(1px)  (@j - 1)*(-1px) 0 @color;
+//             text-shadow+: (@i - 1)*(-1px)  (@j - 1)*(-1px) 0 @color;
+//             text-shadow+: (@i - 1)*(-1px)  (@j - 1)*(1px) 0 @color;
+//             .j-loop(@j - 1);
+//           }
+//           .j-loop (0) {}
+//           .j-loop(@maxj);
+//           .i-loop(@i - 1);
+//         }
+//         .i-loop (0) {}
+//         .i-loop(@maxi);
+//         text-shadow+: 0 0 0 @color;
+// }

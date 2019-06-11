@@ -5,14 +5,35 @@ body {
 }
 
 red {
-    color: red;
+    color: #ff1c4e;
+}
+
+fb {
+    color: #ff1c4e;
+    text-shadow: 1px 1px 0 white,
+    1px -1px 0 white,
+    -1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 0px 0 white,
+    1px 0px 0 white,
+    -1px 0px 0 white,
+    -1px 0px 0 white,
+    0px 1px 0 white,
+    0px -1px 0 white,
+    0px -1px 0 white,
+    0px 1px 0 white,
+    0px 0px 0 white,
+    0px 0px 0 white,
+    0px 0px 0 white,
+    0px 0px 0 white,
+    0 0 0 white;
 }
 
 #topbar {
     position: absolute;
     display: flex;
     justify-content: space-around;
-    margin-top: 23vh;
+    margin-top: 350px;
     width: inherit;
     max-width: inherit;
 }
@@ -34,10 +55,11 @@ red {
 .section-accessor a {
     /* display: none; */
     padding: 15px;
-    border: 1px solid #133164;
+    border: 1px solid;
     border-radius: 15px;
     text-decoration: none;
-    background-color: #0f76d9;
+    background-color: #ff1c4e;
+    border-color:  #ff8985;
     color: white;
     transition: .2s cubic-bezier(0,-0.01,1,1)
 }
@@ -89,7 +111,7 @@ section {
 .switch-btn {
     width: 5vw;
     height: inherit;
-    background: linear-gradient(to left, white, red);
+    background: linear-gradient(to left, white,#ff8985,#ff1c4e);
     background-repeat: no-repeat;
     background-size: 0 100%;
     transition: background-size 0.3s 0s;
@@ -119,7 +141,7 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to left, red, white);
+    background: linear-gradient(to left, #ff1c4e,#ff8985, white);
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
     -webkit-transform-origin: 0% 50%;
@@ -283,6 +305,7 @@ form {
 
 .letstalk-form {
     width: 235px!important;
+    margin: 15px 0;
 }
 
 input[type=text], input[type=email], input[type=tel], textarea {
@@ -295,16 +318,23 @@ input[type=submit] {
     width: 100px;
     margin: auto;
     padding: 15px;
-    background-color: #0f76d9;
-    border-color:  #0f76d9;
+    color: white;
+    background-color: #ff1c4e;
+    border-color:  #ff8985;
     border-radius: 15px;
 }
 
 .a-beautiful-heart {
-    fill:#ef1944;
+    fill:#ff1c4e;
     width:1em;
     animation:love 5s ease infinite;
 }
+
+/*
+-----------------------------
+------- keyframes
+-----------------------------
+*/
 
 @keyframes love {
     0% {
@@ -317,4 +347,9 @@ input[type=submit] {
      transform:scale(1)
     }
 }
-   
+
+/*
+-----------------------------
+------- font borders
+-----------------------------
+*/
