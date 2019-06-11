@@ -27,16 +27,24 @@
             "js",
             "html",
             "css",
-            "python"
+            "python",
+            "dotnet"
         ],
-        "tool":[
-            "visual_studio",
+        "management":[
             "docker",
             "git",
-            "node",
-            "bdd",
+            "agile",
+            "trello"
+        ],
+        "softwares":[
+            "visual_studio",
+            "postman"
+        ],
+        "dev_arch":[
+            "api",
             "mongo",
-            "dotnet"
+            "bdd",
+            "node"
         ],
         "social_list":[
             "linkedin",

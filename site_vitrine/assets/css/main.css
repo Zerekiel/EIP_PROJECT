@@ -250,8 +250,10 @@ i.left {
 }
 
 .right-card {
+    display: flex;
     flex-wrap: wrap;
     padding: 15px;
+    justify-content: space-between;
 }
 
 .right-card div {

@@ -90,27 +90,35 @@ function showDesc(event) {
         for (let index = 0; index < idx.length; index++) {
             $('.languages').append("<img src=\"assets/img/" + idx[index] + ".jpg\" alt=\"" + idx[index] + "\"/>");
         }
-        var idx = infos.infos_right.tool;
+        var idx = infos.infos_right.management;
         for (let index = 0; index < idx.length; index++) {
-            $('.tools_frameworks').append("<img src=\"assets/img/" + idx[index] + ".png\" alt=\"" + idx[index] + "\"/>");
+            $('.management').append("<img src=\"assets/img/" + idx[index] + ".png\" alt=\"" + idx[index] + "\"/>");
+        }
+        var idx = infos.infos_right.softwares;
+        for (let index = 0; index < idx.length; index++) {
+            $('.softwares').append("<img src=\"assets/img/" + idx[index] + ".png\" alt=\"" + idx[index] + "\"/>");
+        }
+        var idx = infos.infos_right.dev_arch;
+        for (let index = 0; index < idx.length; index++) {
+            $('.dev_arch').append("<img src=\"assets/img/" + idx[index] + ".png\" alt=\"" + idx[index] + "\"/>");
         }
         idx = infos.infos_right.social_list;
         for (let index = 0; index < idx.length; index++) {
             switch (idx[index]) {
                 case "linkedin":
-                    $('.social').append("<a href=\"" + infos.infos_right.social.linkedin + "\"><img src=\"assets/img/linkedin.png\"/></a>");
+                    $('.socials').append("<a href=\"" + infos.infos_right.social.linkedin + "\"><img src=\"assets/img/linkedin.png\"/></a>");
                     break;
                 case "instagram":
-                    $('.social').append("<a href=\"" + infos.infos_right.social.instagram + "\"><img src=\"assets/img/instagram.png\"/></a>");
+                    $('.socials').append("<a href=\"" + infos.infos_right.social.instagram + "\"><img src=\"assets/img/instagram.png\"/></a>");
                     break;
                 case "facebook":
-                    $('.social').append("<a href=\"" + infos.infos_right.social.facebook + "\"><img src=\"assets/img/facebook.png\"/></a>");
+                    $('.socials').append("<a href=\"" + infos.infos_right.social.facebook + "\"><img src=\"assets/img/facebook.png\"/></a>");
                     break;
                 case "github":
-                    $('.social').append("<a href=\"" + infos.infos_right.social.github + "\"><img src=\"assets/img/github.png\"/></a>");
+                    $('.socials').append("<a href=\"" + infos.infos_right.social.github + "\"><img src=\"assets/img/github.png\"/></a>");
                     break;
                 case "snapchat":
-                    $('.social').append("<a href=\"" + infos.infos_right.social.snapchat + "\"><img src=\"assets/img/snapchat.png\"/></a>");
+                    $('.socials').append("<a href=\"" + infos.infos_right.social.snapchat + "\"><img src=\"assets/img/snapchat.png\"/></a>");
                     break;
             }
         }
