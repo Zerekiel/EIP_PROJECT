@@ -29,11 +29,11 @@ function setNext(location, tab) {
             else {
                 $('.team-slide').css('background-image', 'url(\'./assets/img/team-pic/' + element.img + '\')')
                 if (element.img.split('.')[0] == "Floriane") {
-                    $('.' + location + '-slide .punch').text('').append('\"' + element.punchline + '<br/>');
-                    $('.' + location + '-slide .punch').append(element.punchline1 + '\"');
+                    $('.' + location + '-slide #punch').text('').append('\"' + element.punchline + '<br/>');
+                    $('.' + location + '-slide #punch').append(element.punchline1 + '\"');
 
                 } else
-                    $('.' + location + '-slide .punch').text('\"' + element.punchline + '\"');
+                    $('.' + location + '-slide #punch').text('\"' + element.punchline + '\"');
                 $('.more').addClass(element.img.split('.')[0]);
             }
         }
@@ -136,6 +136,8 @@ function hideDesc(event) {
 window.onload = function(page) {
     $('.switch-btn').click(function (e) {
         getNext($(e.target).hasClass('proj-btn') ? proj : team, $(e.target).hasClass('left') ? '-' : '+');
+        $('.profile').removeClass('display');
+        $('.team-slide #more').removeClass().addClass('more').addClass(team[getIdx(team)].img.split('.')[0]).html("voir plus...")
     });
     $('.team-slide span').click(function (e) {
         $(event.target).hasClass('more') ? showDesc(e) : $(event.target).hasClass('less') ? hideDesc(e) : exit;
@@ -153,8 +155,6 @@ window.onscroll = function topbarScroll() {
     {
         topbar.css('position', 'fixed');
         topbar.css('background', 'linear-gradient(to bottom, #ff1c4e,#ff8985)');
-        // topbar.css('background', 'linear-gradient(#0f76d9, #70b5f7)');
-        // topbar.css('background-color', '#70b5f7');
         topbar.css('margin-top', '0');
         topbar.css('z-index', '1');
         topbar.css('justify-content', 'space-around');
@@ -162,20 +162,17 @@ window.onscroll = function topbarScroll() {
         $('fb').css('text-shadow', '1px 1px 0 white, 1px -1px 0 white, -1px -1px 0 white, -1px 1px 0 white, 1px 0px 0 white, 1px 0px 0 white, -1px 0px 0 white, -1px 0px 0 white, 0px 1px 0 white, 0px -1px 0 white, 0px -1px 0 white, 0px 1px 0 white, 0px 0px 0 white, 0px 0px 0 white, 0px 0px 0 white, 0px 0px 0 white, 0 0 0 white')
         $('#topbar h2').css('color', 'white');
         $('#topbar h1').css('display', 'none');
-        // $('.topbar a').css('color', 'black')
     }
     
     else if (document.body.scrollTop < 600)
     {
         topbar.css('position', 'absolute');
         topbar.css('background', 'transparent');
-        // topbar.css('background-color', 'transparent');
         topbar.css('margin-top', '350px');
         section.css('display', 'none');
         $('fb').css('text-shadow', 'none')
         $('#topbar h2').css('color', 'white');
         $('#topbar h1').css('display', 'block');
-        // $('.topbar a').css('color', 'white')
     }
 }
 

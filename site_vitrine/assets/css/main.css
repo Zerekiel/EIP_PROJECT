@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Droid+Serif');
+@import url("static/fonts/Montserrat/fonts/webfonts/Montserrat.css");
+
 body {
     max-width: 1920px;
     width: 100%;
@@ -27,6 +31,18 @@ fb {
     0px 0px 0 white,
     0px 0px 0 white,
     0 0 0 white;
+}
+
+.tear {
+    position: relative;
+    left: 40%;
+    top: -40px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    transform: rotateZ(-45deg) scale(1.2,1.2);
+    background: linear-gradient(to bottom,#ff1c4e,#ff8985);
+    border-radius: 120% 0 70% 50% / 70% 0 120% 50%;
 }
 
 #topbar {

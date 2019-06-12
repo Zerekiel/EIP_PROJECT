@@ -1,0 +1,36 @@
+{
+    "img":"./assets/img/team-pic/Joan.jpg",
+    "infos_left":{
+        "age":"",
+        "hobby":[
+            ""
+        ],
+        "countries":[
+            ""
+        ],
+        "role":""
+    },
+    "infos_right":{
+        "languages":[
+            ""
+        ],
+        "management":[
+            ""
+        ],
+        "softwares":[
+            ""
+        ],
+        "dev_arch":[
+            ""
+        ],
+        "social_list":[
+            ""
+        ],
+        "social":{
+            "linkedin":"#",
+            "facebook":"#",
+            "github":"#"
+        },
+        "destination":"<red style=\"padding-left:15px;\">B</red>arhein"
+    }
+}
