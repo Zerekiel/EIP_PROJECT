@@ -205,6 +205,39 @@ section {
     font-style: italic;
 }
 
+.proj-picture_index {
+    width: 65%!important;
+    background-color: black;
+}
+
+.picture_index {
+    width: 500px;
+    margin: auto;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.picture_index a {
+    position: relative;
+    text-shadow: none;
+    color: transparent;
+    display: inline-block;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    margin: 3px 3px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+
+.picture_index a.current {
+    border: 5px solid;
+    border-color: #7d66ff;
+}
+
+
 .team-slide {
     background-image: url("../img/team-pic/Thibaut.jpg");
     margin-bottom: 25px;

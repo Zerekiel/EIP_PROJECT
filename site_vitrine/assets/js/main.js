@@ -1,10 +1,10 @@
-var team = [{img:"Floriane.jpg", current:false, punchline:"La motivation est la clé de la réussite, tout est possible à",punchline1:"qui rêve, ose, travaille et n'abandonne jamais."},
+var team = [{img:"Thibaut.jpg", current:true, punchline:"Je veux vivre d'amour et de mojitos"},
+            {img:"Floriane.jpg", current:false, punchline:"La motivation est la clé de la réussite, tout est possible à",punchline1:"qui rêve, ose, travaille et n'abandonne jamais."},
             {img:"Clement.jpg", current:false, punchline:"Clément"},
             {img:"Thomas.jpg", current:false, punchline:"je ne perds jamais. Soit je gagne, Soit j'apprends"},
             {img:"Joan.jpg", current:false, punchline:"Joan"},
             {img:"Adil.jpg", current:false, punchline:"Adil"},
-            {img:"group.jpg", current:false, punchline:"La team"},
-            {img:"Thibaut.jpg", current:true, punchline:"Je veux vivre d'amour et de mojitos"}];
+            {img:"group.jpg", current:false, punchline:"La team"}];
 var proj = [{url:"y2mate.com - presentation_projet_healthsafe_GTPTQEN4LO0_1080p.mp4", title:"<red>P</red>résentation projet <red>H</red>ealthSafe", current:true},
             {url:"y2mate.com - presentation_application_healthsafe_Pnr4CFogvcY_1080p.mp4", title:"<red>P</red>résentation application mobile", current:false}];
 
@@ -14,6 +14,10 @@ function getIdx(tab) {
             return index;
         }
     }
+}
+
+function setBg(event, idx) {
+    
 }
 
 function setNext(location, tab) {
@@ -124,16 +128,45 @@ function showDesc(event) {
         }
         $('.destination').append(infos.infos_right.destination);
     }, "text");
-    $(event.target).addClass('less').removeClass(team[getIdx(team)].img.split('.')[0]).removeClass('more').addClass(team[getIdx(team)].img.split('.')[0]).html("voir moins...");
+    $(event.target).addClass('less').removeClass(team[getIdx(team)].img.split('.')[0])
+                   .removeClass('more').addClass(team[getIdx(team)].img.split('.')[0]).html("voir moins...");
     $('.profile').addClass('display');
 }
 
 function hideDesc(event) {
     $('.profile').removeClass('display');
-    $(event.target).addClass('more').removeClass(team[getIdx(team)].img.split('.')[0]).removeClass('less').addClass(team[getIdx(team)].img.split('.')[0]).html("voir plus...");
+    $(event.target).addClass('more').removeClass(team[getIdx(team)].img.split('.')[0])
+                   .removeClass('less').addClass(team[getIdx(team)].img.split('.')[0]).html("voir plus...");
+}
+
+function init(event) {
+    var idx = parseInt($(event.target)[0].classList[1].split('_')[1]);
+    console.log(idx);
+    var current = getIdx($(event.target)[0].classList[0].split('-')[0] == "team" ? team : proj);
+    console.log(current);
+    if ($(event.target).hasClass('current') == false) {
+        $('.' + event.target.classList[1].split('_')[0] + '_' + current).removeClass('current');
+        $(event.target).addClass('current');
+        getNext($(event.target).hasClass('proj-btn') ? proj : team, idx < current ? '-' : '+');
+    }
 }
 
 window.onload = function(page) {
+    for (let index = 0; index < team.length; index++) {
+        var html = index === 0 
+        ? "<a class=\"team-btn team-btn_" + index + " current\"></a>"
+        : "<a class=\"team-btn team-btn_" + index + "\"></a>";
+        $('.team-picture_index div').append(html);
+    }
+    for (let index = 0; index < proj.length; index++) {
+        var html = index === 0 
+        ? "<a class=\"proj-btn proj-btn_" + index + " current\"></a>"
+        : "<a class=\"proj-btn proj-btn_" + index + "\"></a>";
+        $('.proj-picture_index div').append(html);
+    }
+    $('.picture_index div a').click(function (e) {
+        init(e);
+    })
     $('.switch-btn').click(function (e) {
         getNext($(e.target).hasClass('proj-btn') ? proj : team, $(e.target).hasClass('left') ? '-' : '+');
         $('.profile').removeClass('display');
