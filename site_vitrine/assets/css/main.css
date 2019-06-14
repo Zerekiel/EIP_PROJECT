@@ -207,6 +207,7 @@ section {
 
 .proj-picture_index {
     width: 65%!important;
+    min-width: 823px;
     background-color: black;
 }
 
@@ -234,7 +235,7 @@ section {
 
 .picture_index a.current {
     border: 5px solid;
-    border-color: #7d66ff;
+    border-color: #ff1c4e;
 }
 
 

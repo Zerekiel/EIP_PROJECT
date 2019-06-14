@@ -6,7 +6,8 @@ var team = [{img:"Thibaut.jpg", current:true, punchline:"Je veux vivre d'amour e
             {img:"Adil.jpg", current:false, punchline:"Adil"},
             {img:"group.jpg", current:false, punchline:"La team"}];
 var proj = [{url:"y2mate.com - presentation_projet_healthsafe_GTPTQEN4LO0_1080p.mp4", title:"<red>P</red>résentation projet <red>H</red>ealthSafe", current:true},
-            {url:"y2mate.com - presentation_application_healthsafe_Pnr4CFogvcY_1080p.mp4", title:"<red>P</red>résentation application mobile", current:false}];
+            {url:"y2mate.com - presentation_application_healthsafe_Pnr4CFogvcY_1080p.mp4", title:"<red>P</red>résentation application mobile", current:false},
+            {url:"", title:"<red>P</red>résentation application web", current:false}];
 
 function getIdx(tab) {
     for (let index = 0; index < tab.length; index++) {
@@ -14,10 +15,6 @@ function getIdx(tab) {
             return index;
         }
     }
-}
-
-function setBg(event, idx) {
-    
 }
 
 function setNext(location, tab) {
@@ -44,9 +41,10 @@ function setNext(location, tab) {
     });
 }
 
-function getNext(tab, action) {
+function getNext(event, tab, action) {
     var idx = getIdx(tab);
 
+    $('.' + event.target.classList[0] + '_' + idx).removeClass('current');
     if (tab.length > 3)
         $('.more').removeClass(tab[idx].img.split('.')[0]);
     if (action == '+') {
@@ -69,8 +67,9 @@ function getNext(tab, action) {
             tab[tab.length - 1].current = true;
         }
     }
-    tab.length == 2 ? proj = tab : team = tab;
-    setNext(tab.length == 2 ? "proj" : "team", tab.length == 2 ? proj : team);
+    tab.length == 3 ? proj = tab : team = tab;
+    $('.' + event.target.classList[0] + '_' + getIdx(tab.length == 3 ? proj : team)).addClass('current');
+    setNext(tab.length == 3 ? "proj" : "team", tab.length == 3 ? proj : team);
 }
 
 function showDesc(event) {
@@ -141,13 +140,15 @@ function hideDesc(event) {
 
 function init(event) {
     var idx = parseInt($(event.target)[0].classList[1].split('_')[1]);
-    console.log(idx);
+    console.log("next: " + idx);
     var current = getIdx($(event.target)[0].classList[0].split('-')[0] == "team" ? team : proj);
-    console.log(current);
+    console.log("current: " + current);
     if ($(event.target).hasClass('current') == false) {
         $('.' + event.target.classList[1].split('_')[0] + '_' + current).removeClass('current');
         $(event.target).addClass('current');
-        getNext($(event.target).hasClass('proj-btn') ? proj : team, idx < current ? '-' : '+');
+        $(event.target).hasClass('proj-btn') ? proj[current].current = false : team[current].current = false;
+        $(event.target).hasClass('proj-btn') ? proj[idx].current = true : team[idx].current = true;
+        setNext($(event.target).hasClass('proj-btn') ? "proj" : "team", $(event.target).hasClass('proj-btn') ? proj : team);
     }
 }
 
@@ -168,7 +169,7 @@ window.onload = function(page) {
         init(e);
     })
     $('.switch-btn').click(function (e) {
-        getNext($(e.target).hasClass('proj-btn') ? proj : team, $(e.target).hasClass('left') ? '-' : '+');
+        getNext(e, $(e.target).hasClass('proj-btn') ? proj : team, $(e.target).hasClass('left') ? '-' : '+');
         $('.profile').removeClass('display');
         $('.team-slide #more').removeClass().addClass('more').addClass(team[getIdx(team)].img.split('.')[0]).html("voir plus...")
     });
