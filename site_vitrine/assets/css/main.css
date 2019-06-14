@@ -224,17 +224,17 @@ section {
     color: transparent;
     display: inline-block;
     cursor: pointer;
-    width: 18px;
-    height: 18px;
+    width: 7px;
+    height: 7px;
     margin: 3px 3px;
     border-radius: 50%;
-    border: 5px solid white;
+    border: 3px solid white;
 }
 
 
 .picture_index a.current {
-    border: 5px solid;
-    border-color: #7d66ff;
+    border: 3px solid;
+    border-color: #ff1c4e;
 }
 
 

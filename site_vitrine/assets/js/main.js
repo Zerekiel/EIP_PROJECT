@@ -140,14 +140,20 @@ function hideDesc(event) {
 }
 
 function init(event) {
-    var idx = parseInt($(event.target)[0].classList[1].split('_')[1]);
-    console.log(idx);
-    var current = getIdx($(event.target)[0].classList[0].split('-')[0] == "team" ? team : proj);
-    console.log(current);
-    if ($(event.target).hasClass('current') == false) {
-        $('.' + event.target.classList[1].split('_')[0] + '_' + current).removeClass('current');
-        $(event.target).addClass('current');
-        getNext($(event.target).hasClass('proj-btn') ? proj : team, idx < current ? '-' : '+');
+    var current = getIdx(event.target.classList[0].split('-')[0] == "team" ? team : proj);
+    var next = event.target.classList[1];
+    var next_idx = event.target.classList[1].split('_')[1];
+    if ($('.' + next).hasClass('current') == false) {
+        event.target.classList[0].split('-')[0] == "team" ? team[current].current = false : proj[current].current = false;
+        event.target.classList[0].split('-')[0] == "team" ? team[next_idx].current = true : proj[next_idx].current = true;
+        $('.' + event.target.classList[0] + '_' + getIdx(event.target.classList[0].split('-')[0] == "team" ? team : proj)).removeClass('current');
+        team.forEach(element => {
+            console.log(element.current);
+        });
+        proj.forEach(element => {
+            console.log(element.current);
+        });
+        $('.' + event.target.classList[0] + '_' + getIdx(event.target.classList[0].split('-')[0] == "team" ? team : proj)).addClass('current');
     }
 }
 
