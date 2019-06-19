@@ -29,6 +29,8 @@ package="com.eipteam.healthsafe">
     </activity>
     <activity android:name=".MedicalStats">
     </activity>
+    <activity android:name=".TransferData">
+    </activity>
 </application>
 
 </manifest>
