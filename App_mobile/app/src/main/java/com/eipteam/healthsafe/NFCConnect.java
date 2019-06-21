@@ -17,7 +17,6 @@ import android.widget.Toast;
 public class NFCConnect extends Activity {
 
     private NfcAdapter nfcAdapter;
-    private PendingIntent pendingIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +30,6 @@ public class NFCConnect extends Activity {
             finish();
             return ;
         }
-
-        pendingIntent = PendingIntent.getActivity(this,
-                0,
-                new Intent(this, this.getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP),
-                0);
     }
 
     @Override
@@ -44,9 +38,8 @@ public class NFCConnect extends Activity {
 
         nfcAdapter = NfcAdapter.getDefaultAdapter(this);
 
-        if (nfcAdapter != null) {
-            if (!nfcAdapter.isEnabled())
-                showWirelessSettings();
+        if (nfcAdapter != null && !nfcAdapter.isEnabled()) {
+            showWirelessSettings();
         }
 
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, new Intent(this, getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
