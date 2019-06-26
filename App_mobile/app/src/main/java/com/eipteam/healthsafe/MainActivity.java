@@ -23,7 +23,7 @@ import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    Integer code = -2;
+    private Integer code = -2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
