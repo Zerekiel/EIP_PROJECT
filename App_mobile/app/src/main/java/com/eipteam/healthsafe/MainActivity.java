@@ -8,8 +8,22 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
+
+    Integer code = -2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +45,55 @@ public class MainActivity extends AppCompatActivity {
         EditText password = (EditText) findViewById(R.id.password);
         String id2 = password.getText().toString();
 
-        if ("deprost".equals(id1) && "password".equals(id2)) {
-            startActivity(intent);
+        try {
+            postRequest(id1, id2);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
+        while (code == -2);
+
+        if (code == 200) {
+            startActivity(intent);
+        }
         else {
             errorMsg(getApplicationContext(), "WRONG ID OR PASSWD");
         }
+    }
+
+    public void postRequest(String login, String pass) throws IOException {
+        String url = "http://10.0.2.2:3000/mobile";
+
+        MediaType MEDIA_TYPE = MediaType.parse("application/json");
+        OkHttpClient client = new OkHttpClient();
+
+        JSONObject postData = new JSONObject();
+        try {
+            postData.put("nom", login);
+            postData.put("ville", pass);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        RequestBody body = RequestBody.create(MEDIA_TYPE, postData.toString());
+
+        Request request = new Request.Builder()
+                .url(url)
+                .post(body)
+                .header("Accept", "application/json")
+                .header("Content-Type", "application/json")
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                code = -1;
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                code = response.code();
+            }
+        });
     }
 }

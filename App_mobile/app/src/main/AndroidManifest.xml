@@ -6,6 +6,7 @@ package="com.eipteam.healthsafe">
 
 <uses-permission android:name="android.permission.NFC" />
 <uses-feature android:name="android.hardware.nfc" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 <application android:allowBackup="true"
     android:icon="@mipmap/ic_launcher"
