@@ -2,9 +2,10 @@ package com.eipteam.healthsafe;
 
 
 //import android.app.Application;
-import android.arch.lifecycle.ReportFragment;
-import android.os.Bundle;
-import android.os.PersistableBundle;
+//import android.arch.lifecycle.ReportFragment;
+//import android.os.Bundle;
+//import android.os.PersistableBundle;
+/*
 import android.view.View;
 
 import junit.framework.TestCase;
@@ -19,6 +20,7 @@ import org.robolectric.Robolectric;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.powermock.api.mockito.PowerMockito.spy;
+*/
 
 
 //@RunWith(PowerMockRunner.class)
