@@ -1,7 +1,7 @@
 package com.eipteam.healthsafe;
 
 
-import android.app.Application;
+//import android.app.Application;
 import android.arch.lifecycle.ReportFragment;
 import android.os.Bundle;
 import android.os.PersistableBundle;
