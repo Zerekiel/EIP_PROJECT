@@ -1,36 +1,46 @@
 {
-    "img":"./assets/img/team-pic/Joan.jpg",
-    "infos_left":{
-        "age":"",
-        "hobby":[
-            ""
+    "img": "./assets/img/team-pic/Joan.jpg",
+    "infos_left": {
+        "age": "21 ans",
+        "hobby": [
+            "Sport",
+            "Jeux vidéo",
+            "Film/Série"
         ],
-        "countries":[
-            ""
+        "countries": [
+            "Angleterre",
+            "Espagne",
+            "Suisse"
         ],
-        "role":""
+        "role": "Web developper & web designer"
     },
-    "infos_right":{
-        "languages":[
-            ""
+    "infos_right": {
+        "languages": [
+            "c",
+            "c++",
+            "html",
+            "css",
+            "sql"
         ],
-        "management":[
-            ""
+        "management": [
+            "docker",
+            "git",
+            "trello",
+            "slack"
         ],
-        "softwares":[
-            ""
+        "softwares": [
+            "visual_studio"
         ],
-        "dev_arch":[
-            ""
+        "dev_arch": [
+            "api",
+            "bdd"
         ],
-        "social_list":[
-            ""
+        "social_list": [
+            "linkedin"
         ],
-        "social":{
-            "linkedin":"#",
-            "facebook":"#",
-            "github":"#"
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/joan-falsimagne-77b956124/"
         },
-        "destination":"<red style=\"padding-left:15px;\">B</red>arhein"
+        "destination": "<red style=\"padding-left:15px;\">B</red>arhain"
     }
 }

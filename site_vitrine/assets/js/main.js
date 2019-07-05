@@ -6,7 +6,8 @@ var team = [{img:"Thibaut.jpg", current:true, punchline:"Je veux vivre d'amour e
             {img:"Adil.jpg", current:false, punchline:"Adil"},
             {img:"group.jpg", current:false, punchline:"La team"}];
 var proj = [{url:"y2mate.com - presentation_projet_healthsafe_GTPTQEN4LO0_1080p.mp4", title:"<red>P</red>résentation projet <red>H</red>ealthSafe", current:true},
-            {url:"y2mate.com - presentation_application_healthsafe_Pnr4CFogvcY_1080p.mp4", title:"<red>P</red>résentation application mobile", current:false}];
+            {url:"y2mate.com - presentation_application_healthsafe_Pnr4CFogvcY_1080p.mp4", title:"<red>P</red>résentation application mobile", current:false},
+            {url:"", title:"<red>P</red>résentation application web", current:false}];
 
 function getIdx(tab) {
     for (let index = 0; index < tab.length; index++) {
@@ -14,10 +15,6 @@ function getIdx(tab) {
             return index;
         }
     }
-}
-
-function setBg(event, idx) {
-    
 }
 
 function setNext(location, tab) {
@@ -44,9 +41,10 @@ function setNext(location, tab) {
     });
 }
 
-function getNext(tab, action) {
+function getNext(event, tab, action) {
     var idx = getIdx(tab);
 
+    $('.' + event.target.classList[0] + '_' + idx).removeClass('current');
     if (tab.length > 3)
         $('.more').removeClass(tab[idx].img.split('.')[0]);
     if (action == '+') {
@@ -69,8 +67,9 @@ function getNext(tab, action) {
             tab[tab.length - 1].current = true;
         }
     }
-    tab.length == 2 ? proj = tab : team = tab;
-    setNext(tab.length == 2 ? "proj" : "team", tab.length == 2 ? proj : team);
+    tab.length == 3 ? proj = tab : team = tab;
+    $('.' + event.target.classList[0] + '_' + getIdx(tab.length == 3 ? proj : team)).addClass('current');
+    setNext(tab.length == 3 ? "proj" : "team", tab.length == 3 ? proj : team);
 }
 
 function showDesc(event) {
@@ -140,6 +139,7 @@ function hideDesc(event) {
 }
 
 function init(event) {
+<<<<<<< HEAD
     var current = getIdx(event.target.classList[0].split('-')[0] == "team" ? team : proj);
     var next = event.target.classList[1];
     var next_idx = event.target.classList[1].split('_')[1];
@@ -154,10 +154,25 @@ function init(event) {
             console.log(element.current);
         });
         $('.' + event.target.classList[0] + '_' + getIdx(event.target.classList[0].split('-')[0] == "team" ? team : proj)).addClass('current');
+=======
+    var idx = parseInt($(event.target)[0].classList[1].split('_')[1]);
+    console.log("next: " + idx);
+    var current = getIdx($(event.target)[0].classList[0].split('-')[0] == "team" ? team : proj);
+    console.log("current: " + current);
+    if ($(event.target).hasClass('current') == false) {
+        $('.' + event.target.classList[1].split('_')[0] + '_' + current).removeClass('current');
+        $(event.target).addClass('current');
+        $(event.target).hasClass('proj-btn') ? proj[current].current = false : team[current].current = false;
+        $(event.target).hasClass('proj-btn') ? proj[idx].current = true : team[idx].current = true;
+        setNext($(event.target).hasClass('proj-btn') ? "proj" : "team", $(event.target).hasClass('proj-btn') ? proj : team);
+>>>>>>> 9b6db07f2b4ce68918d5a5f0c0df23c38d249d78
     }
 }
 
 window.onload = function(page) {
+    $.get('assets/files/fr.html', function (page) {
+        $('body').html(page);
+    }, "text");
     for (let index = 0; index < team.length; index++) {
         var html = index === 0 
         ? "<a class=\"team-btn team-btn_" + index + " current\"></a>"
@@ -174,7 +189,7 @@ window.onload = function(page) {
         init(e);
     })
     $('.switch-btn').click(function (e) {
-        getNext($(e.target).hasClass('proj-btn') ? proj : team, $(e.target).hasClass('left') ? '-' : '+');
+        getNext(e, $(e.target).hasClass('proj-btn') ? proj : team, $(e.target).hasClass('left') ? '-' : '+');
         $('.profile').removeClass('display');
         $('.team-slide #more').removeClass().addClass('more').addClass(team[getIdx(team)].img.split('.')[0]).html("voir plus...")
     });
@@ -182,8 +197,24 @@ window.onload = function(page) {
         $(event.target).hasClass('more') ? showDesc(e) : $(event.target).hasClass('less') ? hideDesc(e) : exit;
     });
     $('form').submit(function (e) {
-        console.log(e.target);
-    })    
+        e.preventDefault();
+        var surname = $(e.target)[0][0].value;
+        var name = $(e.target)[0][1].value;
+        var subject = $(e.target)[0][2].value;
+        var email = $(e.target)[0][3].value;
+        var body = $(e.target)[0][4].value;
+        // Email.send({
+        //     Host : "smtp.elasticemail.com",
+        //     Username : "thibaut.dimartino@epitech.eu",
+        //     Password : "97ddca02-7044-4617-9e50-10147cc47b2d",
+            // To : 'thibaut.dimartino@epitech.eu',
+            // To : 'healthsafe_2021@labeip.epitech.eu',
+        //     From : 'thibaut.dimartino@epitech.eu',
+        //     Subject : name + ' ' + surname + ', ' + subject,
+        //     Body : "Mon email: " + email + ' ' + body
+        // }).then( message => alert(message));
+        window.location = 'mailto:' + "healthsafe_2021@labeip.epitech.eu" + '?subject=' +  name + ' ' + surname +  ', ' + subject + '&body=' + body;
+    });
 }
 
 window.onscroll = function topbarScroll() {
@@ -197,7 +228,7 @@ window.onscroll = function topbarScroll() {
         topbar.css('margin-top', '0');
         topbar.css('z-index', '1');
         topbar.css('justify-content', 'space-around');
-        section.css('display', 'block');
+        section.css('display', 'block').fadeIn(250);
         $('fb').css('text-shadow', '1px 1px 0 white, 1px -1px 0 white, -1px -1px 0 white, -1px 1px 0 white, 1px 0px 0 white, 1px 0px 0 white, -1px 0px 0 white, -1px 0px 0 white, 0px 1px 0 white, 0px -1px 0 white, 0px -1px 0 white, 0px 1px 0 white, 0px 0px 0 white, 0px 0px 0 white, 0px 0px 0 white, 0px 0px 0 white, 0 0 0 white')
         $('#topbar h2').css('color', 'white');
         $('#topbar h1').css('display', 'none');
@@ -207,7 +238,7 @@ window.onscroll = function topbarScroll() {
     {
         topbar.css('position', 'absolute');
         topbar.css('background', 'transparent');
-        topbar.css('margin-top', '350px');
+        topbar.css('margin-top', '45vh');
         section.css('display', 'none');
         $('fb').css('text-shadow', 'none')
         $('#topbar h2').css('color', 'white');
