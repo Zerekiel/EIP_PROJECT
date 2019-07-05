@@ -3,9 +3,13 @@
 @import url("static/fonts/Montserrat/fonts/webfonts/Montserrat.css");
 
 body {
-    max-width: 1920px;
+    max-width: 100vw;
     width: 100%;
     margin: auto;
+}
+
+.hidden {
+    display: none;
 }
 
 red {
@@ -49,7 +53,7 @@ fb {
     position: absolute;
     display: flex;
     justify-content: space-around;
-    margin-top: 350px;
+    margin-top: 45vh;
     width: inherit;
     max-width: inherit;
 }
@@ -92,6 +96,7 @@ fb {
 .language img {
     border: 1px solid white;
     border-radius: 15px;
+    cursor: pointer;
 }
 
 header {
@@ -99,7 +104,7 @@ header {
     background-repeat: no-repeat;
     background-size: 100%;
     width: 100%;
-    height: 700px;
+    height: 100vh;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -189,7 +194,7 @@ section {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 500px;
-    height: 500px;
+    min-height: 500px;
     margin: auto;
     background-color: black;
     display: flex;
@@ -207,7 +212,6 @@ section {
 
 .proj-picture_index {
     width: 65%!important;
-    min-width: 823px;
     background-color: black;
 }
 
@@ -245,7 +249,7 @@ section {
 }
 
 i {
-    margin-top: 226px;
+    margin-top: 180%;
 }
 
 i.left {

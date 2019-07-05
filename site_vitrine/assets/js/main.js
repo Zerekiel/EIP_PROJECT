@@ -153,6 +153,9 @@ function init(event) {
 }
 
 window.onload = function(page) {
+    $.get('assets/files/fr.html', function (page) {
+        $('body').html(page);
+    }, "text");
     for (let index = 0; index < team.length; index++) {
         var html = index === 0 
         ? "<a class=\"team-btn team-btn_" + index + " current\"></a>"
@@ -177,8 +180,24 @@ window.onload = function(page) {
         $(event.target).hasClass('more') ? showDesc(e) : $(event.target).hasClass('less') ? hideDesc(e) : exit;
     });
     $('form').submit(function (e) {
-        console.log(e.target);
-    })    
+        e.preventDefault();
+        var surname = $(e.target)[0][0].value;
+        var name = $(e.target)[0][1].value;
+        var subject = $(e.target)[0][2].value;
+        var email = $(e.target)[0][3].value;
+        var body = $(e.target)[0][4].value;
+        // Email.send({
+        //     Host : "smtp.elasticemail.com",
+        //     Username : "thibaut.dimartino@epitech.eu",
+        //     Password : "97ddca02-7044-4617-9e50-10147cc47b2d",
+            // To : 'thibaut.dimartino@epitech.eu',
+            // To : 'healthsafe_2021@labeip.epitech.eu',
+        //     From : 'thibaut.dimartino@epitech.eu',
+        //     Subject : name + ' ' + surname + ', ' + subject,
+        //     Body : "Mon email: " + email + ' ' + body
+        // }).then( message => alert(message));
+        window.location = 'mailto:' + "healthsafe_2021@labeip.epitech.eu" + '?subject=' +  name + ' ' + surname +  ', ' + subject + '&body=' + body;
+    });
 }
 
 window.onscroll = function topbarScroll() {
@@ -192,7 +211,7 @@ window.onscroll = function topbarScroll() {
         topbar.css('margin-top', '0');
         topbar.css('z-index', '1');
         topbar.css('justify-content', 'space-around');
-        section.css('display', 'block');
+        section.css('display', 'block').fadeIn(250);
         $('fb').css('text-shadow', '1px 1px 0 white, 1px -1px 0 white, -1px -1px 0 white, -1px 1px 0 white, 1px 0px 0 white, 1px 0px 0 white, -1px 0px 0 white, -1px 0px 0 white, 0px 1px 0 white, 0px -1px 0 white, 0px -1px 0 white, 0px 1px 0 white, 0px 0px 0 white, 0px 0px 0 white, 0px 0px 0 white, 0px 0px 0 white, 0 0 0 white')
         $('#topbar h2').css('color', 'white');
         $('#topbar h1').css('display', 'none');
@@ -202,7 +221,7 @@ window.onscroll = function topbarScroll() {
     {
         topbar.css('position', 'absolute');
         topbar.css('background', 'transparent');
-        topbar.css('margin-top', '350px');
+        topbar.css('margin-top', '45vh');
         section.css('display', 'none');
         $('fb').css('text-shadow', 'none')
         $('#topbar h2').css('color', 'white');
