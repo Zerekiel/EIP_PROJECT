@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">HealthSafe</string>
+    <string-array name="medical_informations">
+        <item>Id</item>
+        <item>Lastname</item>
+        <item>Firstname</item>
+        <item>Age</item>
+        <item>Gender</item>
+        <item>Emergency_number</item>
+        <item>Allergies</item>
+        <item>Medical_history</item>
+        <item>Blood_type</item>
+        <item>Social_number</item>
+        <item>Treatments</item>
+        <item>Organ_donation</item>
+        <item>Doctor</item>
+    </string-array>
+    <string-array name="explicit_informations">
+        <item>Id</item>
+        <item>LastName</item>
+        <item>FirstName</item>
+        <item>Age</item>
+        <item>Gender</item>
+        <item>Emergency number</item>
+        <item>Allergies</item>
+        <item>Medical history</item>
+        <item>Blood type</item>
+        <item>Social security number</item>
+        <item>Treatments</item>
+        <item>Organ donation</item>
+        <item>Regular doctor name</item>
+    </string-array>
 </resources>

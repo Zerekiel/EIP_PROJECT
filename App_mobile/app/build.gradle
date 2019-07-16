@@ -3,6 +3,7 @@ apply plugin: 'jacoco'
 
 jacoco {
     toolVersion = '0.8.2' //Use latest version
+    reportsDir = file("$buildDir/reports/jacoco")
 }
 
 tasks.withType(Test) {
@@ -21,6 +22,7 @@ task jacocoTestReport(type: JacocoReport) {
         xml.enabled true
         html.enabled true
         csv.enabled true
+        html.destination file("${buildDir}/jacocoHtml")
     }
 }
 
@@ -56,6 +58,7 @@ android {
 
         release {
             minifyEnabled false
+            testCoverageEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -82,20 +85,19 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
     testImplementation 'junit:junit:4.12'
     testImplementation "org.jacoco:org.jacoco.agent:0.8.3"
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    testImplementation 'androidx.test:core:1.0.0'
+    testImplementation 'androidx.test:core:1.2.0'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    api 'com.google.guava:guava:27.0.1-android'
-    testImplementation 'org.mockito:mockito-core:2.8.0'
+    testImplementation 'org.mockito:mockito-core:2.8.9'
     testImplementation 'org.powermock:powermock-api-mockito2:1.7.0RC2'
     testImplementation 'org.powermock:powermock-module-junit4:1.7.0'
     testImplementation 'org.powermock:powermock-core:1.7.0'
     testImplementation 'org.powermock:powermock-module-junit4-rule:1.7.0'
     testImplementation 'org.powermock:powermock-api-mockito:1.6.6'
-    testImplementation 'org.powermock:powermock-module-junit4-rule-agent:1.6.5'
-    testImplementation 'org.powermock:powermock-module-junit4-rule:1.6.5'
+    testImplementation 'org.powermock:powermock-module-junit4-rule:1.7.0'
     testImplementation "org.powermock:powermock-module-junit4:1.7.0RC2"
     testImplementation 'org.robolectric:robolectric:4.2'
 }
