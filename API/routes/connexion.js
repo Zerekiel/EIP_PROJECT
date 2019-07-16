@@ -6,26 +6,25 @@ router.get('/', function(req, res, next) {
   //res.render('index', { title: 'Express' });
   res.json({
   message : "CONNEXION / LOGIN",
-  login : "",//req.body.nom,
-  password : "",//req.body.ville
-  login2 : req.body.login,
-  password2 : req.body.password,
+  login : req.query.login,
+  password : req.query.password,
+  login2 : req.query.login,
+  password2 : req.query.password,
   methode : req.method
   })
+  console.log(req.query.login);
+  console.log(req.query.password);
 })
 
 .post('/', function(req, res, next) {
         res.json({
         message : "CONNEXION / LOGIN",
-        login : req.body.login,
-        password : req.body.password,
+        login : req.query.login,
+        password : req.query.password,
         methode : req.method
         })
+        console.log(req.query.login);
+        console.log(req.query.password);
 });
-
-// console.log(req.header('Content-Type'))
-//     console.log(req.body.username);
-//     console.log(req.body.password);
-//     console.log(req.body.email);
 
 module.exports = router;
