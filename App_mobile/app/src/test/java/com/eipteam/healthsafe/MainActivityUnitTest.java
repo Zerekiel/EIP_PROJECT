@@ -60,7 +60,7 @@ public class MainActivityUnitTest extends TestCase {
         int id = btn.getId();
         assertEquals(R.id.connexion, id);
         }
-        
+
     @Test()
     public void testConnection() {
         Bundle b = new Bundle();
