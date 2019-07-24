@@ -15,30 +15,14 @@ const database_db = process.env.DATABASE_DB;
 const authSource_db = process.env.AUTHSOURCE_DB;
 const url = 'mongodb+srv://' + username_db + ':' + password_db + '@' + hostlist_db + '.mongodb.net/' + database_db + '?authSource=' + authSource_db;
 
-// Use connect method to connect to the Server
 
-// app.use(bodyParser.urlencoded({
-//     extended: true
-// }));
-// app.use(bodyParser.json());
-
-// Connect to Mongoose and set connection variable
+// Connect to Mongoose to MongoDB and set connection variable
 mongoose.connect(url, { useNewUrlParser: true}, function(err, db) {
 	if (err)
 		return console.error('Connection failed', err);
 	console.log('Connection successful on ', url);
 });
-var db = mongoose.connection;
-var isConnect = function(err, db) {
-	console.log("TEST");
 
-	// Added check for DB connection
-	if(!db)
-	    	console.log("Error connecting db")
-	else
-		console.log("Db connected successfully")
-}
- app.use(isConnect);
 // Connect to MongoDB without Mongoose and set connection variable
 // MongoClient.connect(url, { useNewUrlParser: true }, function(err, db) {
 //         if (err)
