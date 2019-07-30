@@ -20,7 +20,7 @@
 
     <ImageView
         android:layout_width="207dp"
-        android:layout_height="221dp" app:srcCompat="@drawable/caducee_logo"
+        android:layout_height="221dp" app:srcCompat="@drawable/logohealthsafe"
         android:id="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
