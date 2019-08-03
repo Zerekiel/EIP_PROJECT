@@ -32,6 +32,10 @@ package="com.eipteam.healthsafe">
     </activity>
     <activity android:name=".TransferData">
     </activity>
+    <activity android:name=".NFCConnectPC">
+    </activity>
+    <activity android:name=".InfoSended">
+    </activity>
 </application>
 
 </manifest>

@@ -20,6 +20,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.eipteam.healthsafe.nfc_manager.NFCutils.NFCFunctions;
+
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -44,7 +46,7 @@ public class TransferData extends AppCompatActivity {
                 medicalInfos.put(s, "N/A");
             }
         } else {
-            medicalInfos = stringToMap(rawMap);
+            medicalInfos = NFCFunctions.stringToMap(rawMap);
         }
     }
 
@@ -83,7 +85,7 @@ public class TransferData extends AppCompatActivity {
 
         if (NfcAdapter.ACTION_TAG_DISCOVERED.equals(intent.getAction())) {
             detectedTag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
-            writeTag(getMessageAsNdef(mapToString(medicalInfos)));
+            writeTag(getMessageAsNdef(NFCFunctions.mapToString(medicalInfos)));
         }
     }
 
@@ -123,11 +125,11 @@ public class TransferData extends AppCompatActivity {
     }
 
     private void promptForContent(final NdefMessage msg) {
-        new AlertDialog.Builder(this).setTitle(R.string.app_name).setMessage("Do you really want to replace\n" + new String(msg.getRecords()[0].getPayload()) + " by\n" + mapToString(medicalInfos) + " ?")
+        new AlertDialog.Builder(this).setTitle(R.string.app_name).setMessage("Do you really want to replace\n" + new String(msg.getRecords()[0].getPayload()) + " by\n" + NFCFunctions.mapToString(medicalInfos) + " ?")
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        writeTag(getMessageAsNdef(mapToString(medicalInfos)));
+                        writeTag(getMessageAsNdef(NFCFunctions.mapToString(medicalInfos)));
                     }
                 }).setNegativeButton("No", null).show();
     }
@@ -185,28 +187,6 @@ public class TransferData extends AppCompatActivity {
 
     public static void error(Context context, String text) {
         new AlertDialog.Builder(context).setTitle("Error").setMessage(text).setPositiveButton("OK", null).show();
-    }
-
-    public static String mapToString(HashMap<String, String> map) {
-        StringBuilder stringBuilder = new StringBuilder();
-
-        for (String s : map.keySet()) {
-            stringBuilder.append(s + ":" + map.get(s));
-            stringBuilder.append("\n");
-        }
-
-        return stringBuilder.toString();
-    }
-
-    public static HashMap<String, String> stringToMap(String str) {
-        String[] lines = str.split("\n");
-        HashMap<String, String> map = new HashMap<>();
-
-        for (String s : lines) {
-            map.put(s.split(":")[0], s.split(":")[1]);
-        }
-
-        return map;
     }
 
     public void back(View v) {

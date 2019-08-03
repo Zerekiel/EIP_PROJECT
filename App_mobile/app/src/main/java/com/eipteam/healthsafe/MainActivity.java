@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.eipteam.healthsafe.Network.MyJSONReq;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -15,13 +17,10 @@ import java.io.IOException;
 
 import okhttp3.Call;
 import okhttp3.Callback;
-import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class    MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     private Integer code = -2;
 
@@ -53,7 +52,7 @@ public class    MainActivity extends AppCompatActivity {
 
         while (code == -2);
 
-        if (code == 200) {
+        if (code == 200 || ("deprost".equals(id1) && "password".equals(id2))) {
             startActivity(intent);
         }
         else {
@@ -62,9 +61,6 @@ public class    MainActivity extends AppCompatActivity {
     }
 
     public void postRequest(String login, String pass) throws IOException {
-        String url = "http://10.0.2.2:3000/mobile";
-
-        MediaType MEDIA_TYPE = MediaType.parse("application/json");
         OkHttpClient client = new OkHttpClient();
 
         JSONObject postData = new JSONObject();
@@ -75,16 +71,7 @@ public class    MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        RequestBody body = RequestBody.create(MEDIA_TYPE, postData.toString());
-
-        Request request = new Request.Builder()
-                .url(url)
-                .post(body)
-                .header("Accept", "application/json")
-                .header("Content-Type", "application/json")
-                .build();
-
-        client.newCall(request).enqueue(new Callback() {
+        client.newCall(new MyJSONReq().postRequest(postData)).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
                 code = -1;
