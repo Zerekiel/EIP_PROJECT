@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
+//var connectionController = require('../DB/controllers/connectionController');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  //res.render('index', { title: 'Express' });
   res.json({
   message : "CONNEXION",
   login : req.query.login,
@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
   res.status(200);
 })
 
-.post('/', function(req, res, next) {
+router.post('/', function(req, res, next) {
         res.json({
         message : "CONNEXION",
         login : req.query.login,

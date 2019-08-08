@@ -7,14 +7,15 @@ var logger = require('morgan');
 var assert = require('assert');
 var dotenv = require('dotenv').config(); // config for load dotenv
 let bodyParser = require('body-parser');
-let mongoose = require('mongoose');
 
 var url = require('url');
 
 
 // Require for DB.
 // var MongoClient = require('mongodb').MongoClient;
-var MongoClient = require('./sources/DB/dbConnection').MongoClient;
+var MongoClient = require('./sources/DB/config/dbCreationAndConnection').MongoClient;
+let mongoose = require('mongoose');
+
 
 // Require for routes.
 // var indexRouter = require('./routes/index');
@@ -54,6 +55,7 @@ app.use(cookieParser());
 
 // For initialize routes
 app.use('/', indexRouter);
+app.use('/signup', indexRouter);
 app.use('/mobile', mobileRouter);
 app.use('/web', webRouter);
 app.use('/connexion', connexionRouter);

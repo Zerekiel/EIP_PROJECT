@@ -27,9 +27,6 @@ app.set('hostname', hostname);
 
 var server;
 server = http.createServer(app);
-server.on('listening',function() {
-        console.log('Server is running');
-});
 server.on('request', function(req, res) {
         var host;
         var baseUrl;
@@ -46,7 +43,9 @@ server.on('request', function(req, res) {
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+server.listen(port, function() {
+        console.log('Server is running on port :', port);
+});
 
 // I d'ont know what's for
 server.on('error', onError);
