@@ -117,7 +117,10 @@ router.get("/", function(req, res, next) {
                         console.log(result);
                 });
                 console.log(result);
+                o_dbCreation.displayAllCollections("FFR2");
         })
+
+        // o_dbCreation.displayAllCollections("FFR2");
         res.end();
 })
 

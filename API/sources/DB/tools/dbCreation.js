@@ -72,6 +72,20 @@ class dbCreation
 			});
 		});
 	}
+
+	displayAllCollections(dbName)
+	{
+		MongoClient.connect(this.m_urlDB, { useNewUrlParser: true }, function(err, db)
+		{
+			var dbo = null;
+			dbo = db.db(dbName);
+			dbo.listCollections().toArray(function(err, collInfos) {
+				console.log("TEST");
+				console.log(collInfos);
+				db.close();
+			});
+		});
+	}
 };
 
 exports.dbCreation = dbCreation;
