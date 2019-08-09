@@ -1,29 +1,29 @@
-var mongoose = require('mongoose');
 var MongoClient = require('mongodb').MongoClient;
-var Url = require('url');
+var urlParser = require('url-parse');
 var url = require('../config/dbCreationAndConnection');
 
-class objDbCRUD {
-	constructor(){};
+class dbCRUD
+{
+	m_resultParseUrl;
+	m_urlDB;
 
-	CreateTest(callback)
+	constructor()
 	{
+		this.m_resultParseUrl =  new urlParser(url, true);
+		this.m_urlDB = null;
+	};
 
-		// var address = url;
-		// var q = Url.parse(address, true);
-		//
-		// console.log(q); //returns 'localhost:8080'
-		// console.log("PathName = " + q.pathname);
-		// q.pathname = "Tesg";
-		// console.log("HREF " + q.href);
-		// var newADR = q.protocole + '//' + q.auth + '@' + q.hostname + '/' + q.pathname + q.search;
-		// console.log("NEW ADDR = " + newADR);
+	// For Read an DB Collection.
+	readCollection(dbName, collectionName, callback)
+	{
+		this.m_resultParseUrl.pathname = dbName;
+		this.m_resultParseUrl.set('pathname', dbName);
+		this.m_urlDB = this.m_resultParseUrl.href;
 
-
-		MongoClient.connect(url, { useNewUrlParser: true }, function(err, db)
+		MongoClient.connect(this.m_urlDB, { useNewUrlParser: true }, function(err, db)
 		{
-			var dbo = db.db("HealthSafe");
-			dbo.collection("userconnections").find({}).toArray(function(err, result) //.findOne({}, function(err, result) {
+			var dbo = db.db(dbName);
+			dbo.collection(collectionName).find({}).toArray(function(err, result) //.findOne({}, function(err, result) {
 			{
 				if (err)
 					throw err;
@@ -32,54 +32,6 @@ class objDbCRUD {
 			});
 		});
 	};
-
-
-	CreateTest2(nameCollection, callback2)
-	{
-	    this.m_nameCollection = nameCollection;
-		MongoClient.connect(url, { useNewUrlParser: true }, function(err, db)
-		{
-			if (err)
-				throw err;
-			var dbo = db.db(process.env.DATABASE_DB);
-			dbo.createCollection(toString(nameCollection), function(err)
-			{
-				if (err)
-					throw err;
-				//console.log("Collection created! Name Collection = " + process.env.DATABASE_DB);
-				db.close();
-				// return callback2(console.log("Collection created! Name Collection = " + process.env.DATABASE_DB));
-				return callback2("Collection created! Name Collection = " + nameCollection);
-			});
-		});
-	};
-
-	CreateTest3()
-	{
-		MongoClient.connect(url, { useNewUrlParser: true }, function(err, db)
-		{
-			var dbo = db.db(process.env.DATABASE_DB);
-			dbo.listCollections().toArray(function(err, collInfos) {
-				console.log("TEST");
-				console.log(collInfos);
-				db.close();
-			});
-		});
-	}
-
-	CreateTest4()
-	{
-		MongoClient.connect(url, { useNewUrlParser: true }, function(err, db)
-		{
-			var dbo = db.db(process.env.DATABASE_DB);
-
-			dbo.admin().listDatabases().then(function(databases){
-				console.log("TESTTTTTT");
-				console.log(databases);
-				console.log("ENDDDDD TESSST");
-			});
-		});
-	};
 };
 
-exports.objDbCRUD = objDbCRUD;
+exports.dbCRUD = dbCRUD;

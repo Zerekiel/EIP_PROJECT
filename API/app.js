@@ -1,32 +1,36 @@
 // All require for the different depencies.
+// require for manage errors
 var createError = require('http-errors');
+
+// require for Express Framework
 var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
+
+var path = require('path'); // ?
+var cookieParser = require('cookie-parser'); // ?
+
+// require for build to mode DEV / DEBBUG
 var logger = require('morgan');
-var assert = require('assert');
-var dotenv = require('dotenv').config(); // config for load dotenv
+
+// var assert = require('assert');
+
+// require create and call .env file
+// .config for load dotenv
+var dotenv = require('dotenv').config();
+
+// require for parse body
 let bodyParser = require('body-parser');
 
+// Require for parse url.
 var url = require('url');
 
-
-// Require for DB.
-// var MongoClient = require('mongodb').MongoClient;
-var MongoClient = require('./sources/DB/config/dbCreationAndConnection').MongoClient;
-let mongoose = require('mongoose');
-
-
 // Require for routes.
-// var indexRouter = require('./routes/index');
-// var mobileRouter = require('./routes/mobile');
-// var webRouter = require('./routes/web');
-// var connexionRouter = require('./routes/connexion');
-
 var indexRouter = require('./sources/routes/index');
 var mobileRouter = require('./sources/routes/mobile');
 var webRouter = require('./sources/routes/web');
 var connexionRouter = require('./sources/routes/connexion');
+var testRouter = require('./sources/routes/test');
+var stockRouter = require('./sources/routes/stock');
+
 
 var app = express();
 
@@ -34,13 +38,14 @@ var app = express();
 app.set('views', path.join(__dirname, 'sources/views'));
 app.set('view engine', 'ejs');
 
+// Load all middlewares
 // Stylesheets engine setup
 app.use(express.static(path.join(__dirname, 'sources/public/stylesheets')));
 
 // for build to mode DEV / DEBBUG
 app.use(logger('dev'));
 
-// I d'ont know for the moment
+// bodyParser setup
 app.use(bodyParser.urlencoded({
    extended: true
 }));
@@ -50,15 +55,17 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// I d'ont know for the moment
+// ?
 app.use(cookieParser());
 
-// For initialize routes
+// For load routes
 app.use('/', indexRouter);
 app.use('/signup', indexRouter);
 app.use('/mobile', mobileRouter);
 app.use('/web', webRouter);
 app.use('/connexion', connexionRouter);
+app.use('/test', testRouter);
+app.use('/stock', stockRouter);
 
 
 // catch 404 and forward to error handler
