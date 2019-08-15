@@ -58,51 +58,12 @@ var url = require('../DB/config/dbCreationAndConnection');
 
 
 
-
-// router.get('/', function(req, res, next) {
-
-        // res.header('Cache-Control', 'no-cache, no-store, must-revalidate')
-        // CreateTest2(function(callback2) {
-        //         console.log("CREATETEST2 : " + callback2);
-        //         res.status(200);
-        // });
-
-        // CreateTest(function (result) {
-        //         //console.log("CREATETEST = " + result);
-        //         res.status(200).send(result);
-        // });
-
-        	// CreateTest(function(result) {
-                //         console.log(result);
-        	// 	CreateTest2(function(callback2) {
-        	// 		console.log(callback2);
-        	// 		console.log(result);
-        	// 		res.status(200).send(result);
-        	// 	})
-                //
-        	// })
-// });
-
-const functionTest = require("../DB/tools/dbCRUD");
-const objDbCRUD = require('../DB/tools/dbCRUD').objDbCRUD;
 const dbCreation = require('../DB/tools/dbCreation').dbCreation;
 
 router.get("/", function(req, res, next) {
-        // var o_objDbCRUD = new objDbCRUD();
-        //
-        // o_objDbCRUD.CreateTest(function(result) {
-        //         console.log(result);
-        //         res.status(200).send(result);
-        // });
-        // o_objDbCRUD.CreateTest2("TESST222222222222".toString(), function (res2) {
-        //         console.log(res2);
-        // });
-        //
-        // o_objDbCRUD.CreateTest3();
-        //
-        // o_objDbCRUD.CreateTest4();
-        //
-        var o_dbCreation = new dbCreation();
+
+        var o_dbCreation;
+        o_dbCreation = new dbCreation();
 
         o_dbCreation.createDB("FFR2".toString(), function(result) {
                 console.log(result);
@@ -120,20 +81,8 @@ router.get("/", function(req, res, next) {
                 o_dbCreation.displayAllCollections("FFR2");
         })
 
-        // o_dbCreation.displayAllCollections("FFR2");
         res.end();
 })
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -1,21 +1,47 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" xlmns="http://www.w3.org/1999/xhtml">
 
   <head>
     <meta charset="utf-8">
-    <script src="/js/authent.js"></script>
     <title>HealthSafe</title>
+    <!-- <script src="./../routes/jsonlog.js"></script> -->
+    <link rel="stylesheet" style="text/css" href="./stylesheets/auth.css">
   </head>
 
   <body>
+    <div class="cont">
+      <div class="main-box">
+        <div class="log">
+          <form class="">
+            <div class="tear"></div>
 
-    <p>HEALTHSAFE</p>
-    <input type="text" name="identifiant" value="id">
-    <p></p>
-    <input type="text" name="password" value="psswd">
-    <p></p>
-    <button type="button" onclick="{check_data()}">Connexion</button>
+            <h2>HealthSafe</h2>
 
+            <i class="fa fa-check fa-user"></i>
+            <input  type="text"
+                    class="user"
+                    name="username"
+                    placeholder="Username"
+                    id="username"
+                    required />
+
+            <i class="fa fa-check fa-pass"></i>
+            <input  type="password"
+                    class="pass"
+                    name="password"
+                    placeholder="Password"
+                    id="psswd"
+                    required />
+
+            <button   type="button"
+                      class="login"
+                      onclick="{check_data()}">
+                      Connexion
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 
 </html>

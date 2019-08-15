@@ -1,15 +1,17 @@
-var mongoose = require('mongoose');
 var MongoClient = require('mongodb').MongoClient;
-var url = require('../config/dbCreationAndConnection');
 var urlParser = require('url-parse');
+var url = require('../config/dbCreationAndConnection');
 
 
 class dbCreation
 {
-	m_resultParseUrl =  new urlParser(url, true);
-	m_urlDB = null;
+	m_resultParseUrl;
+	m_urlDB;
+	
 	constructor()
 	{
+		this.m_resultParseUrl =  new urlParser(url, true);
+		this.m_urlDB = null;
 	};
 
 	// For Create an DataBase you need call (with callback ?) a method for create an collection.
@@ -34,6 +36,7 @@ class dbCreation
 		});
 	};
 
+	// Create an collection in DB
 	createColl(dbName, nameColl, callback)
 	{
 		this.m_resultParseUrl.pathname = dbName;
@@ -57,6 +60,7 @@ class dbCreation
 		});
 	};
 
+	// List all DB existing.
 	displayDatabases(dbName, callback)
 	{
 		MongoClient.connect(this.m_urlDB, { useNewUrlParser: true }, function(err, db)
@@ -73,6 +77,7 @@ class dbCreation
 		});
 	}
 
+	// List all collection existing in the DB.
 	displayAllCollections(dbName)
 	{
 		MongoClient.connect(this.m_urlDB, { useNewUrlParser: true }, function(err, db)
@@ -89,4 +94,3 @@ class dbCreation
 };
 
 exports.dbCreation = dbCreation;
-// exports.urlDB = urlDB;
