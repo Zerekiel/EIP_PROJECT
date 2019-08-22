@@ -2,12 +2,6 @@
 notifications:
   slack: healthsafe:yjWOO4vhSSuvJ4g9ehyYXyxF
 
-branches:
-  - only:
-    - master
-    - develop
-    - /^feature-.*$/
-
 matrix:
   include:
     - language: node_js
