@@ -2,13 +2,23 @@
 notifications:
   slack: healthsafe:yjWOO4vhSSuvJ4g9ehyYXyxF
 
+branches:
+  only:
+  - /^development.*$/
+
+branches:
+  - only:
+    - master
+    - develop
+    - /^feature-.*$/
+
 matrix:
   include:
     - language: node_js
       node_js:
         - 0.12
       script:
-        - cd ./App_web npm test
+        - cd ./App_web && npm test
 
     - language: android
       android:
@@ -37,6 +47,8 @@ matrix:
       script:
         - cd ./App_mobile
         - ./gradlew assembleRelease --stacktrace
+        - ./gradlew testReleaseUnitTest
+        - ./gradlew createReleaseCoverageReport
 
       after_success:
         - bash <(curl -s https://codecov.io/bash)
