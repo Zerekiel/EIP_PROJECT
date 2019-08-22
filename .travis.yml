@@ -3,10 +3,6 @@ notifications:
   slack: healthsafe:yjWOO4vhSSuvJ4g9ehyYXyxF
 
 branches:
-  only:
-  - /^development.*$/
-
-branches:
   - only:
     - master
     - develop
