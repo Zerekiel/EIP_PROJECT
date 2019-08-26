@@ -36,6 +36,7 @@ matrix:
 
       script:
         - cd ./App_mobile
+        - export CODACY_PROJECT_TOKEN=2d3054f2aa44489e8ffd5f52c28a042b
         - ./gradlew assembleRelease --stacktrace
         - ./gradlew testReleaseUnitTest
         - ./gradlew createReleaseCoverageReport
