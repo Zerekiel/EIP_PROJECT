@@ -1,4 +1,4 @@
-var team = [{img:"Thibaut.jpg", current:true, punchline:"Je veux vivre d'amour et de mojitos"},
+var team = [{img:"Thibaut.jpg", current:true, punchline:"Il faut toujours se relever"},
             {img:"Floriane.jpg", current:false, punchline:"La motivation est la clé de la réussite, tout est possible à",punchline1:"qui rêve, ose, travaille et n'abandonne jamais."},
             {img:"Clement.jpg", current:false, punchline:"Clément"},
             {img:"Thomas.jpg", current:false, punchline:"je ne perds jamais. Soit je gagne, Soit j'apprends"},
@@ -76,7 +76,7 @@ function showDesc(event) {
     $.get('assets/files/profile.html', function (prof) {
         $('.profile').html("").append(prof);
     }, "text");
-    $.get('assets/files/' + event.target.classList[1] + '.json', function (data) {            
+    $.get('assets/files/' + team[getIdx(team)].img.split('.')[0] + '.json', function (data) {            
         var infos = JSON.parse(data);
         $('.left-card img').attr('src', infos.img);
         $('.age').append(infos.infos_left.age);
@@ -139,34 +139,37 @@ function hideDesc(event) {
 }
 
 function init(event) {
-<<<<<<< HEAD
-    var current = getIdx(event.target.classList[0].split('-')[0] == "team" ? team : proj);
-    var next = event.target.classList[1];
-    var next_idx = event.target.classList[1].split('_')[1];
-    if ($('.' + next).hasClass('current') == false) {
-        event.target.classList[0].split('-')[0] == "team" ? team[current].current = false : proj[current].current = false;
-        event.target.classList[0].split('-')[0] == "team" ? team[next_idx].current = true : proj[next_idx].current = true;
-        $('.' + event.target.classList[0] + '_' + getIdx(event.target.classList[0].split('-')[0] == "team" ? team : proj)).removeClass('current');
-        team.forEach(element => {
-            console.log(element.current);
-        });
-        proj.forEach(element => {
-            console.log(element.current);
-        });
-        $('.' + event.target.classList[0] + '_' + getIdx(event.target.classList[0].split('-')[0] == "team" ? team : proj)).addClass('current');
-=======
+    // console.log($('#more').hasClass('less'));
     var idx = parseInt($(event.target)[0].classList[1].split('_')[1]);
-    console.log("next: " + idx);
+    // console.log("next: " + idx);
     var current = getIdx($(event.target)[0].classList[0].split('-')[0] == "team" ? team : proj);
-    console.log("current: " + current);
+    // console.log("current: " + current);
     if ($(event.target).hasClass('current') == false) {
+        if ($(event.target).hasClass('team-btn')) {
+            // console.log(team[current].img.split('.')[0]);
+            $('#more').removeClass(team[current].img.split('.')[0]);
+        }
         $('.' + event.target.classList[1].split('_')[0] + '_' + current).removeClass('current');
         $(event.target).addClass('current');
         $(event.target).hasClass('proj-btn') ? proj[current].current = false : team[current].current = false;
         $(event.target).hasClass('proj-btn') ? proj[idx].current = true : team[idx].current = true;
+        if ($(event.target).hasClass('team-btn')) {
+            $('#more').addClass(team[idx].img.split('.')[0])
+            // console.log(team[idx].img.split('.')[0]);
+        }
+        if ($('#more').hasClass('less')) {
+            $('.profile').removeClass('display');
+            console.log(team[current].img.split('.')[0]);
+            $('.team-slide span.less').addClass('more').removeClass(team[current].img.split('.')[0]);
+            $('.team-slide span.more').removeClass('less');//.addClass(team[idx].img.split('.')[0]);
+            $('.more').html("voir plus...");
+        }
         setNext($(event.target).hasClass('proj-btn') ? "proj" : "team", $(event.target).hasClass('proj-btn') ? proj : team);
->>>>>>> 9b6db07f2b4ce68918d5a5f0c0df23c38d249d78
     }
+}
+
+function Continue() {
+    return;
 }
 
 window.onload = function(page) {
@@ -194,7 +197,7 @@ window.onload = function(page) {
         $('.team-slide #more').removeClass().addClass('more').addClass(team[getIdx(team)].img.split('.')[0]).html("voir plus...")
     });
     $('.team-slide span').click(function (e) {
-        $(event.target).hasClass('more') ? showDesc(e) : $(event.target).hasClass('less') ? hideDesc(e) : exit;
+        $(event.target).hasClass('more') ? showDesc(e) : $(event.target).hasClass('less') ? hideDesc(e) : Continue();
     });
     $('form').submit(function (e) {
         e.preventDefault();

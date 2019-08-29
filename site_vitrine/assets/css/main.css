@@ -238,11 +238,7 @@ section {
 
 
 .picture_index a.current {
-<<<<<<< HEAD
     border: 3px solid;
-=======
-    border: 5px solid;
->>>>>>> 9b6db07f2b4ce68918d5a5f0c0df23c38d249d78
     border-color: #ff1c4e;
 }
 
@@ -253,7 +249,7 @@ section {
 }
 
 i {
-    margin-top: 180%;
+    margin-top: 33vh;
 }
 
 i.left {
@@ -283,7 +279,7 @@ i.left {
 }
 
 .profile.display {
-    max-height: 700px;
+    min-height: 700px;
     opacity: 1;
 }
 
