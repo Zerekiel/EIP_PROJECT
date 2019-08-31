@@ -4,7 +4,8 @@
   <head>
     <meta charset="utf-8">
     <title>HealthSafe</title>
-    <!-- <script src="./../routes/jsonlog.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./../javascripts/jsonlog.js"></script>
     <link rel="stylesheet" style="text/css" href="./stylesheets/auth.css">
   </head>
 
@@ -16,6 +17,8 @@
             <div class="tear"></div>
 
             <h2>HealthSafe</h2>
+
+            <ul id="infos"></ul>
 
             <i class="fa fa-check fa-user"></i>
             <input  type="text"
@@ -35,7 +38,7 @@
 
             <button   type="button"
                       class="login"
-                      onclick="{check_data()}">
+                      id="connexion">
                       Connexion
             </button>
           </form>
