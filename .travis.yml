@@ -37,8 +37,7 @@ matrix:
       script:
         - cd ./App_mobile
         - export CODACY_PROJECT_TOKEN=2d3054f2aa44489e8ffd5f52c28a042b
-        - ./gradlew assembleRelease --stacktrace
-        # - ./gradlew testReleaseUnitTest
+        - ./gradlew assembleDebug --stacktrace
         - ./gradlew generateDebugSources
         - ./gradlew compileDebugSources
         - ./gradlew createMockableJar
@@ -75,8 +74,9 @@ matrix:
         - ./gradlew processDebugJavaRes
         - ./gradlew processDebugUnitTestJavaRes
         - ./gradlew compileDebugUnitTestSources
-        # - ./gradlew createReleaseCoverageReport
-        # - ./codacy-coverage-reporter report -l Java -r ./app/build/reports/test/testReleaseUnitTest/jacoco.xml
+        - ./gradlew testDebugUnitTest
+        - ./gradlew createDebugCoverageReport
+        # - ./codacy-coverage-reporter report -l Java -r ./app/build/reports/test/testDebugUnitTest/jacoco.xml
 
       after_success:
         - bash <(curl -s https://codecov.io/bash)
