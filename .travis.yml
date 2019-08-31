@@ -76,7 +76,7 @@ matrix:
         - ./gradlew compileDebugUnitTestSources
         - ./gradlew testDebugUnitTest
         - ./gradlew createDebugCoverageReport
-        # - ./codacy-coverage-reporter report -l Java -r ./app/build/reports/test/testDebugUnitTest/jacoco.xml
+        - ./codacy-coverage-reporter report -l Java -r ./app/build/reports/coverage/debug/report.xml
 
       after_success:
         - bash <(curl -s https://codecov.io/bash)
