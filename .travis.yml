@@ -38,9 +38,45 @@ matrix:
         - cd ./App_mobile
         - export CODACY_PROJECT_TOKEN=2d3054f2aa44489e8ffd5f52c28a042b
         - ./gradlew assembleRelease --stacktrace
-        - ./gradlew testReleaseUnitTest
-        - ./gradlew createReleaseCoverageReport
-        - ./codacy-coverage-reporter report -l Java -r ./app/build/reports/test/testReleaseUnitTest/jacoco.xml
+        # - ./gradlew testReleaseUnitTest
+        - ./gradlew generateDebugSources
+        - ./gradlew compileDebugSources
+        - ./gradlew createMockableJar
+        - ./gradlew compileDebugUnitTestSources
+        - ./gradlew preBuild
+        - ./gradlew preDebugBuild
+        - ./gradlew compileDebugAidl
+        - ./gradlew compileDebugAidl compileDebugRenderscript
+        - ./gradlew checkDebugManifest
+        - ./gradlew generateDebugBuildConfig
+        - ./gradlew prepareLintJar
+        - ./gradlew generateDebugSources
+        - ./gradlew javaPreCompileDebug
+        - ./gradlew mainApkListPersistenceDebug
+        - ./gradlew generateDebugResValues
+        - ./gradlew generateDebugResources
+        - ./gradlew mergeDebugResources
+        - ./gradlew createDebugCompatibleScreenManifests
+        - ./gradlew processDebugManifest
+        - ./gradlew processDebugResources
+        - ./gradlew compileDebugJavaWithJavac
+        - ./gradlew compileDebugSources
+        - ./gradlew createMockableJar
+        - ./gradlew generateDebugUnitTestSources
+        - ./gradlew preDebugUnitTestBuild
+        - ./gradlew javaPreCompileDebugUnitTest
+        - ./gradlew compileDebugUnitTestJavaWithJavac
+        - ./gradlew mergeDebugShaders
+        - ./gradlew compileDebugShaders
+        - ./gradlew generateDebugAssets
+        - ./gradlew mergeDebugAssets
+        - ./gradlew packageDebugUnitTestForUnitTest
+        - ./gradlew generateDebugUnitTestConfig
+        - ./gradlew processDebugJavaRes
+        - ./gradlew processDebugUnitTestJavaRes
+        - ./gradlew compileDebugUnitTestSources
+        # - ./gradlew createReleaseCoverageReport
+        # - ./codacy-coverage-reporter report -l Java -r ./app/build/reports/test/testReleaseUnitTest/jacoco.xml
 
       after_success:
         - bash <(curl -s https://codecov.io/bash)
