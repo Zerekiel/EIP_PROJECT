@@ -1,16 +1,9 @@
-var fs = require('fs');
-//var express = require('express');
+$(function() {
+  var name = $("#username");
+  var password = $("#psswd");
 
-console.log('say hi !');
-
-// function check_data(){
-//   var   name = document.getElementById('username');
-//   var   psswd = document.getElementById('psswd');
-//   var   concac = name+psswd;
-//   var   concacstring = JSON.stringify(concac);
-//
-//   fs.writeFile("log.json", concacstring, function(err, result){
-//     if (err) console.log('error ', err)
-//     else console.log('Is Ok');
-//   });
-// }
+  $("#connexion").on('click', function() {
+    var data = name.val() + "," + password.val();
+    console.log(data);
+  });
+});
