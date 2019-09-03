@@ -63,9 +63,9 @@ app.use('/', indexRouter);
 app.use('/signup', indexRouter);
 app.use('/mobile', mobileRouter);
 app.use('/web', webRouter);
-app.use('/connexion', connexionRouter);
+// app.use('/connexion', connexionRouter);
 app.use('/test', testRouter);
-app.use('/stock', stockRouter);
+// app.use('/stock', stockRouter);
 
 
 // catch 404 and forward to error handler
