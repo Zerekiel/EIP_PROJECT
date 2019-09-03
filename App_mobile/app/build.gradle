@@ -26,14 +26,14 @@ task jacocoTestReport(type: JacocoReport) {
     }
 }
 
-//task jacocoFix(type: Copy) {
-  //  from 'build/reports/jacoco/jacocoTestReport/jacocoTestReport.xml'
-  //  into '.'
-   // rename { String fileName ->
-    //    fileName.replace("jacocoTestReport.xml", "jacoco.xml")
-   // }
-   // filter { line -> line.replaceAll("com/", "webapp/src/main/java/com/") }
-//}
+task jacocoFix(type: Copy) {
+    from 'build/reports/jacoco/jacocoTestReport/jacocoTestReport.xml'
+    into '.'
+    rename { String fileName ->
+        fileName.replace("jacocoTestReport.xml", "jacoco.xml")
+    }
+    filter { line -> line.replaceAll("com/", "webapp/src/main/java/com/") }
+}
 
 android {
 
