@@ -6,13 +6,14 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var authRouter = require('./routes/auth');
+var homeRouter = require('./routes/home');
 //var usersRouter = require('./routes/users');
 
 var   app = express();
-const port = 8080
+const port = 8080;
 
 // view engine setup
-app.engine('html', cons.swig)
+app.engine('html', cons.swig);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 
@@ -23,6 +24,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', authRouter);
+app.use('/home', homeRouter);
 //app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
