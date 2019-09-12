@@ -23,6 +23,13 @@ const connectionSchema = mongoose.Schema({
 		unique : true,
 		required : true,
 		trim : true
+	},
+	password :
+	{
+		type : String,
+		unique : true,
+		required : true,
+		trim : true
 	}
 });
 
