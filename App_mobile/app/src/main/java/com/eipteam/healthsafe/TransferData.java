@@ -20,7 +20,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.eipteam.healthsafe.nfc_manager.NFCutils.NFCFunctions;
+import com.eipteam.healthsafe.nfc_manager.nfc_utils.NfcFunctions;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -46,7 +46,7 @@ public class TransferData extends AppCompatActivity {
                 medicalInfos.put(s, "N/A");
             }
         } else {
-            medicalInfos = NFCFunctions.stringToMap(rawMap);
+            medicalInfos = NfcFunctions.stringToMap(rawMap);
         }
     }
 
@@ -85,7 +85,7 @@ public class TransferData extends AppCompatActivity {
 
         if (NfcAdapter.ACTION_TAG_DISCOVERED.equals(intent.getAction())) {
             detectedTag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
-            writeTag(getMessageAsNdef(NFCFunctions.mapToString(medicalInfos)));
+            writeTag(getMessageAsNdef(NfcFunctions.mapToString(medicalInfos)));
         }
     }
 
@@ -125,11 +125,11 @@ public class TransferData extends AppCompatActivity {
     }
 
     private void promptForContent(final NdefMessage msg) {
-        new AlertDialog.Builder(this).setTitle(R.string.app_name).setMessage("Do you really want to replace\n" + new String(msg.getRecords()[0].getPayload()) + " by\n" + NFCFunctions.mapToString(medicalInfos) + " ?")
+        new AlertDialog.Builder(this).setTitle(R.string.app_name).setMessage("Do you really want to replace\n" + new String(msg.getRecords()[0].getPayload()) + " by\n" + NfcFunctions.mapToString(medicalInfos) + " ?")
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        writeTag(getMessageAsNdef(NFCFunctions.mapToString(medicalInfos)));
+                        writeTag(getMessageAsNdef(NfcFunctions.mapToString(medicalInfos)));
                     }
                 }).setNegativeButton("No", null).show();
     }

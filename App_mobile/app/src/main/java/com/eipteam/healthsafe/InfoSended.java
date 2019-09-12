@@ -5,8 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.eipteam.healthsafe.Network.MyJSONReq;
-import com.eipteam.healthsafe.nfc_manager.NFCutils.NFCFunctions;
+import com.eipteam.healthsafe.network.MyJSONReq;
+import com.eipteam.healthsafe.nfc_manager.nfc_utils.NfcFunctions;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -34,7 +34,7 @@ public class InfoSended extends Activity {
         Intent intent = getIntent();
         String datas = intent.getStringExtra("data");
 
-        map = NFCFunctions.stringToMap(datas);
+        map = NfcFunctions.stringToMap(datas);
 
         JSONObject postData = new JSONObject();
         try {
@@ -56,7 +56,7 @@ public class InfoSended extends Activity {
         while (code == -2);
 
         if (code == 200) {
-
+            id = message;
         }
     }
 
@@ -65,7 +65,7 @@ public class InfoSended extends Activity {
 
         JSONObject postData = new JSONObject();
         try {
-            postData.put("ID", message);
+            postData.put("ID", id);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -81,7 +81,7 @@ public class InfoSended extends Activity {
         while (code == -2);
 
         if (code == 200) {
-            map = NFCFunctions.stringToMap(message);
+            map = NfcFunctions.stringToMap(message);
         }
     }
 
@@ -107,7 +107,7 @@ public class InfoSended extends Activity {
 
         JSONObject postData = new JSONObject();
         try {
-            postData.put("ID", message);
+            postData.put("ID", id);
         } catch (JSONException e) {
             e.printStackTrace();
         }

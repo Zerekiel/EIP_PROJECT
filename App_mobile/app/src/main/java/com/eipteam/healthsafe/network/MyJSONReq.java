@@ -1,4 +1,4 @@
-package com.eipteam.healthsafe.Network;
+package com.eipteam.healthsafe.network;
 
 import org.json.JSONObject;
 

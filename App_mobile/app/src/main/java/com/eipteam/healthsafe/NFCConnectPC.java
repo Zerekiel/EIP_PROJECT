@@ -14,7 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
-import com.eipteam.healthsafe.nfc_manager.NFCutils.NFCFunctions;
+import com.eipteam.healthsafe.nfc_manager.nfc_utils.NfcFunctions;
 
 import java.util.HashMap;
 
@@ -80,7 +80,7 @@ public class NFCConnectPC extends AppCompatActivity {
     @Override
     protected void onNewIntent(Intent intent) {
         if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(intent.getAction())) {
-            NdefMessage[] msgs = NFCFunctions.getNdefMessages(intent);
+            NdefMessage[] msgs = NfcFunctions.getNdefMessages(intent);
 
             displayMsgs(msgs[0].getRecords()[0]);
         }
@@ -89,7 +89,7 @@ public class NFCConnectPC extends AppCompatActivity {
     private void displayMsgs(NdefRecord raw) {
         final String msg = new String(raw.getPayload());
 
-        if (!NFCFunctions.checkData(keys, msg))  {
+        if (!NfcFunctions.checkData(keys, msg))  {
             Intent tmpIntent = new Intent(this, TransferData.class);
 
             tmpIntent.putExtra("Infos", "NULL");

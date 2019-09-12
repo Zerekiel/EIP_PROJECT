@@ -12,7 +12,7 @@ import android.provider.Settings;
 import android.view.View;
 import android.widget.Toast;
 
-import com.eipteam.healthsafe.nfc_manager.NFCutils.NFCFunctions;
+import com.eipteam.healthsafe.nfc_manager.nfc_utils.NfcFunctions;
 
 public class NFCConnect extends Activity {
 
@@ -73,7 +73,7 @@ public class NFCConnect extends Activity {
     @Override
     protected void onNewIntent(Intent intent) {
         if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(intent.getAction())) {
-            NdefMessage[] msgs = NFCFunctions.getNdefMessages(intent);
+            NdefMessage[] msgs = NfcFunctions.getNdefMessages(intent);
 
             displayMsgs(msgs[0].getRecords()[0]);
         }

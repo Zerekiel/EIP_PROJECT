@@ -1,4 +1,4 @@
-package com.eipteam.healthsafe.nfc_manager.NFCutils;
+package com.eipteam.healthsafe.nfc_manager.nfc_utils;
 
 import android.content.Intent;
 import android.nfc.NdefMessage;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class NFCFunctions {
+public class NfcFunctions {
     public static NdefMessage[] getNdefMessages(Intent intent) {
         NdefMessage[] msgs = null;
 

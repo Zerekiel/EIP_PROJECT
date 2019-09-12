@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.eipteam.healthsafe.Network.MyJSONReq;
+import com.eipteam.healthsafe.network.MyJSONReq;
 
 import org.json.JSONException;
 import org.json.JSONObject;
