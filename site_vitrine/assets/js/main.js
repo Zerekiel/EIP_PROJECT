@@ -1,12 +1,13 @@
-var team = [{img:"Floriane.jpg", current:false, punchline:"La motivation est la clé de la réussite, tout est possible à",punchline1:"qui rêve, ose, travaille et n'abandonne jamais."},
+var team = [{img:"Thibaut.jpg", current:true, punchline:"Il faut toujours se relever"},
+            {img:"Floriane.jpg", current:false, punchline:"La motivation est la clé de la réussite, tout est possible à",punchline1:"qui rêve, ose, travaille et n'abandonne jamais."},
             {img:"Clement.jpg", current:false, punchline:"Clément"},
             {img:"Thomas.jpg", current:false, punchline:"je ne perds jamais. Soit je gagne, Soit j'apprends"},
             {img:"Joan.jpg", current:false, punchline:"Joan"},
             {img:"Adil.jpg", current:false, punchline:"Adil"},
-            {img:"group.jpg", current:false, punchline:"La team"},
-            {img:"Thibaut.jpg", current:true, punchline:"Je veux vivre d'amour et de mojitos"}];
+            {img:"group.jpg", current:false, punchline:"La team"}];
 var proj = [{url:"y2mate.com - presentation_projet_healthsafe_GTPTQEN4LO0_1080p.mp4", title:"<red>P</red>résentation projet <red>H</red>ealthSafe", current:true},
-            {url:"y2mate.com - presentation_application_healthsafe_Pnr4CFogvcY_1080p.mp4", title:"<red>P</red>résentation application mobile", current:false}];
+            {url:"y2mate.com - presentation_application_healthsafe_Pnr4CFogvcY_1080p.mp4", title:"<red>P</red>résentation application mobile", current:false},
+            {url:"", title:"<red>P</red>résentation application web", current:false}];
 
 function getIdx(tab) {
     for (let index = 0; index < tab.length; index++) {
@@ -40,9 +41,10 @@ function setNext(location, tab) {
     });
 }
 
-function getNext(tab, action) {
+function getNext(event, tab, action) {
     var idx = getIdx(tab);
 
+    $('.' + event.target.classList[0] + '_' + idx).removeClass('current');
     if (tab.length > 3)
         $('.more').removeClass(tab[idx].img.split('.')[0]);
     if (action == '+') {
@@ -65,15 +67,16 @@ function getNext(tab, action) {
             tab[tab.length - 1].current = true;
         }
     }
-    tab.length == 2 ? proj = tab : team = tab;
-    setNext(tab.length == 2 ? "proj" : "team", tab.length == 2 ? proj : team);
+    tab.length == 3 ? proj = tab : team = tab;
+    $('.' + event.target.classList[0] + '_' + getIdx(tab.length == 3 ? proj : team)).addClass('current');
+    setNext(tab.length == 3 ? "proj" : "team", tab.length == 3 ? proj : team);
 }
 
 function showDesc(event) {
     $.get('assets/files/profile.html', function (prof) {
         $('.profile').html("").append(prof);
     }, "text");
-    $.get('assets/files/' + event.target.classList[1] + '.json', function (data) {            
+    $.get('assets/files/' + team[getIdx(team)].img.split('.')[0] + '.json', function (data) {            
         var infos = JSON.parse(data);
         $('.left-card img').attr('src', infos.img);
         $('.age').append(infos.infos_left.age);
@@ -124,27 +127,97 @@ function showDesc(event) {
         }
         $('.destination').append(infos.infos_right.destination);
     }, "text");
-    $(event.target).addClass('less').removeClass(team[getIdx(team)].img.split('.')[0]).removeClass('more').addClass(team[getIdx(team)].img.split('.')[0]).html("voir moins...");
+    $(event.target).addClass('less').removeClass(team[getIdx(team)].img.split('.')[0])
+                   .removeClass('more').addClass(team[getIdx(team)].img.split('.')[0]).html("voir moins...");
     $('.profile').addClass('display');
 }
 
 function hideDesc(event) {
     $('.profile').removeClass('display');
-    $(event.target).addClass('more').removeClass(team[getIdx(team)].img.split('.')[0]).removeClass('less').addClass(team[getIdx(team)].img.split('.')[0]).html("voir plus...");
+    $(event.target).addClass('more').removeClass(team[getIdx(team)].img.split('.')[0])
+                   .removeClass('less').addClass(team[getIdx(team)].img.split('.')[0]).html("voir plus...");
+}
+
+function init(event) {
+    // console.log($('#more').hasClass('less'));
+    var idx = parseInt($(event.target)[0].classList[1].split('_')[1]);
+    // console.log("next: " + idx);
+    var current = getIdx($(event.target)[0].classList[0].split('-')[0] == "team" ? team : proj);
+    // console.log("current: " + current);
+    if ($(event.target).hasClass('current') == false) {
+        if ($(event.target).hasClass('team-btn')) {
+            // console.log(team[current].img.split('.')[0]);
+            $('#more').removeClass(team[current].img.split('.')[0]);
+        }
+        $('.' + event.target.classList[1].split('_')[0] + '_' + current).removeClass('current');
+        $(event.target).addClass('current');
+        $(event.target).hasClass('proj-btn') ? proj[current].current = false : team[current].current = false;
+        $(event.target).hasClass('proj-btn') ? proj[idx].current = true : team[idx].current = true;
+        if ($(event.target).hasClass('team-btn')) {
+            $('#more').addClass(team[idx].img.split('.')[0])
+            // console.log(team[idx].img.split('.')[0]);
+        }
+        if ($('#more').hasClass('less')) {
+            $('.profile').removeClass('display');
+            console.log(team[current].img.split('.')[0]);
+            $('.team-slide span.less').addClass('more').removeClass(team[current].img.split('.')[0]);
+            $('.team-slide span.more').removeClass('less');//.addClass(team[idx].img.split('.')[0]);
+            $('.more').html("voir plus...");
+        }
+        setNext($(event.target).hasClass('proj-btn') ? "proj" : "team", $(event.target).hasClass('proj-btn') ? proj : team);
+    }
+}
+
+function Continue() {
+    return;
 }
 
 window.onload = function(page) {
+    $.get('assets/files/fr.html', function (page) {
+        $('body').html(page);
+    }, "text");
+    for (let index = 0; index < team.length; index++) {
+        var html = index === 0 
+        ? "<a class=\"team-btn team-btn_" + index + " current\"></a>"
+        : "<a class=\"team-btn team-btn_" + index + "\"></a>";
+        $('.team-picture_index div').append(html);
+    }
+    for (let index = 0; index < proj.length; index++) {
+        var html = index === 0 
+        ? "<a class=\"proj-btn proj-btn_" + index + " current\"></a>"
+        : "<a class=\"proj-btn proj-btn_" + index + "\"></a>";
+        $('.proj-picture_index div').append(html);
+    }
+    $('.picture_index div a').click(function (e) {
+        init(e);
+    })
     $('.switch-btn').click(function (e) {
-        getNext($(e.target).hasClass('proj-btn') ? proj : team, $(e.target).hasClass('left') ? '-' : '+');
+        getNext(e, $(e.target).hasClass('proj-btn') ? proj : team, $(e.target).hasClass('left') ? '-' : '+');
         $('.profile').removeClass('display');
         $('.team-slide #more').removeClass().addClass('more').addClass(team[getIdx(team)].img.split('.')[0]).html("voir plus...")
     });
     $('.team-slide span').click(function (e) {
-        $(event.target).hasClass('more') ? showDesc(e) : $(event.target).hasClass('less') ? hideDesc(e) : exit;
+        $(event.target).hasClass('more') ? showDesc(e) : $(event.target).hasClass('less') ? hideDesc(e) : Continue();
     });
     $('form').submit(function (e) {
-        console.log(e.target);
-    })    
+        e.preventDefault();
+        var surname = $(e.target)[0][0].value;
+        var name = $(e.target)[0][1].value;
+        var subject = $(e.target)[0][2].value;
+        var email = $(e.target)[0][3].value;
+        var body = $(e.target)[0][4].value;
+        // Email.send({
+        //     Host : "smtp.elasticemail.com",
+        //     Username : "thibaut.dimartino@epitech.eu",
+        //     Password : "97ddca02-7044-4617-9e50-10147cc47b2d",
+            // To : 'thibaut.dimartino@epitech.eu',
+            // To : 'healthsafe_2021@labeip.epitech.eu',
+        //     From : 'thibaut.dimartino@epitech.eu',
+        //     Subject : name + ' ' + surname + ', ' + subject,
+        //     Body : "Mon email: " + email + ' ' + body
+        // }).then( message => alert(message));
+        window.location = 'mailto:' + "healthsafe_2021@labeip.epitech.eu" + '?subject=' +  name + ' ' + surname +  ', ' + subject + '&body=' + body;
+    });
 }
 
 window.onscroll = function topbarScroll() {
@@ -158,7 +231,7 @@ window.onscroll = function topbarScroll() {
         topbar.css('margin-top', '0');
         topbar.css('z-index', '1');
         topbar.css('justify-content', 'space-around');
-        section.css('display', 'block');
+        section.css('display', 'block').fadeIn(250);
         $('fb').css('text-shadow', '1px 1px 0 white, 1px -1px 0 white, -1px -1px 0 white, -1px 1px 0 white, 1px 0px 0 white, 1px 0px 0 white, -1px 0px 0 white, -1px 0px 0 white, 0px 1px 0 white, 0px -1px 0 white, 0px -1px 0 white, 0px 1px 0 white, 0px 0px 0 white, 0px 0px 0 white, 0px 0px 0 white, 0px 0px 0 white, 0 0 0 white')
         $('#topbar h2').css('color', 'white');
         $('#topbar h1').css('display', 'none');
@@ -168,7 +241,7 @@ window.onscroll = function topbarScroll() {
     {
         topbar.css('position', 'absolute');
         topbar.css('background', 'transparent');
-        topbar.css('margin-top', '350px');
+        topbar.css('margin-top', '45vh');
         section.css('display', 'none');
         $('fb').css('text-shadow', 'none')
         $('#topbar h2').css('color', 'white');
