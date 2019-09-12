@@ -52,7 +52,8 @@ public class NFCConnect extends Activity {
 
         IntentFilter[] exchangeFilters = new IntentFilter[] { ndefDetected };
 
-        nfcAdapter.enableForegroundDispatch(this, pendingIntent, exchangeFilters, null);
+        if (nfcAdapter != null)
+            nfcAdapter.enableForegroundDispatch(this, pendingIntent, exchangeFilters, null);
     }
 
     private void showWirelessSettings() {
