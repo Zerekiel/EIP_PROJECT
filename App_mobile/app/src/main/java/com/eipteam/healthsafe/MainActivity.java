@@ -71,7 +71,9 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        client.newCall(new MyJSONReq().postRequest(postData)).enqueue(new Callback() {
+        String url = getResources().getString(R.string.connection);
+
+        client.newCall(new MyJSONReq().postRequest(url, postData)).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
                 code = -1;

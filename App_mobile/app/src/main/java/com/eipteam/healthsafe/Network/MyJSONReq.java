@@ -9,9 +9,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 
 public class MyJSONReq {
-    public Request postRequest(JSONObject js) throws IOException {
-        String url = "http://10.0.2.2:3000/mobile";
-
+    public Request postRequest(String url, JSONObject js) throws IOException {
         MediaType MEDIA_TYPE = MediaType.parse("application/json");
 
         RequestBody body = RequestBody.create(MEDIA_TYPE, js.toString());
