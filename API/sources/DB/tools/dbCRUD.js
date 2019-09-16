@@ -32,6 +32,24 @@ class dbCRUD
 			});
 		});
 	};
+
+	deleteInfo(dbName, collectionName, myQuery, callback)
+	{
+		this.m_resultParseUrl.pathname = dbName;
+		this.m_resultParseUrl.set('pathname', dbName);
+		this.m_urlDB = this.m_resultParseUrl.href;
+		MongoClient.connect(this.m_urlDB, { useNewUrlParser: true }, function(err, db) {
+			if (err) throw err;
+			var dbo = db.db(dbName);
+			//var myquery = { userName: "TEST0" };
+			dbo.collection(collectionName).deleteOne(myQuery, function(err, obj) {
+				if (err) throw err;
+			//console.log(obj);
+			console.log("1 document deleted");
+			db.close();
+			});
+		});
+	};
 };
 
 exports.dbCRUD = dbCRUD;

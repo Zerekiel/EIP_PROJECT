@@ -36,9 +36,52 @@ matrix:
 
       script:
         - cd ./App_mobile
-        - ./gradlew assembleRelease --stacktrace
-        - ./gradlew testReleaseUnitTest
-        - ./gradlew createReleaseCoverageReport
+        - export CODACY_PROJECT_TOKEN=2d3054f2aa44489e8ffd5f52c28a042b
+        - ./gradlew assembleDebug --stacktrace
+        - ./gradlew generateDebugSources
+        - ./gradlew compileDebugSources
+        - ./gradlew createMockableJar
+        - ./gradlew compileDebugUnitTestSources
+        - ./gradlew preBuild
+        - ./gradlew preDebugBuild
+        - ./gradlew compileDebugAidl
+        - ./gradlew compileDebugAidl compileDebugRenderscript
+        - ./gradlew checkDebugManifest
+        - ./gradlew generateDebugBuildConfig
+        - ./gradlew prepareLintJar
+        - ./gradlew generateDebugSources
+        - ./gradlew javaPreCompileDebug
+        - ./gradlew mainApkListPersistenceDebug
+        - ./gradlew generateDebugResValues
+        - ./gradlew generateDebugResources
+        - ./gradlew mergeDebugResources
+        - ./gradlew createDebugCompatibleScreenManifests
+        - ./gradlew processDebugManifest
+        - ./gradlew processDebugResources
+        - ./gradlew compileDebugJavaWithJavac
+        - ./gradlew compileDebugSources
+        - ./gradlew createMockableJar
+        - ./gradlew generateDebugUnitTestSources
+        - ./gradlew preDebugUnitTestBuild
+        - ./gradlew javaPreCompileDebugUnitTest
+        - ./gradlew compileDebugUnitTestJavaWithJavac
+        - ./gradlew mergeDebugShaders
+        - ./gradlew compileDebugShaders
+        - ./gradlew generateDebugAssets
+        - ./gradlew mergeDebugAssets
+        - ./gradlew packageDebugUnitTestForUnitTest
+        - ./gradlew generateDebugUnitTestConfig
+        - ./gradlew processDebugJavaRes
+        - ./gradlew processDebugUnitTestJavaRes
+        - ./gradlew compileDebugUnitTestSources
+        - ./gradlew testDebugUnitTest
+        - ./gradlew createDebugCoverageReport
+        - ./codacy-coverage-reporter report -l Java -r ./app/build/reports/coverage/debug/report.xml
 
       after_success:
         - bash <(curl -s https://codecov.io/bash)
+  deploy:
+    skip_cleanup: true
+    provider: heroku
+    api_key:
+      secure: "92116a61-f8e6-42fd-9008-6ff73e839343"
