@@ -3,7 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <title>HealthSafe_acceuil</title>
-    <link rel="stylesheet" style="text/css" href="./stylesheet/home.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js  "></script>
+    <script src="./../javascripts/home_action.js"></script>
+    <link rel="stylesheet" style="text/css" href="./stylesheets/home.css"/>
 </head>
 <body>
     <div class="cont">
@@ -17,10 +19,10 @@
         </div>
           <div style="width: 60%;margin:auto;">
               <div style="width: 100%;display: flex;margin: 100px auto;">
-                  <button class="scan">Scan</button>
-                  <button class="mobile">Accès mobile</button>
+                  <button class="scan" id="scan">Scan</button>
+                  <button class="mobile" id="mobile">Accès mobile</button>
               </div>
-                  <button class="deconnexion">Deconnexion</button>
+                  <button class="deconnexion" id="deconnexion">Deconnexion</button>
            </div>
     </div>
 </body>

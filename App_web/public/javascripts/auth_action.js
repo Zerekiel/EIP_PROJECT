@@ -5,5 +5,6 @@ $(function() {
   $("#connexion").on('click', function() {
     var data = name.val() + "," + password.val();
     console.log(data);
+    $(location).attr('href', '/home');
   });
 });
