@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.eipteam.healthsafe.network.MyJSONReq;
 import com.eipteam.healthsafe.nfc_manager.nfc_utils.NfcFunctions;
@@ -21,6 +22,7 @@ import okhttp3.Response;
 
 public class InfoSended extends Activity {
     private HashMap<String, String> map;
+    private HashMap<String, String> defaultmap;
     private Integer code = -2;
     private String message;
     private String url;
@@ -35,6 +37,7 @@ public class InfoSended extends Activity {
         String datas = intent.getStringExtra("data");
 
         map = NfcFunctions.stringToMap(datas);
+        defaultmap = map;
 
         JSONObject postData = new JSONObject();
         try {
@@ -82,7 +85,33 @@ public class InfoSended extends Activity {
 
         if (code == 200) {
             map = NfcFunctions.stringToMap(message);
+
+            Integer nb = 0;
+
+            for (String key : map.keySet()) {
+                for (String dKey : defaultmap.keySet()) {
+                    if (dKey == key && !map.get(key).equals(defaultmap.get(dKey))) {
+                        nb += 1;
+                    }
+                }
+            }
+
+            if (nb == 0) {
+                Toast.makeText(this, "You have not changed anything.", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+
+            transfertInfos();
+            finish();
         }
+    }
+
+    private void transfertInfos() {
+        Intent intent = new Intent(this, TransferData.class);
+
+        intent.putExtra("Infos", NfcFunctions.mapToString(map));
+
+        startActivity(intent);
     }
 
     public void postRequest(JSONObject postData) throws IOException {
