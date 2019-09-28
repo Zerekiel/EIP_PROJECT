@@ -1,0 +1,55 @@
+{
+    "img":"./assets/img/team-pic/Thomas.jpg",
+    "infos_left":{
+        "age":"22 ans",
+        "hobby":[
+            "Volley-Ball",
+			"Sciences physiques",
+			"Jeux vidéos"
+        ],
+        "countries":[
+            "Angleterre",
+			"Irelande",
+			"Espagne",
+			"Sardaigne",
+			"Grèce",
+			"Allemagne",
+			"Slovénie",
+			"Tunisie"
+        ],
+        "role":"Android developper and NFC Manager"
+    },
+    "infos_right":{
+        "languages":[
+            "c",
+			"c++",
+			"java",
+			"vb.net",
+			"python",
+			"sql"
+        ],
+        "management":[
+            "git",
+			"agile",
+			"trello"
+        ],
+        "softwares":[
+            "visual_studio",
+			"android_studio"
+        ],
+        "dev_arch":[
+            "bdd"
+        ],
+        "social_list":[
+            "linkedin",
+			"facebook",
+			"github"
+        ],
+        "social":{
+            "linkedin":"https://www.linkedin.com/in/thomas-ducret-1843b3126/",
+            "facebook":"https://www.facebook.com/thomas.ducret.16",
+            "github":"https://github.com/KosmosUniverse"
+        },
+        "destination":"<red style=\"padding-left:15px;\">I</red>rlande"
+    }
+}
