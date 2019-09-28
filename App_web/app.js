@@ -5,10 +5,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// routes for the views
 var authRouter = require('./routes/auth');
 var homeRouter = require('./routes/home');
 var infoRouter = require('./routes/info');
 var scanRouter = require('./routes/scan');
+
+// routes for the back
+var authJsonRouter = require('./routes/authJson');
 
 var   app = express();
 const port = 8080;
@@ -28,6 +32,8 @@ app.use('/', authRouter);
 app.use('/home', homeRouter);
 app.use('/info', infoRouter);
 app.use('/scan', scanRouter);
+
+app.use('/authJson', authJsonRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
