@@ -8,14 +8,37 @@ describe('Array', function() {
 });
 
 var request = require("request");
-var base_url = "http://localhost:3000/connection?login=deprost&password=password"
+var assert = require("assert");
+var chai = require('chai'), chaiHttp = require('chai-http');
+chai.use(chaiHttp);
+var expect = chai.expect;
+var app = 'localhost:8080';
 
-describe("Hello World Server", function() {
-  describe("POST /", function() {
-    it("returns status code 200", function() {
-      request.get(base_url, function(error, response, body) {
-         assert.equal(200, response.statusCode);
-      });
+var requester = chai.request(app).keepOpen()
+
+Promise.all([
+  requester.get('/a'),
+  requester.get('/b'),
+])
+.then(() => requester.close())
+
+describe("Sample Unit Testing", function() {
+    describe("Get User Data", function() {
+        it("send identifiants", function(done) {
+            // Send some Form Data
+             chai.request(app).keepOpen()
+            .post('/connection')
+            .send({
+            login: 'deprost',
+            password: 'password',
+            })
+            .end(function (err, res) {
+              expect(err).to.be.null;
+              console.log(res);
+              expect(res).to.have.status(200);
+              done();
+            });
+        });
+
     });
-  });
 });
