@@ -26,7 +26,7 @@ public class InfoSended extends Activity {
     private Integer code = -2;
     private String message;
     private String url;
-    private String id;
+    private String id = "test";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,6 +120,7 @@ public class InfoSended extends Activity {
         client.newCall(new MyJSONReq().postRequest(url, postData)).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
                 code = -1;
             }
 

@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">HealthSafe</string>
-    <string name="connection">http://10.0.2.2:3000/mobile</string>
-    <string name="stock">http://10.0.2.2:3000/stock</string>
-    <string name="back">http://10.0.2.2:3000/back</string>
-    <string name="delete">http://10.0.2.2:3000/delete</string>
+    <string name="connection">http://10.0.2.2:3000/mobile/connection</string>
+    <string name="stock">http://10.0.2.2:3000/mobile/stock</string>
+    <string name="back">http://10.0.2.2:3000/mobile/back</string>
+    <string name="delete">http://10.0.2.2:3000/mobile/delete</string>
     <string-array name="medical_informations">
         <item>Id</item>
         <item>Lastname</item>
