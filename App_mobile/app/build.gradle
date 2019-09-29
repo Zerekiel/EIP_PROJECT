@@ -11,8 +11,8 @@ tasks.withType(Test) {
     jacoco.excludes = ['jdk.internal.*']
 }
 
-task jacocoTestReport(type: JacocoReport) {
-    executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
+task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest', 'createDebugCoverageReport']) {
+   executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
 
     subprojects.each {
         sourceSets it.sourceSets.main
@@ -22,18 +22,18 @@ task jacocoTestReport(type: JacocoReport) {
         xml.enabled true
         html.enabled true
         csv.enabled true
-        html.destination file("$buildDir/jacocoHtml")
+        html.destination file("$buildDir/reports/jacoco")
     }
 }
 
-task jacocoFix(type: Copy) {
+/*task jacocoFix(type: Copy) {
     from 'build/reports/jacoco/jacocoTestReport/jacocoTestReport.xml'
     into '.'
     rename { String fileName ->
         fileName.replace("jacocoTestReport.xml", "jacoco.xml")
     }
     filter { line -> line.replaceAll("com/", "webapp/src/main/java/com/") }
-}
+}*/
 
 android {
 

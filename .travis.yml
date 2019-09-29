@@ -75,7 +75,7 @@ matrix:
         - ./gradlew processDebugUnitTestJavaRes
         - ./gradlew compileDebugUnitTestSources
         - ./gradlew testDebugUnitTest
-        - ./gradlew createDebugCoverageReport
+        - ./gradlew createDebugCoverageReport --continue
         - ./codacy-coverage-reporter report -l Java -r ./app/build/reports/coverage/debug/report.xml
 
       after_success:
