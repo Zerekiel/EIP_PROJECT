@@ -5,14 +5,20 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// routes for the views
 var authRouter = require('./routes/auth');
-//var usersRouter = require('./routes/users');
+var homeRouter = require('./routes/home');
+var infoRouter = require('./routes/info');
+var scanRouter = require('./routes/scan');
+
+// routes for the back
+var authJsonRouter = require('./routes/authJson');
 
 var   app = express();
-const port = 8080
+const port = 8080;
 
 // view engine setup
-app.engine('html', cons.swig)
+app.engine('html', cons.swig);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 
@@ -23,7 +29,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', authRouter);
-//app.use('/users', usersRouter);
+app.use('/home', homeRouter);
+app.use('/info', infoRouter);
+app.use('/scan', scanRouter);
+
+app.use('/authJson', authJsonRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
