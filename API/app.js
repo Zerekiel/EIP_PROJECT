@@ -23,6 +23,9 @@ let bodyParser = require('body-parser');
 // Require for parse url.
 var url = require('url');
 
+require('util').inspect.defaultOptions.depth = null
+
+
 // Require for routes.
 var indexRouter = require('./sources/routes/index');
 var mobileRouter = require('./sources/routes/mobile');
