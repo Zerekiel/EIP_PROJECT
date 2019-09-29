@@ -7,7 +7,7 @@ class dbCreation
 {
 	m_resultParseUrl;
 	m_urlDB;
-	
+
 	constructor()
 	{
 		this.m_resultParseUrl =  new urlParser(url, true);
