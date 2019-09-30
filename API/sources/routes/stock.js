@@ -11,10 +11,12 @@ router.get('/', function(req, res, next) {
         var o_dbCRUD;
 
 	o_dbCRUD = new dbCRUD();
-
+        console.log("TEST : READ COLLECTION");
 	o_dbCRUD.readCollection("HealthSafe", "modelstocks", function(result) {
 		// displaying in console json
 		console.log(result);
+
+                console.log("END TEST : READ COLLECTION");
 
 		res.status(200).send(result).end();
 	});
@@ -41,8 +43,9 @@ router.post('/', function(req, res, next) {
                 }).save(function(err, result){
                         //if (err)
                         //         res.status(400).send(err);
-                        console.log("TEST");
+                        console.log("TEST : ADD FOR INFORMATIONS");
                         console.log(result);
+                        console.log("END TEST : ADD FOR INFORMATIONS");
 
                         res.status(200).send(result._id).end();
                 });

@@ -65,12 +65,17 @@ router.get("/", function(req, res, next) {
         var o_dbCreation;
         o_dbCreation = new dbCreation();
 
+
         o_dbCreation.createDB("HealthSafe".toString(), function(result) {
+                console.log("TEST : Create BDD");
                 console.log(result);
+                console.log("END TEST : CREATE DB");
+
         });
 
-
         o_dbCreation.displayDatabases("HealthSafe".toString(), function(result) {
+                console.log("TEST : CREATE COLLECTION");
+
                 o_dbCreation.createColl("HealthSafe".toString(), "modelstock", function(result) {
                         o_dbCreation.createDB("HealthSafe".toString(), function(result) {
                                 console.log(result);
@@ -79,9 +84,11 @@ router.get("/", function(req, res, next) {
                 });
                 console.log(result);
                 o_dbCreation.displayAllCollections("HealthSafe");
+                console.log("END TEST : CREATE COLLECTION");
         })
 
         res.end();
+        //res.status(200).end();
 })
 
 
