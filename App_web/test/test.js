@@ -12,7 +12,7 @@ var assert = require("assert");
 var chai = require('chai'), chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 var expect = chai.expect;
-var app = 'localhost:8080';
+var app = 'localhost:3000';
 
 var requester = chai.request(app).keepOpen()
 
@@ -22,20 +22,20 @@ Promise.all([
 ])
 .then(() => requester.close())
 
-describe("Sample Unit Testing", function() {
-    describe("Get User Data", function() {
-        it("send identifiants", function(done) {
+describe("Test wrong route", function() {
+    describe("Should return status 404", function() {
+        it("", function(done) {
             // Send some Form Data
              chai.request(app).keepOpen()
             .post('/connection')
             .send({
-            login: 'deprost',
-            password: 'password',
+              login: 'abc',
+              password: 'abc',
             })
             .end(function (err, res) {
               expect(err).to.be.null;
-              console.log(res);
-              expect(res).to.have.status(200);
+              // console.log(res);
+              expect(res).to.have.status(404);
               done();
             });
         });
