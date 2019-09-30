@@ -30,7 +30,7 @@ require('util').inspect.defaultOptions.depth = null
 var indexRouter = require('./sources/routes/index');
 var mobileRouter = require('./sources/routes/mobile');
 var webRouter = require('./sources/routes/web');
-var connexionRouter = require('./sources/routes/connexion');
+// var connexionRouter = require('./sources/routes/connexion');
 var connectionRouter = require('./sources/routes/connexion');
 var testRouter = require('./sources/routes/test');
 var stockRouter = require('./sources/routes/stock');
@@ -70,7 +70,7 @@ app.use('/web', webRouter);
 // app.use('/connexion', connexionRouter);
 app.use('/api/connection', connectionRouter);
 app.use('/test', testRouter);
-// app.use('/stock', stockRouter);
+app.use('/api/stock', stockRouter);
 
 
 // catch 404 and forward to error handler
