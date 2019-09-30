@@ -8,6 +8,8 @@ matrix:
       node_js:
         - 0.12
       script:
+        - cd API && npm start
+        - cd -
         - cd ./App_web && npm test
 
     - language: android
