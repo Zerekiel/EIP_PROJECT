@@ -27,7 +27,7 @@ describe("Test wrong route", function() {
         it("", function(done) {
             // Send some Form Data
              chai.request(app).keepOpen()
-            .post('/connection')
+            .post('/wrongpath')
             .send({
               login: 'abc',
               password: 'abc',
