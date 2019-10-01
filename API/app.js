@@ -23,11 +23,15 @@ let bodyParser = require('body-parser');
 // Require for parse url.
 var url = require('url');
 
+require('util').inspect.defaultOptions.depth = null
+
+
 // Require for routes.
 var indexRouter = require('./sources/routes/index');
 var mobileRouter = require('./sources/routes/mobile');
 var webRouter = require('./sources/routes/web');
-var connexionRouter = require('./sources/routes/connexion');
+// var connexionRouter = require('./sources/routes/connexion');
+var connectionRouter = require('./sources/routes/connexion');
 var testRouter = require('./sources/routes/test');
 var stockRouter = require('./sources/routes/stock');
 
@@ -64,12 +68,23 @@ app.use('/signup', indexRouter);
 app.use('/mobile', mobileRouter);
 app.use('/web', webRouter);
 // app.use('/connexion', connexionRouter);
+app.use('/api/connection', connectionRouter);
 app.use('/test', testRouter);
-// app.use('/stock', stockRouter);
+app.use('/api/stock', stockRouter);
 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
+        res.setHeader('Access-Control-Allow-Origin', '*');
+
+// Request methods you wish to allow
+res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+// Request headers you wish to allow
+res.setHeader('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers,X-Access-Token,XKey,Authorization');
+
+//  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
   next(createError(404));
 });
 

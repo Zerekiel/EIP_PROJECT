@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var userConnection = require('../DB/models/modelConnection');
-var mongoose = require('mongoose');
-var MongoClient = require('mongodb').MongoClient;
-var CreateTest = require('../DB/tools/dbCRUD');
-var CreateTest2 = require('../DB/tools/dbCRUD').CreateTest2;
-var Test = require('../DB/tools/dbCRUD').CreateTest;
-var Test2 = require('../DB/tools/dbCRUD').CreateTest2;
+// var mongoose = require('mongoose');
+// var MongoClient = require('mongodb').MongoClient;
+// var CreateTest = require('../DB/tools/dbCRUD');
+// var CreateTest2 = require('../DB/tools/dbCRUD').CreateTest2;
+// var Test = require('../DB/tools/dbCRUD').CreateTest;
+// var Test2 = require('../DB/tools/dbCRUD').CreateTest2;
 // var manage = require('../DB/tools/dbCRUD').manage;
 var obj = require('../DB/tools/dbCRUD');
 var url = require('../DB/config/dbCreationAndConnection');
@@ -65,23 +65,30 @@ router.get("/", function(req, res, next) {
         var o_dbCreation;
         o_dbCreation = new dbCreation();
 
-        o_dbCreation.createDB("FFR2".toString(), function(result) {
+
+        o_dbCreation.createDB("HealthSafe".toString(), function(result) {
+                console.log("TEST : Create BDD");
                 console.log(result);
+                console.log("END TEST : CREATE DB");
+
         });
 
+        o_dbCreation.displayDatabases("HealthSafe".toString(), function(result) {
+                console.log("TEST : CREATE COLLECTION");
 
-        o_dbCreation.displayDatabases("FFR2".toString(), function(result) {
-                o_dbCreation.createColl("FFR2".toString(), "TESTCOOLLLL", function(result) {
-                        o_dbCreation.createDB("FFR2".toString(), function(result) {
+                o_dbCreation.createColl("HealthSafe".toString(), "modelstock", function(result) {
+                        o_dbCreation.createDB("HealthSafe".toString(), function(result) {
                                 console.log(result);
                         });
                         console.log(result);
                 });
                 console.log(result);
-                o_dbCreation.displayAllCollections("FFR2");
+                o_dbCreation.displayAllCollections("HealthSafe");
+                console.log("END TEST : CREATE COLLECTION");
         })
 
         res.end();
+        //res.status(200).end();
 })
 
 
