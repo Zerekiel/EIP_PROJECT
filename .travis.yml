@@ -7,8 +7,6 @@ matrix:
     - language: node_js
       node_js:
         - 0.12
-      before_script:
-        - npm i mocha
       script:
         - cd API && npm start
         - cd ..
