@@ -14,6 +14,7 @@ matrix:
 
     - language: android
       android:
+        update_sdk: true
         components:
           - tools
           - build-tools-24.0.1
@@ -35,47 +36,52 @@ matrix:
 
       before_script:
         - chmod +x ./App_mobile/gradlew
+        - echo no | android create avd --force -n test -t android-24 --abi armeabi-v7a
+        - emulator -avd test -no-skin -no-audio -no-window &
+        - android-wait-for-emulator
+        - adb shell input keyevent 82 &
 
       script:
         - cd ./App_mobile
         - export CODACY_PROJECT_TOKEN=2d3054f2aa44489e8ffd5f52c28a042b
-        - ./gradlew assembleDebug --stacktrace
-        - ./gradlew generateDebugSources
-        - ./gradlew compileDebugSources
-        - ./gradlew createMockableJar
-        - ./gradlew compileDebugUnitTestSources
-        - ./gradlew preBuild
-        - ./gradlew preDebugBuild
-        - ./gradlew compileDebugAidl
-        - ./gradlew compileDebugAidl compileDebugRenderscript
-        - ./gradlew checkDebugManifest
-        - ./gradlew generateDebugBuildConfig
-        - ./gradlew prepareLintJar
-        - ./gradlew generateDebugSources
-        - ./gradlew javaPreCompileDebug
-        - ./gradlew mainApkListPersistenceDebug
-        - ./gradlew generateDebugResValues
-        - ./gradlew generateDebugResources
-        - ./gradlew mergeDebugResources
-        - ./gradlew createDebugCompatibleScreenManifests
-        - ./gradlew processDebugManifest
-        - ./gradlew processDebugResources
-        - ./gradlew compileDebugJavaWithJavac
-        - ./gradlew compileDebugSources
-        - ./gradlew createMockableJar
-        - ./gradlew generateDebugUnitTestSources
-        - ./gradlew preDebugUnitTestBuild
-        - ./gradlew javaPreCompileDebugUnitTest
-        - ./gradlew compileDebugUnitTestJavaWithJavac
-        - ./gradlew mergeDebugShaders
-        - ./gradlew compileDebugShaders
-        - ./gradlew generateDebugAssets
-        - ./gradlew mergeDebugAssets
-        - ./gradlew packageDebugUnitTestForUnitTest
-        - ./gradlew generateDebugUnitTestConfig
-        - ./gradlew processDebugJavaRes
-        - ./gradlew processDebugUnitTestJavaRes
-        - ./gradlew compileDebugUnitTestSources
+        - - "./gradlew clean build connectedCheck -PdisablePreDex --stacktrace"
+        # - ./gradlew assembleDebug --stacktrace
+        # - ./gradlew generateDebugSources
+        # - ./gradlew compileDebugSources
+        # - ./gradlew createMockableJar
+        # - ./gradlew compileDebugUnitTestSources
+        # - ./gradlew preBuild
+        # - ./gradlew preDebugBuild
+        # - ./gradlew compileDebugAidl
+        # - ./gradlew compileDebugAidl compileDebugRenderscript
+        # - ./gradlew checkDebugManifest
+        # - ./gradlew generateDebugBuildConfig
+        # - ./gradlew prepareLintJar
+        # - ./gradlew generateDebugSources
+        # - ./gradlew javaPreCompileDebug
+        # - ./gradlew mainApkListPersistenceDebug
+        # - ./gradlew generateDebugResValues
+        # - ./gradlew generateDebugResources
+        # - ./gradlew mergeDebugResources
+        # - ./gradlew createDebugCompatibleScreenManifests
+        # - ./gradlew processDebugManifest
+        # - ./gradlew processDebugResources
+        # - ./gradlew compileDebugJavaWithJavac
+        # - ./gradlew compileDebugSources
+        # - ./gradlew createMockableJar
+        # - ./gradlew generateDebugUnitTestSources
+        # - ./gradlew preDebugUnitTestBuild
+        # - ./gradlew javaPreCompileDebugUnitTest
+        # - ./gradlew compileDebugUnitTestJavaWithJavac
+        # - ./gradlew mergeDebugShaders
+        # - ./gradlew compileDebugShaders
+        # - ./gradlew generateDebugAssets
+        # - ./gradlew mergeDebugAssets
+        # - ./gradlew packageDebugUnitTestForUnitTest
+        # - ./gradlew generateDebugUnitTestConfig
+        # - ./gradlew processDebugJavaRes
+        # - ./gradlew processDebugUnitTestJavaRes
+        # - ./gradlew compileDebugUnitTestSources
         - ./gradlew testDebugUnitTest
         - ./gradlew createDebugCoverageReport --continue
         - ./codacy-coverage-reporter report -l Java -r ./app/build/reports/coverage/debug/report.xml
