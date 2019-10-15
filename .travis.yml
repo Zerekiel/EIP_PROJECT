@@ -27,6 +27,15 @@ matrix:
         licenses:
           - '.+'
 
+        before_cache:
+          - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+          - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+        cache:
+          directories:
+            - $HOME/.gradle/caches/
+            - $HOME/.gradle/wrapper/
+            - $HOME/.android/build-cache
+
       sudo: required
 
       jdk:
@@ -44,7 +53,13 @@ matrix:
       script:
         - cd ./App_mobile
         - export CODACY_PROJECT_TOKEN=2d3054f2aa44489e8ffd5f52c28a042b
-        - - "./gradlew clean build connectedCheck -PdisablePreDex --stacktrace"
+        - ./gradlew clean build connectedCheck -PdisablePreDex --stacktrace
+        - echo "Travis branch is $TRAVIS_BRANCH"    #Print out which branch it is.
+        - echo "Travis branch is in pull request $TRAVIS_PULL+REQUEST"    #Print out pull request number.
+        - android-wait-for-emulator             #Run wait for the emulator script.
+        - adb devices                           #Display list of devices
+        - adb shell input keyevent 82 &
+        - ./gradlew connectedAndroidTest -PdisablePreDex --stacktrace
         # - ./gradlew assembleDebug --stacktrace
         # - ./gradlew generateDebugSources
         # - ./gradlew compileDebugSources
@@ -86,14 +101,21 @@ matrix:
         - ./gradlew createDebugCoverageReport --continue
         - ./codacy-coverage-reporter report -l Java -r ./app/build/reports/coverage/debug/report.xml
 
+      before_install:
+        - pip install --user codecov
       after_success:
+        - codecov
         - bash <(curl -s https://codecov.io/bash)
+      after_failure: "cat $TRAVIS_BUILD_DIR/app/build/outputs/lint-results-debug.xml"
+
   deploy:
     skip_cleanup: true
     provider: heroku
     api_key:
       secure: "92116a61-f8e6-42fd-9008-6ff73e839343"
 
+global:   #Optional
+    - ADB_INSTALL_TIMEOUT=10    #Time out to 10 mins
 #addons:
   #artifacts:
   #  paths:
