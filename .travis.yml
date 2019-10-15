@@ -100,6 +100,7 @@ matrix:
         - ./gradlew testDebugUnitTest
         - ./gradlew createDebugCoverageReport --continue
         - ./codacy-coverage-reporter report -l Java -r ./app/build/reports/coverage/debug/report.xml
+        - bash gradlew test jacocoTestReport
 
       before_install:
         - pip install --user codecov
