@@ -1,3 +1,0 @@
-Pour changer le Path de la DB
-mongod --dbpath ~/WorkSpace/EPITECH/EIP/EIP_PROJECT/API/
-
