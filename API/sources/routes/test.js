@@ -37,14 +37,18 @@ router.post('/test', async function(req, res) {
                 return res.json({ userName: req.body.userName, password: req.body.password });
 });
 
+
 router.delete('/test/:id', async function(req, res) {
 	o_dbCRUD = new dbCRUD();
 
 	var id = req.params.id;
 	var myQuery = { _id: new mongo.ObjectId(id) };
+	console.log("TEST : DELETE BY ID");
 
 	o_dbCRUD.deleteInfo("HealthSafe", "userconnections", myQuery, function(req, res) {
 		// Todo
+		console.log("END TEST : DELETE BY ID");
+
 	});
 
 	res.status(200).send(id);
@@ -67,7 +71,11 @@ router.put('/test/:id', async function(req, res) {
 		}
 		else
 		{
+			console.log("TEST : UPDATE BY ID");
+
 			console.log(result.value);
+			console.log("END TEST : UPDATE BY ID");
+
 			res.status(200).send(result.value);
 		}
 
