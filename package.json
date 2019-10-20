@@ -6,7 +6,7 @@
     "node": "12.10.x"
   },
   "scripts": {
-    "start": "npm start --prefix API/"
+    "start": "node ./API/bin/www"
   },
   "dependencies": {
     "assert": "^2.0.0",
