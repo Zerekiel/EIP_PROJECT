@@ -4,8 +4,11 @@ var url = require('../config/dbCreationAndConnection');
 
 class dbCRUD
 {
-	m_resultParseUrl;
-	m_urlDB;
+	// m_resultParseUrl;
+	// m_urlDB;
+
+	m_resultParseUrl
+	m_urlDB
 
 	constructor()
 	{
