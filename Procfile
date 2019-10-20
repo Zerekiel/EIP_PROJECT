@@ -1,1 +1,1 @@
-web: npm start --prefix ./API/
+worker: npm start --prefix ./API/
