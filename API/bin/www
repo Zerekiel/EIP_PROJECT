@@ -14,7 +14,7 @@ var url = require('url');
  */
 
 var port;
-port = normalizePort(process.env.PORT_SERVER || '8080');
+port = normalizePort(process.env.PORT_SERVER || '3000');
 app.set('port', port);
 
 var hostname;
