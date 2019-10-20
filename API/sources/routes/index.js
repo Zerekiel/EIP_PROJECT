@@ -86,8 +86,7 @@ router.get("/", function(req, res, next) {
                 o_dbCreation.displayAllCollections("HealthSafe");
                 console.log("END TEST : CREATE COLLECTION");
         })
-
-        res.end();
+        res.send("TEST").end();
         //res.status(200).end();
 })
 
