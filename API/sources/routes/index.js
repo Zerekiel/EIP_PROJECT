@@ -10,6 +10,8 @@ var userConnection = require('../DB/models/modelConnection');
 // var manage = require('../DB/tools/dbCRUD').manage;
 var obj = require('../DB/tools/dbCRUD');
 var url = require('../DB/config/dbCreationAndConnection');
+const swaggerJSDoc = require('swagger-jsdoc');
+
 // var userPostConnectionSchema = require('../DB/models/post.modelConnection')
 
 /* GET home page. */
@@ -60,7 +62,37 @@ var url = require('../DB/config/dbCreationAndConnection');
 
 const dbCreation = require('../DB/tools/dbCreation').dbCreation;
 
+/**
+ * @swagger
+ * /list:
+ *   get:
+ *     summary: List all the animals
+ *     description: Returns a list of all the animals, optionally sorted
+ *     tags:
+ *       - animals
+ *     parameters:
+ *       - in: query
+ *         name: sort
+ *         type: string
+ *         required: false
+ *         enum:
+ *           - yes
+ *           - no
+ *     responses:
+ *       200:
+ *         description: List of animals
+ *         schema:
+ *           type: object
+ *           properties:
+ *             animals:
+ *               type: array
+ *               description: all the animals
+ *               items:
+ *                 type: string
+ */
+
 router.get("/", function(req, res, next) {
+
 // HealthSafe
         var o_dbCreation;
         o_dbCreation = new dbCreation();
@@ -87,6 +119,7 @@ router.get("/", function(req, res, next) {
                 console.log("END TEST : CREATE COLLECTION");
         })
         res.render('index', {title : "TEST"});
+        // res.sendFile('/home/paradis/WorkSpace/EPITECH/EIP/EIP_PROJECT/API/doc/index.html');
         //res.status(200).end();
 })
 

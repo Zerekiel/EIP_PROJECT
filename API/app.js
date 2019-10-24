@@ -23,8 +23,10 @@ let bodyParser = require('body-parser');
 // Require for parse url.
 var url = require('url');
 
-require('util').inspect.defaultOptions.depth = null
 
+
+
+require('util').inspect.defaultOptions.depth = null
 
 // Require for routes.
 var indexRouter = require('./sources/routes/index');
@@ -34,9 +36,13 @@ var webRouter = require('./sources/routes/web');
 var connectionRouter = require('./sources/routes/connexion');
 var testRouter = require('./sources/routes/test');
 var stockRouter = require('./sources/routes/stock');
+var documentationRouter = require('./sources/routes/documentation');
+var swaggerRouter = require('./sources/Documentation/configDoc');
+
 
 
 var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'sources/views'));
@@ -71,6 +77,37 @@ app.use('/web', webRouter);
 app.use('/api/connection', connectionRouter);
 app.use('/test', testRouter);
 app.use('/api/stock', stockRouter);
+
+app.use('/docs', documentationRouter);
+app.use('/swagger.json', swaggerRouter);
+
+
+/**
+ * @swagger
+ *
+ * /login:
+ *   post:
+ *     description: Login to the application
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: username
+ *         description: Username to use for login.
+ *         in: formData
+ *         required: true
+ *         type: string
+ *       - name: password
+ *         description: User's password.
+ *         in: formData
+ *         required: true
+ *         type: string
+ *     responses:
+ *       200:
+ *         description: login
+ */
+app.get('/t', function(req, res) {
+        res.send("TEST");
+})
 
 
 // catch 404 and forward to error handler
