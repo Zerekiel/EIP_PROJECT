@@ -5,9 +5,10 @@ var router = express.Router();
 
 /* POST method to get data from front */
 router.post('/authJson', function(req, res, next) {
-  //console.log(req.body.username);
-  //console.log(req.body.password);
-  res.end();
+    //console.log(req.body.username);
+    console.log("get Pinged");
+    //console.log(req.body.password);
+    res.end();
 });
 
 module.exports = router;
