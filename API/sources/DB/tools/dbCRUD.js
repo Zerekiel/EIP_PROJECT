@@ -4,8 +4,13 @@ var url = require('../config/dbCreationAndConnection');
 
 class dbCRUD
 {
+<<<<<<< Updated upstream
 	m_resultParseUrl
 	m_urlDB
+=======
+	m_resultParseUrl;
+	m_urlDB;
+>>>>>>> Stashed changes
 
 	constructor()
 	{
@@ -33,7 +38,10 @@ class dbCRUD
 		});
 	};
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 	deleteInfo(dbName, collectionName, myQuery, callback)
 	{
 		this.m_resultParseUrl.pathname = dbName;
@@ -52,6 +60,7 @@ class dbCRUD
 		});
 	};
 
+<<<<<<< Updated upstream
 	updateOneInfo(dbName, collectionName, myQuery, dataToChange, callback)
 	{
 		this.m_resultParseUrl.pathname = dbName;
@@ -78,4 +87,56 @@ class dbCRUD
 	}
 };
 
+=======
+	/*
+    ** To Delete a DB Collection
+    ** dbo.id => ID in database
+    */
+
+    // deleteCollection(dbName, collectionName, callback)
+    // {
+    //     this.m_resultParseUrl.pathname = dbName;
+		// this.m_resultParseUrl.set('pathname', dbName);
+		// this.m_urlDB = this.m_resultParseUrl.href;
+    //
+		// MongoClient.connect(this.m_urlDB, { useNewUrlParser : true }, function(err, db)
+    //     {
+    //         var dbo = db.db(dbName);
+    //         console.log(dbo.id);
+    //         dbo.collection(collectionName).deleteData(dbo.id, 1, function(err, result)
+    //             {
+    //                 if (err)
+    //                     throw err;
+    //                 db.close();
+    //             });
+    //
+    //     });
+    // };
+
+    /*
+    ** To Update a DB Collection
+    */
+
+    updateCollection(dbName, collectionName, myQuery, newValues,callback)
+    {
+        this.m_resultParseUrl.pathname = dbName;
+		this.m_resultParseUrl.set('pathname', dbName);
+		this.m_urlDB = this.m_resultParseUrl.href;
+
+		//var newValues = { $set: {name: "Mickey", address: "Canyon 123" } };
+
+        MongoClient.connect(this.m_urlDB, { userNewUrlParser: true }, function(err, db)
+        {
+            var dbo = db.db(dbName);
+            dbo.collection(collectionName).updateOne(myQuery, newValues, function(err, result) {
+                if (err)
+                    throw err;
+                db.close();
+            });
+        });
+    };
+};
+
+
+>>>>>>> Stashed changes
 exports.dbCRUD = dbCRUD;

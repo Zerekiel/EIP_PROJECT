@@ -1,0 +1,1275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0832a14d-2efc-438b-ad67-e985569c345b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/lib/binding/Release/node-v64-darwin-x64/fse.node" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/EIP_PROJECT.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/body-parser/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/bytes/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/dotenv/CHANGELOG.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/dotenv/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/dotenv/lib/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/dotenv/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/.travis.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/ISSUE_TEMPLATE.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/Readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/binding.gyp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/fsevents.cc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/fsevents.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/install.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/.bin/detect-libc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/.bin/mkdirp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/.bin/needle" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/.bin/node-pre-gyp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/.bin/nopt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/.bin/rc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/.bin/rimraf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/.bin/semver" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/abbrev/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/abbrev/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/abbrev/abbrev.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/abbrev/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/ansi-regex/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/ansi-regex/license" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/ansi-regex/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/ansi-regex/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/aproba/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/aproba/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/aproba/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/aproba/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/are-we-there-yet/CHANGES.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/are-we-there-yet/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/are-we-there-yet/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/are-we-there-yet/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/are-we-there-yet/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/are-we-there-yet/tracker-base.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/are-we-there-yet/tracker-group.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/are-we-there-yet/tracker-stream.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/are-we-there-yet/tracker.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/balanced-match/.npmignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/balanced-match/LICENSE.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/balanced-match/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/balanced-match/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/balanced-match/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/brace-expansion/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/brace-expansion/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/brace-expansion/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/brace-expansion/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/chownr/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/chownr/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/chownr/chownr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/chownr/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/code-point-at/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/code-point-at/license" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/code-point-at/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/code-point-at/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/concat-map/.travis.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/concat-map/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/concat-map/README.markdown" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/concat-map/example/map.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/concat-map/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/concat-map/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/concat-map/test/map.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/console-control-strings/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/console-control-strings/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/console-control-strings/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/console-control-strings/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/core-util-is/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/core-util-is/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/core-util-is/float.patch" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/core-util-is/lib/util.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/core-util-is/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/core-util-is/test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/debug/CHANGELOG.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/debug/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/debug/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/debug/dist/debug.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/debug/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/debug/src/browser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/debug/src/common.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/debug/src/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/debug/src/node.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/deep-extend/CHANGELOG.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/deep-extend/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/deep-extend/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/deep-extend/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/deep-extend/lib/deep-extend.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/deep-extend/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/delegates/.npmignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/delegates/History.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/delegates/License" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/delegates/Makefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/delegates/Readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/delegates/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/delegates/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/delegates/test/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/detect-libc/.npmignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/detect-libc/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/detect-libc/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/detect-libc/bin/detect-libc.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/detect-libc/lib/detect-libc.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/detect-libc/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/fs-minipass/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/fs-minipass/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/fs-minipass/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/fs-minipass/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/fs.realpath/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/fs.realpath/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/fs.realpath/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/fs.realpath/old.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/fs.realpath/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/gauge/CHANGELOG.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/gauge/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/gauge/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/gauge/base-theme.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/gauge/error.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/gauge/has-color.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/gauge/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/gauge/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/gauge/plumbing.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/gauge/process.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/gauge/progress-bar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/gauge/render-template.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/gauge/set-immediate.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/gauge/set-interval.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/gauge/spin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/gauge/template-item.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/gauge/theme-set.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/gauge/themes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/gauge/wide-truncate.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/glob/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/glob/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/glob/changelog.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/glob/common.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/glob/glob.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/glob/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/glob/sync.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/has-unicode/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/has-unicode/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/has-unicode/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/has-unicode/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/iconv-lite/Changelog.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/iconv-lite/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/iconv-lite/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/iconv-lite/encodings/dbcs-codec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/iconv-lite/encodings/dbcs-data.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/iconv-lite/encodings/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/iconv-lite/encodings/internal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/iconv-lite/encodings/sbcs-codec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/iconv-lite/encodings/sbcs-data-generated.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/iconv-lite/encodings/sbcs-data.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/big5-added.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/cp936.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/cp949.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/cp950.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/eucjp.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/gb18030-ranges.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/gbk-added.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/shiftjis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/iconv-lite/encodings/utf16.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/iconv-lite/encodings/utf7.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/iconv-lite/lib/bom-handling.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/iconv-lite/lib/extend-node.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/iconv-lite/lib/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/iconv-lite/lib/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/iconv-lite/lib/streams.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/iconv-lite/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/ignore-walk/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/ignore-walk/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/ignore-walk/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/ignore-walk/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/inflight/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/inflight/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/inflight/inflight.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/inflight/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/inherits/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/inherits/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/inherits/inherits.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/inherits/inherits_browser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/inherits/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/ini/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/ini/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/ini/ini.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/ini/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/is-fullwidth-code-point/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/is-fullwidth-code-point/license" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/is-fullwidth-code-point/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/is-fullwidth-code-point/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/isarray/.npmignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/isarray/.travis.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/isarray/Makefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/isarray/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/isarray/component.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/isarray/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/isarray/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/isarray/test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/minimatch/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/minimatch/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/minimatch/minimatch.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/minimatch/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/minimist/.travis.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/minimist/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/minimist/example/parse.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/minimist/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/minimist/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/minimist/readme.markdown" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/minimist/test/dash.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/minimist/test/default_bool.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/minimist/test/dotted.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/minimist/test/long.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/minimist/test/parse.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/minimist/test/parse_modified.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/minimist/test/short.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/minimist/test/whitespace.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/minipass/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/minipass/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/minipass/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/minipass/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/minizlib/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/minizlib/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/minizlib/constants.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/minizlib/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/minizlib/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/mkdirp/.travis.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/mkdirp/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/mkdirp/bin/cmd.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/mkdirp/bin/usage.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/mkdirp/examples/pow.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/mkdirp/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/mkdirp/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/mkdirp/readme.markdown" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/mkdirp/test/chmod.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/mkdirp/test/clobber.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/mkdirp/test/mkdirp.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/mkdirp/test/opts_fs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/mkdirp/test/opts_fs_sync.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/mkdirp/test/perm.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/mkdirp/test/perm_sync.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/mkdirp/test/race.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/mkdirp/test/rel.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/mkdirp/test/return.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/mkdirp/test/return_sync.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/mkdirp/test/root.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/mkdirp/test/sync.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/mkdirp/test/umask.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/mkdirp/test/umask_sync.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/ms/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/ms/license.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/ms/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/ms/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/.npmignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/bin/needle" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/examples/deflated-stream.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/examples/digest-auth.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/examples/download-to-file.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/examples/multipart-stream.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/examples/parsed-stream.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/examples/parsed-stream2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/examples/stream-events.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/examples/stream-to-file.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/examples/upload-image.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/lib/auth.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/lib/cookies.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/lib/decoder.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/lib/multipart.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/lib/needle.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/lib/parsers.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/lib/querystring.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/license.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/package-lock.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/test/basic_auth_spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/test/compression_spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/test/cookies_spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/test/decoder_spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/test/errors_spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/test/headers_spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/test/helpers.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/test/keys/ssl.cert" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/test/keys/ssl.key" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/test/long_string_spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/test/output_spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/test/parsing_spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/test/post_data_spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/test/proxy_spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/test/querystring_spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/test/redirect_spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/test/redirect_with_timeout.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/test/request_stream_spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/test/response_stream_spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/test/socket_pool_spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/test/url_spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/test/utils/formidable.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/test/utils/proxy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/needle/test/utils/test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/CHANGELOG.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/appveyor.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/bin/node-pre-gyp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/bin/node-pre-gyp.cmd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/contributing.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/lib/build.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/lib/clean.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/lib/configure.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/lib/info.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/lib/install.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/lib/node-pre-gyp.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/lib/package.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/lib/pre-binding.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/lib/publish.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/lib/rebuild.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/lib/reinstall.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/lib/reveal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/lib/testbinary.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/lib/testpackage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/lib/unpublish.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/abi_crosswalk.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/compile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/handle_gyp_opts.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/napi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/nw-pre-gyp/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/nw-pre-gyp/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/s3_setup.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/versioning.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/node-pre-gyp/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/nopt/.npmignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/nopt/.travis.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/nopt/CHANGELOG.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/nopt/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/nopt/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/nopt/bin/nopt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/nopt/examples/my-program.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/nopt/lib/nopt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/nopt/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/nopt/test/basic.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/npm-bundled/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/npm-bundled/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/npm-bundled/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/npm-bundled/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/npm-packlist/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/npm-packlist/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/npm-packlist/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/npm-packlist/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/npmlog/CHANGELOG.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/npmlog/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/npmlog/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/npmlog/log.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/npmlog/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/number-is-nan/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/number-is-nan/license" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/number-is-nan/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/number-is-nan/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/object-assign/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/object-assign/license" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/object-assign/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/object-assign/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/once/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/once/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/once/once.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/once/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/os-homedir/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/os-homedir/license" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/os-homedir/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/os-homedir/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/os-tmpdir/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/os-tmpdir/license" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/os-tmpdir/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/os-tmpdir/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/osenv/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/osenv/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/osenv/osenv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/osenv/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/path-is-absolute/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/path-is-absolute/license" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/path-is-absolute/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/path-is-absolute/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/process-nextick-args/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/process-nextick-args/license.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/process-nextick-args/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/process-nextick-args/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/LICENSE.APACHE2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/LICENSE.BSD" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/LICENSE.MIT" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/browser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/cli.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/lib/utils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/node_modules/minimist/.travis.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/node_modules/minimist/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/node_modules/minimist/example/parse.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/node_modules/minimist/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/node_modules/minimist/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/node_modules/minimist/readme.markdown" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/node_modules/minimist/test/all_bool.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/node_modules/minimist/test/bool.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/node_modules/minimist/test/dash.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/node_modules/minimist/test/default_bool.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/node_modules/minimist/test/dotted.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/node_modules/minimist/test/kv_short.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/node_modules/minimist/test/long.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/node_modules/minimist/test/num.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/node_modules/minimist/test/parse.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/node_modules/minimist/test/parse_modified.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/node_modules/minimist/test/short.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/node_modules/minimist/test/stop_early.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/node_modules/minimist/test/unknown.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/node_modules/minimist/test/whitespace.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/test/ini.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/test/nested-env-vars.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rc/test/test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/readable-stream/.travis.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/readable-stream/CONTRIBUTING.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/readable-stream/GOVERNANCE.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/readable-stream/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/readable-stream/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/readable-stream/doc/wg-meetings/2015-01-30.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/readable-stream/duplex-browser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/readable-stream/duplex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/readable-stream/lib/_stream_duplex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/readable-stream/lib/_stream_passthrough.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/readable-stream/lib/_stream_readable.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/readable-stream/lib/_stream_transform.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/readable-stream/lib/_stream_writable.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/readable-stream/lib/internal/streams/BufferList.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/readable-stream/lib/internal/streams/destroy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/readable-stream/lib/internal/streams/stream-browser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/readable-stream/lib/internal/streams/stream.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/readable-stream/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/readable-stream/passthrough.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/readable-stream/readable-browser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/readable-stream/readable.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/readable-stream/transform.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/readable-stream/writable-browser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/readable-stream/writable.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rimraf/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rimraf/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rimraf/bin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rimraf/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/rimraf/rimraf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/safe-buffer/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/safe-buffer/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/safe-buffer/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/safe-buffer/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/safe-buffer/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/safer-buffer/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/safer-buffer/Porting-Buffer.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/safer-buffer/Readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/safer-buffer/dangerous.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/safer-buffer/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/safer-buffer/safer.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/safer-buffer/tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/sax/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/sax/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/sax/lib/sax.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/sax/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/semver/CHANGELOG.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/semver/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/semver/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/semver/bin/semver" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/semver/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/semver/range.bnf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/semver/semver.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/set-blocking/CHANGELOG.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/set-blocking/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/set-blocking/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/set-blocking/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/set-blocking/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/signal-exit/CHANGELOG.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/signal-exit/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/signal-exit/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/signal-exit/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/signal-exit/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/signal-exit/signals.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/string-width/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/string-width/license" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/string-width/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/string-width/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/string_decoder/.travis.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/string_decoder/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/string_decoder/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/string_decoder/lib/string_decoder.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/string_decoder/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/strip-ansi/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/strip-ansi/license" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/strip-ansi/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/strip-ansi/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/strip-json-comments/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/strip-json-comments/license" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/strip-json-comments/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/strip-json-comments/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/tar/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/tar/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/tar/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/tar/lib/buffer.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/tar/lib/create.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/tar/lib/extract.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/tar/lib/header.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/tar/lib/high-level-opt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/tar/lib/large-numbers.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/tar/lib/list.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/tar/lib/mkdir.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/tar/lib/mode-fix.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/tar/lib/pack.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/tar/lib/parse.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/tar/lib/pax.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/tar/lib/read-entry.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/tar/lib/replace.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/tar/lib/types.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/tar/lib/unpack.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/tar/lib/update.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/tar/lib/warn-mixin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/tar/lib/winchars.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/tar/lib/write-entry.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/tar/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/util-deprecate/History.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/util-deprecate/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/util-deprecate/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/util-deprecate/browser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/util-deprecate/node.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/util-deprecate/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/wide-align/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/wide-align/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/wide-align/align.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/wide-align/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/wrappy/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/wrappy/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/wrappy/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/wrappy/wrappy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/yallist/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/yallist/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/yallist/iterator.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/yallist/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/node_modules/yallist/yallist.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/src/async.cc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/src/constants.cc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/src/methods.cc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/src/storage.cc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/fsevents/src/thread.cc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/iconv-lite/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/is-retry-allowed/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/is-retry-allowed/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/CHANGELOG.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/LICENSE.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/doc/asyncworker.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/doc/buffers.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/doc/callback.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/doc/converters.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/doc/errors.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/doc/json.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/doc/maybe_types.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/doc/methods.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/doc/new.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/doc/node_misc.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/doc/object_wrappers.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/doc/persistent.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/doc/scopes.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/doc/script.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/doc/string_bytes.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/doc/v8_internals.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/doc/v8_misc.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/include_dirs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/nan.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/nan_callbacks.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/nan_callbacks_12_inl.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/nan_callbacks_pre_12_inl.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/nan_converters.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/nan_converters_43_inl.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/nan_converters_pre_43_inl.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/nan_define_own_property_helper.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/nan_implementation_12_inl.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/nan_implementation_pre_12_inl.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/nan_json.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/nan_maybe_43_inl.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/nan_maybe_pre_43_inl.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/nan_new.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/nan_object_wrap.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/nan_persistent_12_inl.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/nan_persistent_pre_12_inl.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/nan_private.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/nan_string_bytes.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/nan_typedarray_contents.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/nan_weak.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/tools/1to2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/tools/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nan/tools/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/node_modules/nodemon/package.json" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/API/package-lock.json" afterPath="$PROJECT_DIR$/API/package-lock.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/API/package.json" afterPath="$PROJECT_DIR$/API/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/API/sources/DB/tools/dbCRUD.js" afterPath="$PROJECT_DIR$/API/sources/DB/tools/dbCRUD.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/API/sources/routes/web.js" afterPath="$PROJECT_DIR$/API/sources/routes/web.js" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/API/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="8" column="49" lean-forward="false" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
+              <folding>
+                <marker date="1572106114639" expanded="true" signature="2557:2585" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mobile.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/API/sources/routes/mobile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dbCreationAndConnection.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/API/sources/DB/config/dbCreationAndConnection.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="648">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <folding>
+                <marker date="1572106114641" expanded="true" signature="1106:1328" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dbCreation.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/API/sources/DB/tools/dbCreation.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+              <folding>
+                <marker date="1572106114642" expanded="true" signature="163:2136" ph="{...}" />
+                <marker date="1572106114642" expanded="true" signature="211:291" ph="{...}" />
+                <marker date="1572106114642" expanded="true" signature="417:872" ph="{...}" />
+                <marker date="1572106114642" expanded="true" signature="640:867" ph="{...}" />
+                <marker date="1572106114642" expanded="true" signature="771:861" ph="{...}" />
+                <marker date="1572106114642" expanded="true" signature="947:1432" ph="{...}" />
+                <marker date="1572106114642" expanded="true" signature="1168:1427" ph="{...}" />
+                <marker date="1572106114642" expanded="true" signature="1265:1421" ph="{...}" />
+                <marker date="1572106114642" expanded="true" signature="1498:1782" ph="{...}" />
+                <marker date="1572106114642" expanded="true" signature="1583:1777" ph="{...}" />
+                <marker date="1572106114642" expanded="true" signature="1714:1771" ph="{...}" />
+                <marker date="1572106114642" expanded="true" signature="1860:2134" ph="{...}" />
+                <marker date="1572106114642" expanded="true" signature="1945:2129" ph="{...}" />
+                <marker date="1572106114642" expanded="true" signature="2048:2123" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dbCRUD.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/API/sources/DB/tools/dbCRUD.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2142">
+              <caret line="119" column="20" lean-forward="false" selection-start-line="119" selection-start-column="20" selection-end-line="119" selection-end-column="20" />
+              <folding>
+                <marker date="1572106115042" expanded="true" signature="158:160" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/API/sources/routes/test.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="21" column="2" lean-forward="false" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>readCollection</find>
+      <find>deleteInfo</find>
+      <find>ijet</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/API/sources/DB/tools/dbCreation.js" />
+        <option value="$PROJECT_DIR$/API/sources/DB/tools/dbCRUD.js" />
+        <option value="$PROJECT_DIR$/API/sources/routes/web.js" />
+        <option value="$PROJECT_DIR$/site_vitrine/home.html" />
+        <option value="$PROJECT_DIR$/API/app.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/API/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1920" />
+    <option name="height" value="1174" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="EIP_PROJECT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EIP_PROJECT" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EIP_PROJECT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EIP_PROJECT" type="462c0819:PsiDirectoryNode" />
+              <item name="API" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EIP_PROJECT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EIP_PROJECT" type="462c0819:PsiDirectoryNode" />
+              <item name="API" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EIP_PROJECT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EIP_PROJECT" type="462c0819:PsiDirectoryNode" />
+              <item name="API" type="462c0819:PsiDirectoryNode" />
+              <item name="sources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EIP_PROJECT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EIP_PROJECT" type="462c0819:PsiDirectoryNode" />
+              <item name="API" type="462c0819:PsiDirectoryNode" />
+              <item name="sources" type="462c0819:PsiDirectoryNode" />
+              <item name="DB" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EIP_PROJECT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EIP_PROJECT" type="462c0819:PsiDirectoryNode" />
+              <item name="API" type="462c0819:PsiDirectoryNode" />
+              <item name="sources" type="462c0819:PsiDirectoryNode" />
+              <item name="DB" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EIP_PROJECT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EIP_PROJECT" type="462c0819:PsiDirectoryNode" />
+              <item name="API" type="462c0819:PsiDirectoryNode" />
+              <item name="sources" type="462c0819:PsiDirectoryNode" />
+              <item name="DB" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EIP_PROJECT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EIP_PROJECT" type="462c0819:PsiDirectoryNode" />
+              <item name="API" type="462c0819:PsiDirectoryNode" />
+              <item name="sources" type="462c0819:PsiDirectoryNode" />
+              <item name="DB" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EIP_PROJECT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EIP_PROJECT" type="462c0819:PsiDirectoryNode" />
+              <item name="API" type="462c0819:PsiDirectoryNode" />
+              <item name="sources" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0832a14d-2efc-438b-ad67-e985569c345b" name="Default" comment="" />
+      <created>1565261728235</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1565261728235</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1920" height="1174" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17891374" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32902032" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33827618" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/API/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1572106114639" expanded="true" signature="2557:2585" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/sources/routes/mobile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/sources/DB/config/dbCreationAndConnection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <marker date="1572106114641" expanded="true" signature="1106:1328" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/sources/DB/tools/dbCreation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <folding>
+            <marker date="1572106114642" expanded="true" signature="163:2136" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="211:291" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="417:872" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="640:867" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="771:861" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="947:1432" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1168:1427" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1265:1421" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1498:1782" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1583:1777" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1714:1771" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1860:2134" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1945:2129" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="2048:2123" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/sources/DB/tools/dbCRUD.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1476">
+          <caret line="82" column="20" lean-forward="false" selection-start-line="82" selection-start-column="4" selection-end-line="82" selection-end-column="20" />
+          <folding>
+            <marker date="1572106115042" expanded="true" signature="158:160" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/sources/routes/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="2" lean-forward="false" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1572106114639" expanded="true" signature="2557:2585" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/sources/DB/config/dbCreationAndConnection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <marker date="1572106114641" expanded="true" signature="1106:1328" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/sources/DB/tools/dbCreation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <folding>
+            <marker date="1572106114642" expanded="true" signature="163:2136" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="211:291" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="417:872" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="640:867" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="771:861" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="947:1432" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1168:1427" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1265:1421" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1498:1782" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1583:1777" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1714:1771" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1860:2134" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1945:2129" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="2048:2123" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/sources/DB/models/modelConnection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/sources/routes/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1062">
+          <caret line="59" column="23" lean-forward="false" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/sources/routes/web.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/sources/DB/tools/dbCRUD.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1764">
+          <caret line="98" column="11" lean-forward="true" selection-start-line="98" selection-start-column="11" selection-end-line="98" selection-end-column="11" />
+          <folding>
+            <marker date="1572106115042" expanded="true" signature="158:160" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1572106114639" expanded="true" signature="2557:2585" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/sources/DB/config/dbCreationAndConnection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <marker date="1572106114641" expanded="true" signature="1106:1328" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/sources/DB/models/modelConnection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/sources/DB/tools/dbCreation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <folding>
+            <marker date="1572106114642" expanded="true" signature="163:2136" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="211:291" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="417:872" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="640:867" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="771:861" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="947:1432" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1168:1427" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1265:1421" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1498:1782" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1583:1777" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1714:1771" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1860:2134" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1945:2129" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="2048:2123" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/sources/routes/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1062">
+          <caret line="59" column="23" lean-forward="false" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/sources/routes/web.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/sources/DB/tools/dbCRUD.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1674">
+          <caret line="93" column="93" lean-forward="false" selection-start-line="93" selection-start-column="87" selection-end-line="93" selection-end-column="93" />
+          <folding>
+            <marker date="1572106115042" expanded="true" signature="158:160" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/sources/DB/config/dbCreationAndConnection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <marker date="1572106114641" expanded="true" signature="1106:1328" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/sources/DB/tools/dbCRUD.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <marker date="1572106115042" expanded="true" signature="158:160" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1572106114639" expanded="true" signature="2557:2585" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1572106114639" expanded="true" signature="2557:2585" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/bin/www">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/sources/DB/config/dbCreationAndConnection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding>
+            <marker date="1572106114641" expanded="true" signature="1106:1328" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/sources/DB/models/modelConnection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/sources/DB/tools/dbCreation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <folding>
+            <marker date="1572106114642" expanded="true" signature="163:2136" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="211:291" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="417:872" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="640:867" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="771:861" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="947:1432" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1168:1427" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1265:1421" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1498:1782" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1583:1777" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1714:1771" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1860:2134" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="1945:2129" ph="{...}" />
+            <marker date="1572106114642" expanded="true" signature="2048:2123" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/sources/DB/tools/dbCRUD.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2142">
+          <caret line="119" column="20" lean-forward="false" selection-start-line="119" selection-start-column="20" selection-end-line="119" selection-end-column="20" />
+          <folding>
+            <marker date="1572106115042" expanded="true" signature="158:160" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/sources/routes/web.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="30" lean-forward="true" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/sources/routes/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/sources/routes/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="2" lean-forward="false" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/sources/routes/mobile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_vitrine/assets/img/team-pic/Paul.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_vitrine/assets/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="40" column="8" lean-forward="false" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_vitrine/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1656">
+          <caret line="92" column="22" lean-forward="true" selection-start-line="92" selection-start-column="22" selection-end-line="92" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="8" column="49" lean-forward="false" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
+          <folding>
+            <marker date="1572106114639" expanded="true" signature="2557:2585" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
