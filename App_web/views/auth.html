@@ -4,8 +4,7 @@
   <head>
     <meta charset="utf-8">
     <title>HealthSafe</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="./../javascripts/auth_action.js"></script>
+    <!--<script src="./../javascripts/auth_action.js"></script>-->
     <link rel="stylesheet" style="text/css" href="./stylesheets/auth.css"/>
   </head>
 
@@ -13,7 +12,7 @@
     <div class="cont">
       <div class="main-box">
         <div class="log">
-          <form class="">
+          <form class="" action="/" method="post">
             <div class="tear"></div>
 
             <h2>HealthSafe</h2>
@@ -35,13 +34,12 @@
                     id="psswd"
                     required />
 
-            <button type="button"
+            <button type="submit"
                     class="login"
                     onclick="connexion"
                     id="connexion">
                     Connexion
             </button>
-          </form>
         </div>
       </div>
     </div>
