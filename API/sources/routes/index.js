@@ -90,6 +90,19 @@ const dbCreation = require('../DB/tools/dbCreation').dbCreation;
  *               items:
  *                 type: string
  */
+// test = function(req, res, next) {
+//         //res.setHeader('Content-Type', 'application/json');
+//         var o_dbCreation = new dbCreation();
+//         o_dbCreation.createDB("T".toString(), function(result) {
+//                 console.log("TEST CONTROLLER");
+//                 console.log(result);
+//                 res.send(result);
+//
+//         })
+//         res.status(200);
+//         //return JSON.stringify(result);
+// }
+// router.get('/', dbCreation.createDB);
 
 router.get("/", function(req, res, next) {
 
@@ -118,6 +131,8 @@ router.get("/", function(req, res, next) {
                 o_dbCreation.displayAllCollections("HealthSafe");
                 console.log("END TEST : CREATE COLLECTION");
         })
+        // res.render('error404');
+
         res.render('index', {title : "TEST"});
         // res.sendFile('/home/paradis/WorkSpace/EPITECH/EIP/EIP_PROJECT/API/doc/index.html');
         //res.status(200).end();
@@ -127,17 +142,15 @@ router.get("/", function(req, res, next) {
 
 
 
-// router.get('/signup', function(req, res, next) {
-//
-//   console.log("REQ.BODY.USERNAME = " + req.body.userName);
-//   res.render('index', { title: 'Express' });
-//
-//   //console.log("REQ.BODY : " + req.body);
-//
-//   res.status(200);
-// });
+router.get('/signup', function(req, res, next) {
 
-// router.get('/', function(res, req) {});
+  console.log("REQ.BODY.USERNAME = " + req.body.userName);
+  res.render('index', { title: 'Express' });
+
+  //console.log("REQ.BODY : " + req.body);
+
+  res.status(200);
+});
 
 router.post('/signup', async function(req, res) {
         //res.setHeader('Content-Type', 'application/json');
