@@ -9,6 +9,7 @@ var debug = require('debug')('api:server');
 var http = require('http');
 var url = require('url');
 
+
 /**
  * Get port from environment and store in Express.
  */
@@ -38,6 +39,9 @@ server.on('request', function(req, res) {
 
         console.log("URL : " + realUrl);
 });
+
+// require('node-api-doc-generator')(app, process.env.LOCALHOST,3000);
+
 
 /**
  * Listen on provided port, on all network interfaces.

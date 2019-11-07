@@ -1,8 +1,0 @@
-{
-    "name": "HealthSafe API documentation",
-    "version": "0.0.1",
-    "description": "API HealthSafe manager",
-    "template": {
-        "forceLanguage": "en"
-    }
-}
