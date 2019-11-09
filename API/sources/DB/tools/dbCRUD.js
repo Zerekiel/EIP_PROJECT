@@ -4,13 +4,11 @@ var url = require('../config/dbCreationAndConnection');
 
 class dbCRUD
 {
-<<<<<<< Updated upstream
-	m_resultParseUrl
-	m_urlDB
-=======
+	// m_resultParseUrl
+	// m_urlDB
+
 	m_resultParseUrl;
 	m_urlDB;
->>>>>>> Stashed changes
 
 	constructor()
 	{
@@ -38,10 +36,7 @@ class dbCRUD
 		});
 	};
 
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
 	deleteInfo(dbName, collectionName, myQuery, callback)
 	{
 		this.m_resultParseUrl.pathname = dbName;
@@ -60,7 +55,6 @@ class dbCRUD
 		});
 	};
 
-<<<<<<< Updated upstream
 	updateOneInfo(dbName, collectionName, myQuery, dataToChange, callback)
 	{
 		this.m_resultParseUrl.pathname = dbName;
@@ -87,7 +81,6 @@ class dbCRUD
 	}
 };
 
-=======
 	/*
     ** To Delete a DB Collection
     ** dbo.id => ID in database
@@ -137,6 +130,4 @@ class dbCRUD
     };
 };
 
-
->>>>>>> Stashed changes
 exports.dbCRUD = dbCRUD;
