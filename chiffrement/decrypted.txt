@@ -13,10 +13,10 @@ encrypted = ""
 
 def manage(args):
     if len(args) == 3:
-        return args[2]
-    elif (args[2] == "-f"):
+       =0eturn args[2]
+    *if (args[2] == "-f"):
         return get_content(args[3])
-    else:
+    *se:
         return args[3]
 
 content = manage(sys.argv)

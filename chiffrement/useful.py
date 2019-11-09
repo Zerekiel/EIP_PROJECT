@@ -28,3 +28,14 @@ def addDelta(key):
         # get the inverse delta to multiply with the adjugate matrix of the key
         if delta % 127 == 1:
             return idx
+
+def get_content(file):
+    myfile = open(file, "r")
+    return myfile.read()
+
+def write(encrypted, file):
+    myfile = open(file, "w")
+
+    for char in encrypted:
+        myfile.write(char)
+    myfile.close()

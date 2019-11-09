@@ -5,16 +5,14 @@ from matrices_creation import create_key_matrix, create_message_matrix
 from matrices_operations import *
 from useful import get_meaning
 from useful import addDelta
+from useful import get_content
+from useful import write
 
 key_matrix = []
 message_matrix = []
 encrypted = ""
 
 print("decrypted message:")
-
-def get_content(file):
-    myfile = open(file, "r")
-    return myfile.read()
 
 # creating the matrix from the key
 key_matrix = create_key_matrix(sys.argv[1])
@@ -32,3 +30,4 @@ adj_key_matrix = multiply(adj_key_matrix, delta)
 mult_matrix = matrix_mult(adj_key_matrix, message_matrix)
 # mult_matrix = sub(mult_matrix, 32)
 print(get_meaning(mult_matrix))
+write(get_meaning(mult_matrix), "decrypted.txt")
