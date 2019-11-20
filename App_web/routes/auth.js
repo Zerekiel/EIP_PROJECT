@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var request = require('request');
+var mynext = false;
 
 /* GET login page. */
 router.get('/', function(req, res, next) {
@@ -15,11 +16,6 @@ router.post('/', function(req, res, next) {
             password: req.body.password
         }
     });
-
-    request.get('https://healthsafe-api.herokuapp.com/api/connection', function(req, res) {
-        console.log(res.body);
-    });
-
     res.redirect('/home');
     res.end();
 });
