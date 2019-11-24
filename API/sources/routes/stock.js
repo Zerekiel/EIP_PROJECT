@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var dbCRUD = require('../DB/tools/dbCRUD').dbCRUD;
+var dbCRUD = require('../DB/Controllers/dbCRUD').dbCRUD;
 var modelStock = require('../DB/models/modelStock');
 require('util').inspect.defaultOptions.depth = null
 
@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 
 	o_dbCRUD = new dbCRUD();
         console.log("TEST : READ COLLECTION");
-	o_dbCRUD.readCollection("HealthSafe", "modelstocks", function(result) {
+	o_dbCRUD.readCollection("HealthSafe", "PatientInformation", function(result) {
 		// displaying in console json
 		console.log(result);
 

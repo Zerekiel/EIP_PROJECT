@@ -17,6 +17,6 @@ const connectionSchema = mongoose.Schema({
 	}
 });
 
-var userConnection = mongoose.model('userConnection', connectionSchema, true);
+var userConnection = mongoose.model('userConnection', connectionSchema, 'UserConnexion');
 
 module.exports = userConnection;

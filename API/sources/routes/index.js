@@ -8,8 +8,9 @@ var userConnection = require('../DB/models/modelConnection');
 // var Test = require('../DB/tools/dbCRUD').CreateTest;
 // var Test2 = require('../DB/tools/dbCRUD').CreateTest2;
 // var manage = require('../DB/tools/dbCRUD').manage;
-var obj = require('../DB/tools/dbCRUD');
+var obj = require('../DB/Controllers/dbCRUD');
 var url = require('../DB/config/dbCreationAndConnection');
+
 const swaggerJSDoc = require('swagger-jsdoc');
 
 // var userPostConnectionSchema = require('../DB/models/post.modelConnection')
@@ -60,7 +61,7 @@ const swaggerJSDoc = require('swagger-jsdoc');
 
 
 
-const dbCreation = require('../DB/tools/dbCreation').dbCreation;
+const dbCreation = require('../DB/Controllers/dbCreation').dbCreation;
 
 /**
  * @swagger
@@ -118,7 +119,7 @@ router.get("/", function(req, res, next) {
 
         });
 
-        o_dbCreation.displayDatabases("T".toString(), function(result) {
+        o_dbCreation.displayDatabases("TEST_DELIVERY".toString(), function(result) {
                 console.log("TEST : CREATE COLLECTION");
 
                 o_dbCreation.createColl("T".toString(), "modelstock", function(result) {

@@ -87,6 +87,6 @@ const stockSchema = mongoose.Schema({
 	}
 });
 
-var modelStock = mongoose.model('modelStock', stockSchema, true);
+var modelStock = mongoose.model('modelStock', stockSchema, 'PatientInformation');
 
 module.exports = modelStock;

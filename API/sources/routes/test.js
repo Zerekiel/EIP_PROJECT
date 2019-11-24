@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var dbCRUD = require('../DB/tools/dbCRUD').dbCRUD;
+var dbCRUD = require('../DB/Controllers/dbCRUD').dbCRUD;
 var userConnection = require('../DB/models/modelConnection');
 var mongo = require('mongodb')
 require('util').inspect.defaultOptions.depth = null

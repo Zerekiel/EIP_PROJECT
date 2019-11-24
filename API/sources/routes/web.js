@@ -6,15 +6,6 @@ router.get('/', function(req, res, next) {
 
   res.json({
   message : "Ajoute un nouveau patient à la liste",
-<<<<<<< Updated upstream
-  nom : "Dont",//req.body.nom,
-  ville : "PanicIts",//req.body.ville,
-  taille : "170", //req.body.taille,
-=======
-  nom : req.body.nom,
-  ville : req.body.ville,
-  taille : req.body.taille,
->>>>>>> Stashed changes
   methode : req.method
   })
 })
