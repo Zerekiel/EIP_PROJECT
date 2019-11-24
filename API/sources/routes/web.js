@@ -11,20 +11,6 @@ router.get('/', function(req, res, next) {
 })
 
 .post('/', function(req, res, next) {
-     	console.log(req);
-     	console.log(req.query.nom);
-        res.json({
-        message : req.body.nom,
-        nom : req.query.nom,
-        ville : req.query.ville,
-        taille : req.query.taille,
-        methode : req.method
-        })
 });
-
- 	// console.log(req.header('Content-Type'))
-    	// console.log(req.body.username);
-     // console.log(req.body.password);
-     // console.log(req.body.email);
 
 module.exports = router;
