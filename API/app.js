@@ -51,14 +51,8 @@ app.set('view engine', 'ejs');
 // Stylesheets engine setup
 
 app.use(express.static(path.join(__dirname, 'sources/public/stylesheets')));
-// app.use(express.static(path.join(__dirname, 'sources/public/css'))); // do nothing
 app.use(express.static(path.join(__dirname, 'sources/public/scriptJS')));
 
-
-
-// app.use(express.static(path.join(__dirname, 'sources/public/css')));
-// app.use(express.static(path.join(__dirname, 'sources/public/sass')));
-// app.use(express.static(path.join(__dirname, 'sources/public/*')));
 
 
 
@@ -90,61 +84,17 @@ app.use('/api/connection', connectionRouter);
 app.use('/test', testRouter);
 app.use('/api/stock', stockRouter);
 
-app.use('/docs', documentationRouter);
+// app.use('/docs', documentationRouter);
+app.use('/api', documentationRouter);
 app.use('/swagger.json', swaggerRouter);
-// app.use('*', function(req, res) {
-//         // res.set("Content-Type", 'text/css');
-//         //res.set("Content-Type", 'text/html');
-//         // res.set("Content-Type", 'text/javascript');
-//
-//         //res.status(404);
-//         res.render('error404');
-//
-// });
 
-/**
- * @swagger
- *
- * /login:
- *   post:
- *     description: Login to the application
- *     produces:
- *       - application/json
- *     parameters:
- *       - name: username
- *         description: Username to use for login.
- *         in: formData
- *         required: true
- *         type: string
- *       - name: password
- *         description: User's password.
- *         in: formData
- *         required: true
- *         type: string
- *     responses:
- *       200:
- *         description: login
- */
-// app.get('/t', function(req, res) {
-//         res.send("TEST");
-// })
 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-        // res.setHeader('Access-Control-Allow-Origin', '*');
-
-// Request methods you wish to allow
-// res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-
-// Request headers you wish to allow
-// res.setHeader('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers,X-Access-Token,XKey,Authorization');
-
-//  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
   next(createError(404));
-  // createError(404)
-  //res.render('error404');
+
 });
 
 // error handler
@@ -156,7 +106,6 @@ app.use(function(err, req, res, next) {
   // render the error page
   // res.status(err.status || 500);
   // res.render('error');
-  console.log("TEST");
   if (res.status(err.status).statusCode === 404) {
           console.log("ERR STATUS 404 : ")
          //console.log(res.status(err.status))

@@ -6,11 +6,12 @@ var swaggerJSDoc = require('swagger-jsdoc');
 // -- setup up swagger-jsdoc --
 const swaggerDefinition = {
   info: {
-    title: 'Animals',
+    title: 'HealthSafe API',
     version: '1.0.0',
-    description: 'All things animlas',
+    description: 'All routes of API',
   },
   host: 'localhost:3000',
+  host2: 'https://healthsafe-api.herokuapp.com',
   basePath: '/',
 };
 

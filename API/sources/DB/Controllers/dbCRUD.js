@@ -19,7 +19,7 @@ class dbCRUD
 		this.m_resultParseUrl.set('pathname', dbName);
 		this.m_urlDB = this.m_resultParseUrl.href;
 
-		MongoClient.connect(this.m_urlDB, { useNewUrlParser: true }, function(err, db)
+		MongoClient.connect(this.m_urlDB, { useNewUrlParser: true, useUnifiedTopology: true  }, function(err, db)
 		{
 			var dbo = db.db(dbName);
 			dbo.collection(collectionName).find({}).toArray(function(err, result) //.findOne({}, function(err, result) {
