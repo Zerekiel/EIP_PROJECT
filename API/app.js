@@ -37,6 +37,10 @@ var connectionRouter = require('./sources/routes/connexion');
 var testRouter = require('./sources/routes/test');
 var stockRouter = require('./sources/routes/stock');
 var documentationRouter = require('./sources/routes/documentation');
+var signInRouter = require('./sources/routes/signIn');
+var signUpRouter = require('./sources/routes/signUp');
+
+
 var swaggerRouter = require('./sources/Documentation/configDoc');
 
 
@@ -76,13 +80,16 @@ app.use(cookieParser());
 
 // For load routes
 app.use('/', indexRouter);
-app.use('/signup', indexRouter);
-app.use('/mobile', mobileRouter);
-app.use('/web', webRouter);
+// app.use('/signup', indexRouter);
+// app.use('/mobile', mobileRouter);
+// app.use('/web', webRouter);
 // app.use('/connexion', connexionRouter);
 app.use('/api/connection', connectionRouter);
-app.use('/test', testRouter);
+// app.use('/test', testRouter);
 app.use('/api/stock', stockRouter);
+app.use('/api/signin', signInRouter);
+app.use('/api/signup', signUpRouter);
+
 
 // app.use('/docs', documentationRouter);
 app.use('/api', documentationRouter);
