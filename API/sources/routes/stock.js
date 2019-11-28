@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var dbCRUD = require('../DB/Controllers/dbCRUD').dbCRUD;
 var modelStock = require('../DB/models/modelStock');
+var mongo = require('mongodb')
+
 require('util').inspect.defaultOptions.depth = null
 
 
@@ -48,6 +50,63 @@ require('util').inspect.defaultOptions.depth = null
  *         type: string
  *         example: Dr.Chopin
  */
+
+ /**
+  * @swagger
+  * definitions:
+  *   modelStock2:
+  *     properties:
+  *       _id:
+  *         type: string
+  *         example: 5ddaa8468ebb8d8107e3288a
+  *       lastName:
+  *         type: string
+  *         example: Clement
+  *       firstName:
+  *         type: string
+  *         example: Deproost
+  *       age:
+  *         type: integer
+  *         example: 23
+  *       gender:
+  *         type: string
+  *         example: Femme
+  *       emergencyNumber:
+  *         type: integer
+  *         example: 0102030405
+  *       allergies:
+  *         type: string
+  *         example: aucune
+  *       medicalHistory:
+  *         type: string
+  *         example: Autisme, Gill de la tourette.
+  *       bloodType:
+  *         type: string
+  *         example: A+
+  *       socialNumber:
+  *         type: integer
+  *         example: 854237589204
+  *       treatments:
+  *         type: string
+  *         example: On ne peut rien faire pour lui.
+  *       organDonation:
+  *         type: string
+  *         example: OUI
+  *       doctor:
+  *         type: string
+  *         example: Dr.Chopin
+  */
+
+  /**
+   * @swagger
+   * definitions:
+   *   modelStock3:
+   *     properties:
+   *       _id:
+   *         type: string
+   *         example: 5ddaa8468ebb8d8107e3288a
+   */
+
 /**
  * @swagger
  * /api/stock:
@@ -162,7 +221,7 @@ router.get('/', function(req, res, next) {
  * @swagger
  * /api/stock:
  *   post:
- *     summary: Add patient Information into UserConnexion patientInformation collection.
+ *     summary: Add patient Information into patientInformation collection.
  *     description: After send a JSON in body, Returns a JSON added.
  *     requestBody:
  *       content:
@@ -262,6 +321,66 @@ router.post('/', function(req, res, next) {
                 // treatments: req.body.treatments,
                 // organDonation: req.body.organDonation,
                 // doctor: req.body.doctor });
+});
+
+
+
+/**
+ * @swagger
+ * /api/stock:
+ *   delete:
+ *     summary: delete patient Information into patientInformation collection.
+ *     description: After send a JSON _id in body, delete it and Returns a JSON added.
+ *     requestBody:
+ *       content:
+ *         application/json:
+ *           schema:
+ *             oneOf:
+ *               - $ref: '#/definitions/modelStock2'
+ *               - $ref: '#/definitions/modelStock3'
+ *     responses:
+ *       200:
+ *         description: OK
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               $ref: '#/definitions/modelStockResponse'
+ *       500:
+ *         description: ERROR
+ */
+router.delete('/', function(req, res, next) {
+        o_dbCRUD = new dbCRUD();
+
+	// var id = req.params.id;
+        var id = req.body._id;
+	var myQuery = { _id: new mongo.ObjectId(id) };
+
+	o_dbCRUD.deleteInfoByJson("HealthSafe", "PatientInformation", myQuery, function(result, err) {
+                if(err)
+                {
+                        console.log("TEST : DELETE BY ID");
+
+                        console.log(err.stack);
+
+                        console.log("END TEST : DELETE BY ID");
+
+                        return res.status(500).send(err.stack);
+                }
+                else
+                {
+                        console.log("TEST : DELETE BY ID");
+
+                        console.log(result.value);
+
+                        console.log("END TEST : DELETE BY ID");
+
+                        return res.status(200).send(result.value);
+                }
+
+	});
+
+	// res.status(200).send(id);
 });
 
 module.exports = router;

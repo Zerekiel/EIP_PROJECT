@@ -56,15 +56,46 @@ class dbCRUD
 		this.m_resultParseUrl.pathname = dbName;
 		this.m_resultParseUrl.set('pathname', dbName);
 		this.m_urlDB = this.m_resultParseUrl.href;
-		MongoClient.connect(this.m_urlDB, { useNewUrlParser: true }, function(err, db) {
-			if (err) throw err;
+
+		MongoClient.connect(this.m_urlDB, { useNewUrlParser: true, useUnifiedTopology: true }, function(err, db) {
+			if (err)
+				throw err;
+
 			var dbo = db.db(dbName);
-			//var myquery = { userName: "TEST0" };
-			dbo.collection(collectionName).deleteOne(myQuery, function(err, obj) {
-				if (err) throw err;
-			//console.log(obj);
-			console.log("1 document deleted");
-			db.close();
+
+			dbo.collection(collectionName).deleteOne(myQuery, function(err, result) {
+				if (err)
+					throw err;
+
+				console.log("1 document deleted");
+
+				db.close();
+
+				return callback(JSON.stringify(result, null, 4));
+			});
+		});
+	};
+
+	deleteInfoByJson(dbName, collectionName, myJson, callback)
+	{
+		this.m_resultParseUrl.pathname = dbName;
+		this.m_resultParseUrl.set('pathname', dbName);
+		this.m_urlDB = this.m_resultParseUrl.href;
+		MongoClient.connect(this.m_urlDB, { useNewUrlParser: true, useUnifiedTopology: true }, function(err, db) {
+			if (err)
+				throw err;
+
+			var dbo = db.db(dbName);
+
+			dbo.collection(collectionName).findOneAndDelete(myJson, function(err, result) {
+				if (err)
+					throw err;
+
+				console.log("1 document deleted : ", result.value);
+
+				db.close();
+
+				return callback(result);
 			});
 		});
 	};
