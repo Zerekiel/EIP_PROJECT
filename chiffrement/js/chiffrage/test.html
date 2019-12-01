@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<div id="data">
+    <div>
+        <input type="text" name="key" id="key" required="">
+    </div>
+    <div>
+        <textarea name="message" id="message" cols="30" rows="10" required=""></textarea>
+    </div>
+</div>
+<div>
+    <button type="submit" onclick="{encrypt()}" style="padding: 10px 20px;">encrypt</button>
+    <button type="submit" onclick="{decrypt()}" style="padding: 10px 20px;">decrypt</button>
+</div>
+<div id="res">
+    <p id="encrypted">
+
+    </p>
+</div>
+<script src="matrices_operations.js"></script>
+<script src="matrices_creation.js"></script>
+<script src="useful.js"></script>
+<script src="test.js"></script>
+
+</html>
