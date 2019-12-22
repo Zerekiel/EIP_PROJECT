@@ -281,24 +281,14 @@ body {
     /*left: 40%;*/
     margin-left: auto;
     margin-right: auto;
-    top: -100px;
+    top: 50px;
     width: 60px;
     height: 60px;
     border: none;
-    margin-bottom: -60px;
+    margin-bottom: 100px;
     transform: rotateZ(-45deg) scale(1.2,1.2);
     background: linear-gradient(to bottom,#ff1c4e,#ff8985);
     border-radius: 120% 0 70% 50% / 70% 0 120% 50%;
-}
-
-h2 {
-    display: block;
-    text-align: center;
-    color: #ff8985;
-    font-weight: 100;
-    font-size: 50px;
-    letter-spacing: 3px;
-    margin: auto;
 }
 
 h3 {
@@ -325,11 +315,12 @@ img {
 
 .scan {
     color: #ffffff;
+    /*text-align: center;*/
     cursor: pointer;
     font-size: 22px;
     font-weight: 500;
     display: block;
-    padding: 16px 120px;
+    padding: 16px; /* padding : 16px 120px; */
     border-radius: 30px;
     border: 2px solid #fff;
     transition: all 0.5s ease;
@@ -365,11 +356,12 @@ img {
 
 .mobile {
     color: #fff;
+    text-align: center;
     cursor: pointer;
     font-size: 22px;
     font-weight: 500;
     display: block;
-    padding: 15px 110px;
+    padding: 16px ; /* padding : 16px 120px; */
     border-radius: 30px;
     border: 2px solid #fff;
     transition: all 0.5s ease;
@@ -410,14 +402,14 @@ img {
     font-size: 22px;
     font-weight: 500;
     display: block;
-    padding: 15px 110px;
+    padding: 16px; /* padding : 16px 110px; */
     border-radius: 30px;
     border: 2px solid #fff;
     transition: all 0.5s ease;
     background: linear-gradient(to right, #ff1c4e,#ff8985);
     overflow: hidden;
-    width: 370px;
-    margin: 15px auto;
+    width: 250px;
+    margin: auto;
 }
 
     .deconnexion:hover {
@@ -470,4 +462,37 @@ img {
 
 .succses {
     border-bottom-color: #ff8985;
+}
+
+@media only screen and (min-width: 601px) {
+    .cont{
+        width: 75%;
+    }
+    h2 {
+        display: block;
+        text-align: center;
+        color: #ff8985;
+        font-weight: 100;
+        font-size: 20px;
+        letter-spacing: 3px;
+        margin: auto;
+    }
+    /*.tear {*/
+        /*position: relative;*/
+        /*left: 45%;*/
+        /*top: -40px;*/
+        /*width: 60px;*/
+    /*}*/
+}
+
+@media only screen and (min-width : 992px) {
+    .cont {
+        width: 30%
+    }
+    .tear {
+        position: relative;
+        left: 42.5%;
+        top: -40px;
+        width: 60px;
+    }
 }
