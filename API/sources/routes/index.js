@@ -10,6 +10,9 @@ var userConnection = require('../DB/models/modelConnection');
 // var manage = require('../DB/tools/dbCRUD').manage;
 var obj = require('../DB/Controllers/dbCRUD');
 var url = require('../DB/config/dbCreationAndConnection');
+var dbCRUD = require('../DB/Controllers/dbCRUD').dbCRUD;
+var dbCreation = require('../DB/Controllers/dbCRUD').dbCreation;
+
 
 const swaggerJSDoc = require('swagger-jsdoc');
 
@@ -25,24 +28,24 @@ router.get("/", function(req, res, next) {
         o_dbCreation = new dbCreation();
 
 
-        o_dbCreation.createDB("T".toString(), function(result) {
+        o_dbCreation.createDB("TEST".toString(), function(result) {
                 console.log("TEST : Create BDD");
                 console.log(result);
                 console.log("END TEST : CREATE DB");
 
         });
 
-        o_dbCreation.displayDatabases("TEST_DELIVERY".toString(), function(result) {
+        o_dbCreation.displayDatabases("TEST".toString(), function(result) {
                 console.log("TEST : CREATE COLLECTION");
 
-                o_dbCreation.createColl("T".toString(), "modelstock", function(result) {
-                        o_dbCreation.createDB("T".toString(), function(result) {
+                o_dbCreation.createColl("TEST".toString(), "userConnection2", function(result) {
+                        o_dbCreation.createDB("TEST".toString(), function(result) {
                                 console.log(result);
                         });
                         console.log(result);
                 });
                 console.log(result);
-                o_dbCreation.displayAllCollections("HealthSafe");
+                o_dbCreation.displayAllCollections("TEST");
                 console.log("END TEST : CREATE COLLECTION");
         })
 

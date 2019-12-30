@@ -1,7 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var dbCRUD = require('../DB/Controllers/dbCRUD').dbCRUD;
+var auth = require('../DB/Controllers/authentification').auth;
+
 var userConnection = require('../DB/models/modelConnection');
+const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
+
 
 require('util').inspect.defaultOptions.depth = null
 
@@ -34,7 +39,7 @@ require('util').inspect.defaultOptions.depth = null
   *         type: string
   *         example: password
   */
-  
+
 /**
  * @swagger
  * /api/connexion:
@@ -105,30 +110,85 @@ router.get('/', function(req, res, next) {
   *         description: ERROR
   */
 
-router.post('/', function(req, res) {
+
+  // connectionSchema.pre('save', async function (next) {
+  //     // Hash the password before saving the user model
+  //     const user = this
+  //     if (user.isModified('password')) {
+  //         user.password = await bcrypt.hash(user.password, 8)
+  //     }
+  //     next()
+  // })
+router.post('/', async function(req, res) {
 
         console.log("TEST : ADD USER IN DB WITH JSON RECEIVE");
+        // user.tokens = user.tokens.concat({token})
+
         const user = new userConnection(
                 {
                         userName: req.body.userName,
-                        password: req.body.password
-                }).save(function(err, result){
-                        if (err)
-                        {
-                                console.log("ERROR POST API/CONNEXiON");
-                                res.status(500).send(err);
-                        }
+                        password: req.body.password,
+                        tokens: []
+                })
+                var token = jwt.sign({_id: user._id}, process.env.JWT_KEY)
+
+                user.password = await bcrypt.hash(user.password, 8);
+                user.tokens = user.tokens.concat({token})
+                var t = await user.save()
+                console.log("t ", t)
+
+
+
+                // user.save(function(err, result){
+                //         if (err)
+                //         {
+                //                 console.log("ERROR POST API/CONNEXiON");
+                //                 res.status(500).send(err);
+                //         }
+                //         else
+                //         {
+                //                 console.log(result);
+                //                 console.log("END TEST : ADD USER IN DB WITH JSON RECEIVE");
+                //
+                //                 res.status(200).end();
+                //         }
+                // });
+                try{
+                        var o_dbCRUD;
+                        o_dbCRUD = new dbCRUD();
+
+                        User = o_dbCRUD.findByCredentials('HealthSafe', 'UserConnexion', user.userName, req.body.password);
+                        console.log(User)
+                        if (!User)
+                            return res.status(401).send({error: 'Login failed! Check authentication credentials'})
                         else
-                        {
-                                console.log(result);
-                                console.log("END TEST : ADD USER IN DB WITH JSON RECEIVE");
+                                console.log("OK")
+                        // return res.status(200).end();
+                } catch (error) {
+                        console.log("error")
+                        res.status(400).send(error)
+                }
 
-                                res.status(200).end();
+                 token = req.header('Authorization').replace('Bearer ', '')
+                 console.log("REQ ", req.header('Authorization').replace('Bearer ', ''))
+                console.log("TEST TOKEN ",token)
+                // console.log(data)
+                    const data = jwt.verify(token, process.env.JWT_KEY)
+                    try {
+                            console.log("TT")
+                            console.log(user)
+                            console.log(data._id)
+                        const User2 = await user.findOne({ _id: data._id, 'tokens.token': token })
+                        if (!User2) {
+                            throw new Error()
                         }
-
-                });
-
-        return res.json({ userName: req.body.userName, password: req.body.password });
+                        req.User2 = User2
+                        req.token = token
+                        next()
+                    } catch (error) {
+                        res.status(401).send({ error: 'Not authorized to access this resource' })
+                    }
+        //return res.json({ userName: req.body.userName, password: req.body.password });
 });
 
 module.exports = router;

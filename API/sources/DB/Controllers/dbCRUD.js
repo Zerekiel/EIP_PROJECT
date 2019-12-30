@@ -1,6 +1,7 @@
 var MongoClient = require('mongodb').MongoClient;
 var urlParser = require('url-parse');
 var url = require('../config/dbCreationAndConnection');
+const bcrypt = require('bcryptjs')
 
 class dbCRUD
 {
@@ -106,7 +107,7 @@ class dbCRUD
 		this.m_resultParseUrl.set('pathname', dbName);
 		this.m_urlDB = this.m_resultParseUrl.href;
 		var option = {returnOriginal: false};
-		MongoClient.connect(this.m_urlDB, { useNewUrlParser: true }, function(err, db) {
+		MongoClient.connect(this.m_urlDB, { useNewUrlParser: true, useUnifiedTopology: true }, function(err, db) {
 			if (err)
 			 	throw err;
 
@@ -163,7 +164,7 @@ class dbCRUD
 
 		//var newValues = { $set: {name: "Mickey", address: "Canyon 123" } };
 
-        MongoClient.connect(this.m_urlDB, { userNewUrlParser: true }, function(err, db)
+        MongoClient.connect(this.m_urlDB, { userNewUrlParser: true, useUnifiedTopology: true }, function(err, db)
         {
             var dbo = db.db(dbName);
             dbo.collection(collectionName).updateOne(myQuery, newValues, function(err, result) {
@@ -173,6 +174,44 @@ class dbCRUD
             });
         });
     };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	 findByCredentials(dbName, collectionName, username, password)
+	{
+		this.m_resultParseUrl.pathname = dbName;
+		this.m_resultParseUrl.set('pathname', dbName);
+		this.m_urlDB = this.m_resultParseUrl.href;
+		 MongoClient.connect(this.m_urlDB, { userNewUrlParser: true, useUnifiedTopology: true }, async function(err, db)
+		{
+		    var dbo = db.db(dbName);
+		    var user = await dbo.collection(collectionName).findOne({userName: username})
+		    if (!user) {
+	                throw new Error({ error: 'Invalid login credentials' })
+	            }
+
+	            const isPasswordMatch =  await bcrypt.compare(password, user.password)
+	            if (!isPasswordMatch) {
+	                throw new Error({ error: 'Invalid login credentials' })
+	            }
+
+		});
+		return true
+	}
+
+
 };
 
 exports.dbCRUD = dbCRUD;

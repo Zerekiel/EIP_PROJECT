@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 
 	o_dbCRUD = new dbCRUD();
 
-	o_dbCRUD.readCollection("HealthSafe", "userconnections", function(result) {
+	o_dbCRUD.readCollection("TEST", "userConnection2", function(result) {
 		// displaying in console json
 		console.log(result);
 
