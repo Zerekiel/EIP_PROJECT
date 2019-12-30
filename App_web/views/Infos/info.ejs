@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>HealthSafe_page_info</title>
-    <link rel="stylesheet" style="text/css" href="./stylesheets/info.css" />
+    <link rel="stylesheet" style="text:css" href="./stylesheets/info.css" />
 </head>
 <body>
     <h3> Mr / Mme Medecin</h3>
@@ -18,18 +18,18 @@
             <div class="info_patient_box">
                 <img class="photo_patient" src="../img/avatar.png" alt="photo_patient" />
                 <ul class="info_client">
-                    <li>Nom prénom</li>
-                    <li>Date de naissance (âge)</li>
-                    <li>Profession</li>
-                    <li>Pays / ville</li>
-                    <li>Taille</li>
-                    <li>Poid</li>
+                    <li><%= user_name %></li>
+                    <li><%= user_dateOfBirth %></li>
+                    <li><%= user_profession %></li>
+                    <li><%= user_address %></li>
+                    <li><%= user_height %></li>
+                    <li><%= user_weight %></li>
                 </ul>
                 <form action=""> </form>
             </div>
         </div>
         <div class="importante_box">
-            <h1>Infos importante</h1>
+            <h1>Infos importantes</h1>
             <div class="info_importante_box">
                 <ul class="info_client_importante">
                     <li>Groupe sanguin</li>
