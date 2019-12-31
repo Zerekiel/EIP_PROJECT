@@ -30,15 +30,15 @@ require('util').inspect.defaultOptions.depth = null
 
 // Require for routes.
 var indexRouter = require('./sources/routes/index');
-var mobileRouter = require('./sources/routes/mobile');
-var webRouter = require('./sources/routes/web');
+// var mobileRouter = require('./sources/routes/mobile');
+// var webRouter = require('./sources/routes/web');
 // var connexionRouter = require('./sources/routes/connexion');
-var connectionRouter = require('./sources/routes/connexion');
-var testRouter = require('./sources/routes/test');
+// var connectionRouter = require('./sources/routes/connexion');
+// var testRouter = require('./sources/routes/test');
 var stockRouter = require('./sources/routes/stock');
 var documentationRouter = require('./sources/routes/documentation');
 var signInRouter = require('./sources/routes/signIn');
-var signIn2Router = require('./sources/routes/signIn2');
+// var signIn2Router = require('./sources/routes/signIn2');
 var logoutRouter = require('./sources/routes/logout');
 
 
@@ -88,11 +88,11 @@ app.use('/', indexRouter);
 // app.use('/mobile', mobileRouter);
 // app.use('/web', webRouter);
 // app.use('/connexion', connexionRouter);
-app.use('/api/connection', connectionRouter);
-app.use('/test', testRouter);
+// app.use('/api/connection', connectionRouter);
+// app.use('/test', testRouter);
 app.use('/api/stock', stockRouter);
 app.use('/api/signin', signInRouter);
-app.use('/api/signin2', signIn2Router);
+// app.use('/api/signin2', signIn2Router);
 app.use('/api/logout', logoutRouter);
 
 app.use('/api/signup', signUpRouter);

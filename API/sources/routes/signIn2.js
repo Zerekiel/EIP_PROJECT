@@ -33,7 +33,7 @@ require('util').inspect.defaultOptions.depth = null
   */
 
 /**
- * @swagger
+ * -@swagger
  * /api/signin:
  *   get:
  *     summary: Receive a JSON user and seach if the user exist.
@@ -156,7 +156,6 @@ router.get('/me', auth, async(req, res) => {
 
 router.post('/', async (req, res) => {
     // Create a new user
-    console.log("TESTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT")
     try {
         const user = new userConnection(req.body)
         await user.save()

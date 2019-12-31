@@ -25,6 +25,21 @@ require('util').inspect.defaultOptions.depth = null
  /**
   * @swagger
   * definitions:
+  *   UserConnexionToken:
+  *     properties:
+  *       userName:
+  *         type: string
+  *         example : OldBoy
+  *       password:
+  *         type: string
+  *         example: password
+  *       token:
+  *         type: string
+  *         example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTBhOTkyM2ZkNzUxZWM0NjBlOGRiOTIiLCJpYXQiOjE1Nzc3NTYxNTZ9.xauRBJ1wJbT99Ue6ZsGdno5vuW1_5fVmzy68tANqe1s
+  */
+ /**
+  * @swagger
+  * definitions:
   *   signInResponse:
   *     properties:
   *       exist:
@@ -149,6 +164,38 @@ require('util').inspect.defaultOptions.depth = null
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+/**
+ * @swagger
+ * /api/logout:
+ *   post:
+ *     summary: log user out of the application.
+ *     description: Kill bearers token and send a JSON in body.
+ *     requestBody:
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             $ref: '#/definitions/modelUserConnection'
+ *     responses:
+ *       200:
+ *         description: OK
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               $ref: '#/definitions/UserConnexionToken'
+ *             example:
+ *               message: User Logout
+ *               isConnected:
+ *                 - true
+ *                 - false
+ *               userName: OldBoy
+ *               password: password
+ *               token: []
+ *       500:
+ *         description: ERROR
+ */
+
 router.post('/', auth, async (req, res) => {
     // Log user out of the application
     try {
@@ -156,18 +203,52 @@ router.post('/', auth, async (req, res) => {
             return token.token != req.token
         })
         await req.user.save()
-        res.send("USER LOGOUT")
+        res.send({message: "USER LOGOUT", isConnected: false, user: req.user})
     } catch (error) {
         res.status(500).send(error)
     }
 })
 
+
+
+
+/**
+ * @swagger
+ * /api/logout/logoutall:
+ *   post:
+ *     summary: log user out of all devices.
+ *     description: Kill all bearers token and send a JSON in body.
+ *     requestBody:
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             $ref: '#/definitions/modelUserConnection'
+ *     responses:
+ *       200:
+ *         description: OK
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               $ref: '#/definitions/UserConnexionToken'
+ *             example:
+ *               message: User Logoutthe application
+ *               isConnected:
+ *                 - true
+ *                 - false
+ *               userName: OldBoy
+ *               password: password
+ *               token: []
+ *       500:
+ *         description: ERROR
+ */
 router.post('/logoutall', auth, async(req, res) => {
     // Log user out of all devices
     try {
         req.user.tokens.splice(0, req.user.tokens.length)
         await req.user.save()
-        res.send()
+        res.send({message: "USER LOGOUT", isConnected: false, user: req.user})
     } catch (error) {
         res.status(500).send(error)
     }

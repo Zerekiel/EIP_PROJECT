@@ -106,9 +106,9 @@ connectionSchema.statics.findByCredentials = async (userName, password) => {
 
 
 
-var userConnection = mongoose.model('userConnection2', connectionSchema);
+// var userConnection = mongoose.model('userConnection2', connectionSchema);
 
 
-// var userConnection = mongoose.model('userConnection', connectionSchema, 'UserConnexion');
+var userConnection = mongoose.model('userConnection', connectionSchema, 'UserConnexion');
 
 module.exports = userConnection;

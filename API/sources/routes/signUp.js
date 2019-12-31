@@ -105,30 +105,42 @@ router.get('/', function(req, res, next) {
   *         description: ERROR
   */
 
-router.post('/', function(req, res) {
+// router.post('/', function(req, res) {
+//
+//         console.log("TEST : ADD USER IN DB WITH JSON RECEIVE");
+//         const user = new userConnection(
+//                 {
+//                         userName: req.body.userName,
+//                         password: req.body.password
+//                 }).save(function(err, result){
+//                         if (err)
+//                         {
+//                                 console.log("ERROR POST API/CONNEXiON");
+//                                 res.status(500).send(err);
+//                         }
+//                         else
+//                         {
+//                                 console.log(result);
+//                                 console.log("END TEST : ADD USER IN DB WITH JSON RECEIVE");
+//
+//                                 res.status(200).end();
+//                         }
+//
+//                 });
+//
+//         return res.json({ userName: req.body.userName, password: req.body.password });
+// });
 
-        console.log("TEST : ADD USER IN DB WITH JSON RECEIVE");
-        const user = new userConnection(
-                {
-                        userName: req.body.userName,
-                        password: req.body.password
-                }).save(function(err, result){
-                        if (err)
-                        {
-                                console.log("ERROR POST API/CONNEXiON");
-                                res.status(500).send(err);
-                        }
-                        else
-                        {
-                                console.log(result);
-                                console.log("END TEST : ADD USER IN DB WITH JSON RECEIVE");
-
-                                res.status(200).end();
-                        }
-
-                });
-
-        return res.json({ userName: req.body.userName, password: req.body.password });
-});
+router.post('/', async function(req, res) {
+        try {
+            const user = new userConnection(req.body)
+            await user.save()
+            const token = await user.generateAuthToken()
+            console.log(user)
+            res.status(201).send({ user})
+        } catch (error) {
+            res.status(500).send(error)
+        }
+})
 
 module.exports = router;
