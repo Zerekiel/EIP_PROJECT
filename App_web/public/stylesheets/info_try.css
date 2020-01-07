@@ -1,0 +1,194 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+
+* {
+    /*margin: 0;*/
+    /*padding: 0;*/
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    background: #d3d3d3;
+}
+
+.cont {
+    position: relative;
+    width: 28%;
+    height: 550px;
+    margin: 10px auto;
+}
+
+.patient_box {
+    width: 90%;
+    height: 100%;
+    background: #fff;
+    margin-left: -500px;
+    margin-top: 190px;
+}
+
+    .patient_box h1 {
+        color: #ff8985;
+        font-weight: 100;
+        font-size: 26px;
+        padding-top: 10px;
+    }
+
+    .photo_patient {
+        width: 115px;
+        height: 115px;
+        position: absolute;
+        margin-left: 80px;
+    }
+
+    .info_client {
+        width: 280px;
+        list-style: none;
+        margin-left: 0;
+        padding-left: 0;
+        margin-top: 33px;
+        /*margin-left: -50px;*/
+    }
+
+    .info_client li {
+        margin-bottom: 15px; /* à adapter */
+    }
+
+.importante_box {
+    width: 90%;
+    height: 100%;
+    text-align: center;
+    background: #ffffff;
+    margin-top: -550px;
+    margin-left: 23px;
+}
+.info_importante_box {
+    position: relative;
+    top: 20%;
+    width: 100%;
+    height: 75%;
+    padding: 18px 15px;
+}
+
+    .importante_box h1 {
+        color: #ff8985;
+        font-weight: 100;
+        font-size: 26px;
+        padding-top: 10px;
+    }
+    .info_client_importante {
+        width: 280px;
+        list-style: none;
+        padding-left: 0;
+        margin-top: -96px;
+        margin-left: 35px;
+    }
+
+    .info_client_importante li {
+        margin-bottom: 15px; /* à adapter */
+    }
+
+.derniere_visite_box {
+    width: 90%;
+    height: 100%;
+    text-align: center;
+    background: #fff;
+    margin-left: 546px;
+    margin-top: -550px;
+}
+
+    .derniere_visite_box h1 {
+        color: #ff8985;
+        font-weight: 100;
+        font-size: 26px;
+        padding-top: 10px;
+    }
+
+
+.info_derniere_visite {
+    width: 280px;
+    list-style: none;
+    padding-left: 0;
+    margin-top: -96px;
+    margin-left: 35px;
+}
+
+    .info_derniere_visite li {
+        margin-bottom: 15px; /* à adapter */
+    }
+
+.info_derniere_visite_box {
+    position: relative;
+    top: 20%;
+    width: 100%;
+    height: 75%;
+    padding: 18px 15px;
+}
+
+.logo_home{
+    width: 35px;
+    height: 35px;
+    top: 10px;
+    left: 20px;
+    position: absolute;
+}
+
+.logo_reglage {
+    width: 35px;
+    height: 35px;
+    top: 10px;
+    left: 20px;
+    margin-left: 60px;
+    position: absolute;
+    -moz-transition: -moz-transform .3s;
+}
+
+    .logo_reglage:hover {
+        -moz-transform: rotate(180deg);
+    }
+
+.logo {
+    position: relative;
+    left: 40%;
+    top: -362px;
+    width: 60px;
+    height: 60px;
+    margin-left: -10px;
+    border: none;
+    transform: rotateZ(-45deg) scale(1.2,1.2);
+    background: linear-gradient(to bottom,#ff1c4e,#ff8985);
+    border-radius: 120% 0 70% 50% / 70% 0 120% 50%;
+}
+
+h3 {
+    top: 10px;
+    right: 20px;
+    position: absolute;
+    color: #ff8985;
+    font-weight: 100;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+.error {
+    border-bottom-color: red;
+    animation: error 0.5s linear 2;
+}
+
+@keyframes error {
+    0% {
+        left: 0;
+    }
+
+    40% {
+        left: 50px;
+    }
+
+    80% {
+        left: -50px;
+    }
+
+    100% {
+        left: 0;
+    }
+}
