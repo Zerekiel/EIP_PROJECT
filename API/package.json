@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "prestart": "next build",
+    "start": "next start -p ${PORT}",
     "start": "node ./bin/www",
     "sass": "node-sass ./sources/public/sass/ -o ./sources/public/stylesheets"
   },
