@@ -6,7 +6,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
 
-const jwt = require('jsonwebtoken')
+//const jwt = require('jsonwebtoken')
 
 const auth = async(req, res, next) => {
 

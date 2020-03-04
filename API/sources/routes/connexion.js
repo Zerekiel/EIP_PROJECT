@@ -5,7 +5,7 @@ var auth = require('../DB/Controllers/authentification').auth;
 
 var userConnection = require('../DB/models/modelConnection');
 //const bcrypt = require('bcryptjs')
-const jwt = require('jsonwebtoken')
+//const jwt = require('jsonwebtoken')
 
 
 require('util').inspect.defaultOptions.depth = null

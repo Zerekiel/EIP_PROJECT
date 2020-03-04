@@ -2,8 +2,6 @@ var express = require('express');
 var router = express.Router();
 var auth = require('../DB/Controllers/authentification').auth;
 
-const jwt = require('jsonwebtoken')
-
 require('util').inspect.defaultOptions.depth = null
 
 router.get('/.well-known/acme-challenge/zACAJGF-vZC-pWVj3IaM0wRHSZ3UYjmfRm5WYfa_U2Q', function(req, res, next) {
