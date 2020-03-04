@@ -61,7 +61,8 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'sources/public/stylesheets')));
 app.use(express.static(path.join(__dirname, 'sources/public/scriptJS')));
 
-
+// allow files with a dotname (for cetbot)
+app.use(express.static(__dirname, { dotfiles: 'allow' } ));
 
 
 

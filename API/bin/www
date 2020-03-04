@@ -7,6 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('api:server');
 var http = require('http');
+var https = require('https');
 var url = require('url');
 
 
@@ -29,15 +30,15 @@ app.set('hostname', hostname);
 var server;
 server = http.createServer(app);
 server.on('request', function(req, res) {
-        var host;
-        var baseUrl;
-        var realUrl;
+    var host;
+    var baseUrl;
+    var realUrl;
 
-        host = req.headers.host;
-        baseUrl = req.url;
-        realUrl = (req.connection.encrypted ? 'https': 'http') + '://' + host + baseUrl;
+    host = req.headers.host;
+    baseUrl = req.url;
+    realUrl = (req.connection.encrypted ? 'https': 'http') + '://' + host + baseUrl;
 
-        console.log("URL : " + realUrl);
+    console.log("URL : " + realUrl);
 });
 
 // require('node-api-doc-generator')(app, process.env.LOCALHOST,3000);
