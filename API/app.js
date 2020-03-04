@@ -23,8 +23,6 @@ let bodyParser = require('body-parser');
 // Require for parse url.
 var url = require('url');
 
-const bcrypt = require('bcryptjs')
-
 
 
 require('util').inspect.defaultOptions.depth = null
