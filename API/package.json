@@ -6,7 +6,6 @@
     "node": "12.11.1"
   },
   "scripts": {
-    "build": "next build",
     "start": "node ./bin/www",
     "sass": "node-sass ./sources/public/sass/ -o ./sources/public/stylesheets"
   },
