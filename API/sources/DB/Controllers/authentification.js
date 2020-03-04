@@ -2,8 +2,8 @@ var MongoClient = require('mongodb').MongoClient;
 var urlParser = require('url-parse');
 var url = require('../config/dbCreationAndConnection');
 var userConnection = require('../models/modelConnection');
-var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
+//var passport = require('passport');
+//var LocalStrategy = require('passport-local').Strategy;
 
 
 //const jwt = require('jsonwebtoken')
