@@ -10,6 +10,7 @@ var http = require('http');
 var https = require('https');
 var url = require('url');
 
+const bcrypt = require('bcryptjs')
 
 /**
  * Get port from environment and store in Express.

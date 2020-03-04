@@ -13,7 +13,7 @@ var url = require('../DB/config/dbCreationAndConnection');
 var dbCRUD = require('../DB/Controllers/dbCRUD').dbCRUD;
 var dbCreation = require('../DB/Controllers/dbCRUD').dbCreation;
 
-
+const bcrypt = require('bcryptjs')
 const swaggerJSDoc = require('swagger-jsdoc');
 
 
