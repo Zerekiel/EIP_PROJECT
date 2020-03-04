@@ -4,8 +4,6 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "start": "NODE_ENV=production node server.js -p $PORT",
-
     "start": "node ./bin/www",
     "sass": "node-sass ./sources/public/sass/ -o ./sources/public/stylesheets"
   },
@@ -15,6 +13,7 @@
     "body-parser": "^1.19.0",
     "browser-sync": "^2.26.7",
     "cookie-parser": "~1.4.4",
+    "core-util-is": "^1.0.2",
     "debug": "~2.6.9",
     "dotenv": "^8.1.0",
     "ejs": "~2.6.1",
@@ -28,6 +27,7 @@
     "mongodb": "^3.5.4",
     "mongoose": "^5.9.3",
     "morgan": "~1.9.1",
+    "ng": "0.0.0",
     "node-sass": "^4.13.1",
     "node-waf": "^1.0.0",
     "nodemon": "^1.19.4",
@@ -45,6 +45,8 @@
     "url": "^0.11.0",
     "url-parse": "^1.4.7",
     "utils": "^0.3.1",
-    "validator": "^12.2.0"
+    "validator": "^12.2.0",
+    "webpack": "^4.42.0",
+    "webpack-dev-server": "^3.10.3"
   }
 }
