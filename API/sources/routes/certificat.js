@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var auth = require('../DB/Controllers/authentification').auth;
+//var auth = require('../DB/Controllers/authentification').auth;
 
 require('util').inspect.defaultOptions.depth = null
 

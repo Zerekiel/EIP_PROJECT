@@ -14,7 +14,7 @@ var dbCRUD = require('../DB/Controllers/dbCRUD').dbCRUD;
 var dbCreation = require('../DB/Controllers/dbCRUD').dbCreation;
 
 //const bcrypt = require('bcryptjs')
-const swaggerJSDoc = require('swagger-jsdoc');
+//const swaggerJSDoc = require('swagger-jsdoc');
 
 
 
