@@ -1,10 +1,7 @@
 var express = require('express');
 var router = express.Router();
-//var dbCRUD = require('../DB/Controllers/dbCRUD').dbCRUD;
 var auth = require('../DB/Controllers/authentification').auth;
 
-//var userConnection = require('../DB/models/modelConnection');
-const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
 require('util').inspect.defaultOptions.depth = null
