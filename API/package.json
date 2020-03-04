@@ -3,10 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "node server.js",
     "build": "next build",
-    "postinstall": "npm run build",
-    "start": "NODE_ENV=production node server.js",
+    "start": "NODE_ENV=production node server.js -p $PORT",
 
     "start": "node ./bin/www",
     "sass": "node-sass ./sources/public/sass/ -o ./sources/public/stylesheets"
