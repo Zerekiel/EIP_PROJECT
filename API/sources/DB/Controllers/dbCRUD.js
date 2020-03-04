@@ -1,7 +1,7 @@
 var MongoClient = require('mongodb').MongoClient;
 var urlParser = require('url-parse');
 var url = require('../config/dbCreationAndConnection');
-const bcrypt = require('bcryptjs')
+//const bcrypt = require('bcryptjs')
 
 class dbCRUD
 {
