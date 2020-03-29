@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var dbCRUD = require('../DB/tools/dbCRUD').dbCRUD;
+var dbCRUD = require('../DB/Controllers/dbCRUD').dbCRUD;
 var userConnection = require('../DB/models/modelConnection');
 var mongo = require('mongodb')
 require('util').inspect.defaultOptions.depth = null
@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 
 	o_dbCRUD = new dbCRUD();
 
-	o_dbCRUD.readCollection("HealthSafe", "userconnections", function(result) {
+	o_dbCRUD.readCollection("TEST", "userConnection2", function(result) {
 		// displaying in console json
 		console.log(result);
 

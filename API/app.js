@@ -23,17 +23,30 @@ let bodyParser = require('body-parser');
 // Require for parse url.
 var url = require('url');
 
-require('util').inspect.defaultOptions.depth = null
 
+
+
+require('util').inspect.defaultOptions.depth = null
 
 // Require for routes.
 var indexRouter = require('./sources/routes/index');
-var mobileRouter = require('./sources/routes/mobile');
-var webRouter = require('./sources/routes/web');
+// var mobileRouter = require('./sources/routes/mobile');
+// var webRouter = require('./sources/routes/web');
 // var connexionRouter = require('./sources/routes/connexion');
-var connectionRouter = require('./sources/routes/connexion');
-var testRouter = require('./sources/routes/test');
+// var connectionRouter = require('./sources/routes/connexion');
+// var testRouter = require('./sources/routes/test');
 var stockRouter = require('./sources/routes/stock');
+var documentationRouter = require('./sources/routes/documentation');
+var signInRouter = require('./sources/routes/signIn');
+// var signIn2Router = require('./sources/routes/signIn2');
+var logoutRouter = require('./sources/routes/logout');
+
+
+var signUpRouter = require('./sources/routes/signUp');
+
+
+var swaggerRouter = require('./sources/Documentation/configDoc');
+
 
 
 var app = express();
@@ -44,7 +57,14 @@ app.set('view engine', 'ejs');
 
 // Load all middlewares
 // Stylesheets engine setup
+
 app.use(express.static(path.join(__dirname, 'sources/public/stylesheets')));
+app.use(express.static(path.join(__dirname, 'sources/public/scriptJS')));
+
+
+
+
+
 
 // for build to mode DEV / DEBBUG
 app.use(logger('dev'));
@@ -64,28 +84,31 @@ app.use(cookieParser());
 
 // For load routes
 app.use('/', indexRouter);
-app.use('/signup', indexRouter);
-app.use('/mobile', mobileRouter);
-app.use('/web', webRouter);
+// app.use('/signup', indexRouter);
+// app.use('/mobile', mobileRouter);
+// app.use('/web', webRouter);
 // app.use('/connexion', connexionRouter);
-app.use('/api/connection', connectionRouter);
-app.use('/test', testRouter);
+// app.use('/api/connection', connectionRouter);
+// app.use('/test', testRouter);
 app.use('/api/stock', stockRouter);
+app.use('/api/signin', signInRouter);
+// app.use('/api/signin2', signIn2Router);
+app.use('/api/logout', logoutRouter);
+
+app.use('/api/signup', signUpRouter);
+
+
+// app.use('/docs', documentationRouter);
+app.use('/api', documentationRouter);
+app.use('/swagger.json', swaggerRouter);
+
 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-        res.setHeader('Access-Control-Allow-Origin', '*');
-
-// Request methods you wish to allow
-res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-
-// Request headers you wish to allow
-res.setHeader('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers,X-Access-Token,XKey,Authorization');
-
-//  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
   next(createError(404));
+
 });
 
 // error handler
@@ -95,8 +118,23 @@ app.use(function(err, req, res, next) {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+  // res.status(err.status || 500);
+  // res.render('error');
+  if (res.status(err.status).statusCode === 404) {
+          console.log("ERR STATUS 404 : ")
+         //console.log(res.status(err.status))
+         res.status(404);
+         res.render('error404');
+
+  } else {
+          console.log("ERR STATUS : ")
+          console.log(err.status)
+          console.log(res.status(err.status).statusCode)
+         // console.log(res.status(err.status))
+          res.status(err.status || 500);
+          res.render('error');
+  }
+
 });
 
 module.exports = app;

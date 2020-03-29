@@ -9,12 +9,13 @@ var debug = require('debug')('api:server');
 var http = require('http');
 var url = require('url');
 
+
 /**
  * Get port from environment and store in Express.
  */
 
 var port;
-port = normalizePort(process.env.PORT_SERVER || '8080');
+port = normalizePort(process.env.PORT_SERVER || '3000');
 app.set('port', port);
 
 var hostname;
@@ -39,11 +40,14 @@ server.on('request', function(req, res) {
         console.log("URL : " + realUrl);
 });
 
+// require('node-api-doc-generator')(app, process.env.LOCALHOST,3000);
+
+
 /**
  * Listen on provided port, on all network interfaces.
  */
-
-server.listen(port, function() {
+//port
+server.listen((process.env.PORT || 3000), function() {
         console.log('Server is running on port :', port);
 });
 

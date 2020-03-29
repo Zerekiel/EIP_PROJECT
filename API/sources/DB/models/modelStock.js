@@ -3,59 +3,35 @@ const mongoose = require('mongoose');
 const stockSchema = mongoose.Schema({
 	lastName :
 	{
-		type : String,
-		unique : true,
-		required : true,
-		trim : true
+		type : String
 	},
 	firstName :
 	{
-		type : String,
-		unique : true,
-		required : true,
-		trim : true
+		type : String
 	},
 	age :
 	{
-		type : String,
-		unique : true,
-		required : true,
-		trim : true
+		type : String
 	},
 	gender :
 	{
-		type : String,
-		unique : true,
-		required : true,
-		trim : true
+		type : String
 	},
 	emergencyNumber :
 	{
-		type : String,
-		unique : true,
-		required : true,
-		trim : true
+		type : String
 	},
 	allergies :
 	{
-		type : String,
-		unique : true,
-		required : true,
-		trim : true
+		type : String
 	},
 	medicalHistory :
 	{
-		type : String,
-		unique : true,
-		required : true,
-		trim : true
+		type : String
 	},
 	bloodType :
 	{
-		type : String,
-		unique : true,
-		required : true,
-		trim : true
+		type : String
 	},
 	socialNumber :
 	{
@@ -66,27 +42,18 @@ const stockSchema = mongoose.Schema({
 	},
 	treatments :
 	{
-		type : String,
-		unique : true,
-		required : true,
-		trim : true
+		type : String
 	},
 	organDonation :
 	{
-		type : String,
-		unique : true,
-		required : true,
-		trim : true
+		type : String
 	},
 	doctor :
 	{
-		type : String,
-		unique : true,
-		required : true,
-		trim : true
+		type : String
 	}
 });
 
-var modelStock = mongoose.model('modelStock', stockSchema, true);
+var modelStock = mongoose.model('modelStock', stockSchema, 'PatientInformation');
 
 module.exports = modelStock;

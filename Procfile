@@ -1,1 +1,1 @@
-web: node ./API/bin/www
+worker: node ./API/bin/www

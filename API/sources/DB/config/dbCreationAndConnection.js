@@ -14,8 +14,10 @@ const authSource_db = process.env.AUTHSOURCE_DB;
 const url = 'mongodb+srv://' + username_db + ':' + password_db + '@' + hostlist_db + '.mongodb.net/' + database_db + '?authSource=' + authSource_db;
 
 // Create DB via URL and Connect Mongoose to MongoDB and set connection variable
+// useUnifiedTopology: true  -> TO  DELETE
 mongoose.connect(url, { useNewUrlParser: true,
-			useCreateIndex: true }, function(err, db) {
+			useCreateIndex: true,
+			useUnifiedTopology: true }, function(err, db) {
 	if (err)
 		return console.error('Connection failed', err);
 	console.log('Connection successful on', url);

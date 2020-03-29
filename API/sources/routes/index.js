@@ -8,104 +8,64 @@ var userConnection = require('../DB/models/modelConnection');
 // var Test = require('../DB/tools/dbCRUD').CreateTest;
 // var Test2 = require('../DB/tools/dbCRUD').CreateTest2;
 // var manage = require('../DB/tools/dbCRUD').manage;
-var obj = require('../DB/tools/dbCRUD');
+var obj = require('../DB/Controllers/dbCRUD');
 var url = require('../DB/config/dbCreationAndConnection');
-// var userPostConnectionSchema = require('../DB/models/post.modelConnection')
+var dbCRUD = require('../DB/Controllers/dbCRUD').dbCRUD;
+var dbCreation = require('../DB/Controllers/dbCRUD').dbCreation;
 
-/* GET home page. */
-// router.get('/', function(req, res, next) {
-//         //res.setHeader('Content-Type', 'application/json');
-//         //CreateTest();
-//
-//
-//         console.log(CreateTest(res));
-//
-//
-//         //CreateTest();
-//         //console.log(CreateTest());
-//         // var t = JSON.stringify(CreateTest(), null, 4);
-//         // console.log(t);
-//
-//
-//          res.json(CreateTest());
-//         res.end(JSON.stringify(CreateTest(),    null, 3));
-//
-//
-//   //res.render('index', { title: 'Express' });
-//   //console.log(CreateTest());
-//   // console.log("REQ : " + req);
-//   // console.log("REQ.BODY : " + req.body);
-//
-//
-//   console.log("URLDB = " + url);
-//
-//
-//   // MongoClient.connect(url, { useNewUrlParser: true }, function(err, db) {
-//   // if (err) throw err;
-//   // var dbo = db.db("HealthSafe");
-//   // dbo.collection("userconnections").find({}).toArray(function(err, result) {//.findOne({}, function(err, result) {
-//   //   if (err) throw err;
-//   //   console.log(result);
-//   //   db.close();
-//   // CreateTest();
-//   // });
-//
-//
-//   res.status(200);
-//
-//
-// });
+
+const swaggerJSDoc = require('swagger-jsdoc');
 
 
 
-const dbCreation = require('../DB/tools/dbCreation').dbCreation;
+
+
 
 router.get("/", function(req, res, next) {
 
+// HealthSafe
         var o_dbCreation;
         o_dbCreation = new dbCreation();
 
 
-        o_dbCreation.createDB("HealthSafe".toString(), function(result) {
+        o_dbCreation.createDB("TEST".toString(), function(result) {
                 console.log("TEST : Create BDD");
                 console.log(result);
                 console.log("END TEST : CREATE DB");
 
         });
 
-        o_dbCreation.displayDatabases("HealthSafe".toString(), function(result) {
+        o_dbCreation.displayDatabases("TEST".toString(), function(result) {
                 console.log("TEST : CREATE COLLECTION");
 
-                o_dbCreation.createColl("HealthSafe".toString(), "modelstock", function(result) {
-                        o_dbCreation.createDB("HealthSafe".toString(), function(result) {
+                o_dbCreation.createColl("TEST".toString(), "userConnection2", function(result) {
+                        o_dbCreation.createDB("TEST".toString(), function(result) {
                                 console.log(result);
                         });
                         console.log(result);
                 });
                 console.log(result);
-                o_dbCreation.displayAllCollections("HealthSafe");
+                o_dbCreation.displayAllCollections("TEST");
                 console.log("END TEST : CREATE COLLECTION");
         })
 
-        res.end();
-        //res.status(200).end();
+        res.render('index', {title : "TEST"});
+
 })
 
 
 
 
 
-// router.get('/signup', function(req, res, next) {
-//
-//   console.log("REQ.BODY.USERNAME = " + req.body.userName);
-//   res.render('index', { title: 'Express' });
-//
-//   //console.log("REQ.BODY : " + req.body);
-//
-//   res.status(200);
-// });
+router.get('/signup', function(req, res, next) {
 
-// router.get('/', function(res, req) {});
+  console.log("REQ.BODY.USERNAME = " + req.body.userName);
+  res.render('index', { title: 'Express' });
+
+  //console.log("REQ.BODY : " + req.body);
+
+  res.status(200);
+});
 
 router.post('/signup', async function(req, res) {
         //res.setHeader('Content-Type', 'application/json');
