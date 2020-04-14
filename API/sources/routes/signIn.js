@@ -3,6 +3,7 @@ var router = express.Router();
 var dbCRUD = require('../DB/Controllers/dbCRUD').dbCRUD;
 var userConnection = require('../DB/models/modelConnection');
 var auth = require('../DB/Controllers/authentification').auth
+sha3_512 = require('js-sha3').sha3_512;
 
 require('util').inspect.defaultOptions.depth = null
 
@@ -210,6 +211,8 @@ router.get('/me', auth, async(req, res) => {
   router.post('/', async(req, res) => {
       //Login a registered user
       try {
+          userName = sha3_512(userName)
+          password = sha3_512(password)
           const { userName, password } = req.body
           const user = await userConnection.findByCredentials(userName, password)
           if (!user) {
@@ -222,13 +225,6 @@ router.get('/me', auth, async(req, res) => {
       }
 
   })
-
-
-
-
-
-
-
 
 
   /**
@@ -262,6 +258,7 @@ router.get('/me', auth, async(req, res) => {
    router.post('/create', async (req, res) => {
        // Create a new user
        try {
+           console.log(req.body)
            const user = new userConnection(req.body)
            await user.save()
            const token = await user.generateAuthToken()
