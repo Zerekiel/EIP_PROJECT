@@ -7,6 +7,7 @@ var userConnection = require('../DB/models/modelConnection');
 //const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 sha3_512 = require('js-sha3').sha3_512;
+sha3_384 = require('js-sha3').sha3_384;
 
 require('util').inspect.defaultOptions.depth = null
 
@@ -131,8 +132,8 @@ router.post('/', async function(req, res) {
                         tokens: []
                 })
                 var token = jwt.sign({_id: user._id}, process.env.JWT_KEY)
-                user.userName = sha3_512(user.userName)
-                user.password = sha3_512(user.password)
+                user.userName = sha3_512(sha3_384(user.userName))
+                user.password = sha3_512(sha3_384(user.password))
 //                user.password = await bcrypt.hash(user.password, 8);
                 user.tokens = user.tokens.concat({token})
                 var t = await user.save()

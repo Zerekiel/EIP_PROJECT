@@ -2,6 +2,7 @@ var MongoClient = require('mongodb').MongoClient;
 var urlParser = require('url-parse');
 var url = require('../config/dbCreationAndConnection');
 sha3_512 = require('js-sha3').sha3_512;
+sha3_384 = require('js-sha3').sha3_384;
 
 class dbCRUD
 {
@@ -191,7 +192,7 @@ class dbCRUD
 	            }
 
 	            // const isPasswordMatch =  await bcrypt.compare(password, user.password)
-							const isPasswordMatch = (sha3_512(password) === user.password)
+							const isPasswordMatch = (sha3_512(sha3_384(password)) === user.password)
 	            if (!isPasswordMatch) {
 	                throw new Error({ error: 'Invalid login credentials' })
 	            }

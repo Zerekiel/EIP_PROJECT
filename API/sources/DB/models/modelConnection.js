@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const validator = require('validator')
 const jwt = require('jsonwebtoken')
 sha3_512 = require('js-sha3').sha3_512;
+sha3_384 = require('js-sha3').sha3_384;
 
 const connectionSchema = mongoose.Schema({
 	userName :
@@ -66,9 +67,9 @@ connectionSchema.pre('save', async function (next) {
 		const user = this
 
     if (user.isModified('password')) {
-			user.password =  sha3_512(user.password)
+			user.password = sha3_512(sha3_384(user.password))
     } if (user.isModified('userName')) {
-			user.userName = sha3_512(user.userName)
+			user.userName = sha3_512(sha3_384(user.userName))
     }
     next()
 })
@@ -93,7 +94,7 @@ connectionSchema.statics.findByCredentials = async (userName, password) => {
     }
 
 				// const isPasswordMatch = await bcrypt.compare(password, user.password)
-				 const isPasswordMatch = compare(sha3_512(password) === user.password)
+				 const isPasswordMatch = compare(sha3_512(sha3_384(password)) === user.password)
     if (!isPasswordMatch) {
         throw new Error({ error: 'Invalid login credentials' })
     }

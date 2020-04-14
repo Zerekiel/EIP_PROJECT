@@ -4,6 +4,7 @@ var dbCRUD = require('../DB/Controllers/dbCRUD').dbCRUD;
 var userConnection = require('../DB/models/modelConnection');
 var auth = require('../DB/Controllers/authentification').auth
 sha3_512 = require('js-sha3').sha3_512;
+sha3_384 = require('js-sha3').sha3_384;
 
 require('util').inspect.defaultOptions.depth = null
 
@@ -211,8 +212,8 @@ router.get('/me', auth, async(req, res) => {
   router.post('/', async(req, res) => {
       //Login a registered user
       try {
-          userName = sha3_512(userName)
-          password = sha3_512(password)
+          userName = sha3_512(sha3_384(userName))
+          password = sha3_512(sha3_384(password))
           const { userName, password } = req.body
           const user = await userConnection.findByCredentials(userName, password)
           if (!user) {
