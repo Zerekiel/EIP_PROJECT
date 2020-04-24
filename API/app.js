@@ -35,6 +35,7 @@ var indexRouter = require('./sources/routes/index');
 // var connexionRouter = require('./sources/routes/connexion');
 // var connectionRouter = require('./sources/routes/connexion');
 // var testRouter = require('./sources/routes/test');
+var docInfoRouter = require('./sources/routes/docInfo');
 var stockRouter = require('./sources/routes/stock');
 var documentationRouter = require('./sources/routes/documentation');
 var signInRouter = require('./sources/routes/signIn');
@@ -46,8 +47,6 @@ var signUpRouter = require('./sources/routes/signUp');
 
 
 var swaggerRouter = require('./sources/Documentation/configDoc');
-
-
 
 var app = express();
 
@@ -61,11 +60,6 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'sources/public/stylesheets')));
 app.use(express.static(path.join(__dirname, 'sources/public/scriptJS')));
 
-
-
-
-
-
 // for build to mode DEV / DEBBUG
 app.use(logger('dev'));
 
@@ -73,7 +67,7 @@ app.use(logger('dev'));
 app.use(bodyParser.urlencoded({
    extended: true
 }));
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
 
 // For understand JSON format ?
 app.use(express.json());
@@ -91,6 +85,7 @@ app.use('/', indexRouter);
 // app.use('/api/connection', connectionRouter);
 // app.use('/test', testRouter);
 app.use('/api/stock', stockRouter);
+app.use('/api/docInfo', docInfoRouter);
 app.use('/api/signin', signInRouter);
 // app.use('/api/signin2', signIn2Router);
 app.use('/api/logout', logoutRouter);
