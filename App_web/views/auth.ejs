@@ -1,48 +1,71 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr" xlmns="http://www.w3.org/1999/xhtml">
+﻿<!DOCTYPE html>
 
-  <head>
-    <meta charset="utf-8">
-    <title>HealthSafe</title>
-    <!--<script src="./../javascripts/auth_action.js"></script>-->
-    <link rel="stylesheet" style="text/css" href="./stylesheets/auth.css"/>
-  </head>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
-  <body>
-    <div class="cont">
-      <div class="main-box">
-        <div class="log">
-          <form class="" action="/" method="post">
-            <div class="tear"></div>
+<head>
+    <meta charset="utf-8" />
+    <title>HealthSafe_log</title>
+    <link rel="stylesheet" style="text/css" href="./stylesheets/auth.css" />
+    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        Weglot.initialize({
+            api_key: 'wg_775b2c126fe4cf7de96fe0ba186238023'
+        });
+    </script>
+</head>
 
-            <h2>HealthSafe</h2>
+<body>
+    <section id="authen">
+        <div class="gauche">
+            <div class="main-box">
 
+                <div class="log">
+                    <div class="lang">
+                    </div>
+                    <form action="">
 
-            <i class="fa fa-check fa-user"></i>
-            <input  type="text"
-                    class="user"
-                    name="username"
-                    placeholder="Username"
-                    id="username"
-                    required />
+                        <div class="tear"></div>
 
-            <i class="fa fa-check fa-pass"></i>
-            <input  type="password"
-                    class="pass"
-                    name="password"
-                    placeholder="Password"
-                    id="psswd"
-                    required />
+                        <h2>HealthSafe</h2>
+                        <i class="fa fa-check fa-user"></i>
+                        <input type="text" class="user" name="username" placeholder="Nom utilisateur" required />
+                        <i class="fa fa-check fa-pass"></i>
+                        <input type="password" class="pass" name="password" placeholder="Mot de passe" required />
 
-            <button type="submit"
-                    class="login"
-                    onclick="connexion"
-                    id="connexion">
-                    Connexion
-            </button>
+                        <button class="login">Connexion</button>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </body>
+        <div class="droite">
+            <div class="main-box">
+
+                <div class="log">
+                    <div class="lang">
+                    </div>
+                    <form action="#" method="post">
+
+                        <div class="tear"></div>
+
+                        <h2>HealthSafe</h2>
+                        <i class="fa fa-check fa-user"></i>
+                        <input type="text" class="user" name="Name" placeholder="Nom complet" required />
+                        <i class="fa fa-check fa-user"></i>
+                        <input type="text" class="user" name="Mail" placeholder="Adresse mail" required />
+                        <i class="fa fa-check fa-user"></i>
+                        <input type="text" class="user" name="Genre" placeholder="Mr / Mme" required />
+                        <i class="fa fa-check fa-pass"></i>
+                        <input type="text" class="pass" name="id_medecin" placeholder="Identification médecin" required />
+                        <!-- <input type="submit" value="Envoyé"> <-->
+                        <button class="login">Inscription</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="assets/js/mail.js"></script>
+</body>
 
 </html>
