@@ -29,6 +29,21 @@ app.use('/home', homeRouter);
 app.use('/info', infoRouter);
 app.use('/scan', scanRouter);
 
+//global check of connection status in the web client
+/*
+
+if (connectionStatus ===  true) {
+    app.use('/home', homeRouter);
+    app.use('/info', infoRouter);
+    app.use('/scan', scanRouter);
+} else {
+    app.use('/unvalidData', );
+    app.use('/info', infoRouter);
+    app.use('/scan', scanRouter);
+}
+
+*/
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     next("404 Not Found");
