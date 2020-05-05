@@ -163,16 +163,16 @@ class dbCRUD
 		this.m_resultParseUrl.set('pathname', dbName);
 		this.m_urlDB = this.m_resultParseUrl.href;
 
-		//var newValues = { $set: {name: "Mickey", address: "Canyon 123" } };
-
-        MongoClient.connect(this.m_urlDB, { userNewUrlParser: true, useUnifiedTopology: true }, function(err, db)
+        MongoClient.connect(this.m_urlDB, { useNewUrlParser: true, useUnifiedTopology: true }, function(err, db)
         {
             var dbo = db.db(dbName);
-            dbo.collection(collectionName).updateOne(myQuery, newValues, function(err, result) {
+            dbo.collection(collectionName).findOneAndUpdate(myQuery, newValues, function(err, result) {
                 if (err)
-                    throw err;
-                db.close();
+                	console.log("Error :", err);
+                else
+                	return callback(result);
             });
+            db.close();
         });
     };
 
@@ -183,7 +183,7 @@ class dbCRUD
 		this.m_resultParseUrl.pathname = dbName;
 		this.m_resultParseUrl.set('pathname', dbName);
 		this.m_urlDB = this.m_resultParseUrl.href;
-		 MongoClient.connect(this.m_urlDB, { userNewUrlParser: true, useUnifiedTopology: true }, async function(err, db)
+		 MongoClient.connect(this.m_urlDB, { useNewUrlParser: true, useUnifiedTopology: true }, async function(err, db)
 		{
 		    var dbo = db.db(dbName);
 		    var user = await dbo.collection(collectionName).findOne({userName: username})

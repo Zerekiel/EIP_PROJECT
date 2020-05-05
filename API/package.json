@@ -11,14 +11,17 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "browser-sync": "^2.26.7",
+    "bytes": "^3.1.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^8.1.0",
     "ejs": "~2.6.1",
-    "express": "~4.16.1",
+    "express": "^4.16.4",
     "express-favicon": "^2.0.1",
     "express-jwt": "^5.3.1",
-    "http-errors": "~1.6.3",
+    "http-errors": "^1.7.3",
+    "iconv-lite": "^0.5.1",
+    "js-sha3": "^0.8.0",
     "json-stringify-safe": "^5.0.1",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.2.7",
@@ -30,6 +33,7 @@
     "openapi": "0.0.0-placeholder",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "raw-body": "^2.4.1",
     "redoc": "^2.0.0-rc.18",
     "swagger-jsdoc": "^3.4.0",
     "ts-node": "^8.3.0",
@@ -37,6 +41,6 @@
     "url": "^0.11.0",
     "url-parse": "^1.4.7",
     "utils": "^0.3.1",
-    "validator": "^12.1.0"
+    "validator": "^12.2.0"
   }
 }

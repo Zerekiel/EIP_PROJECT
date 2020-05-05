@@ -2,21 +2,25 @@ const mongoose = require('mongoose');
 
 const stockSchema = mongoose.Schema({
 	lastName :
-	{
-		type : String
-	},
+		{type : String,
+		required : ["name"],
+		properties: {
+			"name": { type:"string", pattern: /^[a-zA-Zäèéêëïö ,-]+$/}}},
+
 	firstName :
-	{
-		type : String
-	},
+		{type : String,
+        required : ["name"],
+        properties: {
+            "name": { type:"string", pattern: /^[a-zA-Zäèéêëïö ,-]+$/}}},
 	age :
 	{
-		type : String
+		type : Number
 	},
 	gender :
-	{
-		type : String
-	},
+		{type : String,
+        required: ["sex"],
+        properties: {
+            "sex": {type : "string", pattern: /^(male)|(female)$/}}},
 	emergencyNumber :
 	{
 		type : String
