@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var request = require("request")
+var request = require('request')
 
 var infos = {
     title: undefined,
@@ -15,21 +15,19 @@ var infos = {
     user_allergies: undefined,
     user_surgeries: undefined,
     user_broken_members: undefined,
-    feedInfos: function(title, doc_name, user_name, user_dateOfBirth, user_profession,
-        user_address, user_height, user_weight, user_blood_type, user_allergies,
-        user_surgeries, user_broken_members) {
-        this.title = title;
-        this.doc_name = doc_name;
-        this.user_name = user_name;
-        this.user_dateOfBirth = user_dateOfBirth;
-        this.user_profession = user_profession;
-        this.user_address = user_address;
-        this.user_height = user_height;
-        this.user_weight = user_weight;
-        this.user_blood_type = user_blood_type;
-        this.user_allergies = user_allergies;
-        this.user_surgeries = user_user_surgeries;
-        this.user_broken_members = user_broken_members;
+    feedInfos: function(user_data) {
+        this.title = user_data.title;
+        this.doc_name = user_data.doc_name;
+        this.user_name = user_data.user_name;
+        this.user_dateOfBirth = user_data.user_dateOfBirth;
+        this.user_profession = user_data.user_profession;
+        this.user_address = user_data.user_address;
+        this.user_height = user_data.user_height;
+        this.user_weight = user_data.user_weight;
+        this.user_blood_type = user_data.user_blood_type;
+        this.user_allergies = user_data.user_allergies;
+        this.user_surgeries = user_data.user_surgeries;
+        this.user_broken_members = user_data.user_broken_members;
     }
 };
 
@@ -45,7 +43,7 @@ var options = {
 /* GET info page */
 router.get('/', function(req, res, next) {
     request(options, function(req, res, next) {
-        //res.body;
+        infos.feedInfos(res.body);
         console.log(res.body);
     });
     res.render('info', {
