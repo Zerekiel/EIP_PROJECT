@@ -3,31 +3,31 @@ var router = express.Router();
 var request = require('request')
 
 var infos = {
-    title: undefined,
-    doc_name: undefined,
-    user_name: undefined,
-    user_dateOfBirth: undefined,
-    user_profession: undefined,
-    user_address: undefined,
-    user_height: undefined,
-    user_weight: undefined,
-    user_blood_type: undefined,
-    user_allergies: undefined,
-    user_surgeries: undefined,
-    user_broken_members: undefined,
+    lastname: undefined,
+    firstname: undefined,
+    age: undefined,
+    gender: undefined,
+    emergecyNumber: undefined,
+    allergies: undefined,
+    medicalHistory: undefined,
+    bloodType: undefined,
+    socialNumber: undefined,
+    treatments: undefined,
+    organDonation: undefined,
+    doctor: undefined,
     feedInfos: function(user_data) {
-        this.title = user_data.title;
-        this.doc_name = user_data.doc_name;
-        this.user_name = user_data.user_name;
-        this.user_dateOfBirth = user_data.user_dateOfBirth;
-        this.user_profession = user_data.user_profession;
-        this.user_address = user_data.user_address;
-        this.user_height = user_data.user_height;
-        this.user_weight = user_data.user_weight;
-        this.user_blood_type = user_data.user_blood_type;
-        this.user_allergies = user_data.user_allergies;
-        this.user_surgeries = user_data.user_surgeries;
-        this.user_broken_members = user_data.user_broken_members;
+        this.lastname = user_data.lastname;
+        this.firstname = user_data.firstname;
+        this.age = user_data.age;
+        this.gender = user_data.gender;
+        this.emergecyNumber = user_data.emergecyNumber;
+        this.allergies = user_data.allergies;
+        this.medicalHistory = user_data.medicalHistory;
+        this.bloodType = user_data.bloodType;
+        this.socialNumber = user_data.socialNumber;
+        this.treatments = user_data.treatments;
+        this.organDonation = user_data.organDonation;
+        this.doctor = user_data.doctor;
     }
 };
 
@@ -47,19 +47,23 @@ router.get('/', function(req, res, next) {
         console.log(res.body);
     });
     res.render('info', {
-        title: infos.title,
-        doc_name: infos.doc_name,
-        user_name: 'Paul' /*res.body.first_name + ' '+ stock.last*/ ,
-        user_dateOfBirth: infos.user_dateOfBirth,
-        user_profession: infos.user_profession,
-        user_address: infos.user_address,
-        user_height: infos.user_height,
-        user_weight: infos.user_weight,
-        user_blood_type: infos.user_blood_type,
-        user_allergies: infos.user_allergies,
-        user_surgeries: infos.user_surgeries,
-        user_broken_members: infos.user_broken_members
+        firstname: infos.firstname,
+        lastname: infos.lastname,
+        age: infos.age,
+        gender: infos.gender,
+        emergecyNumber: infos.emergecyNumber,
+        socialNumber: infos.socialNumber,
+        doctor: infos.doctor,
+        bloodType: infos.bloodType,
+        allergies: infos.allergies,
+        treatments: infos.treatments,
+        organDonation: infos.organDonation,
+        medicalHistory: infos.medicalHistory
     });
 });
+
+//pour le systeme de modification, on fait un bouton de modification par colonne
+//plus simple à gérer
+// + un bouton de renvoi de information 
 
 module.exports = router;
