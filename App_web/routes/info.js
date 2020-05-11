@@ -33,15 +33,19 @@ var infos = {
     }
 };
 
+/* Options object for patient infos request */
 var options = {
     url: 'https://healthsafe-api.herokuapp.com/api/stock',
-    method: 'GET'
+    method: 'POST',
+    json: {
+        code: undefined
+    }
 };
 
 /* GET info page */
 router.get('/', function(req, res, next) {
     request(options, function(req, res, next) {
-        res.body;
+        //res.body;
         console.log(res.body);
     });
     res.render('info', {
