@@ -5,6 +5,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+//var healthsafe = require("./javascripts/globalModule/js");
+
+
 // routes for the views
 var authRouter = require('./routes/auth');
 var homeRouter = require('./routes/home');
