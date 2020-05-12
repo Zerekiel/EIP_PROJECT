@@ -8,6 +8,8 @@ var infos = {
     firstname: undefined,
     age: undefined,
     gender: undefined,
+    height: undefined,
+    weight: undefined,
     emergecyNumber: undefined,
     allergies: undefined,
     medicalHistory: undefined,
@@ -22,6 +24,8 @@ var infos = {
         this.firstname = user_data.firstname;
         this.age = user_data.age;
         this.gender = user_data.gender;
+        this.height = user_data.height;
+        this.weight = user_data.weight;
         this.emergecyNumber = user_data.emergecyNumber;
         this.allergies = user_data.allergies;
         this.medicalHistory = user_data.medicalHistory;
@@ -38,10 +42,10 @@ var infos = {
 
 /* Options object for patient infos request */
 var options = {
-    url: 'https://healthsafe-api.herokuapp.com/api/stock',
-    method: 'POST',
+    url: 'https://healthsafe-api.herokuapp.com/api/patientData/patientDataId',
+    method: 'GET',
     json: {
-        code: undefined
+        _id: undefined
     }
 };
 
@@ -59,6 +63,8 @@ router.get('/', function(req, res, next) {
             lastname: infos.lastname,
             age: infos.age,
             gender: infos.gender,
+            height: infos.height,
+            weight: infos.weight,
             emergecyNumber: infos.emergecyNumber,
             socialNumber: infos.socialNumber,
             doctor: infos.doctor,
