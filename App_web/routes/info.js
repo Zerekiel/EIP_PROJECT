@@ -2,6 +2,10 @@ var express = require('express');
 var router = express.Router();
 var request = require('request-promise')
 
+/*router.get('/', function(req, res) {
+    res.render('info', { title: 'Express' });
+});*/
+
 /* object that contain patient infos */
 var infos = {
     lastname: undefined,
@@ -18,10 +22,10 @@ var infos = {
     treatments: undefined,
     organDonation: undefined,
     doctor: undefined,
-    received: false,
+    received: true,
     feedInfos: function(user_data) {
-        this.lastname = user_data.lastname;
-        this.firstname = user_data.firstname;
+        this.lastname = user_data.lastName;
+        this.firstname = user_data.firstName;
         this.age = user_data.age;
         this.gender = user_data.gender;
         this.height = user_data.height;
@@ -42,20 +46,34 @@ var infos = {
 
 /* Options object for patient infos request */
 var options = {
-    url: 'https://healthsafe-api.herokuapp.com/api/patientData/patientDataId',
+    url: 'https://healthsafe-api-beta.herokuapp.com/api/patientData/patientDataId',
     method: 'GET',
     json: {
-        _id: undefined
+        //_id: undefined
+        _id: '5e9cca8c21f92f3e3bb019d8'
     }
 };
+
+/* convert received json into a broken array */
+function json2array(json) {
+    var result = [];
+    var keys = Object.keys(json);
+    keys.forEach(function(key) {
+        result.push(json[key]);
+    });
+    return result;
+}
 
 /* GET info page */
 router.get('/', function(req, res, next) {
     request(options)
         .then(function(res) {
-            infos.feedInfos(res.body);
-            console.log(res.body);
-            infos.allClear(true);
+            var data = json2array(res);
+            console.log(data[0].firstName);
+            //infos.feedInfos(res);
+            //infos.allClear(true);
+            //change allClear value to false
+            //var jsonOBJ = { 'key': 'value' };
         })
     if (infos.receive === true) {
         res.render('info', {
@@ -77,8 +95,14 @@ router.get('/', function(req, res, next) {
     }
 });
 
+
+
 //pour le systeme de modification, on fait un bouton de modification par colonne
 //plus simple à gérer
+// maybe ajout d'un systeme de menu pour les catégories à choix défini
+// -> ou alors un check paramètre après
+
 // + un bouton de renvoi de information 
+// route de renvoi : /api/patientData/create
 
 module.exports = router;
