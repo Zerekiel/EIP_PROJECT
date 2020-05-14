@@ -22,26 +22,24 @@ var infos = {
     treatments: undefined,
     organDonation: undefined,
     doctor: undefined,
-    received: true,
-    feedInfos: function(user_data) {
-        this.lastname = user_data.lastName;
-        this.firstname = user_data.firstName;
-        this.age = user_data.age;
-        this.gender = user_data.gender;
-        this.height = user_data.height;
-        this.weight = user_data.weight;
-        this.emergecyNumber = user_data.emergecyNumber;
-        this.allergies = user_data.allergies;
-        this.medicalHistory = user_data.medicalHistory;
-        this.bloodType = user_data.bloodType;
-        this.socialNumber = user_data.socialNumber;
-        this.treatments = user_data.treatments;
-        this.organDonation = user_data.organDonation;
-        this.doctor = user_data.doctor;
+    validation: 1,
+    feedInfos: function(data) {
+        this.lastname = data[0].lastName;
+        this.firstname = data[0].firstName;
+        this.age = data[0].age;
+        this.gender = data[0].gender;
+        this.height = data[0].height;
+        this.weight = data[0].weight;
+        this.emergecyNumber = data[0].emergecyNumber;
+        this.allergies = data[0].allergies;
+        this.medicalHistory = data[0].medicalHistory;
+        this.bloodType = data[0].bloodType;
+        this.socialNumber = data[0].socialNumber;
+        this.treatments = data[0].treatments;
+        this.organDonation = data[0].organDonation;
+        this.doctor = data[0].doctor;
+        this.validation = 0;
     },
-    allClear: function(value) {
-        this.received = value;
-    }
 };
 
 /* Options object for patient infos request */
@@ -54,7 +52,7 @@ var options = {
     }
 };
 
-/* convert received json into a broken array */
+/* convert received json into a somekow broken array */
 function json2array(json) {
     var result = [];
     var keys = Object.keys(json);
@@ -69,13 +67,10 @@ router.get('/', function(req, res, next) {
     request(options)
         .then(function(res) {
             var data = json2array(res);
-            console.log(data[0].firstName);
-            //infos.feedInfos(res);
-            //infos.allClear(true);
-            //change allClear value to false
-            //var jsonOBJ = { 'key': 'value' };
+            infos.feedInfos(data);
+            console.log(infos.validation);
         })
-    if (infos.receive === true) {
+    if (infos.validation === 0) {
         res.render('info', {
             firstname: infos.firstname,
             lastname: infos.lastname,
