@@ -30,7 +30,6 @@
     "node-sass": "^4.13.0",
     "nodemon": "^1.19.4",
     "npm": "^6.11.3",
-    "openapi": "0.0.0-placeholder",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "raw-body": "^2.4.1",
