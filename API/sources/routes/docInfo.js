@@ -3,6 +3,8 @@ var router = express.Router();
 var dbCRUD = require('../DB/Controllers/dbCRUD').dbCRUD;
 var modelDoc = require('../DB/models/doctorModel.js');
 var mongo = require('mongodb');
+var check = require('express-validator');
+var validationResult = require('express-validator');
 
 router.get('/', function(req, res, next) {
            try
@@ -33,16 +35,30 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-    console.log(req.body);
+    // console.log(req.body);
     try {
         const email = req.body.emailAddr;
+        const fName = req.body.lastName;
+        const lName = req.body.lastName;
+        const gender = req.body.gender;
 
         function validateEmail(email) {
             var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(email);
         }
+        function validatorName(fname){
+            var re = /^[a-zA-Zäèéêëïö ,-]+$/;
+            return re.test(fname);
+        }
+        function validatorGender(gender) {
+            var re = /^(male)|(female)$/;
+            return re.test(gender);
+        }
 
-        if (validateEmail(email)) {
+        if (validateEmail(email) &&
+            validatorName(fName) &&
+            validatorName(lName) &&
+            validatorGender(gender)) {
             const docData = new modelDoc(
                 {
                     lastName: req.body.lastName,
@@ -66,8 +82,8 @@ router.post('/', function(req, res, next) {
             });
         }
         else {
-            console.log("ERROR : email not correct");
-            return res.status(500);
+            console.log("ERROR : one or more fields incorrect");
+            exit(500);
         }
     }
     catch(err)
@@ -76,6 +92,40 @@ router.post('/', function(req, res, next) {
         return res.status(500).send(err.stack);
     }
 });
+
+// router.post('/', [
+//   check('firstName').isLength({ min: 3 }),
+//   check('emailAddr').isEmail(),
+//   check('age').isNumeric()], (req, res)
+// {
+//     const errors = validationResult(req);
+//     if (!errors.isEmpty()) {
+//         return res.status(422).json({ errors: errors.array() })
+//     }
+//
+//   const docData = new modelDoc(
+//                 {
+//                     lastName: req.body.lastName,
+//                     firstName: req.body.firstName,
+//                     emailAddr: req.body.emailAddr,
+//                     gender: req.body.gender,
+//                     age: req.body.age,
+//                     expDomaine: req.body.expDomaine,
+//                     address: req.body.address,
+//                     medicalId: req.body.medicalId
+//                 }).save(function (err, result) {
+//                 if (err) {
+//                     console.log(err.stack);
+//                     return res.status(500).send(err.stack);
+//                 }
+//                 else {
+//                     console.log(result);
+//                     return res.status(200).send(result._id);
+//                 }
+//
+//             });
+// });
+
 
 router.put('/', function (req, res, next) {
     try {
@@ -87,19 +137,44 @@ router.put('/', function (req, res, next) {
         const id = req.body._id;
         var filter = { _id: new mongo.ObjectId(id) };
         var newQuery = {$set:newBody};
+        const email = req.body.emailAddr;
+        const fName = req.body.lastName;
+        const lName = req.body.lastName;
+        const gender = req.body.gender;
 
-        dbConnect.updateCollection("HealthSafe", "DoctorInformation", filter, newQuery, function (dbRes, err) {
-            if(err)
-            {
-                console.log(err.stack);
-                return res.status(500).send(err.stack);
-            }
-            else
-            {
-                console.log(res);
-                return res.status(200).send(dbRes);
-            }
-        });
+        function validateEmail(email) {
+            var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+        function validatorName(fname){
+            var re = /^[a-zA-Zäèéêëïö ,-]+$/;
+            return re.test(fname);
+        }
+        function validatorGender(gender) {
+            var re = /^(male)|(female)$/;
+            return re.test(gender);
+        }
+        if (validateEmail(email) &&
+            validatorName(fName) &&
+            validatorName(lName) &&
+            validatorGender(gender)) {
+
+            dbConnect.updateCollection("HealthSafe", "DoctorInformation", filter, newQuery, function (dbRes, err) {
+                if (err) {
+                    console.log(err.stack);
+                    return res.status(500).send(err.stack);
+                }
+                else {
+                    console.log(res);
+                    return res.status(200).send(dbRes);
+                }
+            });
+        }
+        else {
+            console.log("ERROR : one or more fields incorrect");
+            throw(500);
+
+        }
     }
     catch (err)
     {
@@ -113,16 +188,20 @@ router.delete('/', function(req, res, next) {
         dbConnect = new dbCRUD();
         const id = req.body._id;
         var myQuery = { _id: new mongo.ObjectId(id) };
-        dbConnect.deleteInfoByJson("HealthSafe", "DoctorInformation", myQuery, function(dbRes, err) {
+        dbConnect.deleteInfoByJson("HealthSafe", "DoctorInformation", myQuery, function(result, err) {
                 if(err)
                 {
+                        console.log("TEST : DELETE BY ID");
                         console.log(err.stack);
+                        console.log("END TEST : DELETE BY ID");
                         return res.status(500).send(err.stack);
                 }
                 else
                 {
-                        console.log(res.value);
-                        return res.status(200).send(dbRes.value);
+                        console.log("TEST : DELETE BY ID");
+                        console.log(result.value);
+                        console.log("END TEST : DELETE BY ID");
+                        return res.status(200).send(result.value);
                 }
         });
     }
