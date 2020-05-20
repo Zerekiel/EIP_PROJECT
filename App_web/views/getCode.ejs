@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>HealthSafe_scan_puce</title>
+    <link rel="stylesheet" style="text/css" href="./stylesheets/getCode.css" />
+    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+    <script>
+        Weglot.initialize({
+            api_key: 'wg_775b2c126fe4cf7de96fe0ba186238023'
+        });
+    </script>
+</head>
+
+<body>
+    <div class="cont">
+        <h3> Mr / Mme Medecin</h3>
+        <img src="../img/home_page.png" alt="page d'acceuil" />
+        <div class="tear"></div>
+        <div class="waiting_scan">
+            <form action="/getCode/code" method="POST">
+                <i class="fa fa-check fa-user"></i>
+                <input type="text" class="validation" name="id" placeholder="Entrez le code" required />
+                <button class="valider">Valider</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

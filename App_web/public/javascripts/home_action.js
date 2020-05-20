@@ -1,21 +1,21 @@
 $(function() {
 
-  $("#scan").on('click', function() {
-    $(location).attr('href', '/scan');
-  });
+    $("#scan").on('click', function() {
+        $(location).attr('href', '/scan');
+    });
 
-  $("#mobile").on('click', function() {
-    $(location).attr('href', '/info');
-  });
+    $("#mobile").on('click', function() {
+        $(location).attr('href', '/getCode');
+    });
 
-/*
-  $("#regalges").on('cick', function () {
-    $(location).attr('href', '/reglages');
-  });
-*/
+    /*
+      $("#regalges").on('cick', function () {
+        $(location).attr('href', '/reglages');
+      });
+    */
 
-  $("#deconnexion").on('click', function() {
-    $(location).attr('href', '/');
-  });
+    $("#deconnexion").on('click', function() {
+        $(location).attr('href', '/');
+    });
 
 });

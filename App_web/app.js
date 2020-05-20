@@ -5,12 +5,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-//var healthsafe = require("./javascripts/globalModule/js");
+//var overallData = require("./customModules/globalModule.js");
 
 
 // routes for the views
 var authRouter = require('./routes/auth');
 var homeRouter = require('./routes/home');
+var getCodeRouter = require('./routes/getCode');
 var infoRouter = require('./routes/info');
 var scanRouter = require('./routes/scan');
 
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', authRouter);
 app.use('/home', homeRouter);
+app.use('/getCode', getCodeRouter);
 app.use('/info', infoRouter);
 app.use('/scan', scanRouter);
 
