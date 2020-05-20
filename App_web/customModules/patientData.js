@@ -15,7 +15,7 @@ module.exports = {
     treatments: undefined,
     organDonation: undefined,
     doctor: undefined,
-    validation: 1,
+    code: undefined,
     feedInfos: function(data) {
         this.lastname = data.lastName;
         this.firstname = data.firstName;
@@ -31,11 +31,10 @@ module.exports = {
         this.treatments = data.treatments;
         this.organDonation = data.organDonation;
         this.doctor = data.doctor;
-        this.validation = 0;
     },
     displayInfos: function() {
         console.log(this.lastname, this.firstname, this.age, this.gender, this.height,
-            this.weight, this.emergecyNumber, this.allergies, this.medicalHistory,
+            this.weight, this.emergencyNumber, this.allergies, this.medicalHistory,
             this.bloodType, this.socialNumber, this.treatments, this.organDonation,
             this.doctor);
     }

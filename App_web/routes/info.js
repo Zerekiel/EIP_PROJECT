@@ -1,11 +1,10 @@
 var express = require('express');
 var router = express.Router();
+var request = require('request-promise');
 var patientData = require('../customModules/patientData.js');
 
 /* GET info page */
 router.get('/', function(req, res) {
-    console.log("ici on affiche");
-    console.log(patientData.firstname);
     res.render('info', {
         title: 'Express',
         firstname: patientData.firstname,
@@ -25,17 +24,68 @@ router.get('/', function(req, res) {
     });
 });
 
-// next error to handle is the display of the info on the front
-// perhaps due to the router().post / router().get utilisation
-// have to look at the tuto on internet to get better knowledge about it
+/* Options object for /patientData/create request */
+var options = {
+    url: 'https://healthsafe-api-beta.herokuapp.com/api/patientData/create',
+    method: 'POST',
+    json: {
+        firstName: undefined,
+        lastName: undefined,
+        age: undefined,
+        gender: undefined,
+        height: undefined,
+        weight: undefined,
+        emergencyNumber: undefined,
+        allergies: undefined,
+        medicalHistory: undefined,
+        bloodType: undefined,
+        socialNumber: undefined,
+        treatments: undefined,
+        organDonation: undefined,
+        doctor: undefined
+    },
+    feedInfos: function(data) {
+        this.json.lastName = data.lastname;
+        this.json.firstName = data.firstname;
+        this.json.age = data.age;
+        this.json.gender = data.gender;
+        this.json.height = data.height;
+        this.json.weight = data.weight;
+        this.json.emergencyNumber = data.emergencyNumber;
+        this.json.allergies = data.allergies;
+        this.json.medicalHistory = data.medicalHistory;
+        this.json.bloodType = data.bloodType;
+        this.json.socialNumber = data.socialNumber;
+        this.json.treatments = data.treatments;
+        this.json.organDonation = data.organDonation;
+        this.json.doctor = data.doctor;
+    },
+};
 
+/* await function that wait for the request to end */
+async function performRequest(res) {
+    options.feedInfos(patientData);
+    await request(options)
+        .then(function(res) {
+            patientData.code = res._id;
+        })
+        .catch(function(err) {
+            console.log(err);
+        })
+    res.redirect('/dispCode');
+    res.end();
+};
 
-//pour le systeme de modification, on fait un bouton de modification par colonne
-//plus simple à gérer
-// maybe ajout d'un systeme de menu pour les catégories à choix défini
-// -> ou alors un check paramètre après
+/* POST route for validation */
+router.post('/validation', (req, res) => {
+    performRequest(res);
+});
 
-// + un bouton de renvoi de information 
+/* POST route for modification */
+router.post('/modification', (req, res) => {
+    //ici on reroute vers la page de modif qui enverra et completera le code de retour
+});
+
 // route de renvoi : /api/patientData/create
 
 module.exports = router;

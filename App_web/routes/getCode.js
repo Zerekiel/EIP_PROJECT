@@ -20,28 +20,22 @@ var options = {
     }
 };
 
-/* await function to wait for request */
+/* await function that wait for the request to end */
 async function performRequest(res) {
     await request(options)
         .then(function(res) {
-            console.log("ici c'est ce qu'on reçoit");
-            console.log(res);
-            console.log("ici on va remplir");
             patientData.feedInfos(res);
-            console.log(patientData.displayInfos());
         })
         .catch(function(err) {
             console.log(err);
         })
-    console.log("ici on a rempli");
-    console.log(patientData.firstname);
     res.redirect('/info');
     res.end();
 };
 
+/* POST route for getting the code */
 router.post('/code', (req, res) => {
     options.feedCode(req.body.id);
-    console.log(options.json._id);
     performRequest(res);
 });
 

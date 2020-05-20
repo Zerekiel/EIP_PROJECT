@@ -11,9 +11,10 @@ var logger = require('morgan');
 // routes for the views
 var authRouter = require('./routes/auth');
 var homeRouter = require('./routes/home');
+var scanRouter = require('./routes/scan');
 var getCodeRouter = require('./routes/getCode');
 var infoRouter = require('./routes/info');
-var scanRouter = require('./routes/scan');
+var dispCodeRouter = require('./routes/dispCode');
 
 var app = express();
 const port = 8080;
@@ -30,9 +31,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', authRouter);
 app.use('/home', homeRouter);
+app.use('/scan', scanRouter);
 app.use('/getCode', getCodeRouter);
 app.use('/info', infoRouter);
-app.use('/scan', scanRouter);
+app.use('/dispCode', dispCodeRouter);
 
 //global check of connection status in the web client
 /*
