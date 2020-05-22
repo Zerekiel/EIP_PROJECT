@@ -1,137 +1,147 @@
-var express = require('express');
-var router = express.Router();
-var dbCRUD = require('../DB/Controllers/dbCRUD').dbCRUD;
-var modelDoc = require('../DB/models/doctorModel.js');
-var mongo = require('mongodb');
+const express = require('express');
+const mongo = require('mongodb');
+const router = express.Router();
+const dbCRUD = require('../DB/Controllers/dbCRUD').dbCRUD;
+const modelDoc = require('../DB/models/doctorModel.js');
+const dbConnect = new dbCRUD();
 
-router.get('/', function(req, res, next) {
-           try
-           {
-           var dbConnect= new dbCRUD();
-           console.log("TEST : READ COLLECTION");
-           dbConnect.readCollection("HealthSafe", "DoctorInformation", function(result, err) {
-                if(err)
-                {
-                        console.log(err.stack);
-                        return res.status(500).send(err.stack);
-                }
-                else
-                {
-                        // displaying in console json
-                        console.log(result);
-                        // console.log("TEST FINISH : READ COLLECTION");
-                        return res.status(200).send(result);
-                        // or without return
-                }
-            })
-           }
-           catch(err)
-           {
-           console.log(err.stack);
-           return res.status(500).send(err.stack);
-           }
+router.get('/', (req, res) => {
+    try {
+        console.log("TEST : READ COLLECTION");
+        dbConnect.readCollection("HealthSafe", "DoctorInformation", function (result, err) {
+            if (err) {
+                console.error(err);
+                return res.status(500).send("Ooops ! Something went wrong when displaying the model.");
+            }
+            else {
+                // displaying in console json
+                console.log(result);
+                // console.log("TEST FINISH : READ COLLECTION");
+                return res.status(200).send(result);
+                // or without return
+            }
+        })
+    }
+    catch (err) {
+        console.error(err);
+        return res.status(500).send("Ooops ! Something went wrong when displaying the model.");
+    }
 });
 
-router.post('/', function(req, res, next) {
+router.post('/', (req, res) => {
     try {
         const fName = req.body.firstName;
         const lName = req.body.lastName;
 
-        if((fName.length < 4 && fName.length > 30) ||
-            (lName.length < 4 && lName.length >30)){
-            console.log("The name is ether to long or to short. Please, check the spelling");
-            throw(500);
+        function checkSize(name) {
+            if ((name.length < 4) || (name.length > 30))
+                return false;
+            return true;
         }
-         const docData = new modelDoc({
-             lastName: req.body.lastName,
-             firstName: req.body.firstName,
-             emailAddr: req.body.emailAddr,
-             gender: req.body.gender,
-             age: req.body.age,
-             expDomaine: req.body.expDomaine,
-             address: req.body.address,
-             medicalId: req.body.medicalId
-         }).save(function (err, result) {
-             if (err) {
-                 console.log(err.stack);
-                 return res.status(500).send(err.stack);
-             }
-             else {
-                 console.log(result);
-                 return res.status(200).send(result._id);
-             }
-         });
+        if (checkSize(fName) && checkSize(lName)) {
+            const docData = new modelDoc({
+                lastName: req.body.lastName,
+                firstName: req.body.firstName,
+                emailAddr: req.body.emailAddr,
+                gender: req.body.gender,
+                birthday: req.body.birthday,
+                expDomaine: req.body.expDomaine,
+                address: req.body.address,
+                medicalId: req.body.medicalId
+            }).save(function (err, result) {
+                if (err) {
+                    console.error(err);
+                    return res.status(500).send("Error while creating");
+                }
+                else {
+                    console.log(result);
+                    return res.status(200).send(result._id);
+                }
+            });
+        }
+        else
+            return res.status(500).send('Error: The name is ether to long or to short. Please, check the spelling.');
     }
-    catch(err)
-    {
-        console.log(err.stack);
-        return res.status(500).send(err.stack);
+    catch (err) {
+        console.error(err);
+        return res.status(500).send("Error while creating this new element in the database.");
     }
 });
 
-router.put('/', function (req, res, next) {
+router.put('/', (req, res) => {
     try {
         // Duplication of body for handling newQuery update
-        const newBody = {...req.body};
+        const newBody = { ...req.body };
         delete newBody._id;
 
-        dbConnect = new dbCRUD();
-        const id = req.body._id;
-        var filter = { _id: new mongo.ObjectId(id) };
-        var newQuery = {$set:newBody};
-        const fName = req.body.lastName;
-        const lName = req.body.lastName;
-
-        if((fName.length < 4 && fName.length > 30) ||
-            (lName.length < 4 && lName.length >30)){
-            console.log("The name is ether to long or to short. Please, check the spelling");
-            throw(500);
+        function checkSize(name) {
+            if ((name.length < 4) || (name.length > 30))
+                return false;
+            return true;
         }
 
-        dbConnect.updateCollection("HealthSafe", "DoctorInformation", filter, newQuery, function (dbRes, err) {
-            if (err) {
-                console.log(err.stack);
-                return res.status(500).send(err.stack);
+        const id = req.body._id;
+        console.log(id);
+        if (id) {
+            // dbConnect = new dbCRUD();
+            const filter = { _id: new mongo.ObjectId(id) };
+            const newQuery = { $set: newBody };
+            const fName = req.body.firstName;
+            const lName = req.body.lastName;
+
+            if (checkSize(fName) && checkSize(lName)) {
+                console.log(newQuery);
+                dbConnect.updateCollection("HealthSafe", "DoctorInformation", filter, newQuery, (dbRes, err) => {
+                    if (err) {
+                        console.error(err);
+                        return res.status(500).send("Error while updating");
+                    }
+                    else {
+                        // console.log(res);
+                        return res.status(200).send(dbRes);
+                    }
+                });
             }
-            else {
-                // console.log(res);
-                return res.status(200).send(dbRes);
-            }
-        });
+            else
+                return res.status(500).send('Error: The name is ether to long or to short. Please, check the spelling');
+        }
+        else
+            return res.status(500).send('Error : Missing ID to update');
     }
-    catch (err)
-    {
-        console.log("ERROR while deleting :\n" + err.stack);
-        return res.status(500).send(err.stack);
+    catch (err) {
+        console.error("ERROR while updating :\n" + err);
+        return res.status(500).send('An error occurs while updating data');
     }
 });
 
-router.delete('/', function(req, res, next) {
+router.delete('/', (req, res) => {
     try {
-        dbConnect = new dbCRUD();
         const id = req.body._id;
-        var myQuery = { _id: new mongo.ObjectId(id) };
-        dbConnect.deleteInfoByJson("HealthSafe", "DoctorInformation", myQuery, function(result, err) {
-                if(err)
-                {
-                        console.log("TEST : DELETE BY ID");
-                        console.log(err.stack);
-                        console.log("END TEST : DELETE BY ID");
-                        return res.status(500).send(err.stack);
+        if (id) {
+            // dbConnect = new dbCRUD();
+            const myQuery = { _id: new mongo.ObjectId(id) };
+
+            dbConnect.deleteInfoByJson("HealthSafe", "DoctorInformation", myQuery, (result, err) => {
+                if (err) {
+                    console.log("TEST : DELETE BY ID");
+                    console.error(err);
+                    console.log("END TEST : DELETE BY ID");
+                    return res.status(500).send(err);
                 }
-                else
-                {
-                        console.log("TEST : DELETE BY ID");
-                        console.log(result.value);
-                        console.log("END TEST : DELETE BY ID");
-                        return res.status(200).send(result.value);
+                else {
+                    console.log("TEST : DELETE BY ID");
+                    console.log(result.value);
+                    console.log("END TEST : DELETE BY ID");
+                    return res.status(200).send(result.value);
                 }
-        });
+            });
+        }
+        else
+            return res.status(500).send('Error : Missing ID to update');
     }
-    catch (err)
-    {
-        console.log("ERROR while deleting :\n" + err.stack);
-        return res.status(500).send(err.stack);
+    catch (err) {
+        console.error("ERROR while deleting :\n" + err);
+        return res.status(500).send(err);
     }
 });
 

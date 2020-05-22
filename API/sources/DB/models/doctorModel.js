@@ -5,10 +5,11 @@ const doctorSchema = mongoose.Schema({
     lastName:
     {
         type: String,
-        required: ["name"],
+        minlength: 3,
+        maxlength: 30,
         validate: {
             validator: function (v) {
-                return /^[a-zA-Zäèéêëïö ,-]+$/.test(v);
+                return /^[a-zA-ZÉäèéêëïö]+(([' -][a-zA-ZÉäèéêëïö ])?[a-zA-ZÉäèéêëïö]*)*$/.test(v);
             },
             message: props => `Error: ${props.value} is not a valid last name!`
         },
@@ -16,10 +17,11 @@ const doctorSchema = mongoose.Schema({
     firstName:
     {
         type: String,
-        required: ["name"],
+        minlength: 3,
+        maxlength: 30,
         validate: {
             validator: function (v) {
-                return /^[a-zA-Zäèéêëïö ,-]+$/.test(v);
+                return /^[a-zA-ZÉäèéêëïö]+(([' -][a-zA-ZÉäèéêëïö ])?[a-zA-ZÉäèéêëïö]*)*$/.test(v);
             },
             message: props => `Error: ${props.value} is not a valid first name!`
         },
@@ -28,7 +30,6 @@ const doctorSchema = mongoose.Schema({
     {
         type: String,
         required: true,
-        index: true,
         unique: true,
         validate: {
             validator: function (v) {
@@ -40,7 +41,6 @@ const doctorSchema = mongoose.Schema({
     gender:
     {
         type: String,
-        required: ["sex"],
         validate: {
             validator: function (v) {
                 return /^(male)|(female)$/.test(v);
@@ -48,29 +48,46 @@ const doctorSchema = mongoose.Schema({
             message: props => `${props.value} is not a valid sex!`
         },
     },
-    age:
+    birthday:
     {
-        type: Date,
-        required: true
+        type: String,
+        required: true,
+                validate: {
+            validator: function (v) {
+                return /^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/.test(v);
+            },
+            message: props => `Error: ${props.value} invalid charactere! Please specify the birday date as follow : DD/MM/YYYY`
+        },
+
     },
     expDomaine:
     {
         type: String,
-        required: true
+        required: true,
+        validate: {
+            validator: function (v) {
+                return /^[a-zA-ZÉäèéêëïö]*$/.test(v);
+            },
+            message: props => `Error: ${props.value} invalid charactere!`
+        },
     },
     address:
-        { type: String },
+    {
+        type: String,
+        validate: {
+            validator: function (v) {
+                return /^([0-9]*, )([A-Za-zéàè ]*, )((0[1-9])|([1-8][0-9])|(9[0-8])|(2A)|(2B))[0-9]{3} [a-zA-Z -]*$/.test(v);
+            },
+            message: props => `Error: ${props.value} incorrect address, please verify it is formated as follow :\n"1, avenue Paster, 75000 Paris`
+        }
+    },
     medicalId:
     {
         type: Number,
         required: true,
-        index: true,
         unique: true
     }
 });
 
-doctorSchema.index({ 'emailAddr': 1, 'medicalId': 1 }, { unique: true });
-
 var doctorModel = mongoose.model('docInfoModel', doctorSchema, 'DoctorInformation');
-
 module.exports = doctorModel;
