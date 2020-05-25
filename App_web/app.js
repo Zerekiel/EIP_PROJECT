@@ -7,13 +7,14 @@ var logger = require('morgan');
 
 //var overallData = require("./customModules/globalModule.js");
 
-
 // routes for the views
 var authRouter = require('./routes/auth');
+var authCreateRouter = require('./routes/authCreate');
 var homeRouter = require('./routes/home');
 var scanRouter = require('./routes/scan');
 var getCodeRouter = require('./routes/getCode');
 var infoRouter = require('./routes/info');
+var modifRouter = require('./routes/modif');
 var dispCodeRouter = require('./routes/dispCode');
 
 var app = express();
@@ -30,26 +31,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', authRouter);
+app.use('/authCreate', authCreateRouter);
 app.use('/home', homeRouter);
 app.use('/scan', scanRouter);
 app.use('/getCode', getCodeRouter);
 app.use('/info', infoRouter);
+app.use('/modif', modifRouter);
 app.use('/dispCode', dispCodeRouter);
 
-//global check of connection status in the web client
-/*
-
-if (connectionStatus ===  true) {
-    app.use('/home', homeRouter);
-    app.use('/info', infoRouter);
-    app.use('/scan', scanRouter);
-} else {
-    app.use('/unvalidData', );
-    app.use('/info', infoRouter);
-    app.use('/scan', scanRouter);
-}
-
-*/
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

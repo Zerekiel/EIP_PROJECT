@@ -1,25 +1,26 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
 
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
 body {
     background: #d3d3d3;
 }
 
-#authen {
-    background-color: #d3d3d3;
-    display: flex;
+.cont {
+    position: relative;
+    width: 28%;
     height: 550px;
+    margin: 10px auto;
 }
 
-    #authen .droite {
-       flex: 50%;
-    }
-
-    #authen .gauche {
-       flex: 50%;
-    }
-
 .main-box {
-    width: 50%;
+    width: 90%;
     height: 110%;
     margin-right: auto;
     margin-left: auto;
@@ -29,7 +30,7 @@ body {
     background: #fff;
 }
 
-#authen .log .gauche {
+.log {
     position: relative;
     top: 20%;
     width: 100%;
@@ -37,20 +38,10 @@ body {
     padding: 18px 15px;
 }
 
-.log .droite {
-    width: 45%;
-    float: left;
-    text-align: justify;
-    padding-top: 25%;
-    font-family: 'Arima Madurai', thin;
-    font-size: 17px;
-    color: grey;
-}
-
 .tear {
     position: relative;
     left: 40%;
-    top: 45px;
+    top: -40px;
     width: 60px;
     height: 60px;
     border: none;
@@ -66,8 +57,7 @@ h2 {
     font-weight: 100;
     font-size: 30px;
     letter-spacing: 3px;
-    margin-bottom: 35px;
-    margin-top: 80px;
+    margin-bottom: 50px;
 }
 
 .user, .pass {
@@ -109,7 +99,7 @@ i.fa.fa-check {
     font-size: 22px;
     font-weight: 500;
     display: block;
-    margin: 55px auto;
+    margin: 10px auto;
     padding: 15px 110px;
     position: relative;
     border-radius: 30px;
@@ -140,6 +130,46 @@ i.fa.fa-check {
     }
 
     .login:hover:after {
+        width: 115%;
+    }
+
+.sign {
+    color: #fff;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 500;
+    display: block;
+    margin: 30px auto;
+    padding: 15px 110px;
+    position: relative;
+    border-radius: 30px;
+    border: 2px solid #fff;
+    transition: all 0.5s ease;
+    background: linear-gradient(to right, #ff1c4e,#ff8985);
+    overflow: hidden
+}
+
+    .sign:hover {
+        color: #71db9b;
+        z-index: 2;
+        border-color: #2ecc71;
+    }
+
+    .sign:after {
+        position: absolute;
+        content: "";
+        background: #fff;
+        top: 0;
+        width: 0;
+        height: 100%;
+        left: -19.5%;
+        z-index: -1;
+        transform: skew(50deg);
+        transform-origin: top left;
+        transition: all 0.5s ease;
+    }
+
+    .sign:hover:after {
         width: 115%;
     }
 

@@ -8,42 +8,55 @@ router.get('/', function(req, res) {
     res.render('auth', { title: 'Express' });
 });
 
+/* POST account create page */
+router.post('/create', (req, res) => {
+    res.redirect('/authCreate');
+    res.end();
+});
+
+/* connexion options object */
 var options = {
-    url: 'https://healthsafe-api.herokuapp.com/api/signin',
+    url: 'https://healthsafe-api-beta.herokuapp.com/api/signin/create',
     method: 'POST',
     json: {
-        userName: undefined,
+        email: undefined,
         password: undefined
     },
-    feedJson: function(_username, _password) {
-        this.json.userName = _username;
-        this.json.password = _password;
+    feedJson: function(data) {
+        this.json.email = data.username;
+        this.json.password = data.password;
     }
 };
 
-var returnCode = {
-    code: 0,
-    getCode: function(_code) {
-        this.code = _code;
+var validation = {
+    token: undefined,
+    feedCode: function(code) {
+        this.code = code;
     }
-};
+}
 
-router.post('/', function(req, res, next) {
-    options.feedJson(req.body.username, req.body.password);
-    request(options)
+/* await function that handle api's return */
+async function performRequest(res) {
+    await request(options)
+        .then(function(res) {
+            validation.feedCode(res.token);
+        })
         .catch(function(err) {
-            returnCode.getCode(err.statusCode);
-        });
-    if (returnCode.code === 200) {
-        console.log("all clear");
-
+            console.log(err);
+        })
+    if (validation.code !== undefined) {
         res.redirect('/home');
         res.end();
     } else {
-        console.log("wrong id");
         res.redirect('/');
         res.end();
     }
+};
+
+/* POST account connexion page */
+router.post('/connexion', (req, res) => {
+    options.feedJson(req.body);
+    performRequest(res);
 });
 
 module.exports = router;

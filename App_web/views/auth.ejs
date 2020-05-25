@@ -7,7 +7,6 @@
     <title>HealthSafe_log</title>
     <link rel="stylesheet" style="text/css" href="./stylesheets/auth.css" />
     <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         Weglot.initialize({
             api_key: 'wg_775b2c126fe4cf7de96fe0ba186238023'
@@ -16,56 +15,30 @@
 </head>
 
 <body>
-    <section id="authen">
-        <div class="gauche">
-            <div class="main-box">
+    <div class="cont">
+        <div class="main-box">
 
-                <div class="log">
-                    <div class="lang">
-                    </div>
-                    <form action="">
-
-                        <div class="tear"></div>
-
-                        <h2>HealthSafe</h2>
-                        <i class="fa fa-check fa-user"></i>
-                        <input type="text" class="user" name="username" placeholder="Nom utilisateur" required />
-                        <i class="fa fa-check fa-pass"></i>
-                        <input type="password" class="pass" name="password" placeholder="Mot de passe" required />
-
-                        <button class="login">Connexion</button>
-                    </form>
+            <div class="log">
+                <div class="lang">
                 </div>
+                <form action="/connexion" method="POST">
+
+                    <div class="tear"></div>
+
+                    <h2>HealthSafe</h2>
+                    <i class="fa fa-check fa-user"></i>
+                    <input type="text" class="user" name="username" placeholder="Adresse mail" required />
+                    <i class="fa fa-check fa-pass"></i>
+                    <input type="password" class="pass" name="password" placeholder="Mot de passe" required />
+
+                    <button class="login">Connexion</button>
+                </form>
+                <form action="/create" method="POST">
+                    <button class="sign">Inscription</button>
+                </form>
             </div>
         </div>
-        <div class="droite">
-            <div class="main-box">
-
-                <div class="log">
-                    <div class="lang">
-                    </div>
-                    <form action="#" method="post">
-
-                        <div class="tear"></div>
-
-                        <h2>HealthSafe</h2>
-                        <i class="fa fa-check fa-user"></i>
-                        <input type="text" class="user" name="Name" placeholder="Nom complet" required />
-                        <i class="fa fa-check fa-user"></i>
-                        <input type="text" class="user" name="Mail" placeholder="Adresse mail" required />
-                        <i class="fa fa-check fa-user"></i>
-                        <input type="text" class="user" name="Genre" placeholder="Mr / Mme" required />
-                        <i class="fa fa-check fa-pass"></i>
-                        <input type="text" class="pass" name="id_medecin" placeholder="Identification médecin" required />
-                        <!-- <input type="submit" value="Envoyé"> <-->
-                        <button class="login">Inscription</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script src="./javascripts/mail.js"></script>
+    </div>
 </body>
 
 </html>
