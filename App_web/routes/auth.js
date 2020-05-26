@@ -8,12 +8,6 @@ router.get('/', function(req, res) {
     res.render('auth', { title: 'Express' });
 });
 
-/* POST account create page */
-router.post('/create', (req, res) => {
-    res.redirect('/authCreate');
-    res.end();
-});
-
 /* connexion options object */
 var options = {
     url: 'https://healthsafe-api-beta.herokuapp.com/api/signin/create',
@@ -40,6 +34,7 @@ async function performRequest(res) {
     await request(options)
         .then(function(res) {
             validation.feedCode(res.token);
+            // we'll complete the doctor object here
         })
         .catch(function(err) {
             console.log(err);
@@ -57,6 +52,12 @@ async function performRequest(res) {
 router.post('/connexion', (req, res) => {
     options.feedJson(req.body);
     performRequest(res);
+});
+
+/* POST account create page */
+router.post('/create', (req, res) => {
+    res.redirect('/authCreate');
+    res.end();
 });
 
 module.exports = router;
