@@ -172,6 +172,87 @@ h3 {
     letter-spacing: 3px;
 }
 
+.validation {
+    color: #fff;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 500;
+    display: block;
+    margin: 10px auto;
+    padding: 15px 110px;
+    position: relative;
+    border-radius: 30px;
+    border: 2px solid #fff;
+    transition: all 0.5s ease;
+    background: linear-gradient(to right, #ff1c4e,#ff8985);
+    overflow: hidden;
+    width: 25%;
+}
+.validation:hover {
+    color: #71db9b;
+    z-index: 2;
+    border-color: #2ecc71;
+}
+
+.validation:after {
+    position: absolute;
+    content: "";
+    background: #fff;
+    top: 0;
+    width: 0;
+    height: 100%;
+    left: -19.5%;
+    z-index: -1;
+    transform: skew(50deg);
+    transform-origin: top left;
+    transition: all 0.5s ease;
+}
+
+    .validation:hover:after {
+        width: 115%;
+    }
+
+.modification {
+    color: #fff;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 500;
+    display: block;
+    margin: 10px auto;
+    padding: 15px 110px;
+    position: relative;
+    border-radius: 30px;
+    border: 2px solid #fff;
+    transition: all 0.5s ease;
+    background: linear-gradient(to right, #ff1c4e,#ff8985);
+    overflow: hidden;
+    width:25%;
+}
+
+    .modification:hover {
+        color: #71db9b;
+        z-index: 2;
+        border-color: #2ecc71;
+    }
+
+    .modification:after {
+        position: absolute;
+        content: "";
+        background: #fff;
+        top: 0;
+        width: 0;
+        height: 100%;
+        left: -19.5%;
+        z-index: -1;
+        transform: skew(50deg);
+        transform-origin: top left;
+        transition: all 0.5s ease;
+    }
+
+    .modification:hover:after {
+        width: 115%;
+    }
+
 .error {
     border-bottom-color: red;
     animation: error 0.5s linear 2;

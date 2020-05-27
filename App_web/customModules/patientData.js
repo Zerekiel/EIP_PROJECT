@@ -37,5 +37,49 @@ module.exports = {
             this.weight, this.emergencyNumber, this.allergies, this.medicalHistory,
             this.bloodType, this.socialNumber, this.treatments, this.organDonation,
             this.doctor);
+    },
+    replaceInfos: function(data) {
+        if (data.lastname !== "") {
+            this.lastname = data.lastname;
+        }
+        if (data.firstname !== "") {
+            this.firstname = data.firstname;
+        }
+        if (data.age !== "") {
+            this.age = parseInt(data.age);
+        }
+        if (data.gender !== "") {
+            this.gender = data.gender;
+        }
+        if (data.height !== "") {
+            this.height = parseInt(data.height);
+        }
+        if (data.weight !== "") {
+            this.weight = parseInt(data.weight);
+        }
+        if (data.emergencyNumber !== "") {
+            this.emergencyNumber = data.emergencyNumber;
+        }
+        if (data.allergies !== "") {
+            this.allergies = data.allergies;
+        }
+        if (data.medicalHistory !== "") {
+            this.medicalHistory = data.medicalHistory;
+        }
+        if (data.bloodType !== "") {
+            this.bloodType = data.bloodType;
+        }
+        if (data.socialNumber !== "") {
+            this.socialNumber = data.socialNumber;
+        }
+        if (data.treatments !== "") {
+            this.treatments = data.treatments;
+        }
+        if (data.organDonation !== "") {
+            this.organDonation = data.organDonation;
+        }
+        if (data.doctor !== "") {
+            this.doctor = data.doctor;
+        }
     }
 };

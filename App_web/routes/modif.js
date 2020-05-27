@@ -3,25 +3,9 @@ var router = express.Router();
 var request = require('request-promise');
 var patientData = require('../customModules/patientData.js');
 
-/* GET info page */
+/* GET modif page */
 router.get('/', function(req, res) {
-    res.render('info', {
-        title: 'Express',
-        firstname: patientData.firstname,
-        lastname: patientData.lastname,
-        age: patientData.age,
-        gender: patientData.gender,
-        height: patientData.height,
-        weight: patientData.weight,
-        emergencyNumber: patientData.emergencyNumber,
-        socialNumber: patientData.socialNumber,
-        doctor: patientData.doctor,
-        bloodType: patientData.bloodType,
-        allergies: patientData.allergies,
-        treatments: patientData.treatments,
-        organDonation: patientData.organDonation,
-        medicalHistory: patientData.medicalHistory
-    });
+    res.render('modif', { title: 'Express' });
 });
 
 /* Options object for /patientData/create request */
@@ -76,17 +60,9 @@ async function performRequest(res) {
     res.end();
 };
 
-/* POST route for validation */
-router.post('/validation', (req, res) => {
+router.post('/sendData', function(req, res) {
+    patientData.replaceInfos(req.body);
     performRequest(res);
 });
-
-/* POST route for modification */
-router.post('/modification', (req, res) => {
-    res.redirect('/modif');
-    res.end();
-});
-
-// route de renvoi : /api/patientData/create
 
 module.exports = router;
