@@ -1,0 +1,56 @@
+paths:
+  /api/signin:
+    get:
+      tags:
+        - SIGNIN
+      summary: /api/signin
+      description: Display all user login. Return a JSON list of all user connected.
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/definitions/getRes200ModelSignin'
+        202:
+          description: OK -> No data founded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/definitions/getRes202ModelSignin'
+        500:
+          description: ERROR
+          content:
+            application/json:
+              schema:
+                $ref: '#/definitions/getRes500ModelSignin'
+  /api/signin/signinId:
+    get:
+      summary: /api/signin/signinId
+      description: By ID, display an user connected.
+      requestBody:
+        description: Need ID.
+        type: object
+        content:
+          application/json:
+            schema:
+              $ref: '#/definitions/getReqModelSigninId'
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/definitions/getRes200ModelSignin'
+        202:
+          description: OK -> No data founded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/definitions/getRes202ModelSignin'
+        500:
+          description: ERROR
+          content:
+            application/json:
+              schema:
+                $ref: '#/definitions/getRes500ModelSignin'

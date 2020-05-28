@@ -1,0 +1,25 @@
+
+
+# GET RESPONSE MODEL
+definitions:
+  getRes200ModelSignin2:
+    type: object
+    properties:
+      _id:
+        type: string
+        example : 5ec94fff3976350017367a24KKKKKKKKKKKKKKKKKKKKKKKKK
+      email:
+        type: string
+        example : test@test.com
+      password:
+        type: string
+        example: password
+      tokens:
+        type: object
+        properties:
+          _id:
+            type: string
+            example : 5ec94fff3976350017367a24
+          token:
+            type: string
+            example : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTBhNjM3NGE3OWZhNzhlYjIxZTM5ZmYiLCJpYXQiOjE1Nzc3MzkxNjJ9.-Z8G27Y7srLb1YOBx0a8_vj588OwGZ3U1cSovJp-mF0
