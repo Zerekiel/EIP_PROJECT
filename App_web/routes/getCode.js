@@ -29,14 +29,40 @@ async function performRequest(res) {
         .catch(function(err) {
             console.log(err);
         })
-    res.redirect('/info');
-    res.end();
+    patientData.checkStatus();
+    if (patientData.status === 1) {
+        res.redirect('/info');
+        res.end();
+    } else {
+        console.log("Data unvalid");
+        res.redirect('/getCode');
+        res.end();
+    }
 };
 
 /* POST route for getting the code */
 router.post('/code', (req, res) => {
     options.feedCode(req.body.id);
     performRequest(res);
+});
+
+/* Routes to redirect */
+
+// Redirect home
+router.post('/home', (req, res) => {
+    res.redirect('/home');
+    res.end();
+});
+
+// Redirect options
+router.post('/options', (req, res) => {
+    res.redirect('options');
+    res.end();
+});
+
+router.post('/profile', (req, res) => {
+    res.redirect('/medic');
+    res.end();
 });
 
 module.exports = router;

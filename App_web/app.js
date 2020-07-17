@@ -7,11 +7,19 @@ var logger = require('morgan');
 
 //var overallData = require("./customModules/globalModule.js");
 
-// routes for the views
+/* HANDLERS of the routes */
+
+// Handlers for connexion routes 
 var authRouter = require('./routes/auth');
 var authCreateRouter = require('./routes/authCreate');
+
+// Handlers for home / options / profile routes
 var homeRouter = require('./routes/home');
 var scanRouter = require('./routes/scan');
+var optionsRouter = require('./routes/options');
+var medicRouter = require('./routes/medic');
+
+// Handlers for patient data routes
 var getCodeRouter = require('./routes/getCode');
 var infoRouter = require('./routes/info');
 var modifRouter = require('./routes/modif');
@@ -30,15 +38,23 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+/* USE of the routes */
+
+// Connexion routes
 app.use('/', authRouter);
 app.use('/authCreate', authCreateRouter);
+
+// Home / options / profile routes
 app.use('/home', homeRouter);
+app.use('/options', optionsRouter);
+app.use('/medic', medicRouter);
+
+// Patient data routes
 app.use('/scan', scanRouter);
 app.use('/getCode', getCodeRouter);
 app.use('/info', infoRouter);
 app.use('/modif', modifRouter);
 app.use('/dispCode', dispCodeRouter);
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -16,6 +16,7 @@ module.exports = {
     organDonation: undefined,
     doctor: undefined,
     code: undefined,
+    status: undefined,
     feedInfos: function(data) {
         this.lastname = data.lastName;
         this.firstname = data.firstName;
@@ -80,6 +81,17 @@ module.exports = {
         }
         if (data.doctor !== "") {
             this.doctor = data.doctor;
+        }
+    },
+    checkStatus: function() {
+        if (this.firstname != undefined && this.lastname != undefined && this.age != undefined &&
+            this.gender != undefined && this.height != undefined && this.weight != undefined &&
+            this.emergencyNumber != undefined && this.allergies != undefined && this.medicalHistory != undefined &&
+            this.bloodType != undefined && this.socialNumber != undefined && this.treatments != undefined &&
+            this.organDonation != undefined && this.doctor != undefined) {
+            this.status = 1;
+        } else {
+            this.status = 0;
         }
     }
 };
