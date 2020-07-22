@@ -65,7 +65,7 @@ const streetNumberValidatorPUT = (jsonValue) => {
 };
 
 const typeStreetNumberValidator = (jsonValue) => {
-	const regexp = /^$|bis|ter/;
+	const regexp = /^$|bis|ter|quater/;
 
 	return eValidator.check(jsonValue)
 		.exists().withMessage("Error -> Doesn't exists")
@@ -80,7 +80,7 @@ const typeStreetNumberValidatorPUT = (jsonValue) => {
 };
 
 const typeStreetValidator = (jsonValue) => {
-	const regexp = 	/rue|avenue|boulevard|chemin/;
+	const regexp = 	/rue|avenue|boulevard|chemin|quai/;
 
 	return 	eValidator.check(jsonValue)
 		.exists().withMessage("Error -> Doesn't exists")

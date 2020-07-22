@@ -1,0 +1,8 @@
+definitions:
+  500DefResError:
+    type: object
+    properties:
+      errors:
+        type: string
+        description: Error's description.
+        example : "[error stacks]"

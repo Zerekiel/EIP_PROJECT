@@ -20,8 +20,7 @@ const patientDataRouter = require('./sources/routes/patientData');
 const drProfileRouter = require('./sources/routes/drProfile');
 const signinRouter = require('./sources/routes/signin');
 const logoutRouter = require('./sources/routes/logOut');
-const sendRouter = require('./sources/routes/send');
-const receiveRouter = require('./sources/routes/receive');
+
 
 
 
@@ -60,8 +59,7 @@ app.use('/api/patientData', patientDataRouter);
 app.use('/api/drProfile', drProfileRouter);
 app.use('/api/signin', signinRouter);
 app.use('/api/logOut', logoutRouter);
-app.use('/api/send', sendRouter);
-app.use('/api/receive', receiveRouter);
+
 
 
 app.use('/swagger.json', swaggerRouter);

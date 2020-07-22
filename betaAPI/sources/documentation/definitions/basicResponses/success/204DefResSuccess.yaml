@@ -1,0 +1,10 @@
+definitions:
+  204DefResSuccess:
+    type: object
+    properties:
+      msg:
+        type: string
+        example: SUCCESS but No content in DB.
+      result:
+        type: object
+        example : []

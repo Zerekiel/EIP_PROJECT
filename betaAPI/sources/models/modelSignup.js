@@ -51,18 +51,19 @@ const signupSchema = mongoose.Schema({
 			type: Number,
 			required: true,
 			trim: true,
-			min: 0
+			min: 0,
+			max: 9999
 		},
 		typeStreetNumber: {
 			type: String,
-			enum: ['', "bis", "ter"],
+			enum: ['', "bis", "ter", "quater"],
 			trim: true,
 			minLength: 0,
-			maxLength: 3
+			maxLength: 6
 		},
 		typeStreet: {
 			type: String,
-			enum: ["rue", "avenue", "boulevard", "chemin"],
+			enum: ["rue", "avenue", "boulevard", "chemin", "quai"],
 			trim: true,
 			required: true
 		},

@@ -1,0 +1,21 @@
+definitions:
+  logoutModelRes:
+    type: "object"
+    properties:
+      _id:
+        type: string
+        description: "The user ID."
+        example: 5ddc5f4fb5193a346de246a0
+      tokens:
+        type: object
+        description: Bearer Token generated after user's connection.
+        properties:
+          token:
+            type: string
+            description: "Bearer token for authentification."
+            example : "[]"
+    # required:
+    #   - email
+    #   - password
+    #   - confirmationPassword
+    #   - idNumber

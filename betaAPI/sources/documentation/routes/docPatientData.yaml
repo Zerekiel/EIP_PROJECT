@@ -1,29 +1,24 @@
 paths:
-#GET
-  /api/signin/signinId:
+# GET
+  /api/patientData:
     get:
       tags:
-        - SIGNIN
-      summary: /api/signin/signinId
-      description: By ID, display an user connected.
+        - PATIENTDATA
+      summary: /api/patientData
+      description: Display all patient's data already registered.
       consumes:
         - "application/json"
       produces:
         - "application/json"
       requestBody:
-        description: Need ID.
-        type: object
-        content:
-          application/json:
-            schema:
-              $ref: '#/definitions/idDefRequest'
+        description: Optional description in Markdown
       responses:
         200:
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/definitions/signinModelRes'
+                $ref: '#/definitions/patientDataModelRes'
         204:
           description: OK -> No content in DB.
           content:
@@ -37,23 +32,26 @@ paths:
               schema:
                 $ref: '#/definitions/500DefResError'
 
-  /api/signin:
+  /api/patientData/patientDataId:
     get:
       tags:
-        - SIGNIN
-      summary: /api/signin
-      description: Display all user connected. Returns a JSON list of all user connected.
-      consumes:
-        - "application/json"
-      produces:
-        - "application/json"
+        - PATIENTDATA
+      summary: /api/patientData/patientDataId
+      description: By ID, Display one patient's data registered in DB.
+      requestBody:
+        description: Need ID.
+        type: object
+        content:
+          application/json:
+            schema:
+              $ref: '#/definitions/idDefRequest'
       responses:
         200:
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/definitions/signinModelRes'
+                $ref: '#/definitions/patientDataModelRes'
         204:
           description: OK -> No content in DB.
           content:
@@ -70,33 +68,29 @@ paths:
 # POST
     post:
       tags:
-        - SIGNIN
-      summary: /api/signin
-      description: Allows the user to sign in his credentials and generate a bearer token. Returns JSON
-      consumes:
-        - "application/json"
-      produces:
-        - "application/json"
+        - PATIENTDATA
+      summary: /api/patientData/patientDataId
+      description: -- FOR MOBILE -- By ID, Display one patient's data registered in DB.
       requestBody:
-        description: Email and password are required.
+        description: Need ID.
         type: object
         content:
           application/json:
             schema:
-              $ref: '#/definitions/signinModelReqPOST'
+              $ref: '#/definitions/idDefRequest'
       responses:
         200:
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/definitions/signinModelRes'
-        400:
-          description: ERROR BAD REQUEST
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/400signinDefResError'
+                $ref: '#/definitions/patientDataModelRes'
+        # 204:
+        #   description: OK -> No content in DB.
+        #   content:
+        #     application/json:
+        #       schema:
+        #         $ref: '#/definitions/204DefResSuccess'
         500:
           description: ERROR -> check error stack display for more information.
           content:
@@ -104,36 +98,25 @@ paths:
               schema:
                 $ref: '#/definitions/500DefResError'
 
-  /api/signin/create:
+  /api/patientData/create:
     post:
       tags:
-        - SIGNIN
-      summary: /api/signin/create
-      description: Add user into signin collection and generate a bearer token. Returns JSON
-      consumes:
-        - "application/json"
-      produces:
-        - "application/json"
+        - PATIENTDATA
+      summary: api/patientData/create
+      description: Create and Add patient's information in DB. Returns a JSON added.
       requestBody:
-        description: Email and password are required.
-        type: object
         content:
           application/json:
             schema:
-              $ref: '#/definitions/signinModelReqPOST'
+              type: object
+              $ref: '#/definitions/patientDataModelReqPOST'
       responses:
         200:
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/definitions/signinModelRes'
-        # 400:
-        #   description: ERROR BAD REQUEST
-        #   content:
-        #     application/json:
-        #       schema:
-        #         $ref: '#/definitions/400signinDefResError'
+                $ref: '#/definitions/patientDataModelRes'
         500:
           description: ERROR -> check error stack display for more information.
           content:
@@ -142,12 +125,12 @@ paths:
                 $ref: '#/definitions/500DefResError'
 
 # DELETE
-  /api/signin/delete:
+  /api/patientData/delete:
     delete:
       tags:
-        - SIGNIN
-      summary: /api/signin/delete
-      description: Delete user in DB by ID. Returns JSON.
+        - PATIENTDATA
+      summary: /api/patientData/delete
+      description: Delete patient's data in DB by ID. After send JSON WITH ID and other keys (the other keys are not mandatory), Delete the user and Returns a JSON deleted.
       requestBody:
         description: Need ID. Other keys are not mandatory.
         type: object
@@ -161,13 +144,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/definitions/signinModelRes'
-        204:
-          description: OK -> No content in DB.
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/204DefResSuccess'
+                $ref: '#/definitions/patientDataModelRes'
         500:
           description: ERROR -> check error stack display for more information.
           content:
@@ -176,25 +153,26 @@ paths:
                 $ref: '#/definitions/500DefResError'
 
 # UPDATE
-  /api/signin/update:
+  /api/patientData/update:
     put:
       tags:
-        - SIGNIN
-      summary: /api/signin/update
-      description: Update user's data in DB by ID. Returns JSON with new datas.
+        - PATIENTDATA
+      summary: /api/patientData/update
+      description: Update patient's data in DB by ID. After send a JSON with new data, update the user's data and Returns a JSON updated. IN JSON ID IS MANDATORY
       requestBody:
+        # description: Need ID. Other keys are not mandatory.
         content:
           application/json:
             schema:
               type: object
-              $ref: '#/definitions/signinModelReqPUT'
+              $ref: '#/definitions/patientDataModelReqPUT'
       responses:
         200:
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/definitions/signinModelRes'
+                $ref: '#/definitions/patientDataModelRes'
         500:
           description: ERROR -> check error stack display for more information.
           content:

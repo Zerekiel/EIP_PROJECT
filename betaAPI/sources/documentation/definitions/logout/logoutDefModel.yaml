@@ -1,0 +1,18 @@
+definitions:
+  logoutModel:
+    type: "object"
+    properties:
+      _id:
+        type: string
+        description: "The user ID."
+        example: 5ddc5f4fb5193a346de246a0
+      tokens:
+        type: object
+        properties:
+          token:
+            type: string
+            description: "Bearer token for authentification."
+            example : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTBhNjM3NGE3OWZhNzhlYjIxZTM5ZmYiLCJpYXQiOjE1Nzc3MzkxNjJ9.-Z8G27Y7srLb1YOBx0a8_vj588OwGZ3U1cSovJp-mF0"
+    required:
+      - tokens
+      - token

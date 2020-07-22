@@ -1,0 +1,8 @@
+definitions:
+  400logoutDefResError:
+    type: object
+    properties:
+      errors:
+        type: string
+        description: Bad Request.
+        example : 'Login failed! Check authentication credentials'

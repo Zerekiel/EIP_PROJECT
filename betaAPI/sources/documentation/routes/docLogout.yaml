@@ -1,0 +1,76 @@
+paths:
+#GET
+
+# POST
+  /api/logout:
+    post:
+      tags:
+        - LOGOUT
+      summary: /api/logout
+      description: log user out of the application. Kill bearers token and send a JSON in body. authorization with Bearer Token is needed.
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      requestBody:
+        description: Bearer token is required.
+        type: object
+        content:
+          application/json:
+            schema:
+              $ref: '#/definitions/logoutModelReqPOST'
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/definitions/logoutModelRes'
+        400:
+          description: ERROR BAD REQUEST
+          content:
+            application/json:
+              schema:
+                $ref: '#/definitions/400logoutDefResError'
+        500:
+          description: ERROR -> check error stack display for more information.
+          content:
+            application/json:
+              schema:
+                $ref: '#/definitions/500DefResError'
+
+  /api/logout/logoutall:
+    post:
+      tags:
+        - LOGOUT
+      summary: /api/logout/logoutall
+      description: log user out of all devices. Kill all bearers token and send a JSON in body. authorization with Bearer Token is needed.
+        - "application/json"
+      produces:
+        - "application/json"
+      requestBody:
+        description: Bearer token is required.
+        type: object
+        content:
+          application/json:
+            schema:
+              $ref: '#/definitions/logoutModelReqPOST'
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/definitions/logoutModelRes'
+        400:
+          description: ERROR BAD REQUEST
+          content:
+            application/json:
+              schema:
+                $ref: '#/definitions/400logoutDefResError'
+        500:
+          description: ERROR -> check error stack display for more information.
+          content:
+            application/json:
+              schema:
+                $ref: '#/definitions/500DefResError'

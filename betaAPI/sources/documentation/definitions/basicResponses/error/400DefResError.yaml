@@ -1,0 +1,8 @@
+definitions:
+  400DefResError:
+    type: object
+    properties:
+      errors:
+        type: string
+        description: Bad Request.
+        example : "[error stack]s"

@@ -1,0 +1,19 @@
+definitions:
+  logoutModelReqPUT:
+    type: "object"
+    properties:
+      _id:
+        type: string
+        description: "The user ID."
+        example: 5ddc5f4fb5193a346de246a0
+      email:
+        type: string
+        description: "User's email."
+        example: test@gmail.com
+      password:
+        type: string
+        description: "User's password."
+        format: "password"
+        example : oldboy
+    required:
+      - _id

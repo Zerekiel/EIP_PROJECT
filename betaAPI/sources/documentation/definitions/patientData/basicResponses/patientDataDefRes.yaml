@@ -1,0 +1,110 @@
+definitions:
+  patientDataModelRes:
+    tags:
+      - MODELS
+    type: "object"
+    properties:
+      _id:
+        type: string
+        description: "The user ID."
+        example: 5ddc5f4fb5193a346de246a0
+      lastName:
+        type: "string"
+        description: "User's lastname."
+        minLength: 1
+        maxLength: 40
+        pattern: /^(?=.{1,40}$)[a-zA-Z]+(?:[-,.'\s][a-zA-Z]+)*$/i
+        default: ""
+        example : "OldBoy"
+      firstName:
+        type: string
+        description: "User's firstname."
+        minLength: 1
+        maxLength: 40
+        pattern: /^(?=.{1,40}$)[a-zA-Z]+(?:[-,.'\s][a-zA-Z]+)*$/i
+        default: ""
+        example: ODeSu
+      age:
+        type: integer
+        description: "User's age."
+        minimum: 18
+        maximum: 120
+        default: ""
+        example : 20
+      gender:
+        type: enum
+        description: "User's gender."
+        minLength: 4
+        maxLength: 6
+        default: ""
+        example : [Male, Female]
+      height:
+        type: number
+        description: "User's height."
+        minimum: 1
+        maximum: 300
+        default: ""
+        example : 180
+      weight:
+        type: number
+        description: "User's weight."
+        minimum: 1
+        maximum: 500
+        default: ""
+        example : 80
+      emergencyNumber:
+        type: string
+        description: "User's emergency phone number."
+        minLength: 1
+        maxLength: 12
+        default: ""
+        example : [ '+33658893939', 0638495959, 0139384458]
+      allergies:
+        type: string
+        description: "User's allergies."
+        default: ""
+        example : "Codeine"
+      medicalHistory:
+        type: string
+        description: "User's medical History."
+        default: ""
+        example : "medeical history"
+      bloodType:
+        type: enum
+        description: "User's blood type."
+        minLength: 2
+        maxLength: 3
+        default: ""
+        example : [A+, A-, B+, B-, AB+, AB-, O+, O-]
+      socialNumber:
+        type: string
+        description: "User's social security number."
+        default: ""
+        example : "9112435423432113"
+      treatments:
+        type: string
+        description: "User's treatments."
+        default: ""
+        example : "Codeine"
+      organDonation:
+        type: boolean
+        description: "User's organ donation."
+        default: ""
+        example : true
+      doctor:
+        type: string
+        description: "User's medical History."
+        minLength: 1
+        maxLength: 40
+        pattern: /^(?=.{1,40}$)[a-zA-Z]+(?:[-,.'\s][a-zA-Z]+)*$/i
+        default: ""
+        example : "Docteur Chopin"
+    # required:
+    #   - lastName
+    #   - firstName
+    #   - age
+    #   - gender
+    #   - height
+    #   - weight
+    #   - emergencyNumber
+    #   - socialNumber

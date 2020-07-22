@@ -1,0 +1,9 @@
+components:
+  schemas:
+    drProfileComponent:
+      tags:
+        - MODELS
+      type: "object"
+      properties:
+        drProfileModel:
+          - $ref: '#/definitions/drProfileModel'

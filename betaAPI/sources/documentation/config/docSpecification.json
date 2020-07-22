@@ -1,0 +1,46 @@
+openapi: 3.0.0
+servers:
+  - url: https://localhost:3000/
+    description: Default server HTTPS
+  - url: http://localhost:3000/
+    description: Default server HTTP
+  - url: https://healthsafe-api-beta.herokuapp.com
+    description: Default server HTTPS deployed
+info:
+  description: |
+    API HEALTHSAFE
+    # Introduction
+    This API is documented in **OpenAPI format**
+    It was **extended** to illustrate features of [generator-openapi-repo](https://github.com/Rebilly/generator-openapi-repo)
+    tool and [ReDoc](https://github.com/Redocly/redoc) documentation. In addition to standard
+    OpenAPI syntax we use a few [vendor extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md).
+
+    # OpenAPI Specification
+    This API is documented in **OpenAPI format**
+    It was **extended** to illustrate features of [generator-openapi-repo](https://github.com/Rebilly/generator-openapi-repo)
+    tool and [ReDoc](https://github.com/Redocly/redoc) documentation. In addition to standard
+    OpenAPI syntax we use a few [vendor extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md).
+
+    # Authentication
+
+    # Petstore offers two forms of authentication:
+    #   - API Key
+    #   - OAuth2
+    # OAuth2 - an open protocol to allow secure authorization in a simple
+    # and standard method from web, mobile and desktop applications.
+
+    <SecurityDefinitions />
+
+  version: 1.0.0
+  title: HealthSafe API BETA
+  termsOfService:
+  contact:
+    name: API Support
+    email: contact.healthsafe@gmail.com
+    url: https://github.com/Zerekiel/EIP_PROJECT
+  x-logo:
+    url: 'https://redocly.github.io/redoc/petstore-logo.png'
+    altText: HealthSafe logo NOT YET IMPLEMENTED
+  license:
+    name: Apache 2.0 NOT YET IMPLEMENTED
+    url: 'NOT YET IMPLEMENTED'

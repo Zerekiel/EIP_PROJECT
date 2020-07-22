@@ -52,7 +52,7 @@ const drProfileSchema = mongoose.Schema({
 		},
 		typeStreetNumber: {
 			type: String,
-			enum: ['', "bis", "ter"],
+			enum: ['', "bis", "ter", "quater"],
 			lowercase: true,
 			trim: true,
 			minLength: 0,

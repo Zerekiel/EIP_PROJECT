@@ -1,0 +1,21 @@
+paths:
+# GET
+  /api:
+    get:
+      tags:
+        - DOCUMENTATION
+      summary: /api
+      description: Display API Documentation.
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      responses:
+        200:
+          description: OK
+        500:
+          description: ERROR -> check error stack display for more information.
+          content:
+            application/json:
+              schema:
+                $ref: '#/definitions/500DefResError'

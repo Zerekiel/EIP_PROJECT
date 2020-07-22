@@ -1,0 +1,38 @@
+tags:
+  - name: SIGNUP
+    description: Everything about SignUp routes.
+  - name: SIGNIN
+    description: Everything about SignIn routes.
+  - name: DRPROFILE
+    description: Everything about DrProfile routes.
+  - name: PATIENTDATA
+    description: Everything about PatientData routes.
+  - name: LOGOUT
+    description: Everything about LogOut routes.
+  - name: DOCUMENTATION
+    description: Everything about Documentation routes.
+  - name: SIGNUP_MODEL
+    x-displayName: Sign up Model
+    description: |
+        Signup Model
+        <SchemaDefinition schemaRef="#/components/schemas/signupModel" />
+  - name: SIGNIN_MODEL
+    x-displayName: Sign in Model
+    description: |
+        Signin Model
+        <SchemaDefinition schemaRef="#/components/schemas/signinModel" />
+  - name: PATIENTDATA_MODEL
+    x-displayName: Patient Data Model
+    description: |
+        PatientData Model
+        <SchemaDefinition schemaRef="#/components/schemas/patientDataModel" />
+  - name: DOCTORPROFILE_MODEL
+    x-displayName: Doctor Profile Model
+    description: |
+        Doctor Profile Model
+        <SchemaDefinition schemaRef="#/components/schemas/drProfileModel" />
+  - name: LOGOUT_MODEL
+    x-displayName: Log out Model
+    description: |
+        Log out Model
+        <SchemaDefinition schemaRef="#/components/schemas/logoutModel" />

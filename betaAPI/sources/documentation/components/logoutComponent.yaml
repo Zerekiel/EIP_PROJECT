@@ -1,0 +1,9 @@
+components:
+  schemas:
+    logoutComponent:
+      tags:
+        - MODELS
+      type: "object"
+      properties:
+        logoutModel:
+          - $ref: '#/definitions/logoutModel'

@@ -40,7 +40,7 @@ const patientDataSchema = mongoose.Schema({
 		type: Number,
 		required: true,
 		trim: true,
-		min: 0,
+		min: 1,
 		max: 300
 	},
 	weight:
@@ -48,7 +48,7 @@ const patientDataSchema = mongoose.Schema({
 		type: Number,
 		required: true,
 		trim: true,
-		min: 0,
+		min: 1,
 		max: 500
 	},
 	emergencyNumber:
@@ -60,11 +60,13 @@ const patientDataSchema = mongoose.Schema({
 	allergies :
 	{
 		type: String,
+		required: true,
 		trim: true
 	},
 	medicalHistory:
 	{
 		type: String,
+		required: true,
 		trim: true
 	},
 	bloodType:
@@ -91,8 +93,6 @@ const patientDataSchema = mongoose.Schema({
 	{
 		type : Boolean,
 		trim : true
-		// type : String,
-		// trim : true
 	},
 	doctor :
 	{
