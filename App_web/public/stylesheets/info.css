@@ -1,5 +1,10 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
 
+.elem {
+    width: 30%;
+    min-height: 500px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -14,18 +19,25 @@ body {
 
 .cont {
     position: relative;
-    width: 28%;
-    height: 550px;
-    margin: 10px auto;
+    margin: 10px auto 70px auto;
+}
+
+.all_infos {
+    width: 95%;
+    margin: auto;
+    display: flex; 
+    justify-content: space-around; 
+    margin-top: 190px;
 }
 
 .patient_box {
-    width: 90%;
+    /*    width: 90%;*/
     height: 100%;
     text-align: center;
     background: #fff;
-    margin-left: -500px;
+    /*margin-left: -500px;
     margin-top: 190px;
+    */
 }
 
     .patient_box h1 {
@@ -38,8 +50,6 @@ body {
 .photo_patient {
     width: 115px;
     height: 115px;
-    position: absolute;
-    margin-left: 80px;
 }
 
 .info_client {
@@ -48,19 +58,24 @@ body {
     margin-left: 0;
     padding-left: 0;
     margin-top: 33px;
-    margin-left: -50px;
 }
 
-    .info_client li {
-        margin-bottom: 15px; /* à adapter */
-    }
+.info_patient_box {
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info_client li {
+    margin-bottom: 15px; /* à adapter */
+}
 
 .info_client_importante {
     width: 280px;
     list-style: none;
     padding-left: 0;
-    margin-top: -96px;
     margin-left: 35px;
+    margin-top: 33px;
 }
 
     .info_client_importante li {
@@ -68,12 +83,10 @@ body {
     }
 
 .importante_box {
-    width: 90%;
-    height: 100%;
+    /*width: 90%;*/
+    /*height: 100%;*/
     text-align: center;
     background: #ffffff;
-    margin-top: -550px;
-    margin-left: 23px;
 }
 
     .importante_box h1 {
@@ -84,12 +97,12 @@ body {
     }
 
 .derniere_visite_box {
-    width: 90%;
-    height: 100%;
+    /*width: 90%;*/
+    /*height: 100%;*/
     text-align: center;
     background: #fff;
-    margin-left: 546px;
-    margin-top: -550px;
+    /*margin-left: 546px;
+    margin-top: -550px;*/
 }
 
     .derniere_visite_box h1 {
@@ -105,14 +118,15 @@ body {
     width: 100%;
     height: 75%;
     padding: 18px 15px;
+    margin-top:33px;
 }
 
 .info_derniere_visite {
     width: 280px;
     list-style: none;
     padding-left: 0;
-    margin-top: -96px;
     margin-left: 35px;
+    margin-top: 33px;
 }
 
     .info_derniere_visite li {
@@ -151,12 +165,13 @@ body {
 
 .logo {
     position: relative;
-    left: 40%;
-    top: -362px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 65px;
     width: 60px;
     height: 60px;
-    margin-left: -10px;
     border: none;
+    margin-bottom: -60px;
     transform: rotateZ(-45deg) scale(1.2,1.2);
     background: linear-gradient(to bottom,#ff1c4e,#ff8985);
     border-radius: 120% 0 70% 50% / 70% 0 120% 50%;
@@ -186,7 +201,7 @@ h3 {
     transition: all 0.5s ease;
     background: linear-gradient(to right, #ff1c4e,#ff8985);
     overflow: hidden;
-    width: 25%;
+    width: 30%;
 }
 .validation:hover {
     color: #71db9b;
@@ -201,7 +216,7 @@ h3 {
     top: 0;
     width: 0;
     height: 100%;
-    left: -19.5%;
+    left: -18.5%;
     z-index: -1;
     transform: skew(50deg);
     transform-origin: top left;
@@ -217,19 +232,16 @@ h3 {
     cursor: pointer;
     font-size: 22px;
     font-weight: 500;
-    display: block;
-    margin: 10px auto;
-    padding: 15px 110px;
+    margin: 3% auto;
     position: relative;
-    border-radius: 30px;
-    border: 2px solid #fff;
-    transition: all 0.5s ease;
-    background: linear-gradient(to right, #ff1c4e,#ff8985);
+    /* background: linear-gradient(to right, #ff1c4e,#ff8985); */
     overflow: hidden;
-    width:25%;
+    width: 9%;
+    /* padding-top: 10px; */
+    padding-bottom: 10px;
 }
 
-    .modification:hover {
+   /* .modification:hover {
         color: #71db9b;
         z-index: 2;
         border-color: #2ecc71;
@@ -242,7 +254,7 @@ h3 {
         top: 0;
         width: 0;
         height: 100%;
-        left: -19.5%;
+        left: -18.5%;
         z-index: -1;
         transform: skew(50deg);
         transform-origin: top left;
@@ -252,7 +264,7 @@ h3 {
     .modification:hover:after {
         width: 115%;
     }
-
+*/
 .error {
     border-bottom-color: red;
     animation: error 0.5s linear 2;
@@ -273,5 +285,80 @@ h3 {
 
     100% {
         left: 0;
+    }
+}
+
+@media screen and (min-width : 280px) and (max-width : 750px) {
+
+    .logo {
+        width: 61px;
+    }
+
+    .logo_home {
+        width: 25px;
+        height: 25px;
+        top: 10px;
+        left: 15px;
+        position: absolute;
+    }
+
+    .logo_reglage {
+        width: 25px;
+        height: 25px;
+        top: 10px;
+        left: 10px;
+        margin-left: 50px;
+        position: absolute;
+        -moz-transition: -moz-transform .3s;
+    }
+
+    h3 {
+        top: 20px;
+        right: 15px;
+        position: absolute;
+        color: #ff8985;
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 0px;
+    }
+
+    .all_infos {
+        width: 100%;
+        margin: auto;
+        margin-top: 190px;
+        display:block;
+    }
+    .patient_box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .importante_box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .derniere_visite_box{
+        width: 100%;
+    }
+    .cont {
+        position: relative;
+        margin: 0px auto 30px auto;
+    }
+    .validation {
+        width: auto;
+        text-align: center;
+    }
+    .modification {
+        width: auto;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width : 750px) and (max-width : 1100px) {
+    .validation {
+        width: 40%;
+    }
+
+    .modification {
+        width: 40%;
     }
 }

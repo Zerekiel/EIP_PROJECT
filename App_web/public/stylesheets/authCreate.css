@@ -2,6 +2,40 @@
 
 body {
     background: #fff;
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0 ;
+}
+
+.dropDown {
+    margin: 0 20px 0 0;
+    width: 180px;
+}
+
+.dropDown:hover {
+    cursor: pointer;
+}
+
+.dropDown-item {
+    border-bottom: 2px solid #ff8985;
+    padding: 5px 10px;
+}
+
+.dropDown-active {
+    display: block !important;
+    width: 160px;
+    right: 45px;
+    top: 60px;
+}
+
+.dropDown-menu {
+    display: none;
 }
 
 #authen {
@@ -23,7 +57,7 @@ body {
     height: 110%;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 80px;
+    margin-top: 40px;
    
     text-align: center;
     background: #fff;
@@ -49,7 +83,7 @@ body {
 
 .tear {
     position: relative;
-    margin: 55px auto;
+    margin: 5px auto 10px auto;
     width: 60px;
     height: 60px;
     border: none;
@@ -65,8 +99,15 @@ h2 {
     font-weight: 100;
     font-size: 30px;
     letter-spacing: 3px;
-    margin-bottom: 35px;
-    margin-top: 80px;
+    margin-bottom: 40px;
+    /* margin-top: 80px; */
+}
+
+img {
+    width: 35px;
+    top: 10px;
+    left: 20px;
+    position: absolute;
 }
 
 .user, .pass {
@@ -88,6 +129,7 @@ input::placeholder {
     color: #607d8b;
     font-size: 20px;
     font-weight: lighter;
+    text-align: left;
 }
 
 i.fa.fa-check {
@@ -118,13 +160,13 @@ i.fa.fa-check {
     overflow: hidden
 }
 
-    .login:hover {
+    .login:hover, .prev:hover, .next:hover{
         color: #71db9b;
         z-index: 2;
         border-color: #2ecc71;
     }
 
-    .login:after {
+    .login:after, .prev:after, .next:after {
         position: absolute;
         content: "";
         background: #fff;
@@ -192,3 +234,104 @@ i.fa.fa-check {
         width: 30%
     }
 }
+
+/* Formulaire slide */
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+    height: 260px;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    color: #fff;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 500;
+    display: block;
+    margin: 0;
+    padding: 7px 0;
+    position: relative;
+    border-radius: 30px;
+    border: 2px solid #fff;
+    transition: all 0.5s ease;
+    background: linear-gradient(to right, #ff1c4e,#ff8985);
+    overflow: hidden;
+    top: 50%;
+    width: 30%;
+    /* margin-top: -22px; */
+    /* padding: 16px; */
+    /* user-select: none; */
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    /* border-radius: 3px 0 0 3px; */
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 5px;
+    width: 5px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .dot-active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }

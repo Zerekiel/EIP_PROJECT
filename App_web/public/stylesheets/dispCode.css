@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+﻿    @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
 
 * {
     margin: 0;
@@ -32,7 +32,7 @@ body {
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    top: 28px;
+    top: 5%;
     width: 60px;
     height: 60px;
     border: none;
@@ -42,26 +42,85 @@ body {
     border-radius: 120% 0 70% 50% / 70% 0 120% 50%;
 }
 
-input {
+.validation {
     position: relative;
-    margin: auto;
-    color: #ff8985;
-    font-size: 22px;
-    text-align: center;
-    border: none;
-    font-weight: bold;
     display: block;
     height: 45px;
+    border: none;
+    color: #ff8985;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 22px;
     font-weight: bold;
     margin-bottom: 22px;
     border-bottom: 2px solid #ff8985;
 }
 
-    input::placeholder {
-        color: #607d8b;
-        font-size: 22px;
-        font-weight: lighter;
+input::placeholder {
+    color: #607d8b;
+    font-size: 22px;
+    font-weight: lighter;
+}
+
+i.fa.fa-check {
+    position: relative;
+    top: 30px;
+    right: -30%;
+    z-index: 1;
+    color: #ff8985;
+}
+
+.fa-validation {
+    font-size: 0;
+}
+
+.valider {
+    color: #fff;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 500;
+    display: block;
+    margin: 10px auto;
+    padding: 15px 110px;
+    position: relative;
+    border-radius: 30px;
+    border: 2px solid #fff;
+    transition: all 0.5s ease;
+    background: linear-gradient(to right, #ff1c4e,#ff8985);
+    overflow: hidden
+}
+
+    .valider:hover {
+        color: #71db9b;
+        z-index: 2;
+        border-color: #2ecc71;
     }
+
+    .valider:after {
+        position: absolute;
+        content: "";
+        background: #fff;
+        top: 0;
+        width: 0;
+        height: 100%;
+        left: -19.5%;
+        z-index: -1;
+        transform: skew(50deg);
+        transform-origin: top left;
+        transition: all 0.5s ease;
+    }
+
+    .valider:hover:after {
+        width: 115%;
+    }
+
+input {
+
+    text-align: center;
+    border: none;
+    font-weight: bold;
+    text-align: center;
+}
 
 h3 {
     top: 10px;
@@ -105,4 +164,18 @@ img {
 
 .succses {
     border-bottom-color: #ff8985;
+}
+
+
+@media screen and (min-width : 280px) and (max-width : 700px) {
+    .tear {
+        top: 20%;
+    }
+}
+
+@media screen and (min-width : 700px) and (max-width : 1100px) {
+    .tear {
+        top: 20%;
+    }
+        
 }

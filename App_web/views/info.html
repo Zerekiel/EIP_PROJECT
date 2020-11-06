@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>HealthSafe_acceuil</title>
+    <link rel="stylesheet" style="text/css" href="./stylesheets/info.css" />
+    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        Weglot.initialize({
+            api_key: 'wg_775b2c126fe4cf7de96fe0ba186238023'
+        });
+    </script>
+</head>
+
+<body>
+    <div class="info">
+        <h3> Mr / Mme Medecin</h3>
+        <a href="/home">
+            <img class="logo_home" src="./img/home_page_2.png" />
+        </a>
+        <img class="logo_reglage" src="./img/reglage_3.png" />
+        <div class="cont">
+            <form action="">
+                <div class="logo"></div>
+            </form>
+            <div class="all_infos">
+                <div class="patient_box elem">
+                    <h1>Infos patient</h1>
+                    <div class="info_patient_box">
+                        <ul class="info_client">
+                            <li>
+                                name = "firstname"
+                            </li>
+                            <li>
+                                name = "lastname"
+                            </li>
+                            <li>
+                                name = "age" ans
+                            </li>
+                            <li>
+                                name = "gender"
+                            </li>
+                            <li>
+                                Taille : name = "height" cm
+                            </li>
+                            <li>
+                                Poids : name = "weight"
+                            </li>
+                            <li>
+                                Médecin traitant : name = "doctor"
+                            </li>
+                        </ul>
+                        <img class="photo_patient" src="./img/avatar.png" />
+                    </div>
+                </div>
+                <div class="importante_box elem">
+                    <h1>Infos importantes</h1>
+                    <div class="info_patient_box">
+                        <ul class="info_client_importante">
+                            <li>
+                                Numéro d'urgence : name = "emergencyNumber"
+                            </li>
+                            <li>
+                                Numéro de sécurité sociale : name = "socialNumber"
+                            </li>
+                            <li>
+                                Groupe sanguin : name = "bloodType"
+                            </li>
+                            <li>
+                                Allergies : name = "allergies"
+                            </li>
+                            <li>
+                                Traitements en cours : name = "treatments"
+                            </li>
+                            <li>
+                                Donneur d'organe : name = "organDonation"
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="derniere_visite_box elem">
+                    <h1>Infos dernière visite</h1>
+                    <div class="info_patient_box">
+                        <ul class="info_derniere_visite">
+                            <li>
+                                précendente visite name = "medicalHistory"
+                            </li>
+                        </ul>
+                        <form action=""></form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" bouton">
+            <form action="/info/validation" method="POST">
+                <button class="validation">Validation</button>
+            </form>
+            <form action="/info/modification" method="POST">
+                <div class="modification"> <a href="#" style="color: #FF2651;">modification</a> </div>
+        </div>
+    </div>
+    </form>
+    </div>
+    </div>
+</body>
+
+</html>

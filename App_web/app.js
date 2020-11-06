@@ -1,5 +1,5 @@
 var createError = require('http-errors');
-//var cons = require('consolidate');
+var cons = require('consolidate');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -16,8 +16,8 @@ var authCreateRouter = require('./routes/authCreate');
 // Handlers for home / options / profile routes
 var homeRouter = require('./routes/home');
 var scanRouter = require('./routes/scan');
-var optionsRouter = require('./routes/options');
-var medicRouter = require('./routes/medic');
+//var optionsRouter = require('./routes/options');
+//var medicRouter = require('./routes/medic');
 
 // Handlers for patient data routes
 var getCodeRouter = require('./routes/getCode');
@@ -29,8 +29,13 @@ var app = express();
 const port = 8080;
 
 // view engine setup
+/*app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');*/
+
+app.engine('html', cons.swig);
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('view engine', 'html');
+
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -46,8 +51,8 @@ app.use('/authCreate', authCreateRouter);
 
 // Home / options / profile routes
 app.use('/home', homeRouter);
-app.use('/options', optionsRouter);
-app.use('/medic', medicRouter);
+//app.use('/options', optionsRouter);
+//app.use('/medic', medicRouter);
 
 // Patient data routes
 app.use('/scan', scanRouter);

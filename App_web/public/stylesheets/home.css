@@ -281,24 +281,14 @@ body {
     /*left: 40%;*/
     margin-left: auto;
     margin-right: auto;
-    top: 50px;
+    top: -100px;
     width: 60px;
     height: 60px;
     border: none;
-    margin-bottom: 100px;
+    margin-bottom: -60px;
     transform: rotateZ(-45deg) scale(1.2,1.2);
     background: linear-gradient(to bottom,#ff1c4e,#ff8985);
     border-radius: 120% 0 70% 50% / 70% 0 120% 50%;
-}
-
-h3 {
-    top: 10px;
-    right: 20px;
-    position: absolute;
-    color: #ff8985;
-    font-weight: 200;
-    font-size: 15px;
-    letter-spacing: 3px;
 }
 
 h2 {
@@ -306,9 +296,19 @@ h2 {
     text-align: center;
     color: #ff8985;
     font-weight: 100;
-    font-size: 20px;
+    font-size: 50px;
     letter-spacing: 3px;
     margin: auto;
+}
+
+h3 {
+    top: 10px;
+    right: 20px;
+    position: absolute;
+    color: #ff8985;
+    font-weight: 20;
+    font-size: 15px;
+    letter-spacing: 3px;
 }
 
 img {
@@ -323,24 +323,37 @@ img {
         -moz-transform: rotate(180deg);
     }
 
+
+.all_bouttons{
+   width:60%;
+   margin: auto;
+}
+
+.two_bouttons {
+    width: 100%;
+   /* display: flex;*/
+    margin: 100px, auto;
+    margin-top: 10%;
+}
+
 .scan {
     color: #ffffff;
-    /*text-align: center;*/
     cursor: pointer;
     font-size: 22px;
     font-weight: 500;
     display: block;
-    padding: 16px; /* padding : 16px 120px; */
+    padding: 16px 120px;
     border-radius: 30px;
     border: 2px solid #fff;
     transition: all 0.5s ease;
-    background: linear-gradient(to right, #ff1c4e,#ff8985);
+   /* background: linear-gradient(to right, #ff1c4e,#ff8985);*/
+   background: #a39698;
     overflow: hidden;
     width: 370px;
     margin: 15px auto;
 }
 
-    .scan:hover {
+    /*.scan:hover {
         color: #71db9b;
         z-index: 2;
         border-color: #2ecc71;
@@ -362,16 +375,15 @@ img {
 
 .scan:hover:after {
     width: 115%;
-}
+}*/
 
 .mobile {
     color: #fff;
-    text-align: center;
     cursor: pointer;
     font-size: 22px;
     font-weight: 500;
     display: block;
-    padding: 16px ; /* padding : 16px 120px; */
+    padding: 15px 110px;
     border-radius: 30px;
     border: 2px solid #fff;
     transition: all 0.5s ease;
@@ -412,17 +424,17 @@ img {
     font-size: 22px;
     font-weight: 500;
     display: block;
-    padding: 16px; /* padding : 16px 110px; */
+    padding: 15px 110px;
     border-radius: 30px;
     border: 2px solid #fff;
     transition: all 0.5s ease;
-    background: linear-gradient(to right, #ff1c4e,#ff8985);
+    /*background: linear-gradient(to right, #ff1c4e,#ff8985);*/
     overflow: hidden;
-    width: 250px;
-    margin: auto;
+    width: 370px;
+    margin: 5% auto;
 }
 
-    .deconnexion:hover {
+    /*.deconnexion:hover {
         color: #71db9b;
         z-index: 2;
         border-color: #2ecc71;
@@ -444,7 +456,7 @@ img {
 
     .deconnexion:hover:after {
         width: 370px;
-    }
+    }*/
 
 .error {
     border-bottom-color: red;
@@ -452,6 +464,7 @@ img {
 }
 
 @keyframes error {
+
     0% {
         left: 0;
     }
@@ -473,20 +486,51 @@ img {
     border-bottom-color: #ff8985;
 }
 
-@media only screen and (min-width: 601px) {
-    .cont{
-        width: 75%;
+@media screen and (min-width : 280px) and (max-width : 700px) {
+    .tear {
+        top: 20%;
+    }
+    img {
+        width: 32px;
+    }
+    h3{
+        letter-spacing: 1px;
+    }
+    h2{
+        font-size: 22px;
+        margin-top: 110px;
+    }
+    .Acceuil{
+        top: 60px;
+    }
+    .two_bouttons{
+        margin-top : 50px;
+    }
+    .scan {
+        height: 60px;
+        padding: 0px;
+        font-size: 20px;
+    }
+    .mobile{
+        height: 60px;
+        padding: 0px;
+        font-size: 20px;
+    }
+    .deconnexion{
+        width: 350px;
     }
 }
 
-/*@media only screen and (min-width : 992px) {*/
-    /*.cont {*/
-        /*width: 30%*/
-    /*}*/
-    /*.tear {*/
-        /*position: relative;*/
-        /*left: 42.5%;*/
-        /*top: -40px;*/
-        /*width: 60px;*/
-    /*}*/
-/*}*/
+@media screen and (min-width : 700px) and (max-width : 1100px) {
+    h3 {
+        letter-spacing: 1px;
+    }
+
+    h2 {
+        padding-top: 40px;
+    }
+
+    .all_boutton {
+        padding-top: 80px;
+    }
+}

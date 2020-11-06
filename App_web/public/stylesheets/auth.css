@@ -40,8 +40,8 @@ body {
 
 .tear {
     position: relative;
-    left: 40%;
-    top: -40px;
+    margin: auto;
+    top: -80px;
     width: 60px;
     height: 60px;
     border: none;
@@ -57,7 +57,8 @@ h2 {
     font-weight: 100;
     font-size: 30px;
     letter-spacing: 3px;
-    margin-bottom: 50px;
+    margin-bottom: 110px;
+    margin-top: -50px;
 }
 
 .user, .pass {
@@ -68,7 +69,7 @@ h2 {
     border: none;
     color: #ff8985;
     margin: auto;
-    text-align: center;
+    text-align: left;
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 25px;
@@ -96,17 +97,19 @@ i.fa.fa-check {
 .login {
     color: #fff;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     display: block;
     margin: 10px auto;
-    padding: 15px 110px;
     position: relative;
     border-radius: 30px;
     border: 2px solid #fff;
     transition: all 0.5s ease;
     background: linear-gradient(to right, #ff1c4e,#ff8985);
-    overflow: hidden
+    overflow: hidden;
+    width: 75%;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
     .login:hover {
@@ -133,20 +136,22 @@ i.fa.fa-check {
         width: 115%;
     }
 
-.sign {
+p {
     color: #fff;
     cursor: pointer;
     font-size: 22px;
     font-weight: 500;
     display: block;
-    margin: 30px auto;
-    padding: 15px 110px;
+    margin: 100px auto;
     position: relative;
     border-radius: 30px;
     border: 2px solid #fff;
     transition: all 0.5s ease;
-    background: linear-gradient(to right, #ff1c4e,#ff8985);
-    overflow: hidden
+   /* background: linear-gradient(to right, #ff1c4e,#ff8985);*/
+    overflow: hidden;
+    width: 75%;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
     .sign:hover {
@@ -202,7 +207,8 @@ i.fa.fa-check {
 
 @media only screen and (min-width : 280px) {
     .cont {
-        width: 90%
+        width: 100% ;
+        height: 100%;
     }
 }
 
@@ -220,6 +226,43 @@ i.fa.fa-check {
 
 @media only screen and (min-width : 992px) {
     .cont {
-        width: 30%
+        width: 30%;
+        height: 580px;
+    }
+}
+
+@media screen and (min-width : 280px) and (max-width : 700px) {
+    body {
+        background: white;
+    }
+
+    .login {
+        padding: 14px 80px;
+        margin-top: 80px;
+    }
+
+    .sign {
+        padding: 14px 83px;
+    }
+}
+
+@media screen and (min-width : 700px) and (max-width : 1100px) {
+    body {
+        background: white;
+    }
+    h2 {
+        font-size: 50px;
+        margin-top: 40px;
+    }
+    .user, .pass {
+        font-size: 25px;
+        width: 116%;
+    }
+    .login{
+        margin-top: 100px;
+        padding: 13px 85px;
+    }
+    .sign {
+        padding: 13px 87px;
     }
 }
