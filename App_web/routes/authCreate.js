@@ -104,6 +104,7 @@ async function performRequest(res) {
 router.post('/login', (req, res) => {
     options.feedAddress(req.body.address);
     options.feedJson(req.body);
+    console.log(options.json);
     performRequest(res);
 });
 

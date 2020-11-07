@@ -1,5 +1,4 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
-
 * {
     margin: 0;
     padding: 0;
@@ -25,7 +24,6 @@ body {
     margin-right: auto;
     margin-left: auto;
     margin-top: 80px;
-   
     text-align: center;
     background: #fff;
 }
@@ -45,8 +43,8 @@ body {
     width: 60px;
     height: 60px;
     border: none;
-    transform: rotateZ(-45deg) scale(1.2,1.2);
-    background: linear-gradient(to bottom,#ff1c4e,#ff8985);
+    transform: rotateZ(-45deg) scale(1.2, 1.2);
+    background: linear-gradient(to bottom, #ff1c4e, #ff8985);
     border-radius: 120% 0 70% 50% / 70% 0 120% 50%;
 }
 
@@ -61,7 +59,8 @@ h2 {
     margin-top: -50px;
 }
 
-.user, .pass {
+.user,
+.pass {
     position: relative;
     display: block;
     width: 70%;
@@ -90,7 +89,8 @@ i.fa.fa-check {
     color: #ff8985;
 }
 
-.fa-user, .fa-pass {
+.fa-user,
+.fa-pass {
     font-size: 0;
 }
 
@@ -105,36 +105,36 @@ i.fa.fa-check {
     border-radius: 30px;
     border: 2px solid #fff;
     transition: all 0.5s ease;
-    background: linear-gradient(to right, #ff1c4e,#ff8985);
+    background: linear-gradient(to right, #ff1c4e, #ff8985);
     overflow: hidden;
     width: 75%;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-    .login:hover {
-        color: #71db9b;
-        z-index: 2;
-        border-color: #2ecc71;
-    }
+.login:hover {
+    color: #71db9b;
+    z-index: 2;
+    border-color: #2ecc71;
+}
 
-    .login:after {
-        position: absolute;
-        content: "";
-        background: #fff;
-        top: 0;
-        width: 0;
-        height: 100%;
-        left: -19.5%;
-        z-index: -1;
-        transform: skew(50deg);
-        transform-origin: top left;
-        transition: all 0.5s ease;
-    }
+.login:after {
+    position: absolute;
+    content: "";
+    background: #fff;
+    top: 0;
+    width: 0;
+    height: 100%;
+    left: -19.5%;
+    z-index: -1;
+    transform: skew(50deg);
+    transform-origin: top left;
+    transition: all 0.5s ease;
+}
 
-    .login:hover:after {
-        width: 115%;
-    }
+.login:hover:after {
+    width: 115%;
+}
 
 p {
     color: #fff;
@@ -147,55 +147,65 @@ p {
     border-radius: 30px;
     border: 2px solid #fff;
     transition: all 0.5s ease;
-   /* background: linear-gradient(to right, #ff1c4e,#ff8985);*/
+    /* background: linear-gradient(to right, #ff1c4e,#ff8985);*/
     overflow: hidden;
     width: 75%;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-    .sign:hover {
-        color: #71db9b;
-        z-index: 2;
-        border-color: #2ecc71;
-    }
+.sign:hover {
+    color: #71db9b;
+    z-index: 2;
+    border-color: #2ecc71;
+}
 
-    .sign:after {
-        position: absolute;
-        content: "";
-        background: #fff;
-        top: 0;
-        width: 0;
-        height: 100%;
-        left: -19.5%;
-        z-index: -1;
-        transform: skew(50deg);
-        transform-origin: top left;
-        transition: all 0.5s ease;
-    }
+.sign:after {
+    position: absolute;
+    content: "";
+    background: #fff;
+    top: 0;
+    width: 0;
+    height: 100%;
+    left: -19.5%;
+    z-index: -1;
+    transform: skew(50deg);
+    transform-origin: top left;
+    transition: all 0.5s ease;
+}
 
-    .sign:hover:after {
-        width: 115%;
-    }
+.sign:hover:after {
+    width: 115%;
+}
 
 .error {
     border-bottom-color: red;
     animation: error 0.5s linear 2;
 }
 
+
+/* inscription button style  */
+
+#inscriptionButton {
+    color: #FF2651;
+    border: none;
+    background-color: inherit;
+    padding: 14px 80px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+
 @keyframes error {
     0% {
         left: 0;
     }
-
     40% {
         left: 50px;
     }
-
     80% {
         left: -50px;
     }
-
     100% {
         left: 0;
     }
@@ -205,48 +215,46 @@ p {
     border-bottom-color: #ff8985;
 }
 
-@media only screen and (min-width : 280px) {
+@media only screen and (min-width: 280px) {
     .cont {
-        width: 100% ;
+        width: 100%;
         height: 100%;
     }
 }
 
-@media only screen and (min-width : 480px) {
+@media only screen and (min-width: 480px) {
     .cont {
         width: 60%
     }
 }
 
-@media only screen and (min-width : 768px) {
+@media only screen and (min-width: 768px) {
     .cont {
         width: 40%
     }
 }
 
-@media only screen and (min-width : 992px) {
+@media only screen and (min-width: 992px) {
     .cont {
         width: 30%;
         height: 580px;
     }
 }
 
-@media screen and (min-width : 280px) and (max-width : 700px) {
+@media screen and (min-width: 280px) and (max-width: 700px) {
     body {
         background: white;
     }
-
     .login {
         padding: 14px 80px;
         margin-top: 80px;
     }
-
     .sign {
         padding: 14px 83px;
     }
 }
 
-@media screen and (min-width : 700px) and (max-width : 1100px) {
+@media screen and (min-width: 700px) and (max-width: 1100px) {
     body {
         background: white;
     }
@@ -254,11 +262,12 @@ p {
         font-size: 50px;
         margin-top: 40px;
     }
-    .user, .pass {
+    .user,
+    .pass {
         font-size: 25px;
         width: 116%;
     }
-    .login{
+    .login {
         margin-top: 100px;
         padding: 13px 85px;
     }
