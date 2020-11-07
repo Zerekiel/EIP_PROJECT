@@ -1,9 +1,0 @@
-components:
-  schemas:
-    signinComponent:
-      tags:
-        - MODELS
-      type: "object"
-      properties:
-        signinModel:
-          - $ref: '#/definitions/signinModel'
