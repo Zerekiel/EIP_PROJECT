@@ -1,34 +1,32 @@
 {
-  "name": "api",
+  "name": "app-web",
   "version": "0.0.0",
   "private": true,
-  "engines": {
-    "node": "12.10.x"
-  },
   "scripts": {
-    "start": "node ./API/bin/www"
+    "start": "node ./bin/www",
+    "test": "mocha"
   },
+  "author": "Zerekiel",
+  "license": "ISC",
   "dependencies": {
-    "assert": "^2.0.0",
-    "body-parser": "^1.19.0",
-    "browser-sync": "^2.26.7",
+    "axios": "^0.19.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "consolidate": "^0.15.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
-    "dotenv": "^8.2.0",
-    "ejs": "~2.6.1",
+    "ejs": "^2.7.1",
     "express": "~4.16.1",
-    "express-favicon": "^2.0.1",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
     "http-errors": "~1.6.3",
-    "json-stringify-safe": "^5.0.1",
-    "mongodb": "^3.2.7",
-    "mongoose": "^5.6.5",
+    "mocha": "^7.1.1",
     "morgan": "~1.9.1",
-    "nodemon": "^1.19.3",
-    "npm": "^6.11.3",
-    "ts-node": "^8.3.0",
-    "typescript": "^3.5.3",
-    "url": "^0.11.0",
-    "url-parse": "^1.4.7",
-    "utils": "^0.3.1"
+    "nock": "^9.0.13",
+    "path": "^0.12.7",
+    "pug": "^2.0.4",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.5",
+    "swig": "^1.4.2"
   }
 }
