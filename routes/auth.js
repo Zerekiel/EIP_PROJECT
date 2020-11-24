@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var request = require('request-promise');
+var check = require('../customModules/globalModule.js');
+var doc = require('../customModules/doctorData.js');
 
 
 /* GET login page. */
@@ -9,8 +11,8 @@ router.get('/', function(req, res) {
 });
 
 /* connexion options object */
-var options = {
-    url: 'https://healthsafe-api-beta.herokuapp.com/api/signin/create',
+var options_connect = {
+    url: 'https://x2021healthsafe1051895009000.northeurope.cloudapp.azure.com:5000/api/drSignin',
     method: 'POST',
     json: {
         email: undefined,
@@ -22,24 +24,28 @@ var options = {
     }
 };
 
-var validation = {
-    token: undefined,
-    feedCode: function(code) {
-        this.code = code;
+var get_doc_data = {
+    url: 'https://x2021healthsafe1051895009000.northeurope.cloudapp.azure.com:5000/api/drProfile/drProfileId',
+    method: 'GET',
+    json: {
+        _id: undefined
+    },
+    feed_json_id: function(id) {
+        this.json._id = id;
     }
-}
+};
 
-/* await function that handle api's return */
-async function performRequest(res) {
-    await request(options)
-        .then(function(res) {
-            validation.feedCode(res.token);
-            // we'll complete the doctor object here
+/* complete doc profile after login */
+async function doctorRequest(res) {
+    await request(get_doc_data)
+        .then(function(req) {
+            doc.feedInfos(req);
+            doc.displayInfos();
         })
         .catch(function(err) {
             console.log(err);
         })
-    if (validation.code !== undefined) {
+    if (check.connectionStatus === true && doc.status === true) {
         res.redirect('/home');
         res.end();
     } else {
@@ -48,10 +54,25 @@ async function performRequest(res) {
     }
 };
 
+/* await function that handle api's return */
+async function performRequest(res) {
+    await request(options_connect)
+        .then(function(res) {
+            check.updateConnectionStatus(res.token);
+            doc.feed_id(res.id);
+            get_doc_data.feed_json_id(doc._id);
+        })
+        .catch(function(err) {
+            console.log(err);
+        })
+    doctorRequest(res);
+};
+
 /* POST account connexion page */
 router.post('/connexion', (req, res) => {
-    options.feedJson(req.body);
+    options_connect.feedJson(req.body);
     performRequest(res);
+    console.log("CONNEXION OK");
 });
 
 /* POST account create page */

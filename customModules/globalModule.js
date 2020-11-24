@@ -5,11 +5,12 @@ var doctorData = require("./../customModules/doctorData.js");
 // One module to rule them all
 
 module.exports = {
-    connectionStatus = false,
-    username = undefined,
-    patientCode = undefined,
-    updateConnectionStatus: function(status) {
-        this.connectionStatus = status;
+    connectionStatus: false,
+    username: undefined,
+    patientCode: undefined,
+    updateConnectionStatus: function(token) {
+        if (token != null)
+            this.connectionStatus = true;
     },
     updateUsername: function() {
         this.username = doctorData.lastname;
