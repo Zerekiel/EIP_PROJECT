@@ -6,7 +6,7 @@ var doctorData = require("./../customModules/doctorData.js");
 
 module.exports = {
     connectionStatus: false,
-    username: undefined,
+    username: doctorData.lastname,
     patientCode: undefined,
     updateConnectionStatus: function(token) {
         if (token != null)

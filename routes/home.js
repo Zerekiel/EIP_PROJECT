@@ -1,9 +1,15 @@
 var express = require('express');
 var router = express.Router();
+var check = require('../customModules/globalModule.js');
 
 /* GET home page */
 router.get('/', function(req, res, next) {
-    res.render('home', { title: 'Express' });
+    if (check.connectionStatus === true) {
+        res.render('home', { title: 'Express' });
+    } else {
+        res.redirect('/');
+        res.end();
+    }
 });
 
 /* Routes to redirect */
@@ -23,6 +29,12 @@ router.post('/deco', (req, res) => {
 /* redirect medic profile */
 router.post('/profile', (req, res) => {
     res.redirect('/medic');
+    res.end();
+});
+
+/* redirect medic profile */
+router.post('/movingAlong', (req, res) => {
+    res.redirect('/getCode');
     res.end();
 });
 

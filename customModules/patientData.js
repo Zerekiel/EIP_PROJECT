@@ -15,6 +15,7 @@ module.exports = {
     treatments: undefined,
     organDonation: undefined,
     doctor: undefined,
+    birthDay: undefined,
     code: undefined,
     status: undefined,
     feedInfos: function(data) {
@@ -32,12 +33,13 @@ module.exports = {
         this.treatments = data.treatments;
         this.organDonation = data.organDonation;
         this.doctor = data.doctor;
+        this.birthDay = data.birthDay;
     },
     displayInfos: function() {
         console.log(this.lastname, this.firstname, this.age, this.gender, this.height,
             this.weight, this.emergencyNumber, this.allergies, this.medicalHistory,
             this.bloodType, this.socialNumber, this.treatments, this.organDonation,
-            this.doctor);
+            this.doctor, this.birthDay);
     },
     replaceInfos: function(data) {
         if (data.lastname !== "") {
@@ -82,13 +84,16 @@ module.exports = {
         if (data.doctor !== "") {
             this.doctor = data.doctor;
         }
+        if (data.birthDay !== "") {
+            this.birthDay = data.birthDay;
+        }
     },
     checkStatus: function() {
         if (this.firstname != undefined && this.lastname != undefined && this.age != undefined &&
             this.gender != undefined && this.height != undefined && this.weight != undefined &&
             this.emergencyNumber != undefined && this.allergies != undefined && this.medicalHistory != undefined &&
             this.bloodType != undefined && this.socialNumber != undefined && this.treatments != undefined &&
-            this.organDonation != undefined && this.doctor != undefined) {
+            this.organDonation != undefined && this.doctor != undefined && this.birthDay != undefined) {
             this.status = 1;
         } else {
             this.status = 0;
