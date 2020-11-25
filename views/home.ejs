@@ -16,8 +16,15 @@
 
 <body>
     <div class="cont">
-        <h3>Mr / Mme Medecin</h3>
-        <img src="./img/home_page_2.png" />
+        <h3>Mr / Mme
+            <%= name %>
+        </h3>
+
+        <form action="/home" method="GET">
+            <button>
+                <img src="./img/home_page_2.png" />
+            </button>
+        </form>
         <div class="Acceuil">
             <form action="">
                 <div class="tear"></div>

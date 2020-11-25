@@ -40,7 +40,6 @@ async function doctorRequest(res) {
     await request(get_doc_data)
         .then(function(req) {
             doc.feedInfos(req);
-            doc.displayInfos();
         })
         .catch(function(err) {
             console.log(err);

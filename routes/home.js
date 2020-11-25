@@ -1,11 +1,14 @@
 var express = require('express');
 var router = express.Router();
 var check = require('../customModules/globalModule.js');
+var docData = require('../customModules/doctorData.js');
 
 /* GET home page */
 router.get('/', function(req, res, next) {
     if (check.connectionStatus === true) {
-        res.render('home', { title: 'Express' });
+        res.render('home', {
+            name: docData.lastname
+        });
     } else {
         res.redirect('/');
         res.end();

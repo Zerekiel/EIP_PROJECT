@@ -16,13 +16,20 @@
 
 <body>
     <div class="cont">
-        <h3> Mr / Mme Medecin</h3>
-        <img src="./img/home_page_2.png" />
+        <h3> Mr / Mme
+            <%= name %>
+        </h3>
+        <form action="/home" method="GET">
+            <button>
+                <img src="./img/home_page_2.png" />
+            </button>
+        </form>
+
         <div class="tear"></div>
         <div class="waiting_scan">
-            <form action="">
+            <form action="getCode/code" method="POST">
                 <i class="fa fa-check fa-user"></i>
-                <input type="text" class="validation" name="code" placeholder="Entrez le code" required />
+                <input type="text" class="validation" name="id" placeholder="Entrez le code" required />
                 <button class="valider">Valider</button>
             </form>
         </div>

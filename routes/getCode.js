@@ -1,12 +1,20 @@
 var express = require('express');
 var router = express.Router();
 var request = require('request-promise');
-var check = require('../customModules/patientData.js');
+var check = require('../customModules/globalModule.js');
 var patientData = require('../customModules/patientData.js');
+var docData = require('../customModules/doctorData.js');
 
 /* Get getCode page */
 router.get('/', function(req, res) {
-    res.render('getCode', { title: 'Express' });
+    if (check.connectionStatus === true) {
+        res.render('getCode', {
+            name: docData.lastname
+        });
+    } else {
+        res.redirect('/');
+        res.end();
+    }
 });
 
 /* Options object for getting patient data */
@@ -26,12 +34,11 @@ async function performRequest(res) {
     await request(options)
         .then(function(res) {
             patientData.feedInfos(res);
-            patientData.displayInfos();
+            patientData.checkStatus();
         })
         .catch(function(err) {
             console.log(err);
         })
-    patientData.checkStatus();
     if (patientData.status === 1) {
         res.redirect('/info');
         res.end();
