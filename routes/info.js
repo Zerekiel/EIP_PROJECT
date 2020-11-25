@@ -2,11 +2,12 @@ var express = require('express');
 var router = express.Router();
 var request = require('request-promise');
 var patientData = require('../customModules/patientData.js');
+var docData = require('../customModules/doctorData.js');
 
 /* GET info page */
 router.get('/', function(req, res) {
     res.render('info', {
-        title: 'Express',
+        name: docData.lastname,
         firstname: patientData.firstname,
         lastname: patientData.lastname,
         age: patientData.age,
@@ -26,7 +27,7 @@ router.get('/', function(req, res) {
 
 /* Options object for /patientData/create request */
 var options = {
-    url: 'https://healthsafe-api-beta.herokuapp.com/api/patientData/create',
+    url: 'https://x2021healthsafe1051895009000.northeurope.cloudapp.azure.com:5000/api/patientData/create',
     method: 'POST',
     json: {
         firstName: undefined,
@@ -42,7 +43,8 @@ var options = {
         socialNumber: undefined,
         treatments: undefined,
         organDonation: undefined,
-        doctor: undefined
+        doctor: undefined,
+        birthDay: undefined
     },
     feedInfos: function(data) {
         this.json.lastName = data.lastname;
@@ -59,6 +61,7 @@ var options = {
         this.json.treatments = data.treatments;
         this.json.organDonation = data.organDonation;
         this.json.doctor = data.doctor;
+        this.json.birthDay = data.birthDay;
     },
 };
 
@@ -86,7 +89,5 @@ router.post('/modification', (req, res) => {
     res.redirect('/modif');
     res.end();
 });
-
-// route de renvoi : /api/patientData/create
 
 module.exports = router;

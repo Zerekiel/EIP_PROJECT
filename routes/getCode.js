@@ -29,10 +29,23 @@ var options = {
     }
 };
 
+var getCodeOptions = {
+    url: 'https://x2021healthsafe1051895009000.northeurope.cloudapp.azure.com:5000/api/patientData/receiveId',
+    method: 'GET',
+    headers: {
+        Authorization: undefined
+    },
+    feedAuth: function(token) {
+        this.headers.Authorization = token;
+    }
+}
+
 /* await function that wait for the request to end */
 async function performRequest(res) {
     await request(options)
         .then(function(res) {
+            console.log(options.json._id);
+            console.log("patient data " + res);
             patientData.feedInfos(res);
             patientData.checkStatus();
         })
@@ -49,10 +62,23 @@ async function performRequest(res) {
     }
 };
 
+async function getIdCode(res) {
+    await request(getCodeOptions)
+        .then(function(res) {
+            console.log(JSON.parse(res)[0]);
+            options.feedCode(JSON.parse(res)[0]);
+        })
+        .catch(function(err) {
+            console.log(err);
+        })
+    performRequest(res);
+};
+
 /* POST route for getting the code */
 router.post('/code', (req, res) => {
-    options.feedCode(req.body.id);
-    performRequest(res);
+    const myAuth = "Bearer ".concat(docData._token);
+    getCodeOptions.feedAuth(myAuth);
+    getIdCode(res);
 });
 
 /* Routes to redirect */

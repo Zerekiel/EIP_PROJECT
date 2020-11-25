@@ -59,6 +59,8 @@ async function performRequest(res) {
         .then(function(res) {
             check.updateConnectionStatus(res.token);
             doc.feed_id(res.id);
+            doc.feed_token(res.token);
+            console.log(doc._token);
             get_doc_data.feed_json_id(doc._id);
         })
         .catch(function(err) {

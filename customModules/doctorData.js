@@ -2,6 +2,7 @@ var express = require('express');
 
 module.exports = {
     _id: undefined,
+    _token: undefined,
     lastname: undefined,
     firstname: undefined,
     age: undefined,
@@ -15,6 +16,9 @@ module.exports = {
     status: undefined,
     feed_id: function(id) {
         this._id = id;
+    },
+    feed_token: function(token) {
+        this._token = token;
     },
     feedInfos: function(data) {
         this.lastname = data.lastName;

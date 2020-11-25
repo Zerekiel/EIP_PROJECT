@@ -16,7 +16,9 @@
 
 <body>
     <div class="info">
-        <h3> Mr / Mme Medecin</h3>
+        <h3> Mr / Mme
+            <%= name %>
+        </h3>
         <a href="/home">
             <img class="logo_home" src="./img/home_page_2.png" />
         </a>
@@ -31,25 +33,32 @@
                     <div class="info_patient_box">
                         <ul class="info_client">
                             <li>
-                                name = "firstname"
+                                Prénom :
+                                <%= firstname %>
                             </li>
                             <li>
-                                name = "lastname"
+                                Nom :
+                                <%= lastname %>
                             </li>
                             <li>
-                                name = "age" ans
+                                Age : Né le
+                                <%= age %> ans
                             </li>
                             <li>
-                                name = "gender"
+                                Genre :
+                                <%= gender %>
                             </li>
                             <li>
-                                Taille : name = "height" cm
+                                Taille :
+                                <%= height %> cm
                             </li>
                             <li>
-                                Poids : name = "weight"
+                                Poids :
+                                <%= weight %>
                             </li>
                             <li>
-                                Médecin traitant : name = "doctor"
+                                Médecin traitant :
+                                <%= doctor %>
                             </li>
                         </ul>
                         <img class="photo_patient" src="./img/avatar.png" />
@@ -60,22 +69,28 @@
                     <div class="info_patient_box">
                         <ul class="info_client_importante">
                             <li>
-                                Numéro d'urgence : name = "emergencyNumber"
+                                Numéro d'urgence :
+                                <%= emergencyNumber %>
                             </li>
                             <li>
-                                Numéro de sécurité sociale : name = "socialNumber"
+                                Numéro de sécurité sociale :
+                                <%= socialNumber %>
                             </li>
                             <li>
-                                Groupe sanguin : name = "bloodType"
+                                Groupe sanguin :
+                                <%= bloodType %>
                             </li>
                             <li>
-                                Allergies : name = "allergies"
+                                Allergies :
+                                <%= allergies %>
                             </li>
                             <li>
-                                Traitements en cours : name = "treatments"
+                                Traitements en cours :
+                                <%= treatments %>
                             </li>
                             <li>
-                                Donneur d'organe : name = "organDonation"
+                                Donneur d'organe :
+                                <%= organDonation %>
                             </li>
                         </ul>
                     </div>
@@ -85,7 +100,8 @@
                     <div class="info_patient_box">
                         <ul class="info_derniere_visite">
                             <li>
-                                précendente visite name = "medicalHistory"
+                                précédente visite :
+                                <%= medicalHistory %>
                             </li>
                         </ul>
                         <form action=""></form>
@@ -97,12 +113,8 @@
             <form action="/info/validation" method="POST">
                 <button class="validation">Validation</button>
             </form>
-            <form action="/info/modification" method="POST">
-                <div class="modification"> <a href="#" style="color: #FF2651;">modification</a> </div>
+            <div class="modification"> <a href="/modif" style="color: #FF2651;">modification</a> </div>
         </div>
-    </div>
-    </form>
-    </div>
     </div>
 </body>
 

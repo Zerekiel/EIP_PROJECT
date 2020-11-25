@@ -5,7 +5,8 @@ var patientData = require('../customModules/patientData.js');
 
 /* GET modif page */
 router.get('/', function(req, res) {
-    res.render('modif', { title: 'Express' });
+    var vari = "bite";
+    res.render('modif', { firstname: vari });
 });
 
 /* Options object for /patientData/create request */
