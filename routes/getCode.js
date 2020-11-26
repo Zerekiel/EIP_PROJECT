@@ -80,7 +80,7 @@ router.post('/code', (req, res) => {
 });
 
 /* POST route for getting the code */
-router.post('/auto', (req, res) => {
+router.get('/auto', (req, res) => {
     const myAuth = "Bearer ".concat(docData._token);
     getCodeOptions.feedAuth(myAuth);
     getIdCode(res);

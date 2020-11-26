@@ -21,7 +21,7 @@ router.get('/', function(req, res) {
         allergies: patientData.allergies,
         treatments: patientData.treatments,
         organDonation: patientData.organDonation,
-        medicalHistory: patientData.medicalHistory
+        medicalHistory: patientData.medicalHistory[0]
     });
 });
 
@@ -68,6 +68,7 @@ var options = {
 /* await function that wait for the request to end */
 async function performRequest(res) {
     await options.feedInfos(patientData);
+    await console.log(typeof options.json.medicalHistory);
     await request(options)
         .then(function(res) {
             patientData.code = res._id;
