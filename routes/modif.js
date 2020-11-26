@@ -5,13 +5,28 @@ var patientData = require('../customModules/patientData.js');
 
 /* GET modif page */
 router.get('/', function(req, res) {
-    var vari = "bite";
-    res.render('modif', { firstname: vari });
+    res.render('modif', {
+        firstname: patientData.firstname,
+        lastname: patientData.lastname,
+        age: patientData.age,
+        gender: patientData.gender,
+        height: patientData.height,
+        weight: patientData.weight,
+        emergencyNumber: patientData.emergencyNumber,
+        allergies: patientData.allergies,
+        medicalHistory: patientData.medicalHistory,
+        bloodType: patientData.bloodType,
+        socialNumber: patientData.socialNumber,
+        treatments: patientData.treatments,
+        organDonation: patientData.organDonation,
+        doctor: patientData.doctor,
+        birthDay: patientData.birthDay
+    });
 });
 
 /* Options object for /patientData/create request */
 var options = {
-    url: 'https://healthsafe-api-beta.herokuapp.com/api/patientData/create',
+    url: 'https://x2021healthsafe1051895009000.northeurope.cloudapp.azure.com:5000/api/patientData/create',
     method: 'POST',
     json: {
         firstName: undefined,
@@ -27,7 +42,8 @@ var options = {
         socialNumber: undefined,
         treatments: undefined,
         organDonation: undefined,
-        doctor: undefined
+        doctor: undefined,
+        birthDay: undefined
     },
     feedInfos: function(data) {
         this.json.lastName = data.lastname;
@@ -44,12 +60,14 @@ var options = {
         this.json.treatments = data.treatments;
         this.json.organDonation = data.organDonation;
         this.json.doctor = data.doctor;
+        this.json.birthDay = data.birthDay;
     },
 };
 
 /* await function that wait for the request to end */
 async function performRequest(res) {
-    options.feedInfos(patientData);
+    await options.feedInfos(patientData);
+    console.log(options.json);
     await request(options)
         .then(function(res) {
             patientData.code = res._id;
@@ -63,6 +81,7 @@ async function performRequest(res) {
 
 router.post('/sendData', function(req, res) {
     patientData.replaceInfos(req.body);
+    patientData.displayInfos();
     performRequest(res);
 });
 

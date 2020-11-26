@@ -44,8 +44,6 @@ var getCodeOptions = {
 async function performRequest(res) {
     await request(options)
         .then(function(res) {
-            console.log(options.json._id);
-            console.log("patient data " + res);
             patientData.feedInfos(res);
             patientData.checkStatus();
         })
@@ -56,7 +54,7 @@ async function performRequest(res) {
         res.redirect('/info');
         res.end();
     } else {
-        console.log("Data unvalid");
+        console.log("Data invalid");
         res.redirect('/getCode');
         res.end();
     }
@@ -76,6 +74,13 @@ async function getIdCode(res) {
 
 /* POST route for getting the code */
 router.post('/code', (req, res) => {
+    console.log(req.body.id);
+    options.feedCode(req.body.id);
+    performRequest(res);
+});
+
+/* POST route for getting the code */
+router.post('/auto', (req, res) => {
     const myAuth = "Bearer ".concat(docData._token);
     getCodeOptions.feedAuth(myAuth);
     getIdCode(res);

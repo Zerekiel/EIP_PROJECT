@@ -67,7 +67,7 @@ var options = {
 
 /* await function that wait for the request to end */
 async function performRequest(res) {
-    options.feedInfos(patientData);
+    await options.feedInfos(patientData);
     await request(options)
         .then(function(res) {
             patientData.code = res._id;
