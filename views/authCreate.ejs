@@ -1,119 +1,59 @@
-﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>HealthSafe</title>
+        <link rel="stylesheet" href="./stylesheets/authCreate.css" />
+    </head>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <body>
 
-<head>
-    <meta charset="utf-8" />
-    <title>HealthSafe_log</title>
-    <link rel="stylesheet" style="text/css" href="./stylesheets/authCreate.css" />
-    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
-        Weglot.initialize({
-            api_key: 'wg_775b2c126fe4cf7de96fe0ba186238023'
-        });
-    </script>
-</head>
+        <div class="carousel">
 
-<!-- Slideshow container
-<div class="slideshow-container">
-
-<div class="mySlides fade">
-        <div class="numbertext">1 / 3</div>
-        <img src="img1.jpg" style="width:100%">
-        <div class="text">Caption Text</div>
-    </div>
-
-    <div class="mySlides fade">
-        <div class="numbertext">2 / 3</div>
-        <img src="img2.jpg" style="width:100%">
-        <div class="text">Caption Two</div>
-    </div>
-
-    <div class="mySlides fade">
-        <div class="numbertext">3 / 3</div>
-        <img src="img3.jpg" style="width:100%">
-        <div class="text">Caption Three</div>
-    </div>
-</div>
-<br> -->
-
-<!-- The dots/circles -->
-<!-- <div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
-</div> -->
-
-<body>
-    <div class="droite">
-        <header>
-            <img src="./img/home_page_2.png" alt="page d'acceuil" />
-            <!-- <div class="tear"></div> -->
-            <ul class="dropDown" style="margin: 0 20px 0 0;width:180px" onclick="displayDrop()">
-                <h4 style="right: 10px;margin: 5px 20px 0 0;position: absolute;/* left: 10px; */"> Mr / Mme Medecin 🞃</h4>
-                <ul class="dropDown-menu" style="list-style:none;position:absolute;">
-                    <li class="dropDown-item"><i class="fa fa-cogs"></i> Settings</li>
-                    <li class="dropDown-item"><i class="fa fa-sign-out-alt"></i> Disconnect</li>
-                </ul>
-            </ul>
-        </header>
-        <div class="main-box">
-            <div class="tear"></div>
-            <div class="log">
-                <div class="lang">
-                </div>
-                <form action="/authCreate/login" method="POST" class="slideshow-container">
-                    <h2>HealthSafe</h2>
-                    <div class="mySlides fade">
-                        <i class="fa fa-check fa-user"></i>
-                        <input type="text" class="user" name="Name" placeholder="Nom complet" required />
-                        <i class="fa fa-check fa-pass"></i>
-                        <input type="text" class="user" name="telephone" placeholder="Numéro de téléphone personnel" required />
-                    </div>
-                    <div class="mySlides fade">
-                        <i class="fa fa-check fa-pass"></i>
-                        <input type="text" class="user" name="expertise" placeholder="Expertise" required />
-                        <i class="fa fa-check fa-pass"></i>
-                        <input type="text" class="user" name="id" placeholder="Numéro ID" required />
-                    </div>
-                    <div class="mySlides fade">
-                        <i class="fa fa-check fa-pass"></i>
-                        <input type="text" class="user" name="telephone" placeholder="Numéro de téléphone professionnel" required />
-                        <i class="fa fa-check fa-pass"></i>
-                        <input type="text" class="user" name="Adresse" placeholder="Adresse" required />
-                        <i class="fa fa-check fa-pass"></i>
-                        <input type="text" class="user" name="code_postale" placeholder="Code postale" required />
-                    </div>
-                    <div class="mySlides fade">
-                        <i class="fa fa-check fa-user"></i>
-                        <input type="text" class="user" name="Mail" placeholder="Adresse mail" required />
-                        <i class="fa fa-check fa-user"></i>
-                        <input type="password" class="pass" name="pswd" placeholder="Mot de passe" required />
-                        <i class="fa fa-check fa-pass"></i>
-                        <input type="password" class="pass" name="confirm_pswd" placeholder="Confirmation mot de passe" required />
-                        <!-- <button class="login">Inscription</button> -->
-                    </div>
-                    <!-- <input type="submit" value="Envoyé"> <-->
-                </form>
-                <div style="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                    <span class="dot" onclick="currentSlide(4)"></span>
-                </div>
-                <div style="display: flex;justify-content: space-evenly;">
-                    <!-- Next and previous buttons -->
-                    <button class="prev login" onclick="plusSlides(-1)">&#10094; Prev</button>
-                    <button class="next login" onclick="plusSlides(1)"> Next &#10095;</button>
-                </div>
+            <div class="carousel__item carousel__item--visible">
+                <label>Nom de famille</label>
+                <input type="text" name="lastname" required />
+                <label>Prénom</label>
+                <input type="text" name="firstname" required />
+                <label>Age</label>
+                <input type="number" name="age" required />
             </div>
-        </div>
-    </div>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script src="./javascripts/mail.js"></script>
-</body>
 
+            <div class="carousel__item">
+                <label>Numéro de téléphone</label>
+                <input type="number" name="phoneNumber" required />
+                <label>Domaine d'expertise</label>
+                <input type="text" name="expertiseDomain" required />
+                <label>Numéro d'identification</label>
+                <input type="number" name="idNumber" required />
+            </div>
+
+            <div class="carousel__item">
+                <label>Adresse Postale</label>
+                <input type="text" name="address" required />
+                <label>Ville</label>
+                <input type="text" name="city" required />
+                <label>Code postal</label>
+                <input type="number" name="zipcode" required />
+                <label>Pays</label>
+                <input type="text" name="country" required />
+            </div>
+
+            <div class="carousel__item">
+                <label>Adresse mail</label>
+                <input type="text" name="email" required />
+                <label>Mot de passe</label>
+                <input type="password" name="password" required />
+                <label>Confirmation du mot de passe</label>
+                <input type="password" name="confirmationPassword" required />
+            </div>
+
+            <div class="carousel__actions">
+                <button id="carousel__button--prev">Etape précédente</button>
+                <button id="carousel__button--next">Etape suivante</button>
+            </div>
+
+        </div>
+
+        <script src="./javascripts/carousel.js"></script>
+    </body>
 </html>

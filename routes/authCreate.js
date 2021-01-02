@@ -102,10 +102,11 @@ async function performRequest(res) {
 
 /* POST route to get front data and send them to the API */
 router.post('/login', (req, res) => {
-    options.feedAddress(req.body.address);
+    console.log(req.body);
+    /*options.feedAddress(req.body.address);
     options.feedJson(req.body);
     console.log(options.json);
-    performRequest(res);
+    performRequest(res);*/
 });
 
 module.exports = router;

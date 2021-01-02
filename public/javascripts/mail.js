@@ -1,5 +1,5 @@
-window.onload = function (page) {
-    $('form').submit(function (e) {
+window.onload = function(page) {
+    $('form').submit(function(e) {
         e.preventDefault();
         var Name = $(e.target)[0][0].value;
         var Mail = $(e.target)[0][1].value;
@@ -29,36 +29,43 @@ function displayDrop() {
 }
 
 var slideIndex = 1;
+var n = 1;
 showSlides(slideIndex);
+getCurrentSlide();
+currentSlide(n);
 
 // Next/previous controls
 function plusSlides(n) {
-  showSlides(slideIndex += n);
-  if (slideIndex == 4) {
-      console.log(document.getElementsByClassName("next")[0].innerHTML);
-      document.getElementsByClassName("next")[0].innerHTML = "Inscription";
-  } else
-      document.getElementsByClassName("next")[0].innerHTML = "Next &#10095;";
+    showSlides(slideIndex += n);
+    if (slideIndex == 4) {
+        console.log(document.getElementsByClassName("next")[0].innerHTML);
+        document.getElementsByClassName("next")[0].innerHTML = "Inscription";
+    } else
+        document.getElementsByClassName("next")[0].innerHTML = "Next &#10095;";
 
 }
 
 // Thumbnail data controls
 function currentSlide(n) {
-  showSlides(slideIndex = n);
+    showSlides(slideIndex = n);
+}
+
+function getCurrentSlide() {
+    return (slideIndex);
 }
 
 function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" dot-active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " dot-active";
-} 
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" dot-active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " dot-active";
+}
