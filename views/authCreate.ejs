@@ -1,59 +1,58 @@
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>HealthSafe</title>
-        <link rel="stylesheet" href="./stylesheets/authCreate.css" />
-    </head>
+  <head>
+    <meta charset="utf-8" />
+    <title>HealthSafe</title>
+    <link rel="stylesheet" href="./stylesheets/authCreate.css" />
+  </head>
 
-    <body>
+  <body>
+    <div class="general">
 
-        <div class="carousel">
+        <div class="tear"></div>
 
-            <div class="carousel__item carousel__item--visible">
-                <label>Nom de famille</label>
-                <input type="text" name="lastname" required />
-                <label>Prénom</label>
-                <input type="text" name="firstname" required />
-                <label>Age</label>
-                <input type="number" name="age" required />
-            </div>
-
-            <div class="carousel__item">
-                <label>Numéro de téléphone</label>
-                <input type="number" name="phoneNumber" required />
-                <label>Domaine d'expertise</label>
-                <input type="text" name="expertiseDomain" required />
-                <label>Numéro d'identification</label>
-                <input type="number" name="idNumber" required />
-            </div>
-
-            <div class="carousel__item">
-                <label>Adresse Postale</label>
-                <input type="text" name="address" required />
-                <label>Ville</label>
-                <input type="text" name="city" required />
-                <label>Code postal</label>
-                <input type="number" name="zipcode" required />
-                <label>Pays</label>
-                <input type="text" name="country" required />
-            </div>
-
-            <div class="carousel__item">
-                <label>Adresse mail</label>
-                <input type="text" name="email" required />
-                <label>Mot de passe</label>
-                <input type="password" name="password" required />
-                <label>Confirmation du mot de passe</label>
-                <input type="password" name="confirmationPassword" required />
-            </div>
-
-            <div class="carousel__actions">
-                <button id="carousel__button--prev">Etape précédente</button>
-                <button id="carousel__button--next">Etape suivante</button>
-            </div>
-
+        <div class="head">
+            <h2>HealthSafe</h2>
         </div>
 
-        <script src="./javascripts/carousel.js"></script>
-    </body>
+      <form action="/authCreate/login" method="POST">
+        <div class="carousel">
+          <div class="carousel__item carousel__item--visible">
+            <input type="text" name="firstname" placeholder="Prénom" required />
+            <input type="text" name="lastname" placeholder="Nom" required />
+            <input type="number" name="age" placeholder="Age" required />
+          </div>
+
+          <div class="carousel__item">
+            <input type="number" name="phoneNumber" placeholder="Numéro de téléphone" required />
+            <input type="text" name="expertiseDomain" placeholder="Domaine d'expertise" required />
+            <input type="number" name="idNumber" placeholder="Numéro d'identification" required />
+          </div>
+
+          <div class="carousel__item">
+            <input type="text" name="address" placeholder="Adresse Postale" required />
+            <input type="text" name="city" placeholder="Ville" required />
+            <input type="number" name="zipcode" placeholder="Code Postal" required />
+            <input type="text" name="country" placeholder="Pays" required />
+          </div>
+
+          <div class="carousel__item">
+            <input type="text" name="email" placeholder="Adresse mail" required />
+            <input type="password" name="password" placeholder="Mot de passe" required />
+            <input type="password" name="confirmationPassword" placeholder="Confirmation du mot de passe" required />
+          </div>
+
+          <div class="carousel__actions">
+            <button class="carousel__button--prev login--hidden" type="button">Etape précédente</button>
+            <button class="carousel__button--next" type="button">Etape suivante</button>
+          </div>
+        </div>
+
+        <div class="bot">
+            <button class="login login--hidden" type="submit">Créer le compte</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="./javascripts/carousel.js"></script>
+  </body>
 </html>

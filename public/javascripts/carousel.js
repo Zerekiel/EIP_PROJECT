@@ -1,14 +1,17 @@
 let slidePosition = 0;
 const slides = document.getElementsByClassName('carousel__item');
+const validate = document.getElementsByClassName('login');
+const swiperNext = document.getElementsByClassName('carousel__button--next');
+const swiperPrev = document.getElementsByClassName('carousel__button--prev');
 const totalSlides = slides.length;
 
-document.getElementById('carousel__button--next')
-.addEventListener('click', function() {
+//document.getElementsByClassName('carousel__button--next')
+swiperNext[0].addEventListener('click', function() {
     moveToNext();
 });
 
-document.getElementById('carousel__button--prev')
-.addEventListener('click', function() {
+//document.getElementsByClassName('carousel__button--prev')
+swiperPrev[0].addEventListener('click', function() {
     moveToPrev();
 });
 
@@ -21,22 +24,20 @@ function updateSlidePosition() {
 }
 
 function moveToNext() {
-    console.log("NEXT");
-    if (slidePosition === totalSlides - 1) {
-        //display le bouton de validation du form
-        slidePosition = 0;
+    if (slidePosition === totalSlides - 2) {
+        validate[0].classList.remove('login--hidden');
+        validate[0].classList.remove('login--visible');
+        swiperNext[0].classList.add('login--hidden');
     } else {
+        swiperPrev[0].classList.remove('login--hidden');
         slidePosition++;
     }
     updateSlidePosition();
 }
 
 function moveToPrev() {
-    console.log("PREV");
     if (slidePosition != 0) {
         slidePosition--;
-    } else {
-        slidePosition = 0;
     }
     updateSlidePosition();
 }
