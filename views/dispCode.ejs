@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>HealthSafe_acceuil</title>
+    <link rel="stylesheet" style="text/css" href="./stylesheets/getCode.css" />
+    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        Weglot.initialize({
+            api_key: 'wg_775b2c126fe4cf7de96fe0ba186238023'
+        });
+    </script>
+</head>
+
+<body>
+    <div class="cont">
+        <h3> Mr / Mme
+            <%= name %>
+        </h3>
+        <form action="/home" method="GET">
+            <button>
+                <img src="./img/home_page_2.png" />
+            </button>
+        </form>
+        <div class="tear"></div>
+        <div class="waiting_scan">
+            <form action="">
+                <!--<input type="text" id="name" name="id" />-->
+                <p>
+                    <%= code %>
+                </p>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

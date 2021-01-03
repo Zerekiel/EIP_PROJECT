@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>HealthSafe_log</title>
+    <link rel="stylesheet" style="text/css" href="./stylesheets/modif.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="droite">
+        <div class="main-box">
+            <div class="tear"></div>
+            <div class="log">
+                <div class="lang">
+                </div>
+                <h2>Informations patient</h2>
+
+                <form action="/modif/sendData" method="POST">
+                    <i class="fa fa-check fa-user"></i>
+                    <input type="text" class="user" name="firstname" placeholder="<%= firstname %>">
+                    <i class="fa fa-check fa-user"></i>
+                    <input type="text" class="user" name="lastname" placeholder="<%= lastname %>" />
+                    <i class="fa fa-check fa-user"></i>
+                    <input type="text" class="user" name="age" placeholder="<%= age %>" />
+                    <i class="fa fa-check fa-user"></i>
+                    <input type="text" class="user" name="gender" placeholder="<%= gender %>" />
+                    <i class="fa fa-check fa-user"></i>
+                    <input type="text" class="user" name="height" placeholder="<%= height %>" />
+                    <i class="fa fa-check fa-user"></i>
+                    <input type="text" class="user" name="weight" placeholder="<%= weight %>" />
+                    <i class=" fa fa-check fa-pass "></i>
+                    <input type="text " class="user " name="emergencyNumber" placeholder="<%= emergencyNumber %>" />
+                    <i class="fa fa-check fa-pass"></i>
+                    <input type="text" class="user" name="allergies" placeholder="<%= allergies %>" />
+                    <i class="fa fa-check fa-pass"></i>
+                    <input type="text" class="user" name="medicalHistory" placeholder="<%= medicalHistory %>" />
+                    <i class="fa fa-check fa-pass"></i>
+                    <input type="text" class="user" name="bloodType" placeholder="<%= bloodType %>" />
+                    <i class="fa fa-check fa-user"></i>
+                    <input type="text" class="user" name="socialNumber" placeholder="<%= socialNumber %>" />
+                    <i class="fa fa-check fa-user"></i>
+                    <input type="text" class="user" name="treatments" placeholder="<%= treatments %>" />
+                    <i class="fa fa-check fa-user"></i>
+                    <input type="text" class="user" name="organDonation" placeholder="<%= organDonation %>" />
+                    <i class="fa fa-check fa-user"></i>
+                    <input type="text" class="user" name="doctor" placeholder="<%= doctor %>" />
+                    <i class="fa fa-check fa-user"></i>
+                    <input type="text" class="user" name="birthDay" placeholder="<%= birthDay %>" />
+
+                    <button class="login">Validation</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

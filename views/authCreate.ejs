@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>HealthSafe</title>
+    <link rel="stylesheet" href="./stylesheets/authCreate.css" />
+  </head>
+
+  <body>
+    <div class="general">
+
+        <div class="tear"></div>
+
+        <div class="head">
+            <h2>HealthSafe</h2>
+        </div>
+
+      <form action="/authCreate/login" method="POST">
+        <div class="carousel">
+          <div class="carousel__item carousel__item--visible">
+            <input type="text" name="firstname" placeholder="Prénom" required />
+            <input type="text" name="lastname" placeholder="Nom" required />
+            <input type="number" name="age" placeholder="Age" required />
+          </div>
+
+          <div class="carousel__item">
+            <input type="number" name="phoneNumber" placeholder="Numéro de téléphone" required />
+            <input type="text" name="expertiseDomain" placeholder="Domaine d'expertise" required />
+            <input type="number" name="idNumber" placeholder="Numéro d'identification" required />
+          </div>
+
+          <div class="carousel__item">
+            <input type="text" name="address" placeholder="Adresse Postale" required />
+            <input type="text" name="city" placeholder="Ville" required />
+            <input type="number" name="zipCode" placeholder="Code Postal" required />
+            <input type="text" name="country" placeholder="Pays" required />
+          </div>
+
+          <div class="carousel__item">
+            <input type="text" name="email" placeholder="Adresse mail" required />
+            <input type="password" name="password" placeholder="Mot de passe" required />
+            <input type="password" name="confirmationPassword" placeholder="Confirmation du mot de passe" required />
+          </div>
+
+          <div class="carousel__actions">
+            <button class="carousel__button--prev login--hidden" type="button">Etape précédente</button>
+            <button class="carousel__button--next" type="button">Etape suivante</button>
+          </div>
+        </div>
+
+        <div class="bot">
+            <button class="login login--hidden" type="submit">Créer le compte</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="./javascripts/carousel.js"></script>
+  </body>
+</html>
