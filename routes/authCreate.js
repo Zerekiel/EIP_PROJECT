@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var request = require('request-promise');
 
+let connexionStatus = false;
+
 /* GET authCreate page */
 router.get('/', function(req, res) {
     res.render('authCreate', { title: 'Express' });
@@ -91,22 +93,27 @@ var options = {
 async function performRequest(res) {
     await request(options)
         .then(function(res) {
-            //do something
+            connexionStatus = true;
         })
         .catch(function(err) {
             console.log(err);
         })
-    res.redirect('/');
-    res.end();
+    if (connexionStatus === true) {
+        res.redirect('/');
+        res.end();
+    } else {
+        res.redirect('/authCreate');
+        res.end();
+    }
 };
 
 /* POST route to get front data and send them to the API */
 router.post('/login', (req, res) => {
-    console.log(req.body);
-    /*options.feedAddress(req.body.address);
+    options.feedAddress(req.body.address);
     options.feedJson(req.body);
     console.log(options.json);
-    performRequest(res);*/
+    performRequest(res);
+    console.log("CONNEXION OK");
 });
 
 module.exports = router;
