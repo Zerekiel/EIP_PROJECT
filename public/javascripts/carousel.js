@@ -25,6 +25,7 @@ function updateSlidePosition() {
 
 function moveToNext() {
     if (slidePosition === totalSlides - 2) {
+        slidePosition++;
         validate[0].classList.remove('login--hidden');
         validate[0].classList.remove('login--visible');
         swiperNext[0].classList.add('login--hidden');
@@ -37,6 +38,14 @@ function moveToNext() {
 
 function moveToPrev() {
     if (slidePosition != 0) {
+        if (slidePosition === 1) {
+            swiperPrev[0].classList.add('login--hidden');
+        }
+        if (slidePosition != totalSlides) {
+            swiperNext[0].classList.remove('login--hidden');
+            validate[0].classList.remove('login--visible');
+            validate[0].classList.add('login--hidden');
+        }
         slidePosition--;
     }
     updateSlidePosition();

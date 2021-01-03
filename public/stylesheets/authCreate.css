@@ -70,8 +70,54 @@
 }
 
 .carousel .carousel__actions button {
-    border-radius: 50px;
-    /*button à modif plus tard avec l'ancienne config*/
+    color: #FF2651;
+    border: none;
+    background-color: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.login {
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    display: block;
+    margin: 30px 350px;
+    position: relative;
+    border-radius: 30px;
+    border: 2px solid #fff;
+    transition: all 0.5s ease;
+    background: linear-gradient(to right, #ff1c4e, #ff8985);
+    overflow: hidden;
+    width: 75%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.login:hover {
+    color: #71db9b;
+    z-index: 2;
+    border-color: #2ecc71;
+}
+
+.login:after {
+    position: absolute;
+    content: "";
+    background: #fff;
+    top: 0;
+    width: 0;
+    height: 100%;
+    left: -19.5%;
+    z-index: -1;
+    transform: skew(50deg);
+    transform-origin: top left;
+    transition: all 0.5s ease;
+}
+
+.login:hover:after {
+    width: 115%;
 }
 
 .login--hidden {
